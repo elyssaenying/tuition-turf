@@ -1,0 +1,18 @@
+{
+  "pipeline_version": "0.1.0",
+  "schema_version": "0.3.0",
+  "snapshot_date": "2026-09-12",
+  "preflight_result_ref": "reports/preflight/2026-09-12/preflight-result.json",
+  "target_ages_inclusive": [7, 16],
+  "population_rounding_unit": 10,
+  "exchange_crs": "EPSG:4326",
+  "metric_crs": "EPSG:3414",
+  "singapore_wgs84_bounds": {
+    "minimum_longitude": 103.5,
+    "maximum_longitude": 104.2,
+    "minimum_latitude": 1.1,
+    "maximum_latitude": 1.6
+  },
+  "data_gov_api_pace_seconds": 13.0,
+  "onemap_search_pace_seconds": 0.5
+}

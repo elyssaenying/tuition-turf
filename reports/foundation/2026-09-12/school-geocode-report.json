@@ -1,0 +1,63 @@
+{
+  "cache_ref": "data/interim/foundation/2026-09-12/school-geocodes-67d73a45b45a80d7.json",
+  "executed_search_requests": 337,
+  "fixture_checksum": "67d73a45b45a80d7e0a0bb4da2a5cd6ce9250f319091b4faa77a14ee4150b4e0",
+  "matching_rule": "Exact six-digit postal match and one unique returned WGS84 coordinate; no fuzzy match.",
+  "planned_search_requests": 337,
+  "purpose": "Exact-postal coordinate resolution for S004 schools; no routing requests",
+  "rate_limited_count": 0,
+  "raw_authentication_response_recorded": false,
+  "raw_search_responses_recorded": false,
+  "request_headers_recorded": false,
+  "run_id": "foundation_7dbd9a143e9504e7",
+  "source_id": "S007",
+  "status_counts": {
+    "ambiguous_exact_postal_coordinates": 7,
+    "resolved_exact_postal_unique_coordinate": 330
+  },
+  "token_persisted": false,
+  "unresolved_coordinates": [
+    {
+      "coordinate_status": "ambiguous_exact_postal_coordinates",
+      "postal_code": "487012",
+      "school_id": "MOE_AC66DBB3F93C157B",
+      "school_name": "ANGLICAN HIGH SCHOOL"
+    },
+    {
+      "coordinate_status": "ambiguous_exact_postal_coordinates",
+      "postal_code": "678117",
+      "school_id": "MOE_F435D896BA547A52",
+      "school_name": "ASSUMPTION ENGLISH SCHOOL"
+    },
+    {
+      "coordinate_status": "ambiguous_exact_postal_coordinates",
+      "postal_code": "387621",
+      "school_id": "MOE_C670ACBC58172F00",
+      "school_name": "CANOSSA CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+      "coordinate_status": "ambiguous_exact_postal_coordinates",
+      "postal_code": "737924",
+      "school_id": "MOE_B621AB103FD5BB75",
+      "school_name": "CHRIST CHURCH SECONDARY SCHOOL"
+    },
+    {
+      "coordinate_status": "ambiguous_exact_postal_coordinates",
+      "postal_code": "269734",
+      "school_id": "MOE_52CADBC5D414EA2D",
+      "school_name": "HWA CHONG INSTITUTION"
+    },
+    {
+      "coordinate_status": "ambiguous_exact_postal_coordinates",
+      "postal_code": "575954",
+      "school_id": "MOE_B82D2A7E21B1AE1F",
+      "school_name": "RAFFLES INSTITUTION"
+    },
+    {
+      "coordinate_status": "ambiguous_exact_postal_coordinates",
+      "postal_code": "649961",
+      "school_id": "MOE_613C6C51EF2092BC",
+      "school_name": "RIVER VALLEY HIGH SCHOOL"
+    }
+  ]
+}

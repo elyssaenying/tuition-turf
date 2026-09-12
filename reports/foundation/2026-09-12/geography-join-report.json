@@ -1,0 +1,15 @@
+{
+  "run_id": "foundation_7dbd9a143e9504e7",
+  "summary": {
+    "ambiguous": [],
+    "ambiguous_count": 0,
+    "boundary_only": [],
+    "boundary_only_count": 0,
+    "fuzzy_matching_used": false,
+    "matched_count": 332,
+    "normalization": "uppercase, trim and collapse whitespace only",
+    "population_pair_count": 332,
+    "unmatched": [],
+    "unmatched_count": 0
+  }
+}

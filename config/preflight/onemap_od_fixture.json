@@ -1,0 +1,26 @@
+{
+  "fixture_version": "2026-09-12.1",
+  "purpose": "Geographically dispersed OneMap coverage test; these are not recommended candidates.",
+  "coordinate_source": "Resolve each fixed query with the official OneMap Search API and select the first returned result before routing.",
+  "journey_date": "09-16-2026",
+  "journey_time": "16:00:00",
+  "max_walk_distance_metres": 1000,
+  "origins": [
+    {"id": "origin_woodlands", "label": "Woodlands MRT area", "search_query": "Woodlands MRT"},
+    {"id": "origin_yishun", "label": "Yishun MRT area", "search_query": "Yishun MRT"},
+    {"id": "origin_punggol", "label": "Punggol MRT area", "search_query": "Punggol MRT"},
+    {"id": "origin_pasir_ris", "label": "Pasir Ris MRT area", "search_query": "Pasir Ris MRT"},
+    {"id": "origin_tampines", "label": "Tampines MRT area", "search_query": "Tampines MRT"},
+    {"id": "origin_changi_airport", "label": "Changi Airport Terminal 3", "search_query": "Changi Airport Terminal 3"},
+    {"id": "origin_harbourfront", "label": "HarbourFront MRT area", "search_query": "HarbourFront MRT"},
+    {"id": "origin_jurong_east", "label": "Jurong East MRT area", "search_query": "Jurong East MRT"},
+    {"id": "origin_bukit_panjang", "label": "Bukit Panjang MRT area", "search_query": "Bukit Panjang MRT"},
+    {"id": "origin_tuas_link", "label": "Tuas Link MRT area", "search_query": "Tuas Link MRT"}
+  ],
+  "destinations": [
+    {"id": "destination_bishan", "label": "Bishan MRT area", "search_query": "Bishan MRT"},
+    {"id": "destination_city_hall", "label": "City Hall MRT area", "search_query": "City Hall MRT"},
+    {"id": "destination_buona_vista", "label": "Buona Vista MRT area", "search_query": "Buona Vista MRT"}
+  ]
+}
+

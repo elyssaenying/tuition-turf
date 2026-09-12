@@ -1,0 +1,4878 @@
+{
+  "checks": [
+    {
+      "check_id": "Q02",
+      "details": [],
+      "observation": "0 duplicate source composite keys",
+      "source_id": "S001",
+      "status": "pass",
+      "table": "population_age_7_16"
+    },
+    {
+      "check_id": "Q03",
+      "details": null,
+      "observation": "0 invalid/missing population conditions; 37800 nil-or-negligible source markers treated as zero",
+      "source_id": "S001",
+      "status": "pass",
+      "table": "population_proxy_subzone"
+    },
+    {
+      "check_id": "Q03",
+      "details": [
+        {
+          "age": 8,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Ang Mo Kio Town Centre",
+          "total_minus_males_females": 10
+        },
+        {
+          "age": 8,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Cheng San",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 14,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Cheng San",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 15,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Cheng San",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 16,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Cheng San",
+          "total_minus_males_females": 10
+        },
+        {
+          "age": 9,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Chong Boon",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 10,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Chong Boon",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 11,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Chong Boon",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 12,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Chong Boon",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 16,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Chong Boon",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 11,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Kebun Bahru",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 13,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Kebun Bahru",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 7,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Sembawang Hills",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 10,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Sembawang Hills",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 14,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Sembawang Hills",
+          "total_minus_males_females": 10
+        },
+        {
+          "age": 15,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Sembawang Hills",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 8,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Shangri-La",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 10,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Shangri-La",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 7,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Tagore",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 8,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Tagore",
+          "total_minus_males_females": -10
+        }
+      ],
+      "observation": "0 missing sex sets; maximum Total-(Males+Females) difference 10",
+      "source_id": "S001",
+      "status": "pass",
+      "table": "population_sex_reconciliation"
+    },
+    {
+      "check_id": "Q04",
+      "details": {
+        "difference": 620,
+        "national_published_total": 412010,
+        "national_subzone_sum": 412630,
+        "planning_area_age_max_abs_difference": 30
+      },
+      "observation": "Each published count is rounded to the nearest 10; sums preserve but compound that limitation.",
+      "source_id": "S001",
+      "status": "warning",
+      "table": "population_proxy_subzone"
+    },
+    {
+      "check_id": "Q05",
+      "details": {
+        "area_calculation_crs": "EPSG:3414",
+        "duplicate_geo_ids": [],
+        "duplicate_planning_area_code_name_pairs": [],
+        "duplicate_subzone_codes": [],
+        "geometry_repair_count": 6,
+        "geometry_repairs": [
+          {
+            "method": "shapely.make_valid",
+            "result_geometry_type": "MultiPolygon",
+            "source_reason": "Ring Self-intersection[103.85041030543 1.22911084430392]",
+            "subzone_code": "SISZ02"
+          },
+          {
+            "method": "shapely.make_valid",
+            "result_geometry_type": "MultiPolygon",
+            "source_reason": "Ring Self-intersection[103.823303956149 1.25745321410074]",
+            "subzone_code": "SISZ01"
+          },
+          {
+            "method": "shapely.make_valid",
+            "result_geometry_type": "Polygon",
+            "source_reason": "Ring Self-intersection[103.823637948297 1.26075433692188]",
+            "subzone_code": "BMSZ01"
+          },
+          {
+            "method": "shapely.make_valid",
+            "result_geometry_type": "Polygon",
+            "source_reason": "Ring Self-intersection[103.932080154816 1.30554765129205]",
+            "subzone_code": "BDSZ07"
+          },
+          {
+            "method": "shapely.make_valid",
+            "result_geometry_type": "MultiPolygon",
+            "source_reason": "Ring Self-intersection[103.720393805048 1.29951635954019]",
+            "subzone_code": "JESZ10"
+          },
+          {
+            "method": "shapely.make_valid",
+            "result_geometry_type": "MultiPolygon",
+            "source_reason": "Ring Self-intersection[103.928049842741 1.41966801994]",
+            "subzone_code": "NESZ01"
+          }
+        ],
+        "geometry_types": {
+          "MultiPolygon": 11,
+          "Polygon": 321
+        },
+        "missing_required_field_count": 0,
+        "missing_required_fields": [],
+        "out_of_singapore_bounds_count": 0,
+        "out_of_singapore_bounds_subzone_codes": [],
+        "planning_area_codes_with_multiple_names": {},
+        "processed_feature_count": 332,
+        "processed_invalid_geometry": [],
+        "processed_invalid_geometry_count": 0,
+        "source_crs_interpretation": "GeoJSON coordinates validated as WGS84 longitude/latitude under RFC 7946; no coordinate reprojection was silently inferred.",
+        "source_feature_count": 332,
+        "source_invalid_geometry": [
+          {
+            "reason": "Ring Self-intersection[103.85041030543 1.22911084430392]",
+            "subzone_code": "SISZ02"
+          },
+          {
+            "reason": "Ring Self-intersection[103.823303956149 1.25745321410074]",
+            "subzone_code": "SISZ01"
+          },
+          {
+            "reason": "Ring Self-intersection[103.823637948297 1.26075433692188]",
+            "subzone_code": "BMSZ01"
+          },
+          {
+            "reason": "Ring Self-intersection[103.932080154816 1.30554765129205]",
+            "subzone_code": "BDSZ07"
+          },
+          {
+            "reason": "Ring Self-intersection[103.720393805048 1.29951635954019]",
+            "subzone_code": "JESZ10"
+          },
+          {
+            "reason": "Ring Self-intersection[103.928049842741 1.41966801994]",
+            "subzone_code": "NESZ01"
+          }
+        ],
+        "source_invalid_geometry_count": 6
+      },
+      "observation": "0 blocking geometry, bounds, identifier or hierarchy conditions",
+      "source_id": "S003",
+      "status": "pass",
+      "table": "mp2019_subzones"
+    },
+    {
+      "check_id": "Q05",
+      "details": [
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "MultiPolygon",
+          "source_reason": "Ring Self-intersection[103.85041030543 1.22911084430392]",
+          "subzone_code": "SISZ02"
+        },
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "MultiPolygon",
+          "source_reason": "Ring Self-intersection[103.823303956149 1.25745321410074]",
+          "subzone_code": "SISZ01"
+        },
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "Polygon",
+          "source_reason": "Ring Self-intersection[103.823637948297 1.26075433692188]",
+          "subzone_code": "BMSZ01"
+        },
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "Polygon",
+          "source_reason": "Ring Self-intersection[103.932080154816 1.30554765129205]",
+          "subzone_code": "BDSZ07"
+        },
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "MultiPolygon",
+          "source_reason": "Ring Self-intersection[103.720393805048 1.29951635954019]",
+          "subzone_code": "JESZ10"
+        },
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "MultiPolygon",
+          "source_reason": "Ring Self-intersection[103.928049842741 1.41966801994]",
+          "subzone_code": "NESZ01"
+        }
+      ],
+      "observation": "6 source geometries required recorded make_valid repair; 0 processed geometries remain invalid",
+      "source_id": "S003",
+      "status": "warning",
+      "table": "mp2019_subzones_source_geometry"
+    },
+    {
+      "check_id": "Q05",
+      "details": {
+        "ambiguous": [],
+        "unmatched": []
+      },
+      "observation": "332 matched, 0 unmatched, 0 ambiguous; no fuzzy matches",
+      "source_id": "S001+S003",
+      "status": "pass",
+      "table": "geography_crosswalk"
+    },
+    {
+      "check_id": "Q02",
+      "details": {
+        "coordinate_bounds_validated_count": 330,
+        "coordinate_limitation": "S004 supplies no coordinates. S007 exact-postal search coordinates are retained only when one unique in-bounds coordinate is returned; unresolved or ambiguous coordinates remain null.",
+        "coordinate_missing_count": 7,
+        "coordinate_status_counts": {
+          "ambiguous_exact_postal_coordinates": 7,
+          "resolved_exact_postal_unique_coordinate": 330
+        },
+        "duplicate_normalized_name_postal": [],
+        "duplicate_school_ids": [],
+        "duplicate_source_record_ids": [],
+        "invalid_postal_count": 0,
+        "invalid_postal_examples": [],
+        "leading_zero_postal_normalization_count": 4,
+        "mainlevel_counts": {
+          "CENTRALISED INSTITUTE": 1,
+          "JUNIOR COLLEGE": 10,
+          "MIXED LEVEL (P1-S4)": 3,
+          "MIXED LEVEL (S1-JC2)": 10,
+          "MIXED LEVEL (S1-S5, JC1-JC2)": 1,
+          "PRIMARY": 179,
+          "SECONDARY (S1-S4)": 16,
+          "SECONDARY (S1-S5)": 117
+        },
+        "missing_required_by_field": {},
+        "primary_secondary_context_count": 326,
+        "processed_record_count": 337,
+        "retained_personal_contact_fields": false,
+        "source_record_count": 337,
+        "unresolved_coordinates": [
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "487012",
+            "school_id": "MOE_AC66DBB3F93C157B",
+            "school_name": "ANGLICAN HIGH SCHOOL"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "678117",
+            "school_id": "MOE_F435D896BA547A52",
+            "school_name": "ASSUMPTION ENGLISH SCHOOL"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "387621",
+            "school_id": "MOE_C670ACBC58172F00",
+            "school_name": "CANOSSA CATHOLIC PRIMARY SCHOOL"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "737924",
+            "school_id": "MOE_B621AB103FD5BB75",
+            "school_name": "CHRIST CHURCH SECONDARY SCHOOL"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "269734",
+            "school_id": "MOE_52CADBC5D414EA2D",
+            "school_name": "HWA CHONG INSTITUTION"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "575954",
+            "school_id": "MOE_B82D2A7E21B1AE1F",
+            "school_name": "RAFFLES INSTITUTION"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "649961",
+            "school_id": "MOE_613C6C51EF2092BC",
+            "school_name": "RIVER VALLEY HIGH SCHOOL"
+          }
+        ]
+      },
+      "observation": "0 blocking school key/required-field/postal conditions",
+      "source_id": "S004",
+      "status": "pass",
+      "table": "schools"
+    },
+    {
+      "check_id": "Q05",
+      "details": {
+        "status_counts": {
+          "ambiguous_exact_postal_coordinates": 7,
+          "resolved_exact_postal_unique_coordinate": 330
+        },
+        "unresolved_coordinates": [
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "487012",
+            "school_id": "MOE_AC66DBB3F93C157B",
+            "school_name": "ANGLICAN HIGH SCHOOL"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "678117",
+            "school_id": "MOE_F435D896BA547A52",
+            "school_name": "ASSUMPTION ENGLISH SCHOOL"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "387621",
+            "school_id": "MOE_C670ACBC58172F00",
+            "school_name": "CANOSSA CATHOLIC PRIMARY SCHOOL"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "737924",
+            "school_id": "MOE_B621AB103FD5BB75",
+            "school_name": "CHRIST CHURCH SECONDARY SCHOOL"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "269734",
+            "school_id": "MOE_52CADBC5D414EA2D",
+            "school_name": "HWA CHONG INSTITUTION"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "575954",
+            "school_id": "MOE_B82D2A7E21B1AE1F",
+            "school_name": "RAFFLES INSTITUTION"
+          },
+          {
+            "coordinate_status": "ambiguous_exact_postal_coordinates",
+            "postal_code": "649961",
+            "school_id": "MOE_613C6C51EF2092BC",
+            "school_name": "RIVER VALLEY HIGH SCHOOL"
+          }
+        ]
+      },
+      "observation": "330 coordinates validated; 7 unresolved or absent",
+      "source_id": "S004+S007",
+      "status": "warning",
+      "table": "schools"
+    },
+    {
+      "check_id": "Q05",
+      "details": {
+        "coordinate_bounds_validated_count": 613,
+        "duplicate_business_keys": [
+          "BEDOK NORTH MRT STATION|EXIT B",
+          "BUKIT PANJANG MRT STATION|EXIT A",
+          "CHOA CHU KANG MRT STATION|EXIT A",
+          "CHOA CHU KANG MRT STATION|EXIT C",
+          "CHOA CHU KANG MRT STATION|EXIT D",
+          "EXPO MRT STATION|EXIT A",
+          "HARBOURFRONT MRT STATION|EXIT A",
+          "UPPER CHANGI MRT STATION|EXIT A"
+        ],
+        "duplicate_coordinate_count": 0,
+        "duplicate_coordinates": [],
+        "duplicate_source_unique_ids": [],
+        "duplicate_transit_point_ids": [],
+        "invalid_geometry": [],
+        "invalid_geometry_count": 0,
+        "missing_required_field_count": 0,
+        "missing_required_fields": [],
+        "out_of_singapore_bounds_count": 0,
+        "out_of_singapore_bounds_source_ids": [],
+        "processed_point_count": 613,
+        "source_crs_interpretation": "GeoJSON coordinates validated as WGS84 longitude/latitude under RFC 7946.",
+        "source_feature_count": 613
+      },
+      "observation": "0 blocking point geometry/key/bounds conditions; 0 duplicate coordinates retained for review",
+      "source_id": "S005",
+      "status": "pass",
+      "table": "mrt_exits"
+    },
+    {
+      "check_id": "Q02",
+      "details": [
+        "BEDOK NORTH MRT STATION|EXIT B",
+        "BUKIT PANJANG MRT STATION|EXIT A",
+        "CHOA CHU KANG MRT STATION|EXIT A",
+        "CHOA CHU KANG MRT STATION|EXIT C",
+        "CHOA CHU KANG MRT STATION|EXIT D",
+        "EXPO MRT STATION|EXIT A",
+        "HARBOURFRONT MRT STATION|EXIT A",
+        "UPPER CHANGI MRT STATION|EXIT A"
+      ],
+      "observation": "8 repeated descriptive business keys across unique source point IDs",
+      "source_id": "S005",
+      "status": "warning",
+      "table": "mrt_exits"
+    },
+    {
+      "check_id": "Q05",
+      "details": {
+        "coordinate_bounds_validated_count": 5205,
+        "duplicate_business_keys": [],
+        "duplicate_coordinate_count": 0,
+        "duplicate_coordinates": [],
+        "duplicate_source_unique_ids": [],
+        "duplicate_transit_point_ids": [],
+        "invalid_geometry": [],
+        "invalid_geometry_count": 0,
+        "missing_required_field_count": 0,
+        "missing_required_fields": [],
+        "out_of_singapore_bounds_count": 0,
+        "out_of_singapore_bounds_source_ids": [],
+        "processed_point_count": 5205,
+        "source_crs_interpretation": "GeoJSON coordinates validated as WGS84 longitude/latitude under RFC 7946.",
+        "source_feature_count": 5205
+      },
+      "observation": "0 blocking point geometry/key/bounds conditions; 0 duplicate coordinates retained for review",
+      "source_id": "S006",
+      "status": "pass",
+      "table": "bus_stops"
+    },
+    {
+      "check_id": "Q02",
+      "details": [],
+      "observation": "0 repeated descriptive business keys across unique source point IDs",
+      "source_id": "S006",
+      "status": "pass",
+      "table": "bus_stops"
+    },
+    {
+      "check_id": "Q06",
+      "details": "Missing PT routes require the documented walking/proximity fallback and remain missing; they are not imputed.",
+      "observation": "walking 30/30; PT 19/30; PT missing routes 11; rate limited 0",
+      "source_id": "S007",
+      "status": "warning",
+      "table": "routing_preflight"
+    }
+  ],
+  "overall_status": "passed_with_warnings",
+  "pipeline_version": "0.1.0",
+  "run_id": "foundation_7dbd9a143e9504e7",
+  "schema_version": "0.3.0",
+  "source_summaries": {
+    "S001": {
+      "incomplete_target_subzones": [],
+      "missing_count_marker_count": 0,
+      "national_target_age_difference": 620,
+      "national_target_age_published_total": 412010,
+      "national_target_age_subzone_sum": 412630,
+      "negative_count": 0,
+      "nil_or_negligible_marker_count": 37800,
+      "observed_age_values": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+        "55",
+        "56",
+        "57",
+        "58",
+        "59",
+        "60",
+        "61",
+        "62",
+        "63",
+        "64",
+        "65",
+        "66",
+        "67",
+        "68",
+        "69",
+        "70",
+        "71",
+        "72",
+        "73",
+        "74",
+        "75",
+        "76",
+        "77",
+        "78",
+        "79",
+        "80",
+        "81",
+        "82",
+        "83",
+        "84",
+        "85",
+        "86",
+        "87",
+        "88",
+        "89",
+        "90 & Over",
+        "Total"
+      ],
+      "observed_sex_values": [
+        "Females",
+        "Males",
+        "Total"
+      ],
+      "planning_area_age_reconciliation": [
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Ang Mo Kio",
+          "published_total": 1110,
+          "subzone_sum": 1110
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Ang Mo Kio",
+          "published_total": 1180,
+          "subzone_sum": 1170
+        },
+        {
+          "age": 9,
+          "difference": -10,
+          "planning_area_name": "Ang Mo Kio",
+          "published_total": 1260,
+          "subzone_sum": 1250
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Ang Mo Kio",
+          "published_total": 1280,
+          "subzone_sum": 1280
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Ang Mo Kio",
+          "published_total": 1240,
+          "subzone_sum": 1240
+        },
+        {
+          "age": 12,
+          "difference": 10,
+          "planning_area_name": "Ang Mo Kio",
+          "published_total": 1340,
+          "subzone_sum": 1350
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "Ang Mo Kio",
+          "published_total": 1340,
+          "subzone_sum": 1330
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Ang Mo Kio",
+          "published_total": 1260,
+          "subzone_sum": 1260
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Ang Mo Kio",
+          "published_total": 1280,
+          "subzone_sum": 1280
+        },
+        {
+          "age": 16,
+          "difference": 10,
+          "planning_area_name": "Ang Mo Kio",
+          "published_total": 1440,
+          "subzone_sum": 1450
+        },
+        {
+          "age": 7,
+          "difference": 10,
+          "planning_area_name": "Bedok",
+          "published_total": 2210,
+          "subzone_sum": 2220
+        },
+        {
+          "age": 8,
+          "difference": 30,
+          "planning_area_name": "Bedok",
+          "published_total": 2260,
+          "subzone_sum": 2290
+        },
+        {
+          "age": 9,
+          "difference": -10,
+          "planning_area_name": "Bedok",
+          "published_total": 2440,
+          "subzone_sum": 2430
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Bedok",
+          "published_total": 2450,
+          "subzone_sum": 2450
+        },
+        {
+          "age": 11,
+          "difference": 10,
+          "planning_area_name": "Bedok",
+          "published_total": 2310,
+          "subzone_sum": 2320
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Bedok",
+          "published_total": 2480,
+          "subzone_sum": 2480
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "Bedok",
+          "published_total": 2420,
+          "subzone_sum": 2410
+        },
+        {
+          "age": 14,
+          "difference": -20,
+          "planning_area_name": "Bedok",
+          "published_total": 2450,
+          "subzone_sum": 2430
+        },
+        {
+          "age": 15,
+          "difference": 10,
+          "planning_area_name": "Bedok",
+          "published_total": 2490,
+          "subzone_sum": 2500
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Bedok",
+          "published_total": 2610,
+          "subzone_sum": 2610
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Bishan",
+          "published_total": 760,
+          "subzone_sum": 760
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Bishan",
+          "published_total": 770,
+          "subzone_sum": 760
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Bishan",
+          "published_total": 840,
+          "subzone_sum": 840
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Bishan",
+          "published_total": 740,
+          "subzone_sum": 740
+        },
+        {
+          "age": 11,
+          "difference": -10,
+          "planning_area_name": "Bishan",
+          "published_total": 800,
+          "subzone_sum": 790
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Bishan",
+          "published_total": 870,
+          "subzone_sum": 870
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Bishan",
+          "published_total": 780,
+          "subzone_sum": 780
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Bishan",
+          "published_total": 830,
+          "subzone_sum": 830
+        },
+        {
+          "age": 15,
+          "difference": -10,
+          "planning_area_name": "Bishan",
+          "published_total": 830,
+          "subzone_sum": 820
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Bishan",
+          "published_total": 850,
+          "subzone_sum": 850
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Boon Lay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Boon Lay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Boon Lay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Boon Lay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Boon Lay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Boon Lay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Boon Lay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Boon Lay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Boon Lay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Boon Lay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 10,
+          "planning_area_name": "Bukit Batok",
+          "published_total": 1640,
+          "subzone_sum": 1650
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Bukit Batok",
+          "published_total": 1600,
+          "subzone_sum": 1590
+        },
+        {
+          "age": 9,
+          "difference": 20,
+          "planning_area_name": "Bukit Batok",
+          "published_total": 1560,
+          "subzone_sum": 1580
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Bukit Batok",
+          "published_total": 1610,
+          "subzone_sum": 1610
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Bukit Batok",
+          "published_total": 1490,
+          "subzone_sum": 1490
+        },
+        {
+          "age": 12,
+          "difference": 20,
+          "planning_area_name": "Bukit Batok",
+          "published_total": 1550,
+          "subzone_sum": 1570
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "Bukit Batok",
+          "published_total": 1490,
+          "subzone_sum": 1480
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Bukit Batok",
+          "published_total": 1440,
+          "subzone_sum": 1440
+        },
+        {
+          "age": 15,
+          "difference": 10,
+          "planning_area_name": "Bukit Batok",
+          "published_total": 1570,
+          "subzone_sum": 1580
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Bukit Batok",
+          "published_total": 1570,
+          "subzone_sum": 1570
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Bukit Merah",
+          "published_total": 1080,
+          "subzone_sum": 1080
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Bukit Merah",
+          "published_total": 1110,
+          "subzone_sum": 1100
+        },
+        {
+          "age": 9,
+          "difference": 20,
+          "planning_area_name": "Bukit Merah",
+          "published_total": 1160,
+          "subzone_sum": 1180
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Bukit Merah",
+          "published_total": 1220,
+          "subzone_sum": 1220
+        },
+        {
+          "age": 11,
+          "difference": 10,
+          "planning_area_name": "Bukit Merah",
+          "published_total": 1200,
+          "subzone_sum": 1210
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Bukit Merah",
+          "published_total": 1290,
+          "subzone_sum": 1290
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Bukit Merah",
+          "published_total": 1180,
+          "subzone_sum": 1190
+        },
+        {
+          "age": 14,
+          "difference": 10,
+          "planning_area_name": "Bukit Merah",
+          "published_total": 1200,
+          "subzone_sum": 1210
+        },
+        {
+          "age": 15,
+          "difference": 10,
+          "planning_area_name": "Bukit Merah",
+          "published_total": 1270,
+          "subzone_sum": 1280
+        },
+        {
+          "age": 16,
+          "difference": 20,
+          "planning_area_name": "Bukit Merah",
+          "published_total": 1320,
+          "subzone_sum": 1340
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Bukit Panjang",
+          "published_total": 1170,
+          "subzone_sum": 1170
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Bukit Panjang",
+          "published_total": 1280,
+          "subzone_sum": 1280
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Bukit Panjang",
+          "published_total": 1360,
+          "subzone_sum": 1360
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Bukit Panjang",
+          "published_total": 1380,
+          "subzone_sum": 1380
+        },
+        {
+          "age": 11,
+          "difference": -10,
+          "planning_area_name": "Bukit Panjang",
+          "published_total": 1370,
+          "subzone_sum": 1360
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Bukit Panjang",
+          "published_total": 1390,
+          "subzone_sum": 1390
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Bukit Panjang",
+          "published_total": 1410,
+          "subzone_sum": 1420
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Bukit Panjang",
+          "published_total": 1370,
+          "subzone_sum": 1370
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Bukit Panjang",
+          "published_total": 1350,
+          "subzone_sum": 1350
+        },
+        {
+          "age": 16,
+          "difference": 10,
+          "planning_area_name": "Bukit Panjang",
+          "published_total": 1440,
+          "subzone_sum": 1450
+        },
+        {
+          "age": 7,
+          "difference": 10,
+          "planning_area_name": "Bukit Timah",
+          "published_total": 1180,
+          "subzone_sum": 1190
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Bukit Timah",
+          "published_total": 1170,
+          "subzone_sum": 1160
+        },
+        {
+          "age": 9,
+          "difference": 10,
+          "planning_area_name": "Bukit Timah",
+          "published_total": 1200,
+          "subzone_sum": 1210
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Bukit Timah",
+          "published_total": 1200,
+          "subzone_sum": 1200
+        },
+        {
+          "age": 11,
+          "difference": 10,
+          "planning_area_name": "Bukit Timah",
+          "published_total": 1110,
+          "subzone_sum": 1120
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Bukit Timah",
+          "published_total": 1160,
+          "subzone_sum": 1160
+        },
+        {
+          "age": 13,
+          "difference": 20,
+          "planning_area_name": "Bukit Timah",
+          "published_total": 1090,
+          "subzone_sum": 1110
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Bukit Timah",
+          "published_total": 960,
+          "subzone_sum": 960
+        },
+        {
+          "age": 15,
+          "difference": -10,
+          "planning_area_name": "Bukit Timah",
+          "published_total": 1090,
+          "subzone_sum": 1080
+        },
+        {
+          "age": 16,
+          "difference": 20,
+          "planning_area_name": "Bukit Timah",
+          "published_total": 1060,
+          "subzone_sum": 1080
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Central Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Central Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Central Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Central Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Central Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Central Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Central Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Central Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Central Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Central Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Changi",
+          "published_total": 40,
+          "subzone_sum": 40
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Changi",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Changi",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 10,
+          "difference": -10,
+          "planning_area_name": "Changi",
+          "published_total": 40,
+          "subzone_sum": 30
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Changi",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Changi",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Changi",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 14,
+          "difference": -10,
+          "planning_area_name": "Changi",
+          "published_total": 40,
+          "subzone_sum": 30
+        },
+        {
+          "age": 15,
+          "difference": -10,
+          "planning_area_name": "Changi",
+          "published_total": 30,
+          "subzone_sum": 20
+        },
+        {
+          "age": 16,
+          "difference": 10,
+          "planning_area_name": "Changi",
+          "published_total": 20,
+          "subzone_sum": 30
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Changi Bay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Changi Bay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Changi Bay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Changi Bay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Changi Bay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Changi Bay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Changi Bay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Changi Bay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Changi Bay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Changi Bay",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 20,
+          "planning_area_name": "Choa Chu Kang",
+          "published_total": 1700,
+          "subzone_sum": 1720
+        },
+        {
+          "age": 8,
+          "difference": 20,
+          "planning_area_name": "Choa Chu Kang",
+          "published_total": 1760,
+          "subzone_sum": 1780
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Choa Chu Kang",
+          "published_total": 1870,
+          "subzone_sum": 1870
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Choa Chu Kang",
+          "published_total": 1870,
+          "subzone_sum": 1870
+        },
+        {
+          "age": 11,
+          "difference": 10,
+          "planning_area_name": "Choa Chu Kang",
+          "published_total": 1820,
+          "subzone_sum": 1830
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Choa Chu Kang",
+          "published_total": 1900,
+          "subzone_sum": 1900
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Choa Chu Kang",
+          "published_total": 1810,
+          "subzone_sum": 1820
+        },
+        {
+          "age": 14,
+          "difference": 20,
+          "planning_area_name": "Choa Chu Kang",
+          "published_total": 1820,
+          "subzone_sum": 1840
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Choa Chu Kang",
+          "published_total": 1900,
+          "subzone_sum": 1900
+        },
+        {
+          "age": 16,
+          "difference": 20,
+          "planning_area_name": "Choa Chu Kang",
+          "published_total": 1970,
+          "subzone_sum": 1990
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Clementi",
+          "published_total": 1040,
+          "subzone_sum": 1040
+        },
+        {
+          "age": 8,
+          "difference": 10,
+          "planning_area_name": "Clementi",
+          "published_total": 1060,
+          "subzone_sum": 1070
+        },
+        {
+          "age": 9,
+          "difference": 10,
+          "planning_area_name": "Clementi",
+          "published_total": 1090,
+          "subzone_sum": 1100
+        },
+        {
+          "age": 10,
+          "difference": -10,
+          "planning_area_name": "Clementi",
+          "published_total": 1080,
+          "subzone_sum": 1070
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Clementi",
+          "published_total": 1080,
+          "subzone_sum": 1080
+        },
+        {
+          "age": 12,
+          "difference": 10,
+          "planning_area_name": "Clementi",
+          "published_total": 1040,
+          "subzone_sum": 1050
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "Clementi",
+          "published_total": 1070,
+          "subzone_sum": 1060
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Clementi",
+          "published_total": 1000,
+          "subzone_sum": 1000
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Clementi",
+          "published_total": 1080,
+          "subzone_sum": 1080
+        },
+        {
+          "age": 16,
+          "difference": -10,
+          "planning_area_name": "Clementi",
+          "published_total": 1120,
+          "subzone_sum": 1110
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Downtown Core",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 8,
+          "difference": 10,
+          "planning_area_name": "Downtown Core",
+          "published_total": 40,
+          "subzone_sum": 50
+        },
+        {
+          "age": 9,
+          "difference": -10,
+          "planning_area_name": "Downtown Core",
+          "published_total": 40,
+          "subzone_sum": 30
+        },
+        {
+          "age": 10,
+          "difference": -10,
+          "planning_area_name": "Downtown Core",
+          "published_total": 40,
+          "subzone_sum": 30
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Downtown Core",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 12,
+          "difference": -10,
+          "planning_area_name": "Downtown Core",
+          "published_total": 30,
+          "subzone_sum": 20
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "Downtown Core",
+          "published_total": 40,
+          "subzone_sum": 30
+        },
+        {
+          "age": 14,
+          "difference": -10,
+          "planning_area_name": "Downtown Core",
+          "published_total": 30,
+          "subzone_sum": 20
+        },
+        {
+          "age": 15,
+          "difference": -10,
+          "planning_area_name": "Downtown Core",
+          "published_total": 30,
+          "subzone_sum": 20
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Downtown Core",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 7,
+          "difference": 10,
+          "planning_area_name": "Geylang",
+          "published_total": 930,
+          "subzone_sum": 940
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Geylang",
+          "published_total": 950,
+          "subzone_sum": 950
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Geylang",
+          "published_total": 930,
+          "subzone_sum": 930
+        },
+        {
+          "age": 10,
+          "difference": 10,
+          "planning_area_name": "Geylang",
+          "published_total": 940,
+          "subzone_sum": 950
+        },
+        {
+          "age": 11,
+          "difference": -10,
+          "planning_area_name": "Geylang",
+          "published_total": 930,
+          "subzone_sum": 920
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Geylang",
+          "published_total": 920,
+          "subzone_sum": 920
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "Geylang",
+          "published_total": 900,
+          "subzone_sum": 890
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Geylang",
+          "published_total": 840,
+          "subzone_sum": 840
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Geylang",
+          "published_total": 900,
+          "subzone_sum": 900
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Geylang",
+          "published_total": 980,
+          "subzone_sum": 980
+        },
+        {
+          "age": 7,
+          "difference": -10,
+          "planning_area_name": "Hougang",
+          "published_total": 1880,
+          "subzone_sum": 1870
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Hougang",
+          "published_total": 2010,
+          "subzone_sum": 2000
+        },
+        {
+          "age": 9,
+          "difference": 10,
+          "planning_area_name": "Hougang",
+          "published_total": 2080,
+          "subzone_sum": 2090
+        },
+        {
+          "age": 10,
+          "difference": 20,
+          "planning_area_name": "Hougang",
+          "published_total": 2060,
+          "subzone_sum": 2080
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Hougang",
+          "published_total": 1950,
+          "subzone_sum": 1950
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Hougang",
+          "published_total": 2070,
+          "subzone_sum": 2070
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Hougang",
+          "published_total": 2060,
+          "subzone_sum": 2060
+        },
+        {
+          "age": 14,
+          "difference": -10,
+          "planning_area_name": "Hougang",
+          "published_total": 1850,
+          "subzone_sum": 1840
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Hougang",
+          "published_total": 2030,
+          "subzone_sum": 2030
+        },
+        {
+          "age": 16,
+          "difference": 10,
+          "planning_area_name": "Hougang",
+          "published_total": 2120,
+          "subzone_sum": 2130
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Jurong East",
+          "published_total": 470,
+          "subzone_sum": 470
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Jurong East",
+          "published_total": 490,
+          "subzone_sum": 490
+        },
+        {
+          "age": 9,
+          "difference": 10,
+          "planning_area_name": "Jurong East",
+          "published_total": 500,
+          "subzone_sum": 510
+        },
+        {
+          "age": 10,
+          "difference": 10,
+          "planning_area_name": "Jurong East",
+          "published_total": 570,
+          "subzone_sum": 580
+        },
+        {
+          "age": 11,
+          "difference": -10,
+          "planning_area_name": "Jurong East",
+          "published_total": 550,
+          "subzone_sum": 540
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Jurong East",
+          "published_total": 580,
+          "subzone_sum": 580
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "Jurong East",
+          "published_total": 600,
+          "subzone_sum": 590
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Jurong East",
+          "published_total": 570,
+          "subzone_sum": 570
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Jurong East",
+          "published_total": 660,
+          "subzone_sum": 660
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Jurong East",
+          "published_total": 670,
+          "subzone_sum": 670
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Jurong West",
+          "published_total": 2120,
+          "subzone_sum": 2120
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Jurong West",
+          "published_total": 2300,
+          "subzone_sum": 2300
+        },
+        {
+          "age": 9,
+          "difference": 20,
+          "planning_area_name": "Jurong West",
+          "published_total": 2430,
+          "subzone_sum": 2450
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Jurong West",
+          "published_total": 2530,
+          "subzone_sum": 2530
+        },
+        {
+          "age": 11,
+          "difference": 10,
+          "planning_area_name": "Jurong West",
+          "published_total": 2430,
+          "subzone_sum": 2440
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Jurong West",
+          "published_total": 2670,
+          "subzone_sum": 2670
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Jurong West",
+          "published_total": 2680,
+          "subzone_sum": 2690
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Jurong West",
+          "published_total": 2670,
+          "subzone_sum": 2670
+        },
+        {
+          "age": 15,
+          "difference": -10,
+          "planning_area_name": "Jurong West",
+          "published_total": 2900,
+          "subzone_sum": 2890
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Jurong West",
+          "published_total": 2910,
+          "subzone_sum": 2910
+        },
+        {
+          "age": 7,
+          "difference": 10,
+          "planning_area_name": "Kallang",
+          "published_total": 810,
+          "subzone_sum": 820
+        },
+        {
+          "age": 8,
+          "difference": 10,
+          "planning_area_name": "Kallang",
+          "published_total": 730,
+          "subzone_sum": 740
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Kallang",
+          "published_total": 770,
+          "subzone_sum": 770
+        },
+        {
+          "age": 10,
+          "difference": 10,
+          "planning_area_name": "Kallang",
+          "published_total": 870,
+          "subzone_sum": 880
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Kallang",
+          "published_total": 770,
+          "subzone_sum": 770
+        },
+        {
+          "age": 12,
+          "difference": -20,
+          "planning_area_name": "Kallang",
+          "published_total": 840,
+          "subzone_sum": 820
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Kallang",
+          "published_total": 840,
+          "subzone_sum": 840
+        },
+        {
+          "age": 14,
+          "difference": 10,
+          "planning_area_name": "Kallang",
+          "published_total": 820,
+          "subzone_sum": 830
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Kallang",
+          "published_total": 780,
+          "subzone_sum": 780
+        },
+        {
+          "age": 16,
+          "difference": 10,
+          "planning_area_name": "Kallang",
+          "published_total": 840,
+          "subzone_sum": 850
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Lim Chu Kang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Lim Chu Kang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Lim Chu Kang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Lim Chu Kang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Lim Chu Kang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Lim Chu Kang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Lim Chu Kang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Lim Chu Kang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Lim Chu Kang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Lim Chu Kang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Mandai",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Mandai",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Mandai",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Mandai",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Mandai",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Mandai",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Mandai",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Mandai",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Mandai",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Mandai",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Marina East",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Marina East",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Marina East",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Marina East",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Marina East",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Marina East",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Marina East",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Marina East",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Marina East",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Marina East",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Marina South",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Marina South",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Marina South",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Marina South",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Marina South",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Marina South",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Marina South",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Marina South",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Marina South",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Marina South",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": -10,
+          "planning_area_name": "Marine Parade",
+          "published_total": 500,
+          "subzone_sum": 490
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Marine Parade",
+          "published_total": 530,
+          "subzone_sum": 530
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Marine Parade",
+          "published_total": 500,
+          "subzone_sum": 500
+        },
+        {
+          "age": 10,
+          "difference": -10,
+          "planning_area_name": "Marine Parade",
+          "published_total": 520,
+          "subzone_sum": 510
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Marine Parade",
+          "published_total": 530,
+          "subzone_sum": 530
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Marine Parade",
+          "published_total": 530,
+          "subzone_sum": 530
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Marine Parade",
+          "published_total": 490,
+          "subzone_sum": 490
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Marine Parade",
+          "published_total": 480,
+          "subzone_sum": 480
+        },
+        {
+          "age": 15,
+          "difference": 10,
+          "planning_area_name": "Marine Parade",
+          "published_total": 470,
+          "subzone_sum": 480
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Marine Parade",
+          "published_total": 480,
+          "subzone_sum": 480
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Museum",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Museum",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Museum",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Museum",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Museum",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 12,
+          "difference": -10,
+          "planning_area_name": "Museum",
+          "published_total": 10,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Museum",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Museum",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Museum",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Museum",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Newton",
+          "published_total": 130,
+          "subzone_sum": 130
+        },
+        {
+          "age": 8,
+          "difference": 10,
+          "planning_area_name": "Newton",
+          "published_total": 130,
+          "subzone_sum": 140
+        },
+        {
+          "age": 9,
+          "difference": -10,
+          "planning_area_name": "Newton",
+          "published_total": 130,
+          "subzone_sum": 120
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Newton",
+          "published_total": 120,
+          "subzone_sum": 120
+        },
+        {
+          "age": 11,
+          "difference": -10,
+          "planning_area_name": "Newton",
+          "published_total": 130,
+          "subzone_sum": 120
+        },
+        {
+          "age": 12,
+          "difference": 20,
+          "planning_area_name": "Newton",
+          "published_total": 140,
+          "subzone_sum": 160
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Newton",
+          "published_total": 130,
+          "subzone_sum": 140
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Newton",
+          "published_total": 110,
+          "subzone_sum": 110
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Newton",
+          "published_total": 110,
+          "subzone_sum": 110
+        },
+        {
+          "age": 16,
+          "difference": -10,
+          "planning_area_name": "Newton",
+          "published_total": 120,
+          "subzone_sum": 110
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "North-Eastern Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "North-Eastern Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "North-Eastern Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "North-Eastern Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "North-Eastern Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "North-Eastern Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "North-Eastern Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "North-Eastern Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "North-Eastern Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "North-Eastern Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": -10,
+          "planning_area_name": "Novena",
+          "published_total": 620,
+          "subzone_sum": 610
+        },
+        {
+          "age": 8,
+          "difference": 10,
+          "planning_area_name": "Novena",
+          "published_total": 600,
+          "subzone_sum": 610
+        },
+        {
+          "age": 9,
+          "difference": 10,
+          "planning_area_name": "Novena",
+          "published_total": 610,
+          "subzone_sum": 620
+        },
+        {
+          "age": 10,
+          "difference": 10,
+          "planning_area_name": "Novena",
+          "published_total": 640,
+          "subzone_sum": 650
+        },
+        {
+          "age": 11,
+          "difference": 10,
+          "planning_area_name": "Novena",
+          "published_total": 560,
+          "subzone_sum": 570
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Novena",
+          "published_total": 620,
+          "subzone_sum": 620
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Novena",
+          "published_total": 620,
+          "subzone_sum": 630
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Novena",
+          "published_total": 550,
+          "subzone_sum": 550
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Novena",
+          "published_total": 560,
+          "subzone_sum": 560
+        },
+        {
+          "age": 16,
+          "difference": -10,
+          "planning_area_name": "Novena",
+          "published_total": 540,
+          "subzone_sum": 530
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Orchard",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Orchard",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Orchard",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Orchard",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 11,
+          "difference": -10,
+          "planning_area_name": "Orchard",
+          "published_total": 20,
+          "subzone_sum": 10
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Orchard",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Orchard",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 14,
+          "difference": -10,
+          "planning_area_name": "Orchard",
+          "published_total": 20,
+          "subzone_sum": 10
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Orchard",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Orchard",
+          "published_total": 20,
+          "subzone_sum": 20
+        },
+        {
+          "age": 7,
+          "difference": -10,
+          "planning_area_name": "Outram",
+          "published_total": 90,
+          "subzone_sum": 80
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Outram",
+          "published_total": 90,
+          "subzone_sum": 90
+        },
+        {
+          "age": 9,
+          "difference": -10,
+          "planning_area_name": "Outram",
+          "published_total": 110,
+          "subzone_sum": 100
+        },
+        {
+          "age": 10,
+          "difference": 10,
+          "planning_area_name": "Outram",
+          "published_total": 110,
+          "subzone_sum": 120
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Outram",
+          "published_total": 130,
+          "subzone_sum": 130
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Outram",
+          "published_total": 140,
+          "subzone_sum": 140
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Outram",
+          "published_total": 150,
+          "subzone_sum": 160
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Outram",
+          "published_total": 150,
+          "subzone_sum": 150
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Outram",
+          "published_total": 130,
+          "subzone_sum": 130
+        },
+        {
+          "age": 16,
+          "difference": 10,
+          "planning_area_name": "Outram",
+          "published_total": 140,
+          "subzone_sum": 150
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Pasir Ris",
+          "published_total": 1240,
+          "subzone_sum": 1240
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Pasir Ris",
+          "published_total": 1320,
+          "subzone_sum": 1320
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Pasir Ris",
+          "published_total": 1390,
+          "subzone_sum": 1390
+        },
+        {
+          "age": 10,
+          "difference": 10,
+          "planning_area_name": "Pasir Ris",
+          "published_total": 1420,
+          "subzone_sum": 1430
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Pasir Ris",
+          "published_total": 1370,
+          "subzone_sum": 1370
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Pasir Ris",
+          "published_total": 1440,
+          "subzone_sum": 1440
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Pasir Ris",
+          "published_total": 1440,
+          "subzone_sum": 1450
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Pasir Ris",
+          "published_total": 1340,
+          "subzone_sum": 1340
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Pasir Ris",
+          "published_total": 1470,
+          "subzone_sum": 1470
+        },
+        {
+          "age": 16,
+          "difference": 10,
+          "planning_area_name": "Pasir Ris",
+          "published_total": 1470,
+          "subzone_sum": 1480
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Paya Lebar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Paya Lebar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Paya Lebar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Paya Lebar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Paya Lebar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Paya Lebar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Paya Lebar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Paya Lebar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Paya Lebar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Paya Lebar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Pioneer",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Pioneer",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Pioneer",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Pioneer",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Pioneer",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Pioneer",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Pioneer",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Pioneer",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Pioneer",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Pioneer",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Punggol",
+          "published_total": 2950,
+          "subzone_sum": 2950
+        },
+        {
+          "age": 8,
+          "difference": 10,
+          "planning_area_name": "Punggol",
+          "published_total": 3090,
+          "subzone_sum": 3100
+        },
+        {
+          "age": 9,
+          "difference": -10,
+          "planning_area_name": "Punggol",
+          "published_total": 3260,
+          "subzone_sum": 3250
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Punggol",
+          "published_total": 3220,
+          "subzone_sum": 3220
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Punggol",
+          "published_total": 3030,
+          "subzone_sum": 3030
+        },
+        {
+          "age": 12,
+          "difference": 10,
+          "planning_area_name": "Punggol",
+          "published_total": 2980,
+          "subzone_sum": 2990
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "Punggol",
+          "published_total": 2910,
+          "subzone_sum": 2900
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Punggol",
+          "published_total": 2620,
+          "subzone_sum": 2620
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Punggol",
+          "published_total": 2560,
+          "subzone_sum": 2560
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Punggol",
+          "published_total": 2400,
+          "subzone_sum": 2400
+        },
+        {
+          "age": 7,
+          "difference": 20,
+          "planning_area_name": "Queenstown",
+          "published_total": 730,
+          "subzone_sum": 750
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Queenstown",
+          "published_total": 790,
+          "subzone_sum": 780
+        },
+        {
+          "age": 9,
+          "difference": -10,
+          "planning_area_name": "Queenstown",
+          "published_total": 850,
+          "subzone_sum": 840
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Queenstown",
+          "published_total": 930,
+          "subzone_sum": 930
+        },
+        {
+          "age": 11,
+          "difference": -10,
+          "planning_area_name": "Queenstown",
+          "published_total": 840,
+          "subzone_sum": 830
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Queenstown",
+          "published_total": 910,
+          "subzone_sum": 910
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "Queenstown",
+          "published_total": 900,
+          "subzone_sum": 890
+        },
+        {
+          "age": 14,
+          "difference": -10,
+          "planning_area_name": "Queenstown",
+          "published_total": 870,
+          "subzone_sum": 860
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Queenstown",
+          "published_total": 890,
+          "subzone_sum": 890
+        },
+        {
+          "age": 16,
+          "difference": 10,
+          "planning_area_name": "Queenstown",
+          "published_total": 860,
+          "subzone_sum": 870
+        },
+        {
+          "age": 7,
+          "difference": 10,
+          "planning_area_name": "River Valley",
+          "published_total": 140,
+          "subzone_sum": 150
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "River Valley",
+          "published_total": 160,
+          "subzone_sum": 160
+        },
+        {
+          "age": 9,
+          "difference": 10,
+          "planning_area_name": "River Valley",
+          "published_total": 140,
+          "subzone_sum": 150
+        },
+        {
+          "age": 10,
+          "difference": 10,
+          "planning_area_name": "River Valley",
+          "published_total": 170,
+          "subzone_sum": 180
+        },
+        {
+          "age": 11,
+          "difference": 10,
+          "planning_area_name": "River Valley",
+          "published_total": 150,
+          "subzone_sum": 160
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "River Valley",
+          "published_total": 170,
+          "subzone_sum": 170
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "River Valley",
+          "published_total": 130,
+          "subzone_sum": 120
+        },
+        {
+          "age": 14,
+          "difference": 10,
+          "planning_area_name": "River Valley",
+          "published_total": 120,
+          "subzone_sum": 130
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "River Valley",
+          "published_total": 140,
+          "subzone_sum": 140
+        },
+        {
+          "age": 16,
+          "difference": 20,
+          "planning_area_name": "River Valley",
+          "published_total": 120,
+          "subzone_sum": 140
+        },
+        {
+          "age": 7,
+          "difference": -10,
+          "planning_area_name": "Rochor",
+          "published_total": 70,
+          "subzone_sum": 60
+        },
+        {
+          "age": 8,
+          "difference": 10,
+          "planning_area_name": "Rochor",
+          "published_total": 70,
+          "subzone_sum": 80
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Rochor",
+          "published_total": 90,
+          "subzone_sum": 90
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Rochor",
+          "published_total": 90,
+          "subzone_sum": 90
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Rochor",
+          "published_total": 70,
+          "subzone_sum": 70
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Rochor",
+          "published_total": 100,
+          "subzone_sum": 100
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Rochor",
+          "published_total": 90,
+          "subzone_sum": 100
+        },
+        {
+          "age": 14,
+          "difference": -10,
+          "planning_area_name": "Rochor",
+          "published_total": 80,
+          "subzone_sum": 70
+        },
+        {
+          "age": 15,
+          "difference": 10,
+          "planning_area_name": "Rochor",
+          "published_total": 80,
+          "subzone_sum": 90
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Rochor",
+          "published_total": 100,
+          "subzone_sum": 100
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Seletar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Seletar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Seletar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Seletar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Seletar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Seletar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Seletar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Seletar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Seletar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Seletar",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Sembawang",
+          "published_total": 1270,
+          "subzone_sum": 1270
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Sembawang",
+          "published_total": 1180,
+          "subzone_sum": 1180
+        },
+        {
+          "age": 9,
+          "difference": -10,
+          "planning_area_name": "Sembawang",
+          "published_total": 1320,
+          "subzone_sum": 1310
+        },
+        {
+          "age": 10,
+          "difference": 10,
+          "planning_area_name": "Sembawang",
+          "published_total": 1250,
+          "subzone_sum": 1260
+        },
+        {
+          "age": 11,
+          "difference": 10,
+          "planning_area_name": "Sembawang",
+          "published_total": 1220,
+          "subzone_sum": 1230
+        },
+        {
+          "age": 12,
+          "difference": -10,
+          "planning_area_name": "Sembawang",
+          "published_total": 1260,
+          "subzone_sum": 1250
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Sembawang",
+          "published_total": 1310,
+          "subzone_sum": 1320
+        },
+        {
+          "age": 14,
+          "difference": 10,
+          "planning_area_name": "Sembawang",
+          "published_total": 1200,
+          "subzone_sum": 1210
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Sembawang",
+          "published_total": 1280,
+          "subzone_sum": 1280
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Sembawang",
+          "published_total": 1330,
+          "subzone_sum": 1330
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Sengkang",
+          "published_total": 3160,
+          "subzone_sum": 3160
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Sengkang",
+          "published_total": 3240,
+          "subzone_sum": 3240
+        },
+        {
+          "age": 9,
+          "difference": 10,
+          "planning_area_name": "Sengkang",
+          "published_total": 3410,
+          "subzone_sum": 3420
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Sengkang",
+          "published_total": 3540,
+          "subzone_sum": 3540
+        },
+        {
+          "age": 11,
+          "difference": 10,
+          "planning_area_name": "Sengkang",
+          "published_total": 3360,
+          "subzone_sum": 3370
+        },
+        {
+          "age": 12,
+          "difference": -10,
+          "planning_area_name": "Sengkang",
+          "published_total": 3540,
+          "subzone_sum": 3530
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Sengkang",
+          "published_total": 3280,
+          "subzone_sum": 3280
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Sengkang",
+          "published_total": 3090,
+          "subzone_sum": 3090
+        },
+        {
+          "age": 15,
+          "difference": 10,
+          "planning_area_name": "Sengkang",
+          "published_total": 3190,
+          "subzone_sum": 3200
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Sengkang",
+          "published_total": 3130,
+          "subzone_sum": 3130
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Serangoon",
+          "published_total": 850,
+          "subzone_sum": 850
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Serangoon",
+          "published_total": 930,
+          "subzone_sum": 920
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Serangoon",
+          "published_total": 990,
+          "subzone_sum": 990
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Serangoon",
+          "published_total": 990,
+          "subzone_sum": 990
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Serangoon",
+          "published_total": 990,
+          "subzone_sum": 990
+        },
+        {
+          "age": 12,
+          "difference": -10,
+          "planning_area_name": "Serangoon",
+          "published_total": 1010,
+          "subzone_sum": 1000
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Serangoon",
+          "published_total": 1100,
+          "subzone_sum": 1110
+        },
+        {
+          "age": 14,
+          "difference": -10,
+          "planning_area_name": "Serangoon",
+          "published_total": 980,
+          "subzone_sum": 970
+        },
+        {
+          "age": 15,
+          "difference": -10,
+          "planning_area_name": "Serangoon",
+          "published_total": 1060,
+          "subzone_sum": 1050
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Serangoon",
+          "published_total": 1110,
+          "subzone_sum": 1110
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Simpang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Simpang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Simpang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Simpang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Simpang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Simpang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Simpang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Simpang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Simpang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Simpang",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Singapore River",
+          "published_total": 70,
+          "subzone_sum": 70
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Singapore River",
+          "published_total": 60,
+          "subzone_sum": 60
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Singapore River",
+          "published_total": 70,
+          "subzone_sum": 70
+        },
+        {
+          "age": 10,
+          "difference": -10,
+          "planning_area_name": "Singapore River",
+          "published_total": 80,
+          "subzone_sum": 70
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Singapore River",
+          "published_total": 50,
+          "subzone_sum": 50
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Singapore River",
+          "published_total": 60,
+          "subzone_sum": 60
+        },
+        {
+          "age": 13,
+          "difference": -10,
+          "planning_area_name": "Singapore River",
+          "published_total": 60,
+          "subzone_sum": 50
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Singapore River",
+          "published_total": 50,
+          "subzone_sum": 50
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Singapore River",
+          "published_total": 40,
+          "subzone_sum": 40
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Singapore River",
+          "published_total": 50,
+          "subzone_sum": 50
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Southern Islands",
+          "published_total": 40,
+          "subzone_sum": 40
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Southern Islands",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Southern Islands",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Southern Islands",
+          "published_total": 50,
+          "subzone_sum": 50
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Southern Islands",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Southern Islands",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Southern Islands",
+          "published_total": 40,
+          "subzone_sum": 40
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Southern Islands",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Southern Islands",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Southern Islands",
+          "published_total": 30,
+          "subzone_sum": 30
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Straits View",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Straits View",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Straits View",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Straits View",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Straits View",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Straits View",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Straits View",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Straits View",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Straits View",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Straits View",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": -10,
+          "planning_area_name": "Sungei Kadut",
+          "published_total": 10,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Sungei Kadut",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Sungei Kadut",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Sungei Kadut",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Sungei Kadut",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Sungei Kadut",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Sungei Kadut",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Sungei Kadut",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Sungei Kadut",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Sungei Kadut",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 7,
+          "difference": 10,
+          "planning_area_name": "Tampines",
+          "published_total": 2940,
+          "subzone_sum": 2950
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Tampines",
+          "published_total": 2940,
+          "subzone_sum": 2930
+        },
+        {
+          "age": 9,
+          "difference": -10,
+          "planning_area_name": "Tampines",
+          "published_total": 2880,
+          "subzone_sum": 2870
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Tampines",
+          "published_total": 2750,
+          "subzone_sum": 2750
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Tampines",
+          "published_total": 2610,
+          "subzone_sum": 2610
+        },
+        {
+          "age": 12,
+          "difference": 10,
+          "planning_area_name": "Tampines",
+          "published_total": 2680,
+          "subzone_sum": 2690
+        },
+        {
+          "age": 13,
+          "difference": 10,
+          "planning_area_name": "Tampines",
+          "published_total": 2650,
+          "subzone_sum": 2660
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Tampines",
+          "published_total": 2410,
+          "subzone_sum": 2410
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Tampines",
+          "published_total": 2540,
+          "subzone_sum": 2540
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Tampines",
+          "published_total": 2660,
+          "subzone_sum": 2660
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Tanglin",
+          "published_total": 320,
+          "subzone_sum": 320
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Tanglin",
+          "published_total": 300,
+          "subzone_sum": 300
+        },
+        {
+          "age": 9,
+          "difference": 10,
+          "planning_area_name": "Tanglin",
+          "published_total": 340,
+          "subzone_sum": 350
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Tanglin",
+          "published_total": 320,
+          "subzone_sum": 320
+        },
+        {
+          "age": 11,
+          "difference": 10,
+          "planning_area_name": "Tanglin",
+          "published_total": 320,
+          "subzone_sum": 330
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Tanglin",
+          "published_total": 330,
+          "subzone_sum": 330
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Tanglin",
+          "published_total": 310,
+          "subzone_sum": 310
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Tanglin",
+          "published_total": 290,
+          "subzone_sum": 290
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Tanglin",
+          "published_total": 290,
+          "subzone_sum": 290
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Tanglin",
+          "published_total": 240,
+          "subzone_sum": 240
+        },
+        {
+          "age": 7,
+          "difference": 10,
+          "planning_area_name": "Tengah",
+          "published_total": 190,
+          "subzone_sum": 200
+        },
+        {
+          "age": 8,
+          "difference": 10,
+          "planning_area_name": "Tengah",
+          "published_total": 160,
+          "subzone_sum": 170
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Tengah",
+          "published_total": 170,
+          "subzone_sum": 170
+        },
+        {
+          "age": 10,
+          "difference": 10,
+          "planning_area_name": "Tengah",
+          "published_total": 170,
+          "subzone_sum": 180
+        },
+        {
+          "age": 11,
+          "difference": -10,
+          "planning_area_name": "Tengah",
+          "published_total": 180,
+          "subzone_sum": 170
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Tengah",
+          "published_total": 170,
+          "subzone_sum": 170
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Tengah",
+          "published_total": 150,
+          "subzone_sum": 150
+        },
+        {
+          "age": 14,
+          "difference": 10,
+          "planning_area_name": "Tengah",
+          "published_total": 170,
+          "subzone_sum": 180
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Tengah",
+          "published_total": 160,
+          "subzone_sum": 160
+        },
+        {
+          "age": 16,
+          "difference": -10,
+          "planning_area_name": "Tengah",
+          "published_total": 160,
+          "subzone_sum": 150
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Toa Payoh",
+          "published_total": 1210,
+          "subzone_sum": 1210
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Toa Payoh",
+          "published_total": 1260,
+          "subzone_sum": 1260
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Toa Payoh",
+          "published_total": 1310,
+          "subzone_sum": 1310
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Toa Payoh",
+          "published_total": 1340,
+          "subzone_sum": 1340
+        },
+        {
+          "age": 11,
+          "difference": 20,
+          "planning_area_name": "Toa Payoh",
+          "published_total": 1150,
+          "subzone_sum": 1170
+        },
+        {
+          "age": 12,
+          "difference": 30,
+          "planning_area_name": "Toa Payoh",
+          "published_total": 1190,
+          "subzone_sum": 1220
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Toa Payoh",
+          "published_total": 1200,
+          "subzone_sum": 1200
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Toa Payoh",
+          "published_total": 1070,
+          "subzone_sum": 1070
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Toa Payoh",
+          "published_total": 1200,
+          "subzone_sum": 1200
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Toa Payoh",
+          "published_total": 1150,
+          "subzone_sum": 1150
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Tuas",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Tuas",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Tuas",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Tuas",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Tuas",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Tuas",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Tuas",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Tuas",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Tuas",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Tuas",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Western Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Western Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Western Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Western Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Western Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Western Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Western Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Western Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Western Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Western Islands",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Western Water Catchment",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 8,
+          "difference": 0,
+          "planning_area_name": "Western Water Catchment",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Western Water Catchment",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Western Water Catchment",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Western Water Catchment",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Western Water Catchment",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Western Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 14,
+          "difference": 0,
+          "planning_area_name": "Western Water Catchment",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Western Water Catchment",
+          "published_total": 10,
+          "subzone_sum": 10
+        },
+        {
+          "age": 16,
+          "difference": 0,
+          "planning_area_name": "Western Water Catchment",
+          "published_total": 0,
+          "subzone_sum": 0
+        },
+        {
+          "age": 7,
+          "difference": 0,
+          "planning_area_name": "Woodlands",
+          "published_total": 2290,
+          "subzone_sum": 2290
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Woodlands",
+          "published_total": 2400,
+          "subzone_sum": 2390
+        },
+        {
+          "age": 9,
+          "difference": 10,
+          "planning_area_name": "Woodlands",
+          "published_total": 2480,
+          "subzone_sum": 2490
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Woodlands",
+          "published_total": 2460,
+          "subzone_sum": 2460
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Woodlands",
+          "published_total": 2480,
+          "subzone_sum": 2480
+        },
+        {
+          "age": 12,
+          "difference": 0,
+          "planning_area_name": "Woodlands",
+          "published_total": 2510,
+          "subzone_sum": 2510
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Woodlands",
+          "published_total": 2560,
+          "subzone_sum": 2560
+        },
+        {
+          "age": 14,
+          "difference": 10,
+          "planning_area_name": "Woodlands",
+          "published_total": 2420,
+          "subzone_sum": 2430
+        },
+        {
+          "age": 15,
+          "difference": -10,
+          "planning_area_name": "Woodlands",
+          "published_total": 2730,
+          "subzone_sum": 2720
+        },
+        {
+          "age": 16,
+          "difference": 10,
+          "planning_area_name": "Woodlands",
+          "published_total": 2840,
+          "subzone_sum": 2850
+        },
+        {
+          "age": 7,
+          "difference": 10,
+          "planning_area_name": "Yishun",
+          "published_total": 2310,
+          "subzone_sum": 2320
+        },
+        {
+          "age": 8,
+          "difference": -10,
+          "planning_area_name": "Yishun",
+          "published_total": 2370,
+          "subzone_sum": 2360
+        },
+        {
+          "age": 9,
+          "difference": 0,
+          "planning_area_name": "Yishun",
+          "published_total": 2440,
+          "subzone_sum": 2440
+        },
+        {
+          "age": 10,
+          "difference": 0,
+          "planning_area_name": "Yishun",
+          "published_total": 2450,
+          "subzone_sum": 2450
+        },
+        {
+          "age": 11,
+          "difference": 0,
+          "planning_area_name": "Yishun",
+          "published_total": 2350,
+          "subzone_sum": 2350
+        },
+        {
+          "age": 12,
+          "difference": 10,
+          "planning_area_name": "Yishun",
+          "published_total": 2410,
+          "subzone_sum": 2420
+        },
+        {
+          "age": 13,
+          "difference": 0,
+          "planning_area_name": "Yishun",
+          "published_total": 2300,
+          "subzone_sum": 2300
+        },
+        {
+          "age": 14,
+          "difference": 10,
+          "planning_area_name": "Yishun",
+          "published_total": 2110,
+          "subzone_sum": 2120
+        },
+        {
+          "age": 15,
+          "difference": 0,
+          "planning_area_name": "Yishun",
+          "published_total": 2250,
+          "subzone_sum": 2250
+        },
+        {
+          "age": 16,
+          "difference": 10,
+          "planning_area_name": "Yishun",
+          "published_total": 2240,
+          "subzone_sum": 2250
+        }
+      ],
+      "planning_area_age_reconciliation_max_abs": 30,
+      "rounding_limitation": "Each published count is rounded to the nearest 10; sums preserve but compound that limitation.",
+      "sex_rounding_discrepancy_count": 597,
+      "sex_rounding_discrepancy_examples": [
+        {
+          "age": 8,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Ang Mo Kio Town Centre",
+          "total_minus_males_females": 10
+        },
+        {
+          "age": 8,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Cheng San",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 14,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Cheng San",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 15,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Cheng San",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 16,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Cheng San",
+          "total_minus_males_females": 10
+        },
+        {
+          "age": 9,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Chong Boon",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 10,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Chong Boon",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 11,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Chong Boon",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 12,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Chong Boon",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 16,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Chong Boon",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 11,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Kebun Bahru",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 13,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Kebun Bahru",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 7,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Sembawang Hills",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 10,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Sembawang Hills",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 14,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Sembawang Hills",
+          "total_minus_males_females": 10
+        },
+        {
+          "age": 15,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Sembawang Hills",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 8,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Shangri-La",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 10,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Shangri-La",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 7,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Tagore",
+          "total_minus_males_females": -10
+        },
+        {
+          "age": 8,
+          "planning_area_name": "Ang Mo Kio",
+          "subzone_name": "Tagore",
+          "total_minus_males_females": -10
+        }
+      ],
+      "sex_rounding_discrepancy_max_abs": 10,
+      "sex_set_or_count_missing_count": 0,
+      "sex_set_or_count_missing_examples": [],
+      "source_composite_key_duplicate_count": 0,
+      "source_composite_key_duplicate_examples": [],
+      "source_data_row_count": 107088,
+      "source_note_row_count": 5,
+      "source_note_text": [
+        "Note:",
+        "Planning areas refer to areas demarcated in the Urban Redevelopment Authority's Master Plan 2019.",
+        "Data from 2003 onwards excludes residents who have been away from Singapore for a continuous period of 12 months or longer as at the reference period.",
+        "\"-\" denotes Nil or negligible.",
+        "Data has been rounded to the nearest 10 and may not add up due to rounding."
+      ],
+      "target_age_row_count": 3320,
+      "target_subzone_count": 332,
+      "unexpected_age_values": [],
+      "unexpected_sex_values": [],
+      "unknown_count_markers": {},
+      "workbook_member": "geospatial-data2025/Singapore Residents by Planning Area, Subzone, Single Year of Age and Sex, Jun 2025.xlsx",
+      "worksheet_row_count_after_header": 107093
+    },
+    "S003": {
+      "area_calculation_crs": "EPSG:3414",
+      "duplicate_geo_ids": [],
+      "duplicate_planning_area_code_name_pairs": [],
+      "duplicate_subzone_codes": [],
+      "geometry_repair_count": 6,
+      "geometry_repairs": [
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "MultiPolygon",
+          "source_reason": "Ring Self-intersection[103.85041030543 1.22911084430392]",
+          "subzone_code": "SISZ02"
+        },
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "MultiPolygon",
+          "source_reason": "Ring Self-intersection[103.823303956149 1.25745321410074]",
+          "subzone_code": "SISZ01"
+        },
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "Polygon",
+          "source_reason": "Ring Self-intersection[103.823637948297 1.26075433692188]",
+          "subzone_code": "BMSZ01"
+        },
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "Polygon",
+          "source_reason": "Ring Self-intersection[103.932080154816 1.30554765129205]",
+          "subzone_code": "BDSZ07"
+        },
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "MultiPolygon",
+          "source_reason": "Ring Self-intersection[103.720393805048 1.29951635954019]",
+          "subzone_code": "JESZ10"
+        },
+        {
+          "method": "shapely.make_valid",
+          "result_geometry_type": "MultiPolygon",
+          "source_reason": "Ring Self-intersection[103.928049842741 1.41966801994]",
+          "subzone_code": "NESZ01"
+        }
+      ],
+      "geometry_types": {
+        "MultiPolygon": 11,
+        "Polygon": 321
+      },
+      "missing_required_field_count": 0,
+      "missing_required_fields": [],
+      "out_of_singapore_bounds_count": 0,
+      "out_of_singapore_bounds_subzone_codes": [],
+      "planning_area_codes_with_multiple_names": {},
+      "processed_feature_count": 332,
+      "processed_invalid_geometry": [],
+      "processed_invalid_geometry_count": 0,
+      "source_crs_interpretation": "GeoJSON coordinates validated as WGS84 longitude/latitude under RFC 7946; no coordinate reprojection was silently inferred.",
+      "source_feature_count": 332,
+      "source_invalid_geometry": [
+        {
+          "reason": "Ring Self-intersection[103.85041030543 1.22911084430392]",
+          "subzone_code": "SISZ02"
+        },
+        {
+          "reason": "Ring Self-intersection[103.823303956149 1.25745321410074]",
+          "subzone_code": "SISZ01"
+        },
+        {
+          "reason": "Ring Self-intersection[103.823637948297 1.26075433692188]",
+          "subzone_code": "BMSZ01"
+        },
+        {
+          "reason": "Ring Self-intersection[103.932080154816 1.30554765129205]",
+          "subzone_code": "BDSZ07"
+        },
+        {
+          "reason": "Ring Self-intersection[103.720393805048 1.29951635954019]",
+          "subzone_code": "JESZ10"
+        },
+        {
+          "reason": "Ring Self-intersection[103.928049842741 1.41966801994]",
+          "subzone_code": "NESZ01"
+        }
+      ],
+      "source_invalid_geometry_count": 6
+    },
+    "S004": {
+      "coordinate_bounds_validated_count": 330,
+      "coordinate_limitation": "S004 supplies no coordinates. S007 exact-postal search coordinates are retained only when one unique in-bounds coordinate is returned; unresolved or ambiguous coordinates remain null.",
+      "coordinate_missing_count": 7,
+      "coordinate_status_counts": {
+        "ambiguous_exact_postal_coordinates": 7,
+        "resolved_exact_postal_unique_coordinate": 330
+      },
+      "duplicate_normalized_name_postal": [],
+      "duplicate_school_ids": [],
+      "duplicate_source_record_ids": [],
+      "invalid_postal_count": 0,
+      "invalid_postal_examples": [],
+      "leading_zero_postal_normalization_count": 4,
+      "mainlevel_counts": {
+        "CENTRALISED INSTITUTE": 1,
+        "JUNIOR COLLEGE": 10,
+        "MIXED LEVEL (P1-S4)": 3,
+        "MIXED LEVEL (S1-JC2)": 10,
+        "MIXED LEVEL (S1-S5, JC1-JC2)": 1,
+        "PRIMARY": 179,
+        "SECONDARY (S1-S4)": 16,
+        "SECONDARY (S1-S5)": 117
+      },
+      "missing_required_by_field": {},
+      "primary_secondary_context_count": 326,
+      "processed_record_count": 337,
+      "retained_personal_contact_fields": false,
+      "source_record_count": 337,
+      "unresolved_coordinates": [
+        {
+          "coordinate_status": "ambiguous_exact_postal_coordinates",
+          "postal_code": "487012",
+          "school_id": "MOE_AC66DBB3F93C157B",
+          "school_name": "ANGLICAN HIGH SCHOOL"
+        },
+        {
+          "coordinate_status": "ambiguous_exact_postal_coordinates",
+          "postal_code": "678117",
+          "school_id": "MOE_F435D896BA547A52",
+          "school_name": "ASSUMPTION ENGLISH SCHOOL"
+        },
+        {
+          "coordinate_status": "ambiguous_exact_postal_coordinates",
+          "postal_code": "387621",
+          "school_id": "MOE_C670ACBC58172F00",
+          "school_name": "CANOSSA CATHOLIC PRIMARY SCHOOL"
+        },
+        {
+          "coordinate_status": "ambiguous_exact_postal_coordinates",
+          "postal_code": "737924",
+          "school_id": "MOE_B621AB103FD5BB75",
+          "school_name": "CHRIST CHURCH SECONDARY SCHOOL"
+        },
+        {
+          "coordinate_status": "ambiguous_exact_postal_coordinates",
+          "postal_code": "269734",
+          "school_id": "MOE_52CADBC5D414EA2D",
+          "school_name": "HWA CHONG INSTITUTION"
+        },
+        {
+          "coordinate_status": "ambiguous_exact_postal_coordinates",
+          "postal_code": "575954",
+          "school_id": "MOE_B82D2A7E21B1AE1F",
+          "school_name": "RAFFLES INSTITUTION"
+        },
+        {
+          "coordinate_status": "ambiguous_exact_postal_coordinates",
+          "postal_code": "649961",
+          "school_id": "MOE_613C6C51EF2092BC",
+          "school_name": "RIVER VALLEY HIGH SCHOOL"
+        }
+      ]
+    },
+    "S005": {
+      "coordinate_bounds_validated_count": 613,
+      "duplicate_business_keys": [
+        "BEDOK NORTH MRT STATION|EXIT B",
+        "BUKIT PANJANG MRT STATION|EXIT A",
+        "CHOA CHU KANG MRT STATION|EXIT A",
+        "CHOA CHU KANG MRT STATION|EXIT C",
+        "CHOA CHU KANG MRT STATION|EXIT D",
+        "EXPO MRT STATION|EXIT A",
+        "HARBOURFRONT MRT STATION|EXIT A",
+        "UPPER CHANGI MRT STATION|EXIT A"
+      ],
+      "duplicate_coordinate_count": 0,
+      "duplicate_coordinates": [],
+      "duplicate_source_unique_ids": [],
+      "duplicate_transit_point_ids": [],
+      "invalid_geometry": [],
+      "invalid_geometry_count": 0,
+      "missing_required_field_count": 0,
+      "missing_required_fields": [],
+      "out_of_singapore_bounds_count": 0,
+      "out_of_singapore_bounds_source_ids": [],
+      "processed_point_count": 613,
+      "source_crs_interpretation": "GeoJSON coordinates validated as WGS84 longitude/latitude under RFC 7946.",
+      "source_feature_count": 613
+    },
+    "S006": {
+      "coordinate_bounds_validated_count": 5205,
+      "duplicate_business_keys": [],
+      "duplicate_coordinate_count": 0,
+      "duplicate_coordinates": [],
+      "duplicate_source_unique_ids": [],
+      "duplicate_transit_point_ids": [],
+      "invalid_geometry": [],
+      "invalid_geometry_count": 0,
+      "missing_required_field_count": 0,
+      "missing_required_fields": [],
+      "out_of_singapore_bounds_count": 0,
+      "out_of_singapore_bounds_source_ids": [],
+      "processed_point_count": 5205,
+      "source_crs_interpretation": "GeoJSON coordinates validated as WGS84 longitude/latitude under RFC 7946.",
+      "source_feature_count": 5205
+    },
+    "S007_routing_preflight": {
+      "pt_missing_route": 11,
+      "pt_success": 19,
+      "rate_limited_count": 0,
+      "walking_success": 30
+    },
+    "S007_school_geocoding": {
+      "cache_ref": "data/interim/foundation/2026-09-12/school-geocodes-67d73a45b45a80d7.json",
+      "executed_search_requests": 337,
+      "fixture_checksum": "67d73a45b45a80d7e0a0bb4da2a5cd6ce9250f319091b4faa77a14ee4150b4e0",
+      "matching_rule": "Exact six-digit postal match and one unique returned WGS84 coordinate; no fuzzy match.",
+      "planned_search_requests": 337,
+      "purpose": "Exact-postal coordinate resolution for S004 schools; no routing requests",
+      "rate_limited_count": 0,
+      "raw_authentication_response_recorded": false,
+      "raw_search_responses_recorded": false,
+      "request_headers_recorded": false,
+      "source_id": "S007",
+      "status_counts": {
+        "ambiguous_exact_postal_coordinates": 7,
+        "resolved_exact_postal_unique_coordinate": 330
+      },
+      "token_persisted": false
+    }
+  }
+}

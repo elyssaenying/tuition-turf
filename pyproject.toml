@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tuition-location-analytics"
+version = "0.1.0"
+description = "Reproducible Singapore tuition-location analysis"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "pyarrow==25.0.1",
+  "pyproj==3.8.0",
+  "shapely==2.1.2",
+]
+
+[project.scripts]
+tuition-preflight = "tuition_location_analytics.preflight.cli:main"
+tuition-foundation = "tuition_location_analytics.foundation.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,911 @@
+{
+  "generated_at": "2026-09-12T09:08:07+00:00",
+  "preflight_version": "0.1.0",
+  "remaining_blockers": [
+    "S001 resource-specific raw redistribution permission remains unestablished."
+  ],
+  "s001": {
+    "byte_size": 9568844,
+    "final_url": "https://www.singstat.gov.sg/files/971801ef-637f-4f75-9205-d3d481a3e5cc.zip",
+    "http_response_metadata": {
+      "content-disposition": "inline; filename=\"geospatial-data2025.zip\"",
+      "content-length": "9568844",
+      "content-type": "application/zip",
+      "date": "Sat, 12 Sep 2026 08:43:45 GMT",
+      "etag": "\"c32171df9a2ff768546a2195e1482946\"",
+      "last-modified": "Wed, 08 Apr 2026 09:57:13 GMT"
+    },
+    "http_status": 200,
+    "inspection": {
+      "archive_members": [
+        {
+          "compressed_bytes": 2996132,
+          "name": "geospatial-data2025/Singapore Residents by Planning Area, Subzone, Age Group, Sex and Floor Area of Residence, Jun 2025.xlsx",
+          "uncompressed_bytes": 3279067
+        },
+        {
+          "compressed_bytes": 4440581,
+          "name": "geospatial-data2025/Singapore Residents by Planning Area, Subzone, Age Group, Sex and Type of Dwelling, Jun 2025.xlsx",
+          "uncompressed_bytes": 4978212
+        },
+        {
+          "compressed_bytes": 2131183,
+          "name": "geospatial-data2025/Singapore Residents by Planning Area, Subzone, Single Year of Age and Sex, Jun 2025.xlsx",
+          "uncompressed_bytes": 2478680
+        }
+      ],
+      "complete_dataset_loaded": false,
+      "t3_candidates": [
+        "geospatial-data2025/Singapore Residents by Planning Area, Subzone, Single Year of Age and Sex, Jun 2025.xlsx"
+      ],
+      "t3_schema_inspection": [
+        {
+          "member": "geospatial-data2025/Singapore Residents by Planning Area, Subzone, Single Year of Age and Sex, Jun 2025.xlsx",
+          "schema": {
+            "age_representation": "single-year strings 0 through 89, plus 90 & Over and Total",
+            "candidate_key": [
+              "Planning Area",
+              "Subzone",
+              "Age",
+              "Sex"
+            ],
+            "complete_dataset_loaded": false,
+            "declared_dimension": "A1:E107097",
+            "duplicate_key_risk": "Not tested without full ingestion. Aggregate Total rows and name-only geographies require explicit composite-key validation.",
+            "fields": [
+              "Planning Area",
+              "Subzone",
+              "Age",
+              "Sex",
+              "2025"
+            ],
+            "format": "xlsx",
+            "mp2019_compatibility": true,
+            "resident_count_representation": "numeric 2025 column, rounded to nearest 10",
+            "row_grain": "planning-area name × subzone name × single-year age/category × sex",
+            "selected_header_and_schema_rows": [
+              {
+                "A": "Resident Population by Planning Area/Subzone, Single Year of Age and Sex, June 2025",
+                "row": "1"
+              },
+              {
+                "A": "Planning Area",
+                "B": "Subzone",
+                "C": "Age",
+                "D": "Sex",
+                "E": "2025",
+                "row": "3"
+              },
+              {
+                "A": "Total",
+                "B": "Total",
+                "C": "Total",
+                "D": "Total",
+                "E": "4204520",
+                "row": "4"
+              },
+              {
+                "A": "Total",
+                "B": "Total",
+                "C": "Total",
+                "D": "Males",
+                "E": "2044630",
+                "row": "5"
+              },
+              {
+                "A": "Total",
+                "B": "Total",
+                "C": "Total",
+                "D": "Females",
+                "E": "2159890",
+                "row": "6"
+              },
+              {
+                "A": "Total",
+                "B": "Total",
+                "C": "0",
+                "D": "Total",
+                "E": "29420",
+                "row": "7"
+              },
+              {
+                "A": "Total",
+                "B": "Total",
+                "C": "0",
+                "D": "Males",
+                "E": "15190",
+                "row": "8"
+              },
+              {
+                "A": "Total",
+                "B": "Total",
+                "C": "0",
+                "D": "Females",
+                "E": "14230",
+                "row": "9"
+              }
+            ],
+            "sex_representation": [
+              "Total",
+              "Males",
+              "Females"
+            ],
+            "stable_geography_identifiers_present": false,
+            "suppression_or_missing_markers": {
+              "-": "nil or negligible; not a missing-value marker"
+            },
+            "workbook_notes": [
+              "Planning areas refer to areas demarcated in the Urban Redevelopment Authority's Master Plan 2019.",
+              "\"-\" denotes Nil or negligible.",
+              "Data has been rounded to the nearest 10 and may not add up due to rounding."
+            ],
+            "worksheet": "xl/worksheets/sheet1.xml"
+          }
+        }
+      ]
+    },
+    "landing_url": "https://www.singstat.gov.sg/publication-resources/population-trends-2025",
+    "licence_assessment": {
+      "attribution": "Singapore Department of Statistics, Population Trends 2025, Table T3.",
+      "limitation": "No resource-specific raw-archive redistribution permission was established in this preflight; retain the raw ZIP outside public outputs.",
+      "observed": "The publication identifies the Singapore Department of Statistics as source and links website terms of use.",
+      "status": "unestablished_for_raw_redistribution"
+    },
+    "metadata_ref": "data/raw/s001_population_trends_2025/2026-09-12/snapshot-metadata.json",
+    "requested_url": "https://www.singstat.gov.sg/files/971801ef-637f-4f75-9205-d3d481a3e5cc.zip",
+    "retrieved_at": "2026-09-12T08:43:45+00:00",
+    "sha256": "3008a865bc85e06693a8a8456d464e8a2a0661f2c5aa8dc863dd2c90a5448e2f",
+    "source_id": "S001",
+    "status": "completed_with_limitations",
+    "storage_ref": "data/raw/s001_population_trends_2025/2026-09-12/population-trends-2025-geospatial.zip",
+    "terms_url": "https://www.singstat.gov.sg/terms-of-use"
+  },
+  "s007": {
+    "executed_route_requests": 60,
+    "executed_search_requests": 13,
+    "fixture_ref": "config/preflight/onemap_od_fixture.json",
+    "fixture_resolution": [
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "origin_woodlands",
+        "rate_headers": {},
+        "role": "origin",
+        "selected_postal": "738343",
+        "selected_search_value": "WOODLANDS MRT STATION (NS9)"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "origin_yishun",
+        "rate_headers": {},
+        "role": "origin",
+        "selected_postal": "769093",
+        "selected_search_value": "YISHUN MRT STATION (NS13)"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "origin_punggol",
+        "rate_headers": {},
+        "role": "origin",
+        "selected_postal": "828604",
+        "selected_search_value": "PUNGGOL COAST MRT STATION (NE18)"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "origin_pasir_ris",
+        "rate_headers": {},
+        "role": "origin",
+        "selected_postal": "519969",
+        "selected_search_value": "PASIR RIS EAST MRT STATION (CR4)"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "origin_tampines",
+        "rate_headers": {},
+        "role": "origin",
+        "selected_postal": "529623",
+        "selected_search_value": "TAMPINES EAST MRT STATION (DT33)"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "origin_changi_airport",
+        "rate_headers": {},
+        "role": "origin",
+        "selected_postal": "819663",
+        "selected_search_value": "CHANGI AIRPORT TERMINAL 3 BUILDING"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "origin_harbourfront",
+        "rate_headers": {},
+        "role": "origin",
+        "selected_postal": "NIL",
+        "selected_search_value": "HARBOURFRONT MRT STATION"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "origin_jurong_east",
+        "rate_headers": {},
+        "role": "origin",
+        "selected_postal": "609690",
+        "selected_search_value": "JURONG EAST MRT STATION (EW24 / NS1)"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "origin_bukit_panjang",
+        "rate_headers": {},
+        "role": "origin",
+        "selected_postal": "NIL",
+        "selected_search_value": "BUKIT PANJANG MRT STATION"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "origin_tuas_link",
+        "rate_headers": {},
+        "role": "origin",
+        "selected_postal": "638418",
+        "selected_search_value": "TUAS LINK MRT STATION (EW33)"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "destination_bishan",
+        "rate_headers": {},
+        "role": "destination",
+        "selected_postal": "NIL",
+        "selected_search_value": "BISHAN MRT STATION"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "destination_city_hall",
+        "rate_headers": {},
+        "role": "destination",
+        "selected_postal": "NIL",
+        "selected_search_value": "CITY HALL MRT STATION"
+      },
+      {
+        "category": "resolved",
+        "http_status": 200,
+        "id": "destination_buona_vista",
+        "rate_headers": {},
+        "role": "destination",
+        "selected_postal": "NIL",
+        "selected_search_value": "BUONA VISTA MRT STATION"
+      }
+    ],
+    "fixture_role": "coverage-test fixtures, not recommended candidates",
+    "journey_date": "09-16-2026",
+    "journey_time": "16:00:00",
+    "missing_route_count": 11,
+    "missing_route_rate": 0.18333333333333332,
+    "persistence_limitation": "Only redacted aggregate/request metadata is persisted; authentication material and raw route responses are not stored.",
+    "planned_route_requests": 60,
+    "planned_search_requests": 13,
+    "rate_limited_count": 0,
+    "raw_authentication_response_recorded": false,
+    "request_headers_recorded": false,
+    "routes": [
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_woodlands",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_woodlands",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_woodlands",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_woodlands",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_woodlands",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_woodlands",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_yishun",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_yishun",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_yishun",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_yishun",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_yishun",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_yishun",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_punggol",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_punggol",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_punggol",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_punggol",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_punggol",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_punggol",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_pasir_ris",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_pasir_ris",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_pasir_ris",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_pasir_ris",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_pasir_ris",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_pasir_ris",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_tampines",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_tampines",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_tampines",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_tampines",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_tampines",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_tampines",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_bishan",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_changi_airport",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_changi_airport",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_changi_airport",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_changi_airport",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_changi_airport",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_changi_airport",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_harbourfront",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_harbourfront",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_harbourfront",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_harbourfront",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_harbourfront",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_harbourfront",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_jurong_east",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_jurong_east",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_jurong_east",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_jurong_east",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_jurong_east",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_jurong_east",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_bukit_panjang",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_bukit_panjang",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_bukit_panjang",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_bukit_panjang",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "pt",
+        "origin_id": "origin_bukit_panjang",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_bukit_panjang",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_bishan",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_tuas_link",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_bishan",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_tuas_link",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_tuas_link",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_city_hall",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_tuas_link",
+        "rate_headers": {}
+      },
+      {
+        "category": "missing_route",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": false,
+        "duration_field_available": false,
+        "http_status": 404,
+        "mode": "pt",
+        "origin_id": "origin_tuas_link",
+        "rate_headers": {}
+      },
+      {
+        "category": "success",
+        "destination_id": "destination_buona_vista",
+        "distance_field_available": true,
+        "duration_field_available": true,
+        "http_status": 200,
+        "mode": "walk",
+        "origin_id": "origin_tuas_link",
+        "rate_headers": {}
+      }
+    ],
+    "source_id": "S007",
+    "started_at": "2026-09-12T09:06:59+00:00",
+    "status": "completed",
+    "token_expiry_received": true,
+    "token_persisted": false
+  },
+  "schema_version": "0.3.0",
+  "validation": {
+    "independent_s001_checksum_match": true,
+    "s007_route_request_boundary_respected": true,
+    "secret_scan_findings": []
+  }
+}

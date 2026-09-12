@@ -1,0 +1,54 @@
+{
+  "sources": [
+    {
+      "source_id": "S001",
+      "publisher": "Singapore Department of Statistics",
+      "title": "Population Trends 2025 geospatial data",
+      "landing_url": "https://www.singstat.gov.sg/publication-resources/population-trends-2025",
+      "resource_url": "https://www.singstat.gov.sg/files/971801ef-637f-4f75-9205-d3d481a3e5cc.zip",
+      "method": "existing_immutable_zip",
+      "raw_directory": "s001_population_trends_2025",
+      "raw_filename": "population-trends-2025-geospatial.zip"
+    },
+    {
+      "source_id": "S003",
+      "publisher": "Urban Redevelopment Authority",
+      "title": "Master Plan 2019 Subzone Boundary (No Sea)",
+      "landing_url": "https://data.gov.sg/datasets/d_8594ae9ff96d0c708bc2af633048edfb/view",
+      "resource_id": "d_8594ae9ff96d0c708bc2af633048edfb",
+      "method": "data_gov_poll_download",
+      "format": "geojson",
+      "raw_filename": "master-plan-2019-subzone-boundary-no-sea.geojson"
+    },
+    {
+      "source_id": "S004",
+      "publisher": "Ministry of Education",
+      "title": "General information of schools",
+      "landing_url": "https://data.gov.sg/datasets/d_688b934f82c1059ed0a6993d2a829089/view",
+      "resource_id": "d_688b934f82c1059ed0a6993d2a829089",
+      "method": "data_gov_datastore",
+      "format": "json",
+      "raw_filename": "general-information-of-schools.json"
+    },
+    {
+      "source_id": "S005",
+      "publisher": "Land Transport Authority",
+      "title": "MRT Station Exit",
+      "landing_url": "https://data.gov.sg/datasets/d_b39d3a0871985372d7e1637193335da5/view",
+      "resource_id": "d_b39d3a0871985372d7e1637193335da5",
+      "method": "data_gov_poll_download",
+      "format": "geojson",
+      "raw_filename": "mrt-station-exits.geojson"
+    },
+    {
+      "source_id": "S006",
+      "publisher": "Land Transport Authority",
+      "title": "Bus Stop",
+      "landing_url": "https://data.gov.sg/datasets/d_3f172c6feb3f4f92a2f47d93eed2908a/view",
+      "resource_id": "d_3f172c6feb3f4f92a2f47d93eed2908a",
+      "method": "data_gov_poll_download",
+      "format": "geojson",
+      "raw_filename": "bus-stops.geojson"
+    }
+  ]
+}

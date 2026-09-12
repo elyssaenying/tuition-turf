@@ -1,0 +1,6 @@
+# Python 3.12 runtime lock for the foundational acquisition pipeline.
+certifi==2026.7.22
+numpy==2.5.3
+pyarrow==25.0.1
+pyproj==3.8.0
+shapely==2.1.2
