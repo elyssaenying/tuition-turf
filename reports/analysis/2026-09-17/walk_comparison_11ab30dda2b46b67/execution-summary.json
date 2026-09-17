@@ -1,0 +1,42 @@
+{
+  "authentication_requests": 1,
+  "by_max_walk_distance_metres": {
+    "1000": {
+      "median_successful_pt_minutes": 32.17,
+      "planned_pairs": 20,
+      "status_counts": {
+        "missing_route": 1,
+        "success": 19
+      },
+      "within_primary_20_minutes_count": 4
+    },
+    "300": {
+      "median_successful_pt_minutes": 32.17,
+      "planned_pairs": 20,
+      "status_counts": {
+        "missing_route": 1,
+        "success": 19
+      },
+      "within_primary_20_minutes_count": 4
+    },
+    "500": {
+      "median_successful_pt_minutes": 32.17,
+      "planned_pairs": 20,
+      "status_counts": {
+        "missing_route": 1,
+        "success": 19
+      },
+      "within_primary_20_minutes_count": 4
+    }
+  },
+  "national_execution_authorised": false,
+  "planned_pt_requests": 60,
+  "pt_results_complete": true,
+  "raw_response_persisted": false,
+  "required_walking_fallbacks_complete": true,
+  "routing_requests_this_invocation": 63,
+  "run_id": "walk_comparison_11ab30dda2b46b67",
+  "status": "complete",
+  "stop_category": null,
+  "token_persisted": false
+}

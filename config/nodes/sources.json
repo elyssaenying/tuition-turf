@@ -1,0 +1,42 @@
+{
+  "sources": [
+    {
+      "source_id": "S026",
+      "publisher": "Land Transport Authority",
+      "title": "Train Station Chinese Names",
+      "landing_url": "https://data.gov.sg/datasets/d_d312a5b127e1ae74299b8ae664cedd4e/view",
+      "resource_id": "d_d312a5b127e1ae74299b8ae664cedd4e",
+      "method": "data_gov_datastore",
+      "format": "json",
+      "raw_directory": "s026_train_station_names",
+      "raw_filename": "train-station-chinese-names.json",
+      "use_limitation": "Older Jun 2017 coverage; exact-name corroboration only and never an exclusion filter."
+    },
+    {
+      "source_id": "S027",
+      "publisher": "Urban Redevelopment Authority",
+      "title": "Master Plan 2025 Land Use Layer",
+      "landing_url": "https://data.gov.sg/datasets/d_a8c3546b26712e35021f3a681d0353ae/view",
+      "resource_id": "d_a8c3546b26712e35021f3a681d0353ae",
+      "method": "data_gov_poll_download",
+      "format": "geojson",
+      "raw_directory": "s027_mp2025_land_use",
+      "raw_filename": "master-plan-2025-land-use.geojson",
+      "use_limitation": "Indicative current zoning context only; not occupancy, availability or premises eligibility evidence."
+    },
+    {
+      "source_id": "S032",
+      "publisher": "Land Transport Authority",
+      "title": "System Map (SM-26-01-EN)",
+      "landing_url": "https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network.html",
+      "resource_url": "https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/SM_EN_(Ver210726)_CCL6.pdf",
+      "method": "direct_url_with_expected_checksum",
+      "format": "pdf",
+      "raw_directory": "s032_lta_system_map",
+      "raw_filename": "lta-system-map-sm-26-01-en.pdf",
+      "expected_sha256": "ef985c8df9c8adea0c25119336a1974ed167b092e78fb1497ab91523f4f376e4",
+      "expected_content_type": "application/pdf",
+      "use_limitation": "Publicly published official reference map, retained only as a checked provenance snapshot underlying the manually curated config/nodes/system_map_roster.json derived registry; the roster itself is a reviewed, tracked configuration and is never regenerated automatically from this PDF. Not republished as a redistributed dataset by this project."
+    }
+  ]
+}

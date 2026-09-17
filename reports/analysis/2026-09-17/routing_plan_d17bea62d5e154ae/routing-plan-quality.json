@@ -1,0 +1,19 @@
+{
+  "all_distances_nonnegative": true,
+  "all_population_nonnegative": true,
+  "approved_primary_parameter": {
+    "basis": "Owner approved 500 m as the main conservative setting on 2026-09-17. A bounded same-route comparison at 300 m, 500 m and 1,000 m is approved before any national execution. The 300 m and 1,000 m values are sensitivity checks, not alternative main settings.",
+    "max_walk_distance_metres": 500
+  },
+  "bounded_sample_authorised": true,
+  "expected_pt_request_count": 96944,
+  "national_execution_authorised": false,
+  "network_requests_executed": 0,
+  "node_count": 146,
+  "origin_subzone_count": 332,
+  "planned_pt_request_count": 96944,
+  "request_execution_authorised": false,
+  "scenario_count": 2,
+  "status": "planning_complete_execution_not_authorised",
+  "unique_od_plan_id_count": 96944
+}

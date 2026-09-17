@@ -1,0 +1,182 @@
+{
+  "override_config_version": "2026-09-13.2",
+  "version_2_note": "Adds current post-opening LTA evidence for CC30/CC31/CC32 (the official Circle Line 6 project page confirming completed opening) alongside the original pre-opening public-preview announcement, which is retained rather than removed. All seven identity resolutions from version 2026-09-13.1 are unchanged.",
+  "analysis_cutoff": "2026-09-12",
+  "decision_horizon_end": "2026-09-12",
+  "decision_horizon_note": "No separately labelled forward-looking scenario has been approved, so the decision horizon equals the analysis cutoff. No station is treated as accessible before its own confirmed opening date.",
+  "scope_note": "This registry resolves only the seven S005 code-only station labels found in the 2026-09-12 snapshot (DT4, CC9, NE18, CC30, DT18, CC31, CC32). It is not a nationwide re-verification of every named MRT/LRT complex.",
+  "non_proximity_rule": "Every merge or rename below is justified by an official LTA station-code or opening-date designation, not by exit coordinates alone. Coordinates are reported only as corroborating context.",
+  "overrides": [
+    {
+      "source_label": "CC9",
+      "normalized_source_label": "CC9",
+      "resolution": "merge_into_existing_named_complex",
+      "target_normalized_station_name": "PAYA LEBAR MRT STATION",
+      "target_rail_mode": "mrt",
+      "rationale": "CC9 is LTA's official, long-standing Circle Line station code for the existing Paya Lebar interchange station (interchange code EW8/CC9), independent of the exits' proximity to the existing named complex.",
+      "operational_status": "verified_operational",
+      "operational_status_basis": "Long-operating Circle Line interchange station; current official LTA Circle Line page lists Paya Lebar as station CC9 between Dakota (CC8) and MacPherson (CC10).",
+      "coordinate_corroboration": "The two CC9-labelled exits (MRT_EXIT_21218, MRT_EXIT_21219) sit within about 100 m of the four existing PAYA LEBAR MRT STATION exits (Exit A-D), consistent with but not the basis for this merge.",
+      "evidence": [
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Circle Line",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/getting_around/public_transport/rail_network/circle_line.html",
+          "accessed_at": "2026-09-13",
+          "description": "Official LTA Circle Line page listing Paya Lebar as station CC9, between Dakota (CC8) and MacPherson (CC10)."
+        }
+      ]
+    },
+    {
+      "source_label": "DT18",
+      "normalized_source_label": "DT18",
+      "resolution": "merge_into_existing_named_complex",
+      "target_normalized_station_name": "TELOK AYER MRT STATION",
+      "target_rail_mode": "mrt",
+      "rationale": "DT18 is LTA's official Downtown Line station code for the existing Telok Ayer station, which opened with Downtown Line Stage 1 in December 2013, independent of the exits' proximity to the existing named complex.",
+      "operational_status": "verified_operational",
+      "operational_status_basis": "Official LTA news release confirms Downtown Line Stage 1, including Telok Ayer, commenced service on 22 December 2013, long before the 2026-09-12 analysis cutoff.",
+      "coordinate_corroboration": "The two DT18-labelled exits (MRT_EXIT_21248 Exit E, MRT_EXIT_21250 Exit D) are within about 60 m of the three existing TELOK AYER MRT STATION exits (Exit A-C) and continue the same A-E exit-letter sequence, consistent with but not the basis for this merge.",
+      "evidence": [
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Three New Stations to Connect Downtown Line to North-South Line (background on Downtown Line Stage 1 opening)",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/newsroom/2025/1/news-releases/three_new_stations_to_connect.html",
+          "accessed_at": "2026-09-13",
+          "description": "Official LTA release referencing Downtown Line Stage 1 (Bugis, Promenade, Bayfront, Downtown, Telok Ayer, Chinatown) commencing service on 22 December 2013."
+        }
+      ]
+    },
+    {
+      "source_label": "DT4",
+      "normalized_source_label": "DT4",
+      "resolution": "rename_separate_station",
+      "target_normalized_station_name": "HUME MRT STATION",
+      "target_rail_mode": "mrt",
+      "rationale": "DT4 is the official LTA code for Hume MRT Station, a standalone new station fitted into the existing Downtown Line at a previously provisioned station box between Hillview and Beauty World.",
+      "operational_status": "verified_operational",
+      "operational_status_basis": "Official LTA news release confirms Hume station opened for passenger service at 3pm on 28 February 2025, before the 2026-09-12 analysis cutoff.",
+      "coordinate_corroboration": "The two DT4-labelled exits sit in the Hume Avenue / Bukit Batok West corridor between Hillview and Beauty World, consistent with the announced location.",
+      "evidence": [
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Hume Station to Open on 28 February 2025",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/newsroom/2025/1/news-releases/hume_station_to_open.html",
+          "accessed_at": "2026-09-13",
+          "description": "Official LTA press release confirming Hume MRT station on the Downtown Line opened for passenger service at 3pm on 28 February 2025."
+        }
+      ]
+    },
+    {
+      "source_label": "NE18",
+      "normalized_source_label": "NE18",
+      "resolution": "rename_separate_station",
+      "target_normalized_station_name": "PUNGGOL COAST MRT STATION",
+      "target_rail_mode": "mrt",
+      "rationale": "NE18 is the official LTA code for Punggol Coast MRT Station, the new North East Line terminus beyond the existing Punggol station.",
+      "operational_status": "verified_operational",
+      "operational_status_basis": "Official LTA news releases confirm Punggol Coast station opened for passenger service at 3pm on 10 December 2024, before the 2026-09-12 analysis cutoff.",
+      "coordinate_corroboration": "The two NE18-labelled exits sit in the Punggol Digital District area north-east of the existing Punggol station, consistent with the announced location.",
+      "evidence": [
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Punggol Coast Station to Open for Passenger Service from 10 December 2024",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/newsroom/2024/10/news-releases/punggol_coast_station_to_open_for_passenger_service.html",
+          "accessed_at": "2026-09-13",
+          "description": "Official LTA press release announcing Punggol Coast station would open 10 December 2024 as the new North East Line terminus."
+        },
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Factsheet: Punggol Coast Station Welcomes Commuters from 10 December 2024",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/newsroom/2024/12/news-releases/punggol_coast_station_welcomes_commuters.html",
+          "accessed_at": "2026-09-13",
+          "description": "Official LTA factsheet confirming Punggol Coast station opened for passenger service on 10 December 2024."
+        }
+      ]
+    },
+    {
+      "source_label": "CC30",
+      "normalized_source_label": "CC30",
+      "resolution": "rename_separate_station",
+      "target_normalized_station_name": "KEPPEL MRT STATION",
+      "target_rail_mode": "mrt",
+      "rationale": "CC30 is the official LTA code for Keppel MRT Station, one of three new Circle Line Stage 6 (CCL6) stations that closed the Circle Line loop between HarbourFront and Marina Bay.",
+      "operational_status": "verified_operational",
+      "operational_status_basis": "Official LTA news release confirms Circle Line Stage 6, including Keppel, Cantonment and Prince Edward Road stations, opened for passenger service on 12 July 2026, before the 2026-09-12 analysis cutoff.",
+      "coordinate_corroboration": "The three CC30-labelled exits sit in the Keppel Road / HarbourFront-area corridor consistent with the announced CCL6 alignment.",
+      "evidence": [
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Circle Line Stage 6 to Open for Public Preview on 4 July 2026",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/newsroom/2026/5/news-releases/circle-line-stage-6-to-open-for-public-preview-on-4-july-2026.html",
+          "accessed_at": "2026-09-13",
+          "description": "Official LTA release confirming Keppel (CC30), Cantonment (CC31) and Prince Edward Road (CC32) as the three new CCL6 stations, opening for passenger service on 12 July 2026 after a 4 July 2026 public preview."
+        },
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Circle Line 6",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/upcoming_projects/rail_expansion/circle_line_6.html",
+          "accessed_at": "2026-09-13",
+          "page_last_updated": "2026-09-03",
+          "description": "Official LTA Circle Line 6 project page, updated after opening, stating: 'The Circle Line Stage 6 (CCL6) opened for passenger service on 12 July 2026.' Preferred over the pre-opening public-preview announcement as current post-opening confirmation."
+        }
+      ]
+    },
+    {
+      "source_label": "CC31",
+      "normalized_source_label": "CC31",
+      "resolution": "rename_separate_station",
+      "target_normalized_station_name": "CANTONMENT MRT STATION",
+      "target_rail_mode": "mrt",
+      "rationale": "CC31 is the official LTA code for Cantonment MRT Station, one of three new Circle Line Stage 6 (CCL6) stations, located below the former Tanjong Pagar Railway Station.",
+      "operational_status": "verified_operational",
+      "operational_status_basis": "Official LTA news release confirms Circle Line Stage 6, including Cantonment station, opened for passenger service on 12 July 2026, before the 2026-09-12 analysis cutoff.",
+      "coordinate_corroboration": "The four CC31-labelled exits sit in the Tanjong Pagar / Cantonment Road corridor consistent with the announced CCL6 alignment.",
+      "evidence": [
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Circle Line Stage 6 to Open for Public Preview on 4 July 2026",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/newsroom/2026/5/news-releases/circle-line-stage-6-to-open-for-public-preview-on-4-july-2026.html",
+          "accessed_at": "2026-09-13",
+          "description": "Official LTA release confirming Keppel (CC30), Cantonment (CC31) and Prince Edward Road (CC32) as the three new CCL6 stations, opening for passenger service on 12 July 2026 after a 4 July 2026 public preview."
+        },
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Circle Line 6",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/upcoming_projects/rail_expansion/circle_line_6.html",
+          "accessed_at": "2026-09-13",
+          "page_last_updated": "2026-09-03",
+          "description": "Official LTA Circle Line 6 project page, updated after opening, stating: 'The Circle Line Stage 6 (CCL6) opened for passenger service on 12 July 2026.' Preferred over the pre-opening public-preview announcement as current post-opening confirmation."
+        }
+      ]
+    },
+    {
+      "source_label": "CC32",
+      "normalized_source_label": "CC32",
+      "resolution": "rename_separate_station",
+      "target_normalized_station_name": "PRINCE EDWARD ROAD MRT STATION",
+      "target_rail_mode": "mrt",
+      "rationale": "CC32 is the official LTA code for Prince Edward Road MRT Station, one of three new Circle Line Stage 6 (CCL6) stations that closed the Circle Line loop.",
+      "operational_status": "verified_operational",
+      "operational_status_basis": "Official LTA news release confirms Circle Line Stage 6, including Prince Edward Road station, opened for passenger service on 12 July 2026, before the 2026-09-12 analysis cutoff.",
+      "coordinate_corroboration": "The two CC32-labelled exits sit east of the CC31 (Cantonment) exits along the announced CCL6 alignment toward Marina Bay.",
+      "evidence": [
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Circle Line Stage 6 to Open for Public Preview on 4 July 2026",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/newsroom/2026/5/news-releases/circle-line-stage-6-to-open-for-public-preview-on-4-july-2026.html",
+          "accessed_at": "2026-09-13",
+          "description": "Official LTA release confirming Keppel (CC30), Cantonment (CC31) and Prince Edward Road (CC32) as the three new CCL6 stations, opening for passenger service on 12 July 2026 after a 4 July 2026 public preview."
+        },
+        {
+          "publisher": "Land Transport Authority",
+          "title": "Circle Line 6",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/upcoming_projects/rail_expansion/circle_line_6.html",
+          "accessed_at": "2026-09-13",
+          "page_last_updated": "2026-09-03",
+          "description": "Official LTA Circle Line 6 project page, updated after opening, stating: 'The Circle Line Stage 6 (CCL6) opened for passenger service on 12 July 2026.' Preferred over the pre-opening public-preview announcement as current post-opening confirmation."
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 Assessment date: **2026-09-12 (Asia/Singapore)**. This is a feasibility and contract-validation artifact, not an acquisition log. Exact pages were opened unless a failure is explicitly recorded. Source IDs resolve to the fuller evidence notes in [source-register.md](source-register.md).
 
+**Later-state note (2026-09-17):** this matrix preserves the source-feasibility assessment at its stated date. Subsequent approved runs constructed the node inventory and approved the private competitor method pilot; see README and D33–D52. The second independent commercial signal, national routing and national competitor acquisition remain incomplete. Historical “not yet constructed” wording below is not the current project status.
+
 ## Gate result
 
 | Gate | Result |

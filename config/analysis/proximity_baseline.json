@@ -1,0 +1,18 @@
+{
+  "config_version": "2026-09-17.1",
+  "analysis_date": "2026-09-17",
+  "status": "frozen_before_baseline_execution",
+  "method": "exit_union_straight_line_proximity_proxy",
+  "purpose": "Create the first nationwide node-level population proximity baseline for all 146 approved MRT-area candidates without representing straight-line proximity as travel time or final accessibility.",
+  "proximity_radii_metres": [800, 1200],
+  "population_allocation": "Allocate each MP2019 subzone age-7-16 population proxy in proportion to the share of its EPSG:3414 polygon intersecting the union of buffers around every preserved exit for the station complex.",
+  "claim_boundary": "Outputs are spatial proximity proxies only. They are not transit or walking travel-time results, observed demand, enrolment, customers, a shortlist, a ranking recommendation or evidence of success.",
+  "inputs": {
+    "commercial_node_candidates": "data/processed/nodes/2026-09-13/commercial_node_candidates.parquet",
+    "station_complex_exits": "data/processed/nodes/2026-09-13/station_complex_exits.parquet",
+    "mp2019_subzones": "data/processed/foundation/2026-09-12/mp2019_subzones.parquet",
+    "population_proxy_subzone": "data/processed/foundation/2026-09-12/population_proxy_subzone.parquet",
+    "bus_stops": "data/processed/foundation/2026-09-12/bus_stops.parquet",
+    "schools": "data/processed/foundation/2026-09-12/schools.parquet"
+  }
+}

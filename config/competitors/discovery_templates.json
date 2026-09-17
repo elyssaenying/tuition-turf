@@ -1,0 +1,24 @@
+{
+  "config_version": "2026-09-13.1",
+  "frozen_at": "2026-09-13",
+  "note": "Query templates are frozen identically for every pilot planning area before any discovery is run, so no area receives a more favourable search than another.",
+  "channels": [
+    {
+      "channel_id": "S010",
+      "description": "tuitioncentres.sg directory, used only through a bounded manual query sample per the source-feasibility verdict; results are discovery leads only, never confirmed evidence.",
+      "query_templates": [
+        {"template_id": "primary", "template_code": "P", "query_text_template": "site:tuitioncentres.sg {planning_area_name} primary math"},
+        {"template_id": "secondary", "template_code": "S", "query_text_template": "site:tuitioncentres.sg {planning_area_name} secondary math"}
+      ]
+    },
+    {
+      "channel_id": "WEB_SEARCH",
+      "description": "General permitted web search, used to locate operator-controlled pages; raw result pages/snippets are never persisted.",
+      "query_templates": [
+        {"template_id": "primary", "template_code": "P", "query_text_template": "{planning_area_name} Singapore primary school math tuition centre"},
+        {"template_id": "secondary", "template_code": "S", "query_text_template": "{planning_area_name} Singapore secondary math tuition centre"}
+      ]
+    }
+  ],
+  "execution_rule": "For each pilot planning area, run every listed template on every listed channel once, in the order listed, and record query text, channel, execution date, an observable result/page count where the tool surfaces one, and whether the query returned zero results. A candidate is any named operator or branch reasonably associated with the planning area; every candidate must then be validated against an operator-controlled page before any evidence status stronger than possible is assigned."
+}

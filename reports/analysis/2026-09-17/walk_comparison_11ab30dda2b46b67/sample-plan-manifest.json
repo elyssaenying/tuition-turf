@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-09-17T04:41:30+00:00",
+  "inputs": [
+    {
+      "byte_size": 1290,
+      "path": "config/accessibility/bounded_walk_comparison.json",
+      "sha256": "23189f97d64e267cee2f6eeefadeb74c8d7e9f9c749e3b4d506f8b80cbc7b2d8"
+    },
+    {
+      "byte_size": 1793479,
+      "path": "data/processed/analysis/2026-09-17/routing_plan_d17bea62d5e154ae/national_routing_plan.parquet",
+      "sha256": "92ec73883b5247dc89a5b7d5969b306da9261964c15c89705c13d3f858ff1a3e"
+    }
+  ],
+  "network_requests_executed": 0,
+  "outputs": [
+    {
+      "byte_size": 14359,
+      "path": "data/processed/analysis/2026-09-17/walk_comparison_11ab30dda2b46b67/bounded_walk_comparison_plan.parquet",
+      "row_count": 60,
+      "sha256": "12c3d148545ca1623f9e1b53cbdcad2a56035de14186008b28072678e76d4174"
+    },
+    {
+      "byte_size": 27229,
+      "path": "data/processed/analysis/2026-09-17/walk_comparison_11ab30dda2b46b67/bounded_walk_comparison_plan.csv",
+      "row_count": 60,
+      "sha256": "cd7b90a606cfaf30e7c0c8f95529f2455805890526995a2f03448d94d2daf6d1"
+    },
+    {
+      "byte_size": 516,
+      "path": "reports/analysis/2026-09-17/walk_comparison_11ab30dda2b46b67/sample-plan-summary.md",
+      "sha256": "37569e4881db1cab6bc05a18fa4f5bd7f9849e96acb12e801efdf7e1ea2c1f1b"
+    }
+  ],
+  "run_id": "walk_comparison_11ab30dda2b46b67",
+  "status": "bounded_sample_planned"
+}

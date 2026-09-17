@@ -1,0 +1,58 @@
+{
+  "evidence_policy_version": "2026-09-13.3",
+  "supersedes": "Policy version 2026-09-13.2, which treated S026 (LTA, Jun 2017) exact-name corroboration alone as sufficient, dated 'historical roster floor' evidence for verified_operational, and separately relied on an unsafe general assumption about station permanence that is not repeated here. Both premises are invalid. S026 can carry a name/code for a station that was not yet operating when the dataset was published: Teck Lee LRT Station is an exact S026 match, but LTA confirms it did not begin operating until 15 August 2024. The unsafe permanence assumption is contradicted by Ten Mile Junction LRT. Neither S026 corroboration nor mere presence in the S005 exit layer is used for operational_status under this version.",
+  "analysis_cutoff": "2026-09-12",
+  "s026_role": "S026 (LTA, Jun 2017) is identity corroboration only: it may confirm a station's name, station code and line, and is recorded in station_codes_json/line_names_json/station_names_chinese_json. It plays no role in operational_status and, alone, can never produce verified_operational.",
+  "roster_source_limitation": "LTA's per-line prose pages (rail_network/*.html) do not enumerate every station with a machine-extractable status flag. The current authoritative roster used here is LTA's own dated System Map (S032, version SM-26-01-EN, filename-dated 2026-07-21), which explicitly marks under-construction stations in its legend and was directly inspected (not assumed) for that marking. Its coverage is recorded in config/nodes/system_map_roster.json as a versioned, manually curated derived registry, disclosed as such rather than presented as an automated parse.",
+  "general_rule": [
+    "1. A complex resolved by a station_overrides.json identity entry (merge or rename) uses that entry's operational_status, backed by its own dated station-specific evidence.",
+    "2. Otherwise, a complex named in known_exceptions below uses that entry's operational_status; this is the only remaining mechanism that can produce not_operational or verified_opening_within_decision_horizon.",
+    "3. Otherwise, a named MRT/LRT complex whose base name appears in config/nodes/system_map_roster.json's operational_base_names is verified_operational, referencing that dated roster snapshot (S032).",
+    "4. Otherwise the complex is unresolved. Neither S026 corroboration nor mere presence in the S005 exit layer is, by itself, ever sufficient evidence of current operational status."
+  ],
+  "known_exceptions": [
+    {
+      "normalized_station_name": "MARINA SOUTH MRT STATION",
+      "operational_status": "not_operational",
+      "basis": "LTA's own Thomson-East Coast Line page states Marina South station will open in tandem with the completion of developments in the area, with its opening date to be advised; it has not opened as at the 2026-09-12 analysis cutoff. Independently, Marina South does not appear as a labelled station on LTA's current System Map (S032, SM-26-01-EN), consistent with this status.",
+      "evidence": [
+        {
+          "source_id": "S029",
+          "publisher": "Land Transport Authority",
+          "title": "Thomson-East Coast Line",
+          "url": "https://www.lta.gov.sg/content/ltagov/en/upcoming_projects/rail_expansion/thomson_east_coast_line.html",
+          "accessed_at": "2026-09-13",
+          "page_last_updated": "2026-07-07",
+          "quote": "Mount Pleasant and Marina South stations will open in tandem with the completion of developments in the respective areas. Opening date to be advised."
+        },
+        {
+          "source_id": "S032",
+          "publisher": "Land Transport Authority",
+          "title": "System Map (SM-26-01-EN)",
+          "url": "https://www.lta.gov.sg/content/dam/ltagov/getting_around/public_transport/rail_network/pdf/SM_EN_(Ver210726)_CCL6.pdf",
+          "accessed_at": "2026-09-13",
+          "description": "Marina South is absent from the current dated System Map's station roster (Marina South Pier, a separate long-operating station, is present); consistent with not_operational rather than evidence of it in isolation."
+        }
+      ]
+    }
+  ],
+  "checked_but_absent_from_snapshot": [
+    {
+      "normalized_station_name": "MOUNT PLEASANT MRT STATION",
+      "note": "Listed by LTA as a Thomson-East Coast Line Stage 3 station with opening deferred pending development completion (S029). Absent from both the 613-record S005 snapshot and the S032 map roster. No complex exists for it, so none is added or excluded."
+    },
+    {
+      "normalized_station_name": "FOUNDERS' MEMORIAL MRT STATION",
+      "note": "Listed by LTA as a Thomson-East Coast Line Stage 4 station with opening deferred pending completion of the adjoining memorial (S029). Absent from both the 613-record S005 snapshot and the S032 map roster."
+    },
+    {
+      "normalized_station_name": "BEDOK SOUTH MRT STATION",
+      "note": "Listed by LTA as a Thomson-East Coast Line Stage 5 (2026) station. Explicitly marked 'Under Construction' on the S032 map. Absent from the 613-record S005 snapshot."
+    },
+    {
+      "normalized_station_name": "SUNGEI BEDOK MRT STATION",
+      "note": "Listed by LTA as a Thomson-East Coast Line Stage 5 (2026) interchange station. Explicitly marked 'Under Construction' on the S032 map. Absent from the 613-record S005 snapshot."
+    }
+  ],
+  "teck_lee_note": "TECK LEE LRT STATION is an exact S026 (Jun 2017) match, but LTA's own press release confirms it did not begin operations until 15 August 2024 (S033); S026 alone would incorrectly imply operational status back to 2017 and is not used for this purpose. Teck Lee's verified_operational status instead comes from its presence, unmarked, on the current S032 map roster (Rule 3), independently corroborated by S033's dated opening evidence."
+}

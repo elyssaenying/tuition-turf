@@ -1,0 +1,54 @@
+{
+  "config_version": "2026-09-13.1",
+  "frozen_at": "2026-09-13",
+  "unit_of_analysis": "One physical teaching branch at one current address. Different locations of the same brand/chain count as separate branches. Several subjects or levels taught at one address remain one branch with multiple branch_offerings records.",
+  "in_scope": [
+    "Physical Singapore tuition branches (a specific, identifiable teaching address).",
+    "Mathematics tuition overlapping at least one P1-S4 level (P1, P2, P3, P4, P5, P6, S1, S2, S3, S4).",
+    "Mathematics-only centres.",
+    "Multi-subject or hybrid academic centres, if mathematics and an overlapping P1-S4 level are supported by evidence at that specific branch."
+  ],
+  "out_of_scope": [
+    "Online-only providers with no identifiable physical teaching branch.",
+    "Individual home tutors without an identifiable teaching centre.",
+    "Preschool-only providers (no P1-S4 offering).",
+    "Adult-only education providers.",
+    "Pure enrichment providers with no documented academic mathematics offering.",
+    "Closed or future (not-yet-opened) branches at the analysis cutoff.",
+    "A brand headquarters or registered address that is not itself evidenced as a teaching location."
+  ],
+  "level_tokens": {
+    "primary": ["P1", "P2", "P3", "P4", "P5", "P6", "PRIMARY 1", "PRIMARY 2", "PRIMARY 3", "PRIMARY 4", "PRIMARY 5", "PRIMARY 6", "LOWER PRIMARY", "UPPER PRIMARY", "PSLE"],
+    "secondary": ["S1", "S2", "S3", "S4", "SECONDARY 1", "SECONDARY 2", "SECONDARY 3", "SECONDARY 4", "LOWER SECONDARY", "UPPER SECONDARY", "O-LEVEL", "O LEVEL", "E MATH", "E-MATH", "A MATH", "A-MATH", "ELEMENTARY MATH", "ADDITIONAL MATH"],
+    "out_of_scope_level_tokens": ["S5", "SECONDARY 5", "JC", "JUNIOR COLLEGE", "H1", "H2", "H3", "A-LEVEL", "A LEVEL", "IB", "POLYTECHNIC", "UNIVERSITY", "PRESCHOOL", "KINDERGARTEN", "NURSERY", "PLAYGROUP", "INFANT CARE"],
+    "note": "A branch confirmed for S5/JC/A-level/IB only, with no P1-S4 evidence, is excluded. A branch confirmed for both a P1-S4 level and an out-of-scope level remains in scope on the P1-S4 evidence alone; the out-of-scope levels are recorded but not counted as the qualifying evidence."
+  },
+  "subject_tokens": {
+    "mathematics": ["MATH", "MATHS", "MATHEMATICS", "E MATH", "E-MATH", "A MATH", "A-MATH", "ELEMENTARY MATHEMATICS", "ADDITIONAL MATHEMATICS"],
+    "note": "Token match is necessary but not sufficient; evidence_status still requires the source/evidence-scope rules below, not a keyword match alone."
+  },
+  "evidence_statuses": {
+    "confirmed": "All three hold: (1) a current official operator-controlled source supports the physical branch address and current branch existence; (2) official operator-controlled subject/programme/timetable evidence supports mathematics; (3) official evidence supports at least one overlapping P1-S4 level.",
+    "possible": "Credible evidence of a physical branch and likely in-scope offering exists, but at least one confirmation element from the confirmed rule is absent, generic, stale (older than the evidence freshness window) or contradictory.",
+    "excluded": "Evidence affirmatively places the branch outside scope (e.g. explicitly online-only, explicitly closed, explicitly preschool/adult-only, explicitly no mathematics or no P1-S4 level).",
+    "unresolved": "Identity, address or status conflicts prevent classification into any of the above (e.g. two sources disagree on whether the branch is still operating, or on its exact address/unit)."
+  },
+  "evidence_scope_definitions": {
+    "operator_controlled": "A page or document published and controlled by the branch's own operator (its own domain/official page, official centre-locator, official social-media business page it controls, or an operator-issued document). This is the only evidence scope that can satisfy the confirmed rule's address/subject/level elements.",
+    "directory": "A third-party aggregator/directory listing (e.g. S010) not controlled by the operator. Directory-only evidence can support possible at most, never confirmed, per the explicit rule that a directory result, ACRA registration, search snippet or map pin alone must never create a confirmed branch.",
+    "legal_entity": "ACRA or another company/business registry record (S011). Corroborates legal identity/registration status only; never proves an operating teaching branch at a given address by itself.",
+    "search_snippet": "A general web-search result snippet, used only to locate an operator-controlled page to validate against; never stored or cited as evidence content itself once the operator page has been checked."
+  },
+  "evidence_freshness_days": {
+    "branch_existence_and_address": 30,
+    "subject_and_level_offering": 30,
+    "note": "Mirrors the foundation/methodology-wide 30-day dynamic-evidence refresh rule already adopted for branch/offering/premises evidence."
+  },
+  "branch_status_values": ["current", "closed", "relocated", "future", "unresolved"],
+  "double_counting_guards": [
+    "A brand total is never substituted for a branch count; every reported count is of physical branches unless explicitly labelled a brand count.",
+    "A relocation creates a new branch record linked to the previous one via previous_branch_id; only the current operating site counts as 'current' at the analysis cutoff.",
+    "Multiple subjects/levels at one address remain one branch with multiple branch_offerings rows, never multiple branch rows.",
+    "A directory listing and an operator page describing the same physical branch resolve to one branch record with two evidence_observations rows, never two branches."
+  ]
+}

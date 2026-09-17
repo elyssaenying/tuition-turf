@@ -1,0 +1,15 @@
+{
+  "all_nodes_have_exits": true,
+  "anchor_geography_unresolved_count": 0,
+  "duplicate_node_id_count": 0,
+  "expected_node_count": 146,
+  "national_target_population_proxy": 412630,
+  "negative_population_proxy_count": 0,
+  "node_count": 146,
+  "proxy_exceeds_national_population_count": 0,
+  "school_coordinate_resolved_count": 330,
+  "school_coordinate_unresolved_count": 7,
+  "sensitivity_monotonic": true,
+  "status": "passed_with_warnings",
+  "warning": "straight-line proximity baseline only; national transit/walking routing has not been executed"
+}

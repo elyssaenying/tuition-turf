@@ -1,0 +1,102 @@
+{
+  "selection_algorithm_version": "2026-09-13.1",
+  "total_planning_areas_in_geography_data": 55,
+  "total_regions": 5,
+  "per_region_picks": 2,
+  "mandated_planning_area_code": "BK",
+  "mandated_planning_area_name": "BUKIT BATOK",
+  "mandated_planning_area_reason": "Bukit Batok hosts Hume MRT Station, which carries an open no_commercial_zoning_signal review item; alphabetically first among the five such planning-area codes (BK, CH, PN, SK, TS) under the documented tie-break.",
+  "selected": [
+    {
+      "planning_area_code": "NT",
+      "planning_area_name": "NEWTON",
+      "region_name": "CENTRAL REGION",
+      "planning_area_target_population_proxy": 1260.0,
+      "national_population_quartile": 2,
+      "selection_reason": "closest_to_region_median_population_proxy"
+    },
+    {
+      "planning_area_code": "TP",
+      "planning_area_name": "TOA PAYOH",
+      "region_name": "CENTRAL REGION",
+      "planning_area_target_population_proxy": 12130.0,
+      "national_population_quartile": 3,
+      "selection_reason": "highest_population_proxy_in_region"
+    },
+    {
+      "planning_area_code": "CH",
+      "planning_area_name": "CHANGI",
+      "region_name": "EAST REGION",
+      "planning_area_target_population_proxy": 270.0,
+      "national_population_quartile": 2,
+      "selection_reason": "closest_to_region_median_population_proxy"
+    },
+    {
+      "planning_area_code": "TM",
+      "planning_area_name": "TAMPINES",
+      "region_name": "EAST REGION",
+      "planning_area_target_population_proxy": 27070.0,
+      "national_population_quartile": 4,
+      "selection_reason": "highest_population_proxy_in_region"
+    },
+    {
+      "planning_area_code": "MD",
+      "planning_area_name": "MANDAI",
+      "region_name": "NORTH REGION",
+      "planning_area_target_population_proxy": 210.0,
+      "national_population_quartile": 2,
+      "selection_reason": "closest_to_region_median_population_proxy"
+    },
+    {
+      "planning_area_code": "WD",
+      "planning_area_name": "WOODLANDS",
+      "region_name": "NORTH REGION",
+      "planning_area_target_population_proxy": 25180.0,
+      "national_population_quartile": 4,
+      "selection_reason": "highest_population_proxy_in_region"
+    },
+    {
+      "planning_area_code": "AM",
+      "planning_area_name": "ANG MO KIO",
+      "region_name": "NORTH-EAST REGION",
+      "planning_area_target_population_proxy": 12720.0,
+      "national_population_quartile": 4,
+      "selection_reason": "closest_to_region_median_population_proxy"
+    },
+    {
+      "planning_area_code": "SE",
+      "planning_area_name": "SENGKANG",
+      "region_name": "NORTH-EAST REGION",
+      "planning_area_target_population_proxy": 32960.0,
+      "national_population_quartile": 4,
+      "selection_reason": "highest_population_proxy_in_region"
+    },
+    {
+      "planning_area_code": "BK",
+      "planning_area_name": "BUKIT BATOK",
+      "region_name": "WEST REGION",
+      "planning_area_target_population_proxy": 15560.0,
+      "national_population_quartile": 4,
+      "selection_reason": "mandated_no_commercial_zoning_signal_stress_test"
+    },
+    {
+      "planning_area_code": "JW",
+      "planning_area_name": "JURONG WEST",
+      "region_name": "WEST REGION",
+      "planning_area_target_population_proxy": 25670.0,
+      "national_population_quartile": 4,
+      "selection_reason": "highest_population_proxy_in_region_excluding_mandated_pick"
+    }
+  ],
+  "national_population_quartiles_represented": [
+    2,
+    3,
+    4
+  ],
+  "not_based_on_observed_competitor_counts": true,
+  "frozen_at": "2026-09-13",
+  "frozen_before_discovery": true,
+  "source_geography_ref": "data/processed/foundation/2026-09-12/mp2019_subzones.csv",
+  "source_population_ref": "data/processed/foundation/2026-09-12/population_proxy_subzone.csv",
+  "field_rename_note": "planning_area_target_population_proxy (previously named accessible_target_population_proxy in this file) is a planning-area-level population sum used only for stratified pilot selection; it is not an accessibility, catchment or demand-conversion result."
+}

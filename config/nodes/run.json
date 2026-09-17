@@ -1,0 +1,24 @@
+{
+  "pipeline_version": "0.2.2",
+  "schema_version": "0.5.2",
+  "method_version": "station-complex-commercial-evidence-v4-map-roster-corrected",
+  "snapshot_date": "2026-09-13",
+  "foundation_manifest_ref": "reports/foundation/2026-09-12/acquisition-manifest.json",
+  "foundation_mrt_exits_ref": "data/processed/foundation/2026-09-12/mrt_exits.parquet",
+  "station_overrides_ref": "config/nodes/station_overrides.json",
+  "review_dispositions_ref": "config/nodes/review_dispositions.json",
+  "operational_status_evidence_ref": "config/nodes/operational_status_evidence.json",
+  "system_map_roster_ref": "config/nodes/system_map_roster.json",
+  "exchange_crs": "EPSG:4326",
+  "metric_crs": "EPSG:3414",
+  "commercial_buffer_metres": [400, 800],
+  "station_dispersion_review_threshold_metres": 400,
+  "station_implausible_extent_threshold_metres": 1000,
+  "minimum_independent_signals_for_qualified": 2,
+  "accepted_land_use_categories": [
+    "COMMERCIAL",
+    "COMMERCIAL & RESIDENTIAL",
+    "COMMERCIAL / INSTITUTION",
+    "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY"
+  ]
+}

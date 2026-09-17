@@ -1,0 +1,469 @@
+{
+  "checks": [
+    {
+      "check_id": "NQ01",
+      "details": {
+        "closed_review_item_count": 12,
+        "code_only_or_unknown_complex_count": 0,
+        "dispersed_complex_count": 6,
+        "dispersion_review_threshold_metres": 400.0,
+        "dispersion_threshold_rationale": "The 400 m threshold equals the smallest fixed commercial-evidence proximity band, so a wider exit set can materially change exit-union buffer evidence. It is a review trigger, never a grouping rule.",
+        "duplicate_membership_exit_ids": [],
+        "grouping_method": "Exact case/whitespace-normalized S005 station name; no fuzzy or distance-based merge/split. Authoritative station overrides are applied before grouping, never by proximity alone.",
+        "implausible_extent_complex_count": 0,
+        "input_exit_count": 613,
+        "known_operational_exceptions_applied": [
+          "MARINA SOUTH MRT STATION"
+        ],
+        "lrt_complex_count": 41,
+        "manual_review_complex_count": 12,
+        "membership_row_count": 613,
+        "missing_membership_exit_ids": [],
+        "mrt_complex_count": 147,
+        "open_review_item_count": 0,
+        "operational_status_counts": {
+          "not_operational": 1,
+          "verified_operational": 187
+        },
+        "repeated_exit_label_complex_count": 6,
+        "s026_exact_match_complex_count": 160,
+        "s026_train_only_names": [
+          "TEN MILE JUNCTION"
+        ],
+        "s026_unmatched_complex_count": 28,
+        "station_complex_count": 188,
+        "station_complex_id_crosswalk_count": 7,
+        "station_override_source_label_count": 7,
+        "station_overrides_applied_count": 7,
+        "system_map_roster_names_matched_count": 177,
+        "system_map_roster_source_id": "S032",
+        "system_map_roster_unmatched_names": [
+          "CANTONMENT",
+          "HUME",
+          "KEPPEL",
+          "PAYA LEBAR",
+          "PRINCE EDWARD ROAD",
+          "PUNGGOL COAST",
+          "SENTOSA",
+          "TELOK AYER"
+        ],
+        "system_map_roster_version": "2026-09-13.1",
+        "unexpected_membership_exit_ids": [],
+        "unused_known_operational_exceptions": [],
+        "unused_station_override_labels": []
+      },
+      "observation": "613/613 source exits preserved exactly once",
+      "status": "pass",
+      "table": "station_complex_exits"
+    },
+    {
+      "check_id": "NQ02",
+      "details": {
+        "closed_review_item_count": 12,
+        "code_only_or_unknown_complex_count": 0,
+        "dispersed_complex_count": 6,
+        "dispersion_review_threshold_metres": 400.0,
+        "dispersion_threshold_rationale": "The 400 m threshold equals the smallest fixed commercial-evidence proximity band, so a wider exit set can materially change exit-union buffer evidence. It is a review trigger, never a grouping rule.",
+        "duplicate_membership_exit_ids": [],
+        "grouping_method": "Exact case/whitespace-normalized S005 station name; no fuzzy or distance-based merge/split. Authoritative station overrides are applied before grouping, never by proximity alone.",
+        "implausible_extent_complex_count": 0,
+        "input_exit_count": 613,
+        "known_operational_exceptions_applied": [
+          "MARINA SOUTH MRT STATION"
+        ],
+        "lrt_complex_count": 41,
+        "manual_review_complex_count": 12,
+        "membership_row_count": 613,
+        "missing_membership_exit_ids": [],
+        "mrt_complex_count": 147,
+        "open_review_item_count": 0,
+        "operational_status_counts": {
+          "not_operational": 1,
+          "verified_operational": 187
+        },
+        "repeated_exit_label_complex_count": 6,
+        "s026_exact_match_complex_count": 160,
+        "s026_train_only_names": [
+          "TEN MILE JUNCTION"
+        ],
+        "s026_unmatched_complex_count": 28,
+        "station_complex_count": 188,
+        "station_complex_id_crosswalk_count": 7,
+        "station_override_source_label_count": 7,
+        "station_overrides_applied_count": 7,
+        "system_map_roster_names_matched_count": 177,
+        "system_map_roster_source_id": "S032",
+        "system_map_roster_unmatched_names": [
+          "CANTONMENT",
+          "HUME",
+          "KEPPEL",
+          "PAYA LEBAR",
+          "PRINCE EDWARD ROAD",
+          "PUNGGOL COAST",
+          "SENTOSA",
+          "TELOK AYER"
+        ],
+        "system_map_roster_version": "2026-09-13.1",
+        "unexpected_membership_exit_ids": [],
+        "unused_known_operational_exceptions": [],
+        "unused_station_override_labels": []
+      },
+      "observation": "188 exact-name complexes; 12 carry review flags",
+      "status": "warning",
+      "table": "station_complexes"
+    },
+    {
+      "check_id": "NQ03",
+      "details": {
+        "coverage_limitation": "June 2017 name/code/line coverage is corroborative only and cannot exclude newer or unmatched S005 complexes.",
+        "distinct_station_name_count": 158,
+        "duplicate_source_record_ids": [],
+        "missing_station_code_count": 0,
+        "missing_station_name_count": 0,
+        "processed_row_count": 184,
+        "source_row_count": 184
+      },
+      "observation": "S026 corroborated 160 complexes; 28 unmatched complexes retained",
+      "status": "warning",
+      "table": "station_complexes"
+    },
+    {
+      "check_id": "NQ04",
+      "details": {
+        "accepted_land_use_categories": [
+          "COMMERCIAL",
+          "COMMERCIAL & RESIDENTIAL",
+          "COMMERCIAL / INSTITUTION",
+          "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY"
+        ],
+        "classification_rule": "Only explicitly commercial or explicitly commercial-mixed MP2025 categories are accepted. Business/industrial, White, hotel, educational and other unrelated categories are excluded.",
+        "duplicate_relevant_object_ids": [],
+        "missing_relevant_object_id_count": 0,
+        "observed_land_use_categories": {
+          "AGRICULTURE": 270,
+          "BEACH AREA": 35,
+          "BUSINESS 1": 1399,
+          "BUSINESS 1 - WHITE": 39,
+          "BUSINESS 2": 5674,
+          "BUSINESS 2 - WHITE": 25,
+          "BUSINESS PARK": 163,
+          "BUSINESS PARK - WHITE": 12,
+          "CEMETERY": 15,
+          "CIVIC & COMMUNITY INSTITUTION": 648,
+          "COMMERCIAL": 5897,
+          "COMMERCIAL & RESIDENTIAL": 874,
+          "COMMERCIAL / INSTITUTION": 532,
+          "EDUCATIONAL INSTITUTION": 582,
+          "HEALTH & MEDICAL CARE": 217,
+          "HOTEL": 308,
+          "LIGHT RAPID TRANSIT": 15,
+          "MASS RAPID TRANSIT": 54,
+          "OPEN SPACE": 769,
+          "PARK": 1545,
+          "PLACE OF WORSHIP": 642,
+          "PORT / AIRPORT": 49,
+          "RESERVE SITE": 593,
+          "RESIDENTIAL": 79406,
+          "RESIDENTIAL / INSTITUTION": 951,
+          "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY": 2845,
+          "ROAD": 6913,
+          "SPECIAL USE": 60,
+          "SPORTS & RECREATION": 240,
+          "TRANSPORT FACILITIES": 352,
+          "UTILITY": 1051,
+          "WATERBODY": 1017,
+          "WHITE": 202
+        },
+        "relevant_feature_count": 10148,
+        "relevant_geometry_repair_count": 0,
+        "source_feature_count": 113394,
+        "source_invalid_geometry_count": 3,
+        "vintage_limitation": "MP2025 zoning is Dec 2025 context while population remains harmonised to MP2019 subzones. Zoning is not current occupancy, unit availability or tuition-use eligibility."
+      },
+      "observation": "10148 accepted-category features from 113394 MP2025 features; 3 invalid source geometries, none silently used without validation/repair",
+      "status": "warning",
+      "table": "mp2025_relevant_land_use"
+    },
+    {
+      "check_id": "NQ05",
+      "details": {
+        "buffer_metres": [
+          400,
+          800
+        ],
+        "buffer_semantics": "Straight-line union buffers from every valid station exit in EPSG:3414; not walking time.",
+        "commercial_evidence_row_count": 584,
+        "commercial_node_candidate_count": 146,
+        "excluded_not_yet_operational_count": 1,
+        "lrt_complexes_not_promoted_to_mrt_candidates": 41,
+        "minimum_independent_signals_for_qualified": 2,
+        "missing_evidence_treated_as_zero": false,
+        "operational_status_counts_among_candidates": {
+          "verified_operational": 146
+        },
+        "qualification_status_counts": {
+          "needs_manual_review": 5,
+          "provisional": 141
+        },
+        "qualified_nodes_without_minimum_signals": 0,
+        "review_issue_category_counts": {
+          "excluded_not_yet_operational": 1,
+          "no_commercial_zoning_signal": 5,
+          "repeated_exit_labels": 6,
+          "unusually_dispersed": 6
+        },
+        "review_issue_category_open_counts": {
+          "excluded_not_yet_operational": 1,
+          "no_commercial_zoning_signal": 5
+        },
+        "review_queue_closed_count": 12,
+        "review_queue_deduplication_rule": "One review item per (station_complex_id, issue_category); multiple distinct issue categories on the same node are all retained independently.",
+        "review_queue_open_count": 6,
+        "review_queue_row_count": 18,
+        "station_complex_count": 188
+      },
+      "observation": "146 MRT candidates; statuses {'needs_manual_review': 5, 'provisional': 141}; missing evidence remains null",
+      "status": "pass",
+      "table": "commercial_node_candidates"
+    },
+    {
+      "check_id": "NQ07",
+      "details": [],
+      "observation": "7 station-override labels applied; 0 configured override labels were not found in this exit snapshot",
+      "status": "pass",
+      "table": "station_overrides"
+    },
+    {
+      "check_id": "NQ10",
+      "details": {
+        "unused_known_operational_exceptions": []
+      },
+      "observation": "1 known operational exceptions applied (S026 plays no role in operational_status; identity/name/code/line corroboration only); 0 configured known exceptions were not found in this exit snapshot; 177 system-map roster (S032 v2026-09-13.1) names matched a complex in this snapshot",
+      "status": "pass",
+      "table": "operational_status_evidence"
+    },
+    {
+      "check_id": "NQ08",
+      "details": {
+        "not_operational": 1,
+        "verified_operational": 187
+      },
+      "observation": "operational_status counts {'not_operational': 1, 'verified_operational': 187}",
+      "status": "pass",
+      "table": "station_complexes"
+    },
+    {
+      "check_id": "NQ11",
+      "details": null,
+      "observation": "Every verified_operational complex carries either a non-empty operational-status evidence reference (identity override or known-exception evidence) or a match against the current dated System Map roster; S026 corroboration and mere presence in the S005 exit layer are never, by themselves, sufficient.",
+      "status": "pass",
+      "table": "station_complexes"
+    },
+    {
+      "check_id": "NQ09",
+      "details": {
+        "excluded_not_yet_operational": 1,
+        "no_commercial_zoning_signal": 5
+      },
+      "observation": "18 review rows; 6 open, 12 closed; issue categories {'excluded_not_yet_operational': 1, 'no_commercial_zoning_signal': 5, 'repeated_exit_labels': 6, 'unusually_dispersed': 6}",
+      "status": "pass",
+      "table": "node_review_queue"
+    },
+    {
+      "check_id": "NQ06",
+      "details": {
+        "assurance": "full",
+        "credential_values_available": true,
+        "exact_credential_comparison_status": "performed",
+        "exact_credential_finding_count": 0,
+        "exact_credential_finding_paths": [],
+        "finding_count": 0,
+        "finding_paths": [],
+        "generic_pattern_finding_count": 0,
+        "generic_pattern_finding_paths": [],
+        "generic_pattern_scan_status": "pass",
+        "scanned_file_count": 15,
+        "scope": [
+          "data/processed/nodes/2026-09-13",
+          "reports/nodes/2026-09-13"
+        ],
+        "skipped_binary_file_count": 6,
+        "status": "pass"
+      },
+      "observation": "generic scan pass; exact comparison performed; 0 finding files",
+      "status": "pass",
+      "table": "reportable_node_outputs"
+    }
+  ],
+  "method_version": "station-complex-commercial-evidence-v4-map-roster-corrected",
+  "overall_status": "passed_with_warnings",
+  "run_id": "nodes_0a34bc5be80d0c27",
+  "schema_version": "0.5.2",
+  "source_summaries": {
+    "S005_station_grouping": {
+      "closed_review_item_count": 12,
+      "code_only_or_unknown_complex_count": 0,
+      "dispersed_complex_count": 6,
+      "dispersion_review_threshold_metres": 400.0,
+      "dispersion_threshold_rationale": "The 400 m threshold equals the smallest fixed commercial-evidence proximity band, so a wider exit set can materially change exit-union buffer evidence. It is a review trigger, never a grouping rule.",
+      "duplicate_membership_exit_ids": [],
+      "grouping_method": "Exact case/whitespace-normalized S005 station name; no fuzzy or distance-based merge/split. Authoritative station overrides are applied before grouping, never by proximity alone.",
+      "implausible_extent_complex_count": 0,
+      "input_exit_count": 613,
+      "known_operational_exceptions_applied": [
+        "MARINA SOUTH MRT STATION"
+      ],
+      "lrt_complex_count": 41,
+      "manual_review_complex_count": 12,
+      "membership_row_count": 613,
+      "missing_membership_exit_ids": [],
+      "mrt_complex_count": 147,
+      "open_review_item_count": 0,
+      "operational_status_counts": {
+        "not_operational": 1,
+        "verified_operational": 187
+      },
+      "repeated_exit_label_complex_count": 6,
+      "s026_exact_match_complex_count": 160,
+      "s026_train_only_names": [
+        "TEN MILE JUNCTION"
+      ],
+      "s026_unmatched_complex_count": 28,
+      "station_complex_count": 188,
+      "station_complex_id_crosswalk_count": 7,
+      "station_override_source_label_count": 7,
+      "station_overrides_applied_count": 7,
+      "system_map_roster_names_matched_count": 177,
+      "system_map_roster_source_id": "S032",
+      "system_map_roster_unmatched_names": [
+        "CANTONMENT",
+        "HUME",
+        "KEPPEL",
+        "PAYA LEBAR",
+        "PRINCE EDWARD ROAD",
+        "PUNGGOL COAST",
+        "SENTOSA",
+        "TELOK AYER"
+      ],
+      "system_map_roster_version": "2026-09-13.1",
+      "unexpected_membership_exit_ids": [],
+      "unused_known_operational_exceptions": [],
+      "unused_station_override_labels": []
+    },
+    "S026_train_names": {
+      "coverage_limitation": "June 2017 name/code/line coverage is corroborative only and cannot exclude newer or unmatched S005 complexes.",
+      "distinct_station_name_count": 158,
+      "duplicate_source_record_ids": [],
+      "missing_station_code_count": 0,
+      "missing_station_name_count": 0,
+      "processed_row_count": 184,
+      "source_row_count": 184
+    },
+    "S027_land_use": {
+      "accepted_land_use_categories": [
+        "COMMERCIAL",
+        "COMMERCIAL & RESIDENTIAL",
+        "COMMERCIAL / INSTITUTION",
+        "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY"
+      ],
+      "classification_rule": "Only explicitly commercial or explicitly commercial-mixed MP2025 categories are accepted. Business/industrial, White, hotel, educational and other unrelated categories are excluded.",
+      "duplicate_relevant_object_ids": [],
+      "missing_relevant_object_id_count": 0,
+      "observed_land_use_categories": {
+        "AGRICULTURE": 270,
+        "BEACH AREA": 35,
+        "BUSINESS 1": 1399,
+        "BUSINESS 1 - WHITE": 39,
+        "BUSINESS 2": 5674,
+        "BUSINESS 2 - WHITE": 25,
+        "BUSINESS PARK": 163,
+        "BUSINESS PARK - WHITE": 12,
+        "CEMETERY": 15,
+        "CIVIC & COMMUNITY INSTITUTION": 648,
+        "COMMERCIAL": 5897,
+        "COMMERCIAL & RESIDENTIAL": 874,
+        "COMMERCIAL / INSTITUTION": 532,
+        "EDUCATIONAL INSTITUTION": 582,
+        "HEALTH & MEDICAL CARE": 217,
+        "HOTEL": 308,
+        "LIGHT RAPID TRANSIT": 15,
+        "MASS RAPID TRANSIT": 54,
+        "OPEN SPACE": 769,
+        "PARK": 1545,
+        "PLACE OF WORSHIP": 642,
+        "PORT / AIRPORT": 49,
+        "RESERVE SITE": 593,
+        "RESIDENTIAL": 79406,
+        "RESIDENTIAL / INSTITUTION": 951,
+        "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY": 2845,
+        "ROAD": 6913,
+        "SPECIAL USE": 60,
+        "SPORTS & RECREATION": 240,
+        "TRANSPORT FACILITIES": 352,
+        "UTILITY": 1051,
+        "WATERBODY": 1017,
+        "WHITE": 202
+      },
+      "relevant_feature_count": 10148,
+      "relevant_geometry_repair_count": 0,
+      "source_feature_count": 113394,
+      "source_invalid_geometry_count": 3,
+      "vintage_limitation": "MP2025 zoning is Dec 2025 context while population remains harmonised to MP2019 subzones. Zoning is not current occupancy, unit availability or tuition-use eligibility."
+    },
+    "commercial_nodes": {
+      "buffer_metres": [
+        400,
+        800
+      ],
+      "buffer_semantics": "Straight-line union buffers from every valid station exit in EPSG:3414; not walking time.",
+      "commercial_evidence_row_count": 584,
+      "commercial_node_candidate_count": 146,
+      "excluded_not_yet_operational_count": 1,
+      "lrt_complexes_not_promoted_to_mrt_candidates": 41,
+      "minimum_independent_signals_for_qualified": 2,
+      "missing_evidence_treated_as_zero": false,
+      "operational_status_counts_among_candidates": {
+        "verified_operational": 146
+      },
+      "qualification_status_counts": {
+        "needs_manual_review": 5,
+        "provisional": 141
+      },
+      "qualified_nodes_without_minimum_signals": 0,
+      "review_issue_category_counts": {
+        "excluded_not_yet_operational": 1,
+        "no_commercial_zoning_signal": 5,
+        "repeated_exit_labels": 6,
+        "unusually_dispersed": 6
+      },
+      "review_issue_category_open_counts": {
+        "excluded_not_yet_operational": 1,
+        "no_commercial_zoning_signal": 5
+      },
+      "review_queue_closed_count": 12,
+      "review_queue_deduplication_rule": "One review item per (station_complex_id, issue_category); multiple distinct issue categories on the same node are all retained independently.",
+      "review_queue_open_count": 6,
+      "review_queue_row_count": 18,
+      "station_complex_count": 188
+    },
+    "secret_scan": {
+      "assurance": "full",
+      "credential_values_available": true,
+      "exact_credential_comparison_status": "performed",
+      "exact_credential_finding_count": 0,
+      "exact_credential_finding_paths": [],
+      "finding_count": 0,
+      "finding_paths": [],
+      "generic_pattern_finding_count": 0,
+      "generic_pattern_finding_paths": [],
+      "generic_pattern_scan_status": "pass",
+      "scanned_file_count": 15,
+      "scope": [
+        "data/processed/nodes/2026-09-13",
+        "reports/nodes/2026-09-13"
+      ],
+      "skipped_binary_file_count": 6,
+      "status": "pass"
+    }
+  }
+}

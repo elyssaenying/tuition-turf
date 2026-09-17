@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="710" viewBox="0 0 1040 710">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,sans-serif;fill:#1f2937}.title{font-size:22px;font-weight:700}.label{font-size:12px}.value{font-size:12px;font-weight:700}.note{font-size:11px;fill:#6b7280}</style>
+<text class="title" x="20" y="32">Top MRT areas by 800 m population proximity proxy</text>
+<text class="note" x="20" y="53">Area-weighted ages 7–16 resident proxy; straight-line exit-union catchment, not travel time or enrolment</text>
+<text class="label" x="270" y="88" text-anchor="end">1. SENGKANG</text>
+<rect x="280" y="72" width="670.0" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="957.0" y="88">10,084</text>
+<text class="label" x="270" y="119" text-anchor="end">2. PUNGGOL</text>
+<rect x="280" y="103" width="612.2" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="899.2" y="119">9,214</text>
+<text class="label" x="270" y="150" text-anchor="end">3. ADMIRALTY</text>
+<rect x="280" y="134" width="594.9" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="881.9" y="150">8,954</text>
+<text class="label" x="270" y="181" text-anchor="end">4. BUANGKOK</text>
+<rect x="280" y="165" width="465.9" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="752.9" y="181">7,012</text>
+<text class="label" x="270" y="212" text-anchor="end">5. TAMPINES</text>
+<rect x="280" y="196" width="443.9" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="730.9" y="212">6,681</text>
+<text class="label" x="270" y="243" text-anchor="end">6. WOODLANDS</text>
+<rect x="280" y="227" width="411.9" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="698.9" y="243">6,200</text>
+<text class="label" x="270" y="274" text-anchor="end">7. TAMPINES EAST</text>
+<rect x="280" y="258" width="407.1" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="694.1" y="274">6,128</text>
+<text class="label" x="270" y="305" text-anchor="end">8. BUKIT PANJANG</text>
+<rect x="280" y="289" width="397.5" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="684.5" y="305">5,982</text>
+<text class="label" x="270" y="336" text-anchor="end">9. BOON LAY</text>
+<rect x="280" y="320" width="383.4" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="670.4" y="336">5,770</text>
+<text class="label" x="270" y="367" text-anchor="end">10. PIONEER</text>
+<rect x="280" y="351" width="381.3" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="668.3" y="367">5,738</text>
+<text class="label" x="270" y="398" text-anchor="end">11. HOUGANG</text>
+<rect x="280" y="382" width="380.1" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="667.1" y="398">5,720</text>
+<text class="label" x="270" y="429" text-anchor="end">12. YEW TEE</text>
+<rect x="280" y="413" width="365.8" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="652.8" y="429">5,505</text>
+<text class="label" x="270" y="460" text-anchor="end">13. SEMBAWANG</text>
+<rect x="280" y="444" width="361.1" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="648.1" y="460">5,435</text>
+<text class="label" x="270" y="491" text-anchor="end">14. TAMPINES WEST</text>
+<rect x="280" y="475" width="360.0" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="647.0" y="491">5,418</text>
+<text class="label" x="270" y="522" text-anchor="end">15. CHOA CHU KANG</text>
+<rect x="280" y="506" width="349.9" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="636.9" y="522">5,266</text>
+<text class="label" x="270" y="553" text-anchor="end">16. YISHUN</text>
+<rect x="280" y="537" width="328.8" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="615.8" y="553">4,949</text>
+<text class="label" x="270" y="584" text-anchor="end">17. CANBERRA</text>
+<rect x="280" y="568" width="321.8" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="608.8" y="584">4,843</text>
+<text class="label" x="270" y="615" text-anchor="end">18. BUKIT BATOK</text>
+<rect x="280" y="599" width="320.9" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="607.9" y="615">4,830</text>
+<text class="label" x="270" y="646" text-anchor="end">19. WOODLANDS SOUTH</text>
+<rect x="280" y="630" width="312.5" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="599.5" y="646">4,703</text>
+<text class="label" x="270" y="677" text-anchor="end">20. TOA PAYOH</text>
+<rect x="280" y="661" width="311.0" height="22" rx="3" fill="#2563eb"/>
+<text class="value" x="598.0" y="677">4,680</text>
+</svg>

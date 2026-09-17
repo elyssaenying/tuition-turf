@@ -1,0 +1,52 @@
+{
+  "config_version": "2026-09-13.1",
+  "status": "frozen_pre_results",
+  "frozen_at": "2026-09-13",
+  "purpose": "Freeze operator-scenario accessibility assumptions and the H2 materiality rule before any national OneMap routing is executed, so no threshold or materiality definition is chosen after seeing results.",
+  "scope_note": "This is a configuration artifact only. No routing was executed to produce it; it does not itself contain any accessibility, demand or ranking result.",
+  "disclosure": "Every timestamp, threshold and distance below is a plausible operator decision scenario for a neighbourhood P1-S4 mathematics tuition outlet, not a measured student- or parent-preference estimate, and not a claim about actual travel behaviour. They are inputs to later sensitivity analysis, not findings.",
+  "primary_scenario": {
+    "scenario_id": "primary_weekday_after_school",
+    "journey_timestamp": "2026-09-16T16:00:00+08:00",
+    "journey_timestamp_note": "Wednesday, a representative weekday after-school period, Asia/Singapore time. Frozen before routing; not derived from any observed travel pattern.",
+    "public_transport_threshold_minutes": 20,
+    "walking_threshold_minutes": 10,
+    "straight_line_proximity_fallback_metres": 800,
+    "proximity_fallback_rule": "Used only if OneMap PT and walking routing both fail for a given origin-destination pair after the documented fallback order. A straight-line distance is a proximity proxy, never a travel-time claim, and must populate proximity_proxy rather than transit_reach_share or any minutes-denominated field.",
+    "missing_route_rule": "A missing OneMap PT route stays missing and is never imputed. The documented fallback order is: (1) OneMap PT, (2) OneMap walking, (3) EPSG:3414 straight-line proximity at the fallback distance above."
+  },
+  "sensitivity_scenarios": {
+    "public_transport_threshold_minutes": [15, 25],
+    "walking_threshold_minutes": [5, 15],
+    "weekend_comparison_scenario": {
+      "scenario_id": "weekend_comparison",
+      "journey_timestamp": "2026-09-19T10:00:00+08:00",
+      "journey_timestamp_note": "Saturday morning, Asia/Singapore time, for a weekend-vs-weekday comparison. Frozen before routing."
+    },
+    "note": "These are one-way sensitivity variations on the primary scenario's thresholds/timestamp, not an independent full scenario grid. Combine only as documented when the plausible-scenario grid for financial/Pareto work is later frozen; do not silently cross every sensitivity value with every other without justification."
+  },
+  "h2_materiality_rule": {
+    "hypothesis": "H2: transit-aware accessibility produces materially different catchment demand estimates from straight-line proximity.",
+    "primary_rule": {
+      "metric": "node_level_absolute_percentage_difference",
+      "formula": "abs(transit_aware_accessible_population_proxy - straight_line_accessible_population_proxy) / straight_line_accessible_population_proxy, computed per node only where both denominators are valid (not null, not zero)",
+      "aggregation": "median across all nodes with a valid computation",
+      "materiality_threshold": 0.10,
+      "decision_rule": "The overall difference between transit-aware and straight-line accessibility is treated as materially important if and only if the median node-level absolute percentage difference is at least 10%.",
+      "zero_or_null_denominator_handling": "A node where the straight-line accessible population proxy is null or exactly zero is excluded from the median computation and reported separately as excluded_from_h2_denominator, with a count and the reason (null vs zero) disclosed. It is never treated as a 0% or 100% difference and never silently dropped without being counted."
+    },
+    "secondary_descriptive_diagnostics": [
+      {
+        "diagnostic": "spearman_rank_correlation",
+        "description": "Spearman rank correlation between node demand ordering under transit-aware accessibility and under straight-line proximity.",
+        "role": "descriptive only; does not replace or retroactively change the primary 10% median rule"
+      },
+      {
+        "diagnostic": "share_of_nodes_moving_at_least_10_ranks",
+        "description": "Share of nodes whose rank position under transit-aware accessibility differs from their rank under straight-line proximity by at least 10 positions.",
+        "role": "descriptive only; does not replace or retroactively change the primary 10% median rule"
+      }
+    ],
+    "freeze_statement": "This rule, threshold and both descriptive diagnostics are frozen on 2026-09-13, before any national OneMap routing is executed and before any node-level accessible-population-proxy result exists. Any later deviation requires a dated decision-log entry explaining why, not a silent change."
+  }
+}

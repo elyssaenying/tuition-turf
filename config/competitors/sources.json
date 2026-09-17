@@ -1,0 +1,66 @@
+{
+  "config_version": "2026-09-13.1",
+  "inspected_at": "2026-09-13",
+  "sources": [
+    {
+      "source_id": "S009",
+      "title": "Example operator locations page",
+      "landing_url": "https://timganmath.edu.sg/locations",
+      "publisher": "Independent tuition operator (example only; not the analysis subject)",
+      "inspection_summary": "Official operator-controlled page listing three branch addresses with per-branch programme lists (H2/H1/A Math/E Math/Secondary 1 Math/etc.) and copyright notice. No systematic-acquisition restriction inspected beyond standard copyright.",
+      "feasibility": {
+        "discovery_only": "not_applicable",
+        "factual_validation": "usable",
+        "legal_entity_corroboration": "not_applicable",
+        "systematic_acquisition": "not_assessed_single_operator_not_a_bulk_source",
+        "public_redistribution": "not_permitted_full_page_content; factual observations (address, subject, level, observation date) may be recorded and cited"
+      },
+      "use_limitation": "Used only as the worked example of operator-controlled evidence for the 'confirmed' evidence rule, and as one real operator page validated during the pilot if it appears in a selected planning area. Copyright is retained by the operator; only short factual observations are stored, never the full page text."
+    },
+    {
+      "source_id": "S010",
+      "title": "tuitioncentres.sg directory",
+      "landing_url": "https://www.tuitioncentres.sg/",
+      "publisher": "Independent third-party directory (not government, not an operator)",
+      "inspection_summary": "Homepage confirms 1,200+ listed providers, searchable by location/MRT/subject/level. robots.txt directly inspected 2026-09-13: disallows only /wp-admin/, otherwise permits crawling; no explicit scraping/reuse policy in robots.txt. Terms & Conditions directly inspected 2026-09-13: contain no explicit clause addressing automated collection, scraping, systematic extraction, reuse or republication of listing data in either direction (neither an explicit prohibition nor an explicit grant of reuse rights).",
+      "feasibility": {
+        "discovery_only": "usable_bounded_manual_sample_only",
+        "factual_validation": "not_usable_alone; directory evidence alone can support possible at most, never confirmed",
+        "legal_entity_corroboration": "not_applicable",
+        "systematic_acquisition": "unclear_permission; not authorised in this pass",
+        "public_redistribution": "not_permitted; retain only URLs and short factual references, never copied page content or bulk listing text"
+      },
+      "use_limitation": "Because systematic-acquisition permission is unclear rather than affirmatively granted, S010 is used only through a bounded manual discovery sample per the pilot's frozen query templates. Every S010-derived candidate must be validated against an operator-controlled page before any evidence status stronger than possible is assigned; if no operator page can be found, the candidate remains possible or unresolved, never confirmed."
+    },
+    {
+      "source_id": "S011",
+      "title": "ACRA corporate-entity collection",
+      "landing_url": "https://data.gov.sg/collections/2/view",
+      "publisher": "Accounting and Corporate Regulatory Authority / data.gov.sg",
+      "inspection_summary": "27 monthly alphabetic CSV datasets (A-Z plus Others), updated through August 2026, under the Singapore Open Data Licence. Exposes UEN, entity name/status and registered address/SSIC description per the previously verified sample child dataset; does not indicate whether a registered address is an operating teaching location.",
+      "feasibility": {
+        "discovery_only": "not_recommended_as_primary_discovery_channel; entity names are not branch addresses",
+        "factual_validation": "not_usable_alone",
+        "legal_entity_corroboration": "usable",
+        "systematic_acquisition": "permitted_under_open_data_licence_for_identity_corroboration_use",
+        "public_redistribution": "permitted_under_open_data_licence_for_the_corroboration_fields_used"
+      },
+      "use_limitation": "ACRA may corroborate a brand's legal identity/registration status only. A registered ACRA address is never treated as evidence of an operating tuition branch at that address; branch existence requires operator-controlled or, at minimum, directory-plus-validation evidence."
+    },
+    {
+      "source_id": "WEB_SEARCH",
+      "title": "General permitted web search (discovery channel, not a registered dataset)",
+      "landing_url": "not_applicable",
+      "publisher": "not_applicable",
+      "inspection_summary": "Used only to locate candidate operator-controlled pages for a planning area/subject query; not a stored dataset.",
+      "feasibility": {
+        "discovery_only": "usable",
+        "factual_validation": "not_usable_alone; must locate and then validate against an operator-controlled page",
+        "legal_entity_corroboration": "not_applicable",
+        "systematic_acquisition": "not_applicable_not_a_dataset",
+        "public_redistribution": "not_permitted; raw search-result pages and snippets are never persisted, only the resulting operator URL and observation date once validated"
+      },
+      "use_limitation": "A second, distinct discovery channel from S010 for overlap/unique-yield measurement. Search-result snippets are read only to identify a candidate operator URL, then discarded; nothing from the search-results page itself is stored."
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "disposition_config_version": "2026-09-13.2",
+  "version_2_note": "Supersedes the wording of version 2026-09-13.1's repeated_exit_labels dispositions only. The 15 m figure is relabelled an explicit QA heuristic, not evidence of real-world exit-structure identity; language claiming distance 'is consistent with two physically separate exit structures' is removed. Choa Chu Kang's repeated_exit_labels item is now closed as a processing decision (all points retained as published) while its semantic ambiguity is kept visible as a non-blocking quality flag rather than an open human-decision item. The six unusually_dispersed dispositions from version 2026-09-13.1 are unchanged and are not affected by this correction.",
+  "review_basis": "Dispositions below use validated EPSG:3414 source-exit geometry and, where noted, exact official-name identity already established by the exact-normalized-name grouping rule. No source exit is ever merged, dropped or relabelled by a disposition; every distinct S005 point is retained exactly as published regardless of disposition.",
+  "distance_ambiguity_threshold_metres": 15.0,
+  "distance_heuristic_disclaimer": "The 15 m figure is a disclosed quality-assurance heuristic only. It decides whether a semantic-ambiguity flag needs to stay open for human attention; it is not authoritative evidence that same-labelled records more than 15 m apart are physically separate real-world exit structures, nor that records closer together are the same structure. No claim about real-world doorway-level identity is made either way for any repeated-label case.",
+  "dispositions": [
+    {
+      "normalized_station_name": "UPPER CHANGI MRT STATION",
+      "issue_category": "repeated_exit_labels",
+      "status": "closed",
+      "resolution_summary": "Processing decision closed: both official EXIT A records are retained exactly as published, with no merge, drop or relabel. They are 44.0 m apart in EPSG:3414, above the disclosed 15 m QA heuristic, so no semantic-ambiguity quality flag is raised. This distance does not itself prove or disprove separate real-world exit structures.",
+      "human_decision_required": false,
+      "semantic_ambiguity_quality_flag": false
+    },
+    {
+      "normalized_station_name": "BEDOK NORTH MRT STATION",
+      "issue_category": "repeated_exit_labels",
+      "status": "closed",
+      "resolution_summary": "Processing decision closed: both official EXIT B records are retained exactly as published, with no merge, drop or relabel. They are 24.2 m apart in EPSG:3414, above the disclosed 15 m QA heuristic, so no semantic-ambiguity quality flag is raised. This distance does not itself prove or disprove separate real-world exit structures.",
+      "human_decision_required": false,
+      "semantic_ambiguity_quality_flag": false
+    },
+    {
+      "normalized_station_name": "CHOA CHU KANG MRT STATION",
+      "issue_category": "repeated_exit_labels",
+      "status": "closed",
+      "resolution_summary": "Processing decision closed: all official EXIT A, EXIT C and EXIT D records are retained exactly as published, with no merge, drop or relabel; no human decision is required merely to preserve all authoritative source records. EXIT D's two records are 39.2 m apart (above the 15 m heuristic). EXIT A's two records are 3.5 m apart and EXIT C's two records are 5.4 m apart, both under the 15 m heuristic, so a non-blocking semantic-ambiguity quality flag is retained on this complex for EXIT A and EXIT C: whether each pair represents one physical exit recorded twice or two very close structures is genuinely unresolved and is not decided by this disposition either way. The flag does not block node construction, qualification evaluation or later accessibility use.",
+      "human_decision_required": false,
+      "semantic_ambiguity_quality_flag": true
+    },
+    {
+      "normalized_station_name": "EXPO MRT STATION",
+      "issue_category": "repeated_exit_labels",
+      "status": "closed",
+      "resolution_summary": "Processing decision closed: both official EXIT A records are retained exactly as published, with no merge, drop or relabel. They are 21.4 m apart in EPSG:3414, above the disclosed 15 m QA heuristic, so no semantic-ambiguity quality flag is raised. This distance does not itself prove or disprove separate real-world exit structures.",
+      "human_decision_required": false,
+      "semantic_ambiguity_quality_flag": false
+    },
+    {
+      "normalized_station_name": "HARBOURFRONT MRT STATION",
+      "issue_category": "repeated_exit_labels",
+      "status": "closed",
+      "resolution_summary": "Processing decision closed: both official EXIT A records are retained exactly as published, with no merge, drop or relabel. They are 249.3 m apart in EPSG:3414 at this large multi-line interchange, above the disclosed 15 m QA heuristic, so no semantic-ambiguity quality flag is raised. This distance does not itself prove or disprove separate real-world exit structures.",
+      "human_decision_required": false,
+      "semantic_ambiguity_quality_flag": false
+    },
+    {
+      "normalized_station_name": "BUKIT PANJANG MRT STATION",
+      "issue_category": "repeated_exit_labels",
+      "status": "closed",
+      "resolution_summary": "Processing decision closed: all three official EXIT A records are retained exactly as published, with no merge, drop or relabel. They are pairwise more than 15 m apart (29.5 m, 322.3 m, 348.4 m) at this large MRT/LRT/bus interchange, above the disclosed QA heuristic, so no semantic-ambiguity quality flag is raised. This distance does not itself prove or disprove separate real-world exit structures.",
+      "human_decision_required": false,
+      "semantic_ambiguity_quality_flag": false
+    },
+    {
+      "normalized_station_name": "MARINE PARADE MRT STATION",
+      "issue_category": "unusually_dispersed",
+      "status": "closed",
+      "resolution_summary": "Accepted as one official complex. All 6 exits carry the identical official station name string from the source, and a 603.9 m exit spread is consistent with a long single-platform Thomson-East Coast Line station serving an extended road frontage. The dispersion measurement and closest-exit-for-accessibility rule are retained unchanged.",
+      "human_decision_required": false
+    },
+    {
+      "normalized_station_name": "MARINA BAY MRT STATION",
+      "issue_category": "unusually_dispersed",
+      "status": "closed",
+      "resolution_summary": "Accepted as one official complex. All 5 exits carry the identical official station name string, and a 468.6 m spread is consistent with this large multi-line (North-South/Circle/Thomson-East Coast) interchange's integrated basement footprint. The dispersion measurement and closest-exit-for-accessibility rule are retained unchanged.",
+      "human_decision_required": false
+    },
+    {
+      "normalized_station_name": "WOODLANDS MRT STATION",
+      "issue_category": "unusually_dispersed",
+      "status": "closed",
+      "resolution_summary": "Accepted as one official complex. All 7 exits carry the identical official station name string, and a 427.3 m spread is consistent with this large North-South/Thomson-East Coast interchange plus integrated bus interchange and mall. The dispersion measurement and closest-exit-for-accessibility rule are retained unchanged.",
+      "human_decision_required": false
+    },
+    {
+      "normalized_station_name": "MARINE TERRACE MRT STATION",
+      "issue_category": "unusually_dispersed",
+      "status": "closed",
+      "resolution_summary": "Accepted as one official complex. All 6 exits carry the identical official station name string; independent secondary sources corroborate this Thomson-East Coast Line station having 6 official exits, consistent with a 464.2 m spread along its platform corridor. The dispersion measurement and closest-exit-for-accessibility rule are retained unchanged.",
+      "human_decision_required": false
+    },
+    {
+      "normalized_station_name": "OUTRAM PARK MRT STATION",
+      "issue_category": "unusually_dispersed",
+      "status": "closed",
+      "resolution_summary": "Accepted as one official complex. All 8 exits carry the identical official station name string, and a 405.8 m spread is consistent with this large triple-line (East-West/North-East/Thomson-East Coast) interchange's extensive exit network. The dispersion measurement and closest-exit-for-accessibility rule are retained unchanged.",
+      "human_decision_required": false
+    },
+    {
+      "normalized_station_name": "GREAT WORLD MRT STATION",
+      "issue_category": "unusually_dispersed",
+      "status": "closed",
+      "resolution_summary": "Accepted as one official complex. All 6 exits carry the identical official station name string; independent secondary sources corroborate this Thomson-East Coast Line station having exits distributed toward the adjoining Great World mall consistent with a 416.4 m spread. The dispersion measurement and closest-exit-for-accessibility rule are retained unchanged.",
+      "human_decision_required": false
+    }
+  ]
+}

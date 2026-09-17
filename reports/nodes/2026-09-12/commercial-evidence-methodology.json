@@ -1,0 +1,96 @@
+{
+  "accepted_land_use_categories": [
+    "COMMERCIAL",
+    "COMMERCIAL & RESIDENTIAL",
+    "COMMERCIAL / INSTITUTION",
+    "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY"
+  ],
+  "buffer_metres": [
+    400,
+    800
+  ],
+  "candidate_source_assessments": [
+    {
+      "candidate": "HDB Property Information plus HDB Existing Building",
+      "decision": "rejected_for_this_phase",
+      "reason": "No deterministic shared identifier or address join; large-scale geocoding was not authorised without a separate preflight."
+    },
+    {
+      "candidate": "OneMap thematic layers",
+      "decision": "deferred",
+      "reason": "Authenticated service inspected, but no necessary nationwide commercial theme was verified for this run."
+    }
+  ],
+  "commercial_quality": {
+    "buffer_metres": [
+      400,
+      800
+    ],
+    "buffer_semantics": "Straight-line union buffers from every valid station exit in EPSG:3414; not walking time.",
+    "commercial_evidence_row_count": 596,
+    "commercial_node_candidate_count": 149,
+    "lrt_complexes_not_promoted_to_mrt_candidates": 41,
+    "minimum_independent_signals_for_qualified": 2,
+    "missing_evidence_treated_as_zero": false,
+    "qualification_status_counts": {
+      "needs_manual_review": 23,
+      "provisional": 126
+    },
+    "qualified_nodes_without_minimum_signals": 0,
+    "review_queue_row_count": 23,
+    "station_complex_count": 190
+  },
+  "land_use_quality": {
+    "accepted_land_use_categories": [
+      "COMMERCIAL",
+      "COMMERCIAL & RESIDENTIAL",
+      "COMMERCIAL / INSTITUTION",
+      "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY"
+    ],
+    "classification_rule": "Only explicitly commercial or explicitly commercial-mixed MP2025 categories are accepted. Business/industrial, White, hotel, educational and other unrelated categories are excluded.",
+    "duplicate_relevant_object_ids": [],
+    "missing_relevant_object_id_count": 0,
+    "observed_land_use_categories": {
+      "AGRICULTURE": 270,
+      "BEACH AREA": 35,
+      "BUSINESS 1": 1399,
+      "BUSINESS 1 - WHITE": 39,
+      "BUSINESS 2": 5674,
+      "BUSINESS 2 - WHITE": 25,
+      "BUSINESS PARK": 163,
+      "BUSINESS PARK - WHITE": 12,
+      "CEMETERY": 15,
+      "CIVIC & COMMUNITY INSTITUTION": 648,
+      "COMMERCIAL": 5897,
+      "COMMERCIAL & RESIDENTIAL": 874,
+      "COMMERCIAL / INSTITUTION": 532,
+      "EDUCATIONAL INSTITUTION": 582,
+      "HEALTH & MEDICAL CARE": 217,
+      "HOTEL": 308,
+      "LIGHT RAPID TRANSIT": 15,
+      "MASS RAPID TRANSIT": 54,
+      "OPEN SPACE": 769,
+      "PARK": 1545,
+      "PLACE OF WORSHIP": 642,
+      "PORT / AIRPORT": 49,
+      "RESERVE SITE": 593,
+      "RESIDENTIAL": 79406,
+      "RESIDENTIAL / INSTITUTION": 951,
+      "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY": 2845,
+      "ROAD": 6913,
+      "SPECIAL USE": 60,
+      "SPORTS & RECREATION": 240,
+      "TRANSPORT FACILITIES": 352,
+      "UTILITY": 1051,
+      "WATERBODY": 1017,
+      "WHITE": 202
+    },
+    "relevant_feature_count": 10148,
+    "relevant_geometry_repair_count": 0,
+    "source_feature_count": 113394,
+    "source_invalid_geometry_count": 3,
+    "vintage_limitation": "MP2025 zoning is Dec 2025 context while population remains harmonised to MP2019 subzones. Zoning is not current occupancy, unit availability or tuition-use eligibility."
+  },
+  "minimum_independent_signals_for_qualified": 2,
+  "run_id": "nodes_afd024de462faab3"
+}

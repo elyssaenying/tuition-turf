@@ -1,0 +1,26 @@
+{
+  "quality": {
+    "code_only_or_unknown_complex_count": 7,
+    "dispersed_complex_count": 6,
+    "dispersion_review_threshold_metres": 400.0,
+    "dispersion_threshold_rationale": "The 400 m threshold equals the smallest fixed commercial-evidence proximity band, so a wider exit set can materially change exit-union buffer evidence. It is a review trigger, never a grouping rule.",
+    "duplicate_membership_exit_ids": [],
+    "grouping_method": "Exact case/whitespace-normalized S005 station name; no fuzzy or distance-based merge/split.",
+    "implausible_extent_complex_count": 0,
+    "input_exit_count": 613,
+    "lrt_complex_count": 41,
+    "manual_review_complex_count": 19,
+    "membership_row_count": 613,
+    "missing_membership_exit_ids": [],
+    "mrt_complex_count": 142,
+    "repeated_exit_label_complex_count": 6,
+    "s026_exact_match_complex_count": 160,
+    "s026_train_only_names": [
+      "TEN MILE JUNCTION"
+    ],
+    "s026_unmatched_complex_count": 30,
+    "station_complex_count": 190,
+    "unexpected_membership_exit_ids": []
+  },
+  "run_id": "nodes_afd024de462faab3"
+}

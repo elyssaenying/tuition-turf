@@ -1,0 +1,17 @@
+{
+  "all_distances_nonnegative": true,
+  "all_population_nonnegative": true,
+  "expected_pt_request_count": 96944,
+  "network_requests_executed": 0,
+  "node_count": 146,
+  "origin_subzone_count": 332,
+  "planned_pt_request_count": 96944,
+  "proposed_parameter_requiring_owner_approval": {
+    "basis": "Inherited from the successful 2026-09-12 fixed OneMap preflight. D40 did not freeze this API parameter, so owner approval is still required before route execution.",
+    "max_walk_distance_metres": 1000
+  },
+  "request_execution_authorised": false,
+  "scenario_count": 2,
+  "status": "planning_complete_execution_not_authorised",
+  "unique_od_plan_id_count": 96944
+}

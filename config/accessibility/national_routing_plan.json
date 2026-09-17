@@ -1,0 +1,32 @@
+{
+  "config_version": "2026-09-17.5",
+  "plan_date": "2026-09-17",
+  "execution_status": "approved_for_national_execution",
+  "origin_definition": "MP2019 subzone geometric centroid from the approved foundation output; population is the full rounded ages 7-16 subzone proxy for route-allocation purposes.",
+  "destination_definition": "For each origin-node pair, choose the preserved station exit with minimum EPSG:3414 straight-line distance. This implements the approved requirement to use the closest exit rather than the station medoid.",
+  "primary_max_walk_distance_metres": 500,
+  "bounded_comparison_walk_distances_metres": [300, 500, 1000],
+  "max_walk_distance_basis": "Owner approved 500 m as the main conservative setting on 2026-09-17. A bounded same-route comparison at 300 m, 500 m and 1,000 m is approved before any national execution. The 300 m and 1,000 m values are sensitivity checks, not alternative main settings.",
+  "bounded_sample_authorised": true,
+  "bounded_sample_completed_run_id": "walk_comparison_11ab30dda2b46b67",
+  "national_execution_authorised": true,
+  "authorised_execution_plan_run_id": "routing_plan_d17bea62d5e154ae",
+  "authorised_execution_plan": "data/processed/analysis/2026-09-17/routing_plan_d17bea62d5e154ae/national_routing_plan.parquet",
+  "authorised_execution_plan_sha256": "92ec73883b5247dc89a5b7d5969b306da9261964c15c89705c13d3f858ff1a3e",
+  "approved_chunk_request_limit": 5000,
+  "execution_pace_seconds": 0.25,
+  "concurrent_request_workers": 7,
+  "chunk_policy": "Run resumable 5,000-request chunks continuously under the owner's 2026-09-17 finish instruction. Start at most one request every 0.25 seconds using up to six workers to hide response latency. Persist safe progress after every chunk and stop scheduling immediately on rate limit, authentication or network failure; already in-flight requests may finish and are safely cached.",
+  "num_itineraries": 1,
+  "planned_max_requests_per_minute": 240,
+  "rate_limit_note": "Conservative planning cap below the documented 300 token-based API calls per minute; execution client and current account limits must still be verified before running.",
+  "fallback_order": ["onemap_pt", "onemap_walk", "straight_line_proximity_proxy"],
+  "persistence_boundary": "Persist only request identity, parameters, safe HTTP/category outcome, selected duration/distance and cache checksum. Never persist credentials, token, request headers, authentication body/response, or raw route response.",
+  "inputs": {
+    "accessibility_scenarios": "config/accessibility/scenarios.json",
+    "mp2019_subzones": "data/processed/foundation/2026-09-12/mp2019_subzones.parquet",
+    "population_proxy_subzone": "data/processed/foundation/2026-09-12/population_proxy_subzone.parquet",
+    "commercial_node_candidates": "data/processed/nodes/2026-09-13/commercial_node_candidates.parquet",
+    "station_complex_exits": "data/processed/nodes/2026-09-13/station_complex_exits.parquet"
+  }
+}

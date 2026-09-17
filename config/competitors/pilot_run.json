@@ -1,0 +1,19 @@
+{
+  "config_version": "2026-09-16.3",
+  "analysis_cutoff": "2026-09-15",
+  "raw_observation_ledger_ref": "data/interim/competitors/pilot_raw_observations.private.json",
+  "validation_attempt_ledger_ref": "data/interim/competitors/pilot_validation_attempts.private.json",
+  "query_id_template": "Q_{planning_area_code}_{channel_id}_{template_code}",
+  "query_id_channel_codes": {"S010": "S010", "WEB_SEARCH": "WEB"},
+  "query_id_area_code_overrides": {"SE": "SK"},
+  "publication_boundary": {
+    "s010_evidence": "private_ignored",
+    "reportable_output_root": "data/interim/competitors/reports",
+    "public_release_authorized": false,
+    "note": "S010 has no public-redistribution permission. The private discovery and candidate-validation ledgers, and all pilot outputs that retain S010-derived evidence, must remain in ignored local storage unless a later written source-use decision authorises publication."
+  },
+  "verification_boundary": {
+    "production_pipeline_runs_unit_tests": false,
+    "note": "Test, compilation and dependency verification are external release checks; they are not claimed as work performed by the production pipeline."
+  }
+}

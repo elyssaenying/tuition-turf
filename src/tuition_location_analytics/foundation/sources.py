@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import time
@@ -149,6 +150,97 @@ def _write_new_snapshot(raw_path: Path, metadata_path: Path, raw: bytes, metadat
     except Exception:
         temporary.unlink(missing_ok=True)
         raise
+
+
+def acquire_direct_url_source(
+    repo_root: Path,
+    source: dict[str, Any],
+    snapshot_date: str,
+) -> dict[str, Any]:
+    """Acquire a source by direct URL against a configured expected checksum.
+
+    Unlike acquire_data_gov_source, this does not depend on the data.gov.sg
+    metadata/poll-download API shape. It is idempotent: an existing snapshot that
+    matches the configured expected_sha256 is reused without any network request;
+    an existing snapshot that does not match raises rather than overwriting; and a
+    missing snapshot is downloaded, verified against expected_sha256, byte size and
+    content-type, and only then written as an immutable snapshot.
+    """
+    expected_checksum = source.get("expected_sha256")
+    if not expected_checksum:
+        raise RuntimeError(f"{source['source_id']} is missing a configured expected_sha256")
+    raw_path, metadata_path = source_snapshot_paths(repo_root, source, snapshot_date)
+
+    if raw_path.exists() or metadata_path.exists():
+        if not (raw_path.exists() and metadata_path.exists()):
+            raise RuntimeError(f"incomplete immutable snapshot at {raw_path.parent}")
+        observed = sha256_file(raw_path)
+        if observed != expected_checksum:
+            raise RuntimeError(
+                f"existing {source['source_id']} snapshot at {raw_path} does not match the "
+                f"configured expected checksum; refusing to overwrite or use unverified content "
+                f"(expected {expected_checksum}, observed {observed})"
+            )
+        metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        if metadata.get("checksum") != expected_checksum:
+            raise RuntimeError(
+                f"existing {source['source_id']} snapshot metadata checksum does not match the "
+                f"configured expected checksum; refusing to use unverified content"
+            )
+        return {
+            "source": source,
+            "raw_path": raw_path,
+            "metadata_path": metadata_path,
+            "metadata": metadata,
+            "acquisition_status": "reused_immutable_snapshot",
+        }
+
+    raw, status, final_url, headers = _request_bytes(source["resource_url"])
+    if status != 200:
+        raise RuntimeError(f"{source['source_id']} download failed with HTTP {status}")
+    if not raw:
+        raise RuntimeError(f"{source['source_id']} download returned zero bytes")
+    expected_content_type = source.get("expected_content_type")
+    observed_content_type = headers.get("content-type", "")
+    if expected_content_type and expected_content_type not in observed_content_type:
+        raise RuntimeError(
+            f"{source['source_id']} unexpected content-type {observed_content_type!r}; "
+            f"expected to contain {expected_content_type!r}"
+        )
+    checksum = hashlib.sha256(raw).hexdigest()
+    if checksum != expected_checksum:
+        raise RuntimeError(
+            f"{source['source_id']} downloaded content does not match the configured expected "
+            f"checksum; refusing to use unverified content (expected {expected_checksum}, "
+            f"observed {checksum}). The official file may have changed; review before updating "
+            f"the configured expected_sha256."
+        )
+    metadata = {
+        "source_id": source["source_id"],
+        "publisher": source["publisher"],
+        "title": source["title"],
+        "landing_url": source["landing_url"],
+        "requested_url": source["resource_url"],
+        "final_download_location": sanitize_url(final_url),
+        "retrieved_at": utc_now(),
+        "download_http_status": status,
+        "download_response_headers": headers,
+        "byte_size": len(raw),
+        "checksum_algorithm": "sha256",
+        "checksum": checksum,
+        "expected_checksum_configured_in": "config/nodes/sources.json",
+        "storage_ref": raw_path.relative_to(repo_root).as_posix(),
+        "immutable": True,
+        "licence": source.get("use_limitation", ""),
+    }
+    _write_new_snapshot(raw_path, metadata_path, raw, metadata)
+    return {
+        "source": source,
+        "raw_path": raw_path,
+        "metadata_path": metadata_path,
+        "metadata": metadata,
+        "acquisition_status": "downloaded",
+    }
 
 
 def acquire_data_gov_source(

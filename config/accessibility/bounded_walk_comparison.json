@@ -1,0 +1,22 @@
+{
+  "config_version": "2026-09-17.1",
+  "analysis_date": "2026-09-17",
+  "execution_status": "approved_for_bounded_sample",
+  "purpose": "Compare the same public-transport routes at 300 m, 500 m and 1,000 m maximum walking settings before any national execution.",
+  "source_routing_plan": "data/processed/analysis/2026-09-17/routing_plan_d17bea62d5e154ae/national_routing_plan.parquet",
+  "scenario_id": "primary_weekday_after_school",
+  "walk_distances_metres": [300, 500, 1000],
+  "primary_walk_distance_metres": 500,
+  "distance_bands_metres": [
+    {"band_id": "under_2km", "minimum": 0, "maximum_exclusive": 2000},
+    {"band_id": "2_to_5km", "minimum": 2000, "maximum_exclusive": 5000},
+    {"band_id": "5_to_10km", "minimum": 5000, "maximum_exclusive": 10000},
+    {"band_id": "10km_and_over", "minimum": 10000, "maximum_exclusive": null}
+  ],
+  "pairs_per_distance_band": 5,
+  "selection_seed": "bounded-walk-comparison-2026-09-17",
+  "pace_seconds": 0.5,
+  "maximum_total_route_requests": 120,
+  "national_execution_authorised": false,
+  "claim_boundary": "This is a deterministic 20-pair diagnostic sample for choosing a walking parameter and testing the safe client. It is not a representative national accessibility estimate, candidate ranking, shortlist or recommendation."
+}
