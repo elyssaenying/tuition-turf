@@ -1,0 +1,45 @@
+{
+  "config_version": "2026-09-18.1",
+  "frozen_at": "2026-09-18",
+  "purpose": "Select the approved maximum-36 competition-stage candidate set without using competitor, rent or premises evidence.",
+  "inputs": {
+    "qualified_nodes_ref": "data/processed/nodes/2026-09-18/commercial_node_candidates.csv",
+    "population_proximity_ref": "data/processed/analysis/2026-09-17/proximity_baseline_965a36240409d092/node_proximity_metrics.csv",
+    "accessibility_ref": "data/processed/analysis/2026-09-17/accessibility_f7fb9e067b244fbd/node_accessibility_metrics.csv"
+  },
+  "eligibility": {
+    "qualification_status": "qualified",
+    "accessibility_scenario_id": "primary_weekday_after_school",
+    "accessibility_threshold_case_id": "pt20_walk10_primary",
+    "require_route_coverage_complete": true,
+    "require_known_planning_region": true
+  },
+  "screen": {
+    "population_metric": "proximity_target_population_proxy_800m",
+    "accessibility_metric": "accessible_target_population_proxy",
+    "rank_direction": "higher_is_better",
+    "percentile_method": "ordinal_rank_with_stable_commercial_node_id_tiebreak",
+    "weights": {
+      "population_proximity_percentile": 0.5,
+      "accessibility_percentile": 0.5
+    },
+    "interpretation": "Equal-weight screening balance between nearby ages 7-16 population and transit-aware population able to reach the node; this is not the final competition/finance ranking."
+  },
+  "selection": {
+    "maximum_nodes": 36,
+    "merit_slots": 24,
+    "regional_coverage_slots": 12,
+    "merit_rule": "highest_equal_weight_screen_score",
+    "regional_rule": "After merit selection, repeatedly add the highest-scoring unselected node from the planning region with the fewest currently selected nodes; break region ties alphabetically and node ties by commercial_node_id.",
+    "shortfall_rule": "If a region has no eligible unselected node, skip it; fill any remaining slot globally by screen score.",
+    "stable_tiebreak": "commercial_node_id_ascending"
+  },
+  "prohibited_inputs": [
+    "competitor_count",
+    "competitor_brand",
+    "competitor_location",
+    "rent_observation",
+    "premises_listing",
+    "preferred_named_outcome"
+  ]
+}

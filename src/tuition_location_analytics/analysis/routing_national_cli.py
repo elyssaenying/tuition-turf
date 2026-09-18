@@ -11,7 +11,11 @@ import pyarrow.parquet as pq
 from tuition_location_analytics.competitors.geocode import OneMapUnavailable, _authenticate
 from tuition_location_analytics.foundation.common import sha256_file, write_json
 
-from .routing_execute import RedactedRouteCache, execute_route_batch_concurrent
+from .routing_execute import (
+    WALK_FALLBACK_PT_CATEGORIES,
+    RedactedRouteCache,
+    execute_route_batch_concurrent,
+)
 
 
 def _repo_file(repo_root: Path, reference: str) -> Path:
@@ -51,18 +55,22 @@ def build_progress(
     pt = {row["od_plan_id"]: row for row in cache_records if row["method"] == "pt"}
     walk = {row["od_plan_id"]: row for row in cache_records if row["method"] == "walk"}
     pt_counts = Counter(row["category"] for row in pt.values())
-    missing_ids = {od_id for od_id, row in pt.items() if row["category"] == "missing_route"}
-    fallback_complete = sum(od_id in walk for od_id in missing_ids)
+    fallback_ids = {
+        od_id
+        for od_id, row in pt.items()
+        if row["category"] in WALK_FALLBACK_PT_CATEGORIES
+    }
+    fallback_complete = sum(od_id in walk for od_id in fallback_ids)
     planned = len(rows)
     pt_complete = len(pt)
-    complete = pt_complete == planned and fallback_complete == len(missing_ids)
+    complete = pt_complete == planned and fallback_complete == len(fallback_ids)
     return {
         "status": "complete" if complete else "in_progress",
         "planned_pt_requests": planned,
         "completed_pt_requests": pt_complete,
         "completed_pt_percent": round(100 * pt_complete / planned, 3),
         "pt_status_counts": dict(sorted(pt_counts.items())),
-        "walking_fallbacks_required": len(missing_ids),
+        "walking_fallbacks_required": len(fallback_ids),
         "walking_fallbacks_completed": fallback_complete,
         "total_cached_safe_outcomes": len(cache_records),
         "raw_response_persisted": False,
@@ -79,11 +87,11 @@ def _write_progress(report_dir: Path, progress: dict[str, Any]) -> None:
             [
                 "# National OneMap routing progress",
                 "",
-                f"Status: **{progress['status']}**  ",
-                f"PT routes completed: **{progress['completed_pt_requests']:,} / {progress['planned_pt_requests']:,} ({progress['completed_pt_percent']:.3f}%)**  ",
-                f"Successful PT routes: **{counts.get('success', 0):,}**  ",
-                f"Missing PT routes: **{counts.get('missing_route', 0):,}**  ",
-                f"Walking fallbacks completed: **{progress['walking_fallbacks_completed']:,} / {progress['walking_fallbacks_required']:,}**",
+                f"- Status: **{progress['status']}**",
+                f"- PT routes completed: **{progress['completed_pt_requests']:,} / {progress['planned_pt_requests']:,} ({progress['completed_pt_percent']:.3f}%)**",
+                f"- Successful PT routes: **{counts.get('success', 0):,}**",
+                f"- Missing PT routes: **{counts.get('missing_route', 0):,}**",
+                f"- Walking fallbacks completed: **{progress['walking_fallbacks_completed']:,} / {progress['walking_fallbacks_required']:,}**",
                 "",
                 "Only safe status, duration and distance outcomes are cached. Credentials, tokens and raw responses are not persisted.",
             ]

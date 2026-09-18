@@ -113,6 +113,19 @@ class RedactedCacheTests(unittest.TestCase):
             self.assertEqual(cache.get("OD_ONE", "walk").category, "success")
             cache.close()
 
+    def test_cached_invalid_pt_resumes_uncached_walking_fallback(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            cache = RedactedRouteCache(Path(tmp) / "routes.sqlite")
+            cache.put("OD_ONE", "pt", parse_safe_route_outcome(JsonRequestResult(200, {}, "ok"), mode="pt"))
+
+            def request_fn(*args, **kwargs):
+                return JsonRequestResult(200, {"route_summary": {"total_time": 400, "total_distance": 500}}, "ok")
+
+            summary = execute_route_batch([row()], token="x", cache=cache, request_fn=request_fn, pace_seconds=0)
+            self.assertEqual(summary["walking_fallback_requests"], 1)
+            self.assertEqual(cache.get("OD_ONE", "walk").category, "success")
+            cache.close()
+
     def test_concurrent_executor_runs_fallback_and_keeps_safe_cache(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             cache = RedactedRouteCache(Path(tmp) / "routes.sqlite")

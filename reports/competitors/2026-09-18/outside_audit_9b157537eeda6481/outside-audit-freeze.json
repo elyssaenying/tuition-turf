@@ -1,0 +1,158 @@
+{
+  "audit_id": "outside_audit_9b157537eeda6481",
+  "config_ref": "config/competitors/outside_audit.json",
+  "config_sha256": "9b157537eeda6481e01b2fc9ba5a91d77617093cc139cc574ce5ac03f43a5d60",
+  "created_at": "2026-09-18T02:57:59+00:00",
+  "input_sha256": {
+    "candidate_freeze_ref": "8b2314f4cb651d73236b06e534cf5876209fa4326a5cfa73fd4e3b6d339a19e7",
+    "eligible_screen_ref": "93036ed6e7324e20b59349e590d73b91d6dacd4933d8b6df67d49d6068c35dc0"
+  },
+  "outputs": [
+    {
+      "byte_size": 13806,
+      "path": "data/processed/competitors/2026-09-18/outside_audit_9b157537eeda6481/outside_audit_sample.csv",
+      "row_count": 40,
+      "sha256": "6d0134945a76eea9af92c7080a0a80b7cd75089698dfa7804e38b4da072d1a2f"
+    },
+    {
+      "byte_size": 12396,
+      "path": "data/processed/competitors/2026-09-18/outside_audit_9b157537eeda6481/outside_audit_sample.parquet",
+      "row_count": 40,
+      "sha256": "64ba06572e6154456ae5f6ef08663056f610965c6bae21c2a1752547fb595fa7"
+    },
+    {
+      "byte_size": 486,
+      "path": "data/processed/competitors/2026-09-18/outside_audit_9b157537eeda6481/outside_audit_strata.csv",
+      "row_count": 5,
+      "sha256": "78fb6519e5f40219204f00ca83b8116ac392df236e9870ab5dbaef4560ad3aec"
+    },
+    {
+      "byte_size": 2743,
+      "path": "data/processed/competitors/2026-09-18/outside_audit_9b157537eeda6481/outside_audit_strata.parquet",
+      "row_count": 5,
+      "sha256": "ddaa453de1a0b086a6e426d95bc205336ae2c6655ab8c270a0d7eb6831167d3d"
+    }
+  ],
+  "quality": {
+    "actual_sample_size": 40,
+    "band_sample_counts": {
+      "high": 1,
+      "lower": 21,
+      "middle": 18
+    },
+    "candidate_count": 36,
+    "candidate_overlap_count": 0,
+    "combined_candidate_and_audit_region_count": 5,
+    "competitor_inputs_used": false,
+    "eligible_non_candidate_count": 59,
+    "eligible_non_candidate_region_counts": {
+      "CENTRAL REGION": 55,
+      "NORTH-EAST REGION": 1,
+      "WEST REGION": 3
+    },
+    "eligible_universe_count": 95,
+    "nonempty_stratum_count": 5,
+    "region_sample_counts": {
+      "CENTRAL REGION": 37,
+      "NORTH-EAST REGION": 1,
+      "WEST REGION": 2
+    },
+    "regions_without_eligible_non_candidates": [
+      "EAST REGION",
+      "NORTH REGION"
+    ],
+    "requested_sample_size": 40,
+    "unique_sample_ids": true
+  },
+  "random_seed": 20260918,
+  "sample_node_ids": [
+    "NODE_7F25B27A3F5118AA",
+    "NODE_141F74BE5CF4576D",
+    "NODE_2F91438C7A25816F",
+    "NODE_364748939C0E17F5",
+    "NODE_3E6E7C14FFCD82CA",
+    "NODE_460CC50E54272A6F",
+    "NODE_65CD6C5E7DFB4285",
+    "NODE_6972D751936E43AD",
+    "NODE_7EB536EC1C3EBFD9",
+    "NODE_8B6C8B651F78538A",
+    "NODE_8EC6DD271F4C6B99",
+    "NODE_96B8559671B5A65F",
+    "NODE_9907418DA96ADF8C",
+    "NODE_A9481C2CB0BB8018",
+    "NODE_B33BD861BCFC8C90",
+    "NODE_B8A0F18B025E7123",
+    "NODE_C5E383687CDDD396",
+    "NODE_DA86AC9D1118FC22",
+    "NODE_DC81EF0E18C3E4AA",
+    "NODE_DE42F66BB02CB336",
+    "NODE_E38BFFE75BAA58C6",
+    "NODE_F5CC7911FED0B37A",
+    "NODE_04CE11E762437C88",
+    "NODE_095FAB5264655E26",
+    "NODE_5DB9489B1E8CC1A1",
+    "NODE_6A1D9A6B156450A8",
+    "NODE_7C19E6A8B9ED491B",
+    "NODE_80B55383A8E530D6",
+    "NODE_8B563D9F6EE87039",
+    "NODE_8E7540828D98BBC4",
+    "NODE_8F776BF389C3F165",
+    "NODE_990F7527815E4647",
+    "NODE_AAE79EF702E59084",
+    "NODE_CFFC3AC353F855DE",
+    "NODE_D94D95456EA90449",
+    "NODE_DF93DEF352AA0C20",
+    "NODE_EC2C7494B7539964",
+    "NODE_038D6E216A990844",
+    "NODE_9A9CEAAC0371080F",
+    "NODE_CEEF4E1D26F51B48"
+  ],
+  "status": "frozen_before_competitor_inspection",
+  "strata": [
+    {
+      "audit_stratum_id": "CENTRAL REGION|high",
+      "design_weight": 1.0,
+      "inclusion_probability": 1.0,
+      "planning_region": "CENTRAL REGION",
+      "population_count": 1,
+      "pre_competition_screen_band": "high",
+      "sample_count": 1
+    },
+    {
+      "audit_stratum_id": "CENTRAL REGION|lower",
+      "design_weight": 1.4761904761904763,
+      "inclusion_probability": 0.6774193548387096,
+      "planning_region": "CENTRAL REGION",
+      "population_count": 31,
+      "pre_competition_screen_band": "lower",
+      "sample_count": 21
+    },
+    {
+      "audit_stratum_id": "CENTRAL REGION|middle",
+      "design_weight": 1.5333333333333332,
+      "inclusion_probability": 0.6521739130434783,
+      "planning_region": "CENTRAL REGION",
+      "population_count": 23,
+      "pre_competition_screen_band": "middle",
+      "sample_count": 15
+    },
+    {
+      "audit_stratum_id": "NORTH-EAST REGION|middle",
+      "design_weight": 1.0,
+      "inclusion_probability": 1.0,
+      "planning_region": "NORTH-EAST REGION",
+      "population_count": 1,
+      "pre_competition_screen_band": "middle",
+      "sample_count": 1
+    },
+    {
+      "audit_stratum_id": "WEST REGION|middle",
+      "design_weight": 1.5,
+      "inclusion_probability": 0.6666666666666666,
+      "planning_region": "WEST REGION",
+      "population_count": 3,
+      "pre_competition_screen_band": "middle",
+      "sample_count": 2
+    }
+  ]
+}

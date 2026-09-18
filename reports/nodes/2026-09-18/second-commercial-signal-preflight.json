@@ -1,0 +1,150 @@
+{
+  "config_ref": "config/nodes/second_signal_preflight.json",
+  "config_sha256": "015742878a1d5c99e499131244a80006588b17f47bb263b162eb742694363414",
+  "coverage_metrics": {
+    "national_node_coverage_rate": 0.6575342465753424,
+    "node_count": 146,
+    "positive_node_count": 96,
+    "primary_buffer_metres": 800,
+    "regions": {
+      "CENTRAL REGION": {
+        "coverage_rate": 0.7411764705882353,
+        "node_count": 85,
+        "positive_node_count": 63
+      },
+      "EAST REGION": {
+        "coverage_rate": 0.4117647058823529,
+        "node_count": 17,
+        "positive_node_count": 7
+      },
+      "NORTH REGION": {
+        "coverage_rate": 0.6363636363636364,
+        "node_count": 11,
+        "positive_node_count": 7
+      },
+      "NORTH-EAST REGION": {
+        "coverage_rate": 0.6428571428571429,
+        "node_count": 14,
+        "positive_node_count": 9
+      },
+      "WEST REGION": {
+        "coverage_rate": 0.5263157894736842,
+        "node_count": 19,
+        "positive_node_count": 10
+      }
+    }
+  },
+  "decision": "accepted",
+  "diagnostics": {
+    "source_points_by_region": {
+      "CENTRAL REGION": 130,
+      "EAST REGION": 37,
+      "NORTH REGION": 16,
+      "NORTH-EAST REGION": 31,
+      "WEST REGION": 35
+    },
+    "unassigned_node_count": 0,
+    "unassigned_source_point_count": 0,
+    "unassigned_source_point_rate": 0.0
+  },
+  "gates": [
+    {
+      "gate": "feature_count",
+      "observed": 249,
+      "required": ">=100",
+      "status": "pass"
+    },
+    {
+      "gate": "valid_in_bounds_point_rate",
+      "observed": 1.0,
+      "required": ">=0.99",
+      "status": "pass"
+    },
+    {
+      "gate": "source_age_months",
+      "observed": 10.316221765913758,
+      "required": "<=18",
+      "status": "pass"
+    },
+    {
+      "gate": "planning_region_count",
+      "observed": 5,
+      "required": ">=5",
+      "status": "pass"
+    },
+    {
+      "gate": "minimum_source_points_per_region",
+      "observed": 16,
+      "required": ">=10",
+      "status": "pass"
+    },
+    {
+      "gate": "unassigned_source_point_rate",
+      "observed": 0.0,
+      "required": "<=0.01",
+      "status": "pass"
+    },
+    {
+      "gate": "unassigned_node_count",
+      "observed": 0,
+      "required": "<=0",
+      "status": "pass"
+    },
+    {
+      "gate": "national_node_coverage_rate",
+      "observed": 0.6575342465753424,
+      "required": ">=0.45",
+      "status": "pass"
+    },
+    {
+      "gate": "minimum_region_node_coverage_rate",
+      "observed": 0.4117647058823529,
+      "required": ">=0.25",
+      "status": "pass"
+    },
+    {
+      "gate": "positive_nodes_nationally",
+      "observed": 96,
+      "required": ">=36",
+      "status": "pass"
+    },
+    {
+      "gate": "minimum_positive_nodes_per_region",
+      "observed": 7,
+      "required": ">=2",
+      "status": "pass"
+    }
+  ],
+  "limitations": [
+    "tuition_competitor_measurement",
+    "proof_of_unit_availability",
+    "proof_of_rent_or_affordability",
+    "proof_of_tuition_use_permission",
+    "proof_that_no_commercial_activity_exists_when_no_pharmacy_is_observed"
+  ],
+  "outputs": [
+    {
+      "byte_size": 118982,
+      "path": "data/processed/nodes/2026-09-18/second_commercial_signal_node_coverage.csv",
+      "row_count": 292,
+      "sha256": "4c92e517f846622fe23a03020cc8d0aeeab682980acd7b96a49acd8f8ed2ccba"
+    }
+  ],
+  "run_at": "2026-09-18T02:49:12+00:00",
+  "snapshot_date": "2026-09-18",
+  "source_age_months": 10.316221765913758,
+  "source_id": "S034",
+  "source_last_updated_at": "2025-11-08T10:12:28+08:00",
+  "source_quality": {
+    "duplicate_object_ids": [],
+    "invalid_geometry_count": 0,
+    "missing_object_id_count": 0,
+    "out_of_bounds_count": 0,
+    "source_feature_count": 249,
+    "valid_in_bounds_point_count": 249,
+    "valid_in_bounds_point_rate": 1.0
+  },
+  "source_snapshot_ref": "data/raw/s034_hsa_retail_pharmacies/2026-09-18/retail-pharmacy-locations.geojson",
+  "source_snapshot_sha256": "d44b4d0642c51fc4cc9c6e09cfdfa2d56decae5743ef87b1089d761e5fa2302c",
+  "source_title": "Retail pharmacy locations (GEOJSON)"
+}

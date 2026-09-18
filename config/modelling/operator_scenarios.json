@@ -1,0 +1,40 @@
+{
+  "config_version": "2026-09-18.1",
+  "frozen_at": "2026-09-18",
+  "currency": "SGD",
+  "period": "month",
+  "model": "simple_linear_operator_assumption",
+  "interpretation": "Illustrative operator assumptions used consistently across every node. They are not observed fees, market rents, forecasts or unit quotes.",
+  "capacity_active_students": 180,
+  "target_active_students": 120,
+  "scenarios": [
+    {
+      "scenario_id": "cautious",
+      "effective_fee_per_student": 280,
+      "variable_cost_per_student": 35,
+      "non_occupancy_fixed_cost": 18000,
+      "occupancy_cost": 12000
+    },
+    {
+      "scenario_id": "base",
+      "effective_fee_per_student": 320,
+      "variable_cost_per_student": 30,
+      "non_occupancy_fixed_cost": 15000,
+      "occupancy_cost": 9000
+    },
+    {
+      "scenario_id": "upside",
+      "effective_fee_per_student": 360,
+      "variable_cost_per_student": 25,
+      "non_occupancy_fixed_cost": 12000,
+      "occupancy_cost": 6000
+    }
+  ],
+  "weights": {
+    "balanced": [0.25, 0.25, 0.25, 0.25],
+    "demand_led": [0.4, 0.2, 0.2, 0.2],
+    "accessibility_led": [0.2, 0.4, 0.2, 0.2],
+    "competition_led": [0.2, 0.2, 0.4, 0.2],
+    "finance_led": [0.2, 0.2, 0.2, 0.4]
+  }
+}

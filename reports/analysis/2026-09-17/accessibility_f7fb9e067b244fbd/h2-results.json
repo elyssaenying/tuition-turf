@@ -1,0 +1,12 @@
+{
+  "excluded_zero_or_null_proximity_denominator_count": 19,
+  "hypothesis": "H2_transit_aware_differs_from_straight_line",
+  "material_difference": true,
+  "materiality_threshold": 0.1,
+  "median_node_absolute_percentage_difference": 5.6,
+  "nodes_moving_at_least_10_ranks_count": 92,
+  "primary_scenario_id": "primary_weekday_after_school",
+  "share_nodes_moving_at_least_10_ranks": 0.7244094488188977,
+  "spearman_rank_correlation": 0.6143568369178581,
+  "valid_node_count": 127
+}

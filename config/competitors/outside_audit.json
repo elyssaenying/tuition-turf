@@ -1,0 +1,36 @@
+{
+  "config_version": "2026-09-18.1",
+  "frozen_at": "2026-09-18",
+  "purpose": "Draw the approved probability sample of 40 eligible non-candidate MRT areas before competitor inspection.",
+  "candidate_freeze_id": "candidate_freeze_8f16c917adc6a3a3",
+  "inputs": {
+    "eligible_screen_ref": "data/processed/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/eligible_node_screen.csv",
+    "candidate_freeze_ref": "data/processed/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/candidate_node_freeze.csv"
+  },
+  "sample_size": 40,
+  "random_seed": 20260918,
+  "screen_bands": {
+    "method": "ordinal_tertiles_across_all_eligible_nodes_by_screen_score",
+    "labels_high_to_low": ["high", "middle", "lower"],
+    "stable_tiebreak": "commercial_node_id_ascending"
+  },
+  "stratification": ["planning_region", "pre_competition_screen_band"],
+  "allocation": {
+    "minimum_per_nonempty_stratum": 1,
+    "remaining_slots": "iteratively_assigned_to_the_most_underrepresented_stratum_relative_to_its_non_candidate_universe_share",
+    "within_stratum_selection": "simple_random_sample_without_replacement_using_frozen_seed"
+  },
+  "required_outputs": [
+    "stratum_population_count",
+    "stratum_sample_count",
+    "inclusion_probability",
+    "design_weight"
+  ],
+  "prohibited_inputs": [
+    "competitor_count",
+    "competitor_brand",
+    "competitor_location",
+    "rent_observation",
+    "premises_listing"
+  ]
+}

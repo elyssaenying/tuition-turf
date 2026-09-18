@@ -1,6 +1,6 @@
 # National design decision sheet
 
-**Status:** proposal for owner approval; no national data collection or routing is authorised by this document.
+**Status:** approved in D63 and implemented through the non-competitor candidate/audit freezes in D64, the frozen discovery protocol in D65 and the separately labelled Bukit Timah benchmark amendment in D66. The benchmark does not alter the frozen 36.
 
 ## Recommended package
 
@@ -14,7 +14,9 @@
 | Discovery sources | Operator-controlled pages plus general web search as lead generation; no systematic S010 use; fixed templates and identical treatment for candidate/audit catchments | Matches the approved pilot evidence hierarchy and private/public boundary | Search-engine coverage is incomplete and changes over time |
 | Workload control | Approve a 100-human-hour planning ceiling, with a mandatory re-estimate after 25% of catchments; pause rather than silently reduce coverage | Makes the portfolio feasible while keeping scope changes explicit | The full protocol may require a later owner decision to increase time or narrow claims |
 
-The candidate maximum, audit size and workload ceiling are recommendations, not approvals. If the owner prefers a smaller workload, use the lean package below and narrow the claims rather than weakening validation inside selected catchments.
+The owner approved the recommended balanced package. D64 records its implementation through the 36-node candidate freeze and 40-node outside-audit freeze.
+
+The owner's pre-existing knowledge that Bukit Timah is an established tuition hub is retained as a strategic benchmark rather than used to rewrite the pre-competition ranking. Beauty World and King Albert Park were already in the probability audit; Sixth Avenue and Tan Kah Kee are benchmark-only. All four receive the same queries and catchment rules, and their results must be compared with the frozen candidate/audit distributions before any dated amendment can be considered.
 
 ## Sequencing dependency that must be resolved
 

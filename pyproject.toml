@@ -16,6 +16,14 @@ dependencies = [
 [project.scripts]
 tuition-preflight = "tuition_location_analytics.preflight.cli:main"
 tuition-foundation = "tuition_location_analytics.foundation.cli:main"
+tuition-commercial-signal-preflight = "tuition_location_analytics.nodes.commercial_signal_preflight:main"
+tuition-commercial-signal-apply = "tuition_location_analytics.nodes.commercial_signal_apply:main"
+tuition-candidate-freeze = "tuition_location_analytics.competitors.candidate_freeze:main"
+tuition-outside-audit = "tuition_location_analytics.competitors.outside_audit:main"
+tuition-national-protocol = "tuition_location_analytics.competitors.national_protocol:main"
+tuition-benchmark-walk = "tuition_location_analytics.competitors.walking_catchment:main"
+tuition-competitor-walk = "tuition_location_analytics.competitors.walking_catchment:main"
+tuition-final-decision = "tuition_location_analytics.analysis.final_decision:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

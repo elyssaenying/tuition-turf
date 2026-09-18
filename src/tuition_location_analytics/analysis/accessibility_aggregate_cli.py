@@ -47,16 +47,16 @@ def _summary_markdown(
         f"Run ID: `{run_id}`  ",
         "Status: **complete and quality-checked**",
         "",
-        "The primary measure estimates the ages 7–16 population represented by subzone centroids that can reach each MRT area by public transport within 20 minutes, or by the walking fallback within 10 minutes. It is an area-level accessibility proxy, not observed demand or customers.",
+        "The primary measure estimates the ages 7–16 population represented by subzone centroids that can reach each MRT area by public transport within 20 minutes, by the walking fallback within 10 minutes, or by the frozen 800 m straight-line proximity fallback when neither route method yields a usable result. The three contributions are reported separately; proximity is never presented as a travel-time result. It is an area-level accessibility proxy, not observed demand or customers.",
         "",
         "## Highest primary accessible-population proxies",
         "",
-        "| Rank | MRT area | Accessible population proxy | PT-accessible | Walk-fallback accessible |",
-        "|---:|---|---:|---:|---:|",
+        "| Rank | MRT area | Accessible population proxy | PT-accessible | Walk-fallback accessible | Proximity-fallback accessible |",
+        "|---:|---|---:|---:|---:|---:|",
     ]
     for index, row in enumerate(primary[:10], start=1):
         lines.append(
-            f"| {index} | {row['node_name']} | {float(row['accessible_target_population_proxy']):.0f} | {float(row['pt_accessible_population_proxy']):.0f} | {float(row['walking_fallback_accessible_population_proxy']):.0f} |"
+            f"| {index} | {row['node_name']} | {float(row['accessible_target_population_proxy']):.0f} | {float(row['pt_accessible_population_proxy']):.0f} | {float(row['walking_fallback_accessible_population_proxy']):.0f} | {float(row['proximity_fallback_accessible_population_proxy']):.0f} |"
         )
     difference = h2["median_node_absolute_percentage_difference"]
     correlation = h2["spearman_rank_correlation"]
@@ -131,8 +131,11 @@ def run(repo_root: Path) -> dict[str, Any]:
         "accessible_target_population_proxy": pa.float64(),
         "pt_accessible_population_proxy": pa.float64(),
         "walking_fallback_accessible_population_proxy": pa.float64(),
+        "proximity_fallback_accessible_population_proxy": pa.float64(),
+        "transport_accessible_population_proxy": pa.float64(),
         "centroid_proximity_population_proxy_800m": pa.float64(),
         "transit_reach_share": pa.float64(),
+        "combined_accessibility_reach_share": pa.float64(),
         "national_target_population_proxy": pa.float64(),
         "unresolved_route_population_proxy": pa.float64(),
     }

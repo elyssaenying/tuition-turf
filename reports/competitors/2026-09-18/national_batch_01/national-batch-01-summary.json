@@ -1,0 +1,41 @@
+{
+  "batch_id": "national_batch_01_2026-09-18",
+  "status": "complete",
+  "scope": {
+    "unique_nodes": 8,
+    "fixed_queries": 16,
+    "candidate_nodes": 4,
+    "outside_audit_nodes": 4
+  },
+  "quality": {
+    "queries_completed": 16,
+    "queries_blocked": 0,
+    "queries_with_zero_in_scope_operator_page_leads": 3,
+    "distinct_leads_recorded": 20,
+    "confirmed_physical_in_scope_leads": 18,
+    "excluded_or_unresolved_leads": 2,
+    "exact_postal_geocodes_resolved": 18,
+    "exact_postal_geocodes_unresolved": 0,
+    "walking_route_requests_completed": 646,
+    "walking_route_request_failures": 0,
+    "branch_node_memberships_calculated": 144,
+    "raw_search_pages_or_snippets_persisted": false,
+    "systematic_s010_use": false
+  },
+  "node_results": [
+    {"node_name": "LENTOR MRT STATION", "target_set": "outside_audit", "confirmed_within_10_min_walk": 1, "confirmed_within_15_min_walk": 1},
+    {"node_name": "NEWTON MRT STATION", "target_set": "outside_audit", "confirmed_within_10_min_walk": 1, "confirmed_within_15_min_walk": 1},
+    {"node_name": "SENGKANG MRT STATION", "target_set": "candidate", "confirmed_within_10_min_walk": 1, "confirmed_within_15_min_walk": 1},
+    {"node_name": "CHINATOWN MRT STATION", "target_set": "outside_audit", "confirmed_within_10_min_walk": 1, "confirmed_within_15_min_walk": 1},
+    {"node_name": "HARBOURFRONT MRT STATION", "target_set": "outside_audit", "confirmed_within_10_min_walk": 0, "confirmed_within_15_min_walk": 0},
+    {"node_name": "PUNGGOL MRT STATION", "target_set": "candidate", "confirmed_within_10_min_walk": 1, "confirmed_within_15_min_walk": 1},
+    {"node_name": "PAYA LEBAR MRT STATION", "target_set": "candidate", "confirmed_within_10_min_walk": 4, "confirmed_within_15_min_walk": 5},
+    {"node_name": "MARINE TERRACE MRT STATION", "target_set": "candidate", "confirmed_within_10_min_walk": 0, "confirmed_within_15_min_walk": 3}
+  ],
+  "limitations": [
+    "The fixed search protocol is discovery-bounded and is not a complete business registry.",
+    "Only operator-validated physical branches enter the counts.",
+    "A branch may belong to multiple MRT catchments, so node counts cannot be summed into a unique national branch total.",
+    "Eight nodes are insufficient for candidate-versus-audit conclusions or final rankings."
+  ]
+}

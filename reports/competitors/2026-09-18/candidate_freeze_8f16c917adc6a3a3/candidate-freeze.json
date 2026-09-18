@@ -1,0 +1,98 @@
+{
+  "config_ref": "config/competitors/candidate_freeze.json",
+  "config_sha256": "8f16c917adc6a3a32ed4c6e0489d1db152470aa90cc2d567ba04d1d1b9261993",
+  "created_at": "2026-09-18T02:53:58+00:00",
+  "freeze_id": "candidate_freeze_8f16c917adc6a3a3",
+  "input_sha256": {
+    "accessibility_ref": "aa46af261f555396d36586a2e380e1624bd73362c6975f63c86fbb58b45936d1",
+    "population_proximity_ref": "7e5cf827a2d2b3d0619436d713d825dd10121abefc2ffa78954411465bd7d5ed",
+    "qualified_nodes_ref": "1553470bbfe360c6a44effc125cf90d17454174a6d3d3dab74f774a1ff21f732"
+  },
+  "outputs": [
+    {
+      "byte_size": 25303,
+      "path": "data/processed/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/eligible_node_screen.csv",
+      "row_count": 95,
+      "sha256": "93036ed6e7324e20b59349e590d73b91d6dacd4933d8b6df67d49d6068c35dc0"
+    },
+    {
+      "byte_size": 13719,
+      "path": "data/processed/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/eligible_node_screen.parquet",
+      "row_count": 95,
+      "sha256": "cc625accd326e844b117f69de7b6f8a544dd7f162a30597db89a450215aaa69e"
+    },
+    {
+      "byte_size": 9844,
+      "path": "data/processed/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/candidate_node_freeze.csv",
+      "row_count": 36,
+      "sha256": "8b2314f4cb651d73236b06e534cf5876209fa4326a5cfa73fd4e3b6d339a19e7"
+    },
+    {
+      "byte_size": 10167,
+      "path": "data/processed/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/candidate_node_freeze.parquet",
+      "row_count": 36,
+      "sha256": "64c1a0a95ac5958041e07c921bee5bb2270ae56f68632f96feec6014f778e44b"
+    }
+  ],
+  "quality": {
+    "competitor_inputs_used": false,
+    "eligible_node_count": 95,
+    "excluded_node_count": 51,
+    "exclusion_counts": {
+      "not_commercially_qualified": 51
+    },
+    "input_node_count": 146,
+    "selected_node_count": 36,
+    "selected_region_counts": {
+      "CENTRAL REGION": 8,
+      "EAST REGION": 6,
+      "NORTH REGION": 7,
+      "NORTH-EAST REGION": 8,
+      "WEST REGION": 7
+    },
+    "selection_stage_counts": {
+      "merit": 24,
+      "regional_coverage": 12
+    },
+    "unique_selected_ids": true
+  },
+  "selected_node_ids": [
+    "NODE_060EFCFFF0678F62",
+    "NODE_14A5C750CFCA69F9",
+    "NODE_5C9F27F182EC04E0",
+    "NODE_FBD766C3735845AC",
+    "NODE_7C210228429B4D5D",
+    "NODE_D7E890F74C189D62",
+    "NODE_5D83E5FE99347632",
+    "NODE_6FF34CE78F7A7CE4",
+    "NODE_7AF1F758D718FF8F",
+    "NODE_C537F8120AAB5A48",
+    "NODE_47C3F502FCBF6D2F",
+    "NODE_BE3506E4DDD906F9",
+    "NODE_43220C9A8C78747C",
+    "NODE_8274E1550C9D50B0",
+    "NODE_FEEA2CA592CBBD13",
+    "NODE_E62A238EEFE24A0E",
+    "NODE_E0C109E03C86EF62",
+    "NODE_37BEDA440130E8C9",
+    "NODE_69A5823A5F4CBB39",
+    "NODE_DCC0FC8F75393AA4",
+    "NODE_1F84239E47E93DA1",
+    "NODE_C3A8C9C6D085005D",
+    "NODE_88A40D6577952082",
+    "NODE_C83BEA2CAFFD97E8",
+    "NODE_8AA587D6F81B4538",
+    "NODE_508225A8012289DF",
+    "NODE_5A8A2367299FC45A",
+    "NODE_AF50EA7BD5A9B213",
+    "NODE_23E1F1B3CAF5448D",
+    "NODE_BDCD9B8B115B8110",
+    "NODE_C7B368530FF438A3",
+    "NODE_CC9CBDDDC2E8C808",
+    "NODE_9B9F1BA40A1694BF",
+    "NODE_4906C58D7F369E4A",
+    "NODE_8C9B296C3FE59EF1",
+    "NODE_35FB845694A4942B"
+  ],
+  "status": "frozen_before_competitor_inspection"
+}

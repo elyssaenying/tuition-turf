@@ -105,7 +105,7 @@ class RoutingPlanConfigTests(unittest.TestCase):
         self.assertTrue(config["national_execution_authorised"])
         self.assertEqual(config["approved_chunk_request_limit"], 5000)
         self.assertEqual(config["execution_pace_seconds"], 0.25)
-        self.assertEqual(config["concurrent_request_workers"], 6)
+        self.assertEqual(config["concurrent_request_workers"], 7)
         boundary = config["persistence_boundary"].lower()
         for term in ("credentials", "token", "request headers", "raw route response"):
             self.assertIn(term, boundary)

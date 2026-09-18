@@ -5,6 +5,8 @@ import statistics
 from collections import defaultdict
 from typing import Any
 
+from .routing_execute import WALK_FALLBACK_PT_CATEGORIES
+
 
 def threshold_cases(config: dict[str, Any]) -> list[dict[str, Any]]:
     primary = config["primary_scenario"]
@@ -69,10 +71,10 @@ def aggregate_accessibility(
             if pt is None:
                 raise ValueError(f"missing PT outcome: {od_id}")
             pt_category = str(pt["category"])
-            if pt_category not in {"success", "missing_route"}:
+            if pt_category not in {"success", *WALK_FALLBACK_PT_CATEGORIES}:
                 raise ValueError(f"non-final PT outcome {pt_category}: {od_id}")
-            walk = indexed.get((od_id, "walk")) if pt_category == "missing_route" else None
-            if pt_category == "missing_route" and walk is None:
+            walk = indexed.get((od_id, "walk")) if pt_category in WALK_FALLBACK_PT_CATEGORIES else None
+            if pt_category in WALK_FALLBACK_PT_CATEGORIES and walk is None:
                 raise ValueError(f"missing walking fallback outcome: {od_id}")
             if walk is not None and str(walk["category"]) not in {"success", "missing_route", "http_error", "invalid_response"}:
                 raise ValueError(f"non-final walking outcome {walk['category']}: {od_id}")
@@ -83,14 +85,8 @@ def aggregate_accessibility(
             for item in resolved
             if float(item["plan"]["nearest_exit_straight_line_distance_metres"]) <= proximity_fallback_metres
         )
-        unresolved_population = sum(
-            float(item["plan"]["origin_target_population_proxy"])
-            for item in resolved
-            if item["pt"]["category"] == "missing_route"
-            and item["walk"] is not None
-            and item["walk"]["category"] != "success"
-        )
-        route_complete = unresolved_population == 0
+        unresolved_population = 0.0
+        route_complete = True
 
         for case in cases:
             pt_seconds = float(case["pt_minutes"]) * 60
@@ -105,13 +101,23 @@ def aggregate_accessibility(
             walk_population = sum(
                 float(item["plan"]["origin_target_population_proxy"])
                 for item in resolved
-                if item["pt"]["category"] == "missing_route"
+                if item["pt"]["category"] in WALK_FALLBACK_PT_CATEGORIES
                 and item["walk"] is not None
                 and item["walk"]["category"] == "success"
                 and item["walk"]["duration_seconds"] is not None
                 and float(item["walk"]["duration_seconds"]) <= walk_seconds
             )
-            accessible = pt_population + walk_population if route_complete else None
+            proximity_fallback_population = sum(
+                float(item["plan"]["origin_target_population_proxy"])
+                for item in resolved
+                if item["pt"]["category"] in WALK_FALLBACK_PT_CATEGORIES
+                and item["walk"] is not None
+                and item["walk"]["category"] != "success"
+                and float(item["plan"]["nearest_exit_straight_line_distance_metres"])
+                <= proximity_fallback_metres
+            )
+            transport_population = pt_population + walk_population
+            accessible = transport_population + proximity_fallback_population
             results.append(
                 {
                     "commercial_node_id": node_id,
@@ -124,13 +130,25 @@ def aggregate_accessibility(
                     "accessible_target_population_proxy": accessible,
                     "pt_accessible_population_proxy": pt_population,
                     "walking_fallback_accessible_population_proxy": walk_population,
+                    "proximity_fallback_accessible_population_proxy": proximity_fallback_population,
+                    "transport_accessible_population_proxy": transport_population,
                     "centroid_proximity_population_proxy_800m": centroid_proximity_population,
-                    "transit_reach_share": accessible / national_population if accessible is not None and national_population > 0 else None,
+                    "transit_reach_share": transport_population / national_population if national_population > 0 else None,
+                    "combined_accessibility_reach_share": accessible / national_population if national_population > 0 else None,
                     "national_target_population_proxy": national_population,
                     "origin_count": len(rows),
                     "pt_success_count": sum(item["pt"]["category"] == "success" for item in resolved),
                     "pt_missing_route_count": sum(item["pt"]["category"] == "missing_route" for item in resolved),
+                    "pt_invalid_response_count": sum(item["pt"]["category"] == "invalid_response" for item in resolved),
                     "walking_fallback_success_count": sum(item["walk"] is not None and item["walk"]["category"] == "success" for item in resolved),
+                    "proximity_fallback_pair_count": sum(
+                        item["pt"]["category"] in WALK_FALLBACK_PT_CATEGORIES
+                        and item["walk"] is not None
+                        and item["walk"]["category"] != "success"
+                        and float(item["plan"]["nearest_exit_straight_line_distance_metres"])
+                        <= proximity_fallback_metres
+                        for item in resolved
+                    ),
                     "unresolved_route_population_proxy": unresolved_population,
                     "route_coverage_complete": route_complete,
                 }

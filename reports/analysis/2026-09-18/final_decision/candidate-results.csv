@@ -1,0 +1,37 @@
+commercial_node_id,node_name,planning_region,nearby_population_proxy_800m,primary_accessible_population_proxy,confirmed_competitors_10_min,confirmed_competitors_15_min,possible_competitors_10_min,possible_competitors_15_min,possible_count_status,selection_count,top_three_frequency,top_three_frequency_observed_confirmed,top_three_frequency_zero_confirmed_caution,pareto_frequency,best_rank,median_rank,worst_rank
+NODE_060EFCFFF0678F62,SENGKANG MRT STATION,NORTH-EAST REGION,10083.841371470571,61450.0,1,1,,,not_systematically_retained_in_national_collection,200,1.0,1.0,1.0,1.0,1,1.0,2
+NODE_6FF34CE78F7A7CE4,YISHUN MRT STATION,NORTH REGION,4949.175602896822,27270.0,0,0,,,not_systematically_retained_in_national_collection,99,0.495,0.99,0.0,0.5,1,5.0,11
+NODE_E62A238EEFE24A0E,BUKIT PANJANG MRT STATION,WEST REGION,5982.417450971321,20080.0,0,2,,,not_systematically_retained_in_national_collection,43,0.215,0.43,0.0,0.25,3,11.0,30
+NODE_BE3506E4DDD906F9,SERANGOON MRT STATION,NORTH-EAST REGION,3777.537487702368,32570.0,1,1,,,not_systematically_retained_in_national_collection,37,0.185,0.17,0.2,0.2,3,9.0,28
+NODE_5A8A2367299FC45A,MARSILING MRT STATION,NORTH REGION,3343.3660986825535,16910.0,0,0,,,not_systematically_retained_in_national_collection,1,0.005,0.01,0.0,0.05,6,21.0,32
+NODE_14A5C750CFCA69F9,PUNGGOL MRT STATION,NORTH-EAST REGION,9213.943261166976,50830.0,1,1,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,2,2.0,3
+NODE_FBD766C3735845AC,HOUGANG MRT STATION,NORTH-EAST REGION,5719.9560663371,45840.0,1,1,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,3,3.0,5
+NODE_5C9F27F182EC04E0,TAMPINES MRT STATION,EAST REGION,6680.670997296619,46360.0,2,2,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,3,4.0,12
+NODE_5D83E5FE99347632,PASIR RIS MRT STATION,EAST REGION,4112.183938075949,39720.0,1,1,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,4,7.0,14
+NODE_7AF1F758D718FF8F,BOON LAY MRT STATION,WEST REGION,5770.24016551698,24310.0,1,1,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,5,8.0,18
+NODE_43220C9A8C78747C,PIONEER MRT STATION,WEST REGION,5738.497073165166,21600.0,1,1,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,4,9.0,21
+NODE_7C210228429B4D5D,ADMIRALTY MRT STATION,NORTH REGION,8953.838549747486,29970.0,3,3,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,5,10.0,21
+NODE_BDCD9B8B115B8110,WOODLANDS MRT STATION,NORTH REGION,6199.723594396006,10870.0,1,1,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,6,11.0,25
+NODE_C3A8C9C6D085005D,KHATIB MRT STATION,NORTH REGION,3349.0790017267427,22860.0,0,0,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.05,5,13.0,20
+NODE_37BEDA440130E8C9,YEW TEE MRT STATION,WEST REGION,5505.436359467141,20140.0,2,2,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,11,15.0,26
+NODE_D7E890F74C189D62,SEMBAWANG MRT STATION,NORTH REGION,5435.269036582563,33210.0,3,4,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,8,17.0,31
+NODE_C537F8120AAB5A48,CHOA CHU KANG MRT STATION,WEST REGION,5266.2086651612235,27180.0,3,3,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,8,17.0,34
+NODE_47C3F502FCBF6D2F,KOVAN MRT STATION,NORTH-EAST REGION,3483.35956096463,43950.0,3,3,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,7,18.0,26
+NODE_FEEA2CA592CBBD13,BUKIT BATOK MRT STATION,WEST REGION,4829.818878796823,24060.0,2,2,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,15,19.0,27
+NODE_69A5823A5F4CBB39,SIMEI MRT STATION,EAST REGION,3132.481286520462,33150.0,2,2,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,9,19.0,31
+NODE_CC9CBDDDC2E8C808,WOODLANDS SOUTH MRT STATION,NORTH REGION,4702.917561453819,7580.0,1,1,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,11,19.5,31
+NODE_C83BEA2CAFFD97E8,POTONG PASIR MRT STATION,CENTRAL REGION,3312.895759927886,21620.0,1,1,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,12,20.0,27
+NODE_8AA587D6F81B4538,EUNOS MRT STATION,CENTRAL REGION,2368.2496401092503,26470.0,1,1,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,11,21.0,32
+NODE_4906C58D7F369E4A,CLEMENTI MRT STATION,WEST REGION,4636.946628580987,15650.0,2,2,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,17,23.0,35
+NODE_E0C109E03C86EF62,ANG MO KIO MRT STATION,NORTH-EAST REGION,4245.827751103941,24570.0,3,3,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,18,24.5,35
+NODE_8274E1550C9D50B0,TOA PAYOH MRT STATION,CENTRAL REGION,4680.0845176299335,25290.0,3,4,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,19,26.5,33
+NODE_DCC0FC8F75393AA4,WOODLEIGH MRT STATION,CENTRAL REGION,2869.09823157233,34860.0,3,3,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,12,27.5,35
+NODE_C7B368530FF438A3,BOON KENG MRT STATION,CENTRAL REGION,3682.153934554884,17770.0,2,2,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,19,28.0,34
+NODE_35FB845694A4942B,YIO CHU KANG MRT STATION,NORTH-EAST REGION,2183.6855111443188,19720.0,0,0,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,13,28.0,35
+NODE_508225A8012289DF,KEMBANGAN MRT STATION,EAST REGION,2241.354447934243,30470.0,3,3,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,21,31.0,36
+NODE_9B9F1BA40A1694BF,LORONG CHUAN MRT STATION,NORTH-EAST REGION,2438.4866993326127,17890.0,1,2,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,9,32.0,35
+NODE_88A40D6577952082,BEDOK MRT STATION,EAST REGION,3055.01148749602,25530.0,3,3,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,27,32.0,36
+NODE_8C9B296C3FE59EF1,BISHAN MRT STATION,CENTRAL REGION,3100.601038125974,20040.0,2,4,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,10,32.0,36
+NODE_1F84239E47E93DA1,PAYA LEBAR MRT STATION,CENTRAL REGION,2850.285560115831,33020.0,4,5,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,22,33.0,36
+NODE_AF50EA7BD5A9B213,TIONG BAHRU MRT STATION,CENTRAL REGION,4116.922409205497,16800.0,4,4,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,20,34.0,36
+NODE_23E1F1B3CAF5448D,MARINE TERRACE MRT STATION,EAST REGION,3000.2164088058835,8670.0,0,3,,,not_systematically_retained_in_national_collection,0,0.0,0.0,0.0,0.0,15,35.0,36

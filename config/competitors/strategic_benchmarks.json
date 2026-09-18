@@ -1,0 +1,55 @@
+{
+  "config_version": "2026-09-18.1",
+  "recorded_at": "2026-09-18",
+  "purpose": "Preserve owner-supplied prior knowledge about established tuition hubs without changing the pre-competition 36-node candidate freeze after results are known.",
+  "benchmarks": [
+    {
+      "benchmark_id": "bukit_timah_tuition_hub",
+      "label": "Bukit Timah established tuition-hub benchmark",
+      "prior_type": "owner_supplied_market_knowledge_before_national_competitor_collection",
+      "prior_statement": "Bukit Timah is widely perceived as a popular tuition-centre area with many operating centres.",
+      "interpretation": "This is a strategic benchmark and hypothesis-generating context, not proof of demand, profitability or a reason to overwrite the frozen candidate ranking.",
+      "node_members": [
+        {
+          "commercial_node_id": "NODE_EC2C7494B7539964",
+          "station_complex_id": "STC_7A57F60AE16E1D86",
+          "node_name": "BEAUTY WORLD MRT STATION",
+          "planning_region": "CENTRAL REGION",
+          "qualification_status": "qualified",
+          "existing_protocol_role": "outside_audit"
+        },
+        {
+          "commercial_node_id": "NODE_B8A0F18B025E7123",
+          "station_complex_id": "STC_22F5C5D46F348B1B",
+          "node_name": "KING ALBERT PARK MRT STATION",
+          "planning_region": "CENTRAL REGION",
+          "qualification_status": "qualified",
+          "existing_protocol_role": "outside_audit"
+        },
+        {
+          "commercial_node_id": "NODE_65FC512C0845199C",
+          "station_complex_id": "STC_3A2BE336ADE58BBB",
+          "node_name": "SIXTH AVENUE MRT STATION",
+          "planning_region": "CENTRAL REGION",
+          "qualification_status": "provisional",
+          "existing_protocol_role": "benchmark_only"
+        },
+        {
+          "commercial_node_id": "NODE_50607F57D4B30841",
+          "station_complex_id": "STC_70BF85ADB2D0B580",
+          "node_name": "TAN KAH KEE MRT STATION",
+          "planning_region": "CENTRAL REGION",
+          "qualification_status": "provisional",
+          "existing_protocol_role": "benchmark_only"
+        }
+      ],
+      "required_reporting": [
+        "confirmed_and_possible_competitor_exposure_under_the_same_protocol",
+        "comparison_with_candidate_and_audit_distributions",
+        "explicit_discussion_of_affluence_willingness_to_pay_and_school_cluster_as_current_unmeasured_factors",
+        "whether_the_frozen_screen_creates_a_material_blind_spot"
+      ],
+      "decision_guardrail": "Do not silently add a benchmark node to the frozen 36 or call it recommended. Any later candidate-set amendment requires a dated design decision after the outside-audit escalation review."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "byte_size": 53248,
+      "path": "reports/competitors/2026-09-18/national_completion/national-competition-summary.json",
+      "sha256": "879e2092e858fdad31d7df7ab3f2ddcaf7f36a34b4e2d343c3c363e71dde3320"
+    },
+    {
+      "byte_size": 1303,
+      "path": "reports/competitors/2026-09-18/national_completion/national-competition-summary.md",
+      "sha256": "eaaeb40a9e426063de5c3d167dd3e1d028c894d9b78d9f660c5f935f2ea3b0db"
+    },
+    {
+      "byte_size": 6528,
+      "path": "reports/analysis/2026-09-18/final_decision/candidate-results.csv",
+      "sha256": "1beafec4e874fb5c2f73bae061977157c85a960904846737b200a4621fd90aee"
+    },
+    {
+      "byte_size": 140429,
+      "path": "reports/analysis/2026-09-18/final_decision/final-decision.json",
+      "sha256": "a97a0c7eede372df625480f32b73f1f6eceea83669ab5d48ca9b114b4bb2b315"
+    },
+    {
+      "byte_size": 3385,
+      "path": "reports/analysis/2026-09-18/final_decision/final-decision.md",
+      "sha256": "00680920e5671f6a1234c2b0a077f1e360272968714541481aa0f8cebdf5ee72"
+    },
+    {
+      "byte_size": 1896,
+      "path": "reports/analysis/2026-09-18/final_decision/data-quality-report.json",
+      "sha256": "0be8ca82e97d38bfaa1983105f7c800c78e1a77fcd80d12d7a70cbcfca62249f"
+    },
+    {
+      "byte_size": 515,
+      "path": "reports/analysis/2026-09-18/final_decision/release-summary.md",
+      "sha256": "8a6b1e6fe6a7e1baef5cd67bd8d6d068fb41deda998ff9d599cc4cdcf20dbe08"
+    },
+    {
+      "byte_size": 213767,
+      "path": "app/public/data/final-analysis.json",
+      "sha256": "0d4c16ff0a6d74cb532dbbb5c926a3191d508a3bd30d5ae6a33ce903aeacaa1a"
+    },
+    {
+      "byte_size": 9807,
+      "path": "data/processed/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/candidate_node_freeze.csv",
+      "sha256": "d144a1ee22d08455e0205af0de44f318cc79a93614aff3869c21625477fdba85"
+    },
+    {
+      "byte_size": 13765,
+      "path": "data/processed/competitors/2026-09-18/outside_audit_9b157537eeda6481/outside_audit_sample.csv",
+      "sha256": "efaaf8b7959ffae9dd55669472a75d2237154991eeffe66634dca204c9cff783"
+    },
+    {
+      "byte_size": 294494,
+      "path": "app/public/data/node_accessibility_metrics.csv",
+      "sha256": "3bb358694bd95a507f866d467e73c1bf77d46e50c03c8c64cee521f2f24bbe5e"
+    },
+    {
+      "byte_size": 48763,
+      "path": "app/public/data/node_proximity_metrics.csv",
+      "sha256": "987866056154e79bae7213774958bb3468648314882ef686f719b2e61380310d"
+    },
+    {
+      "byte_size": 484,
+      "path": "app/public/data/h2-results.json",
+      "sha256": "9aa249d3acbc21a15045a1df22c55207668cd5b490d5af454ebec65543540436"
+    }
+  ],
+  "generated_at": "2026-09-18",
+  "status": "pass_with_accepted_limitations"
+}

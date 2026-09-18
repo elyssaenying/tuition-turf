@@ -16,6 +16,7 @@ from tuition_location_analytics.foundation.common import utc_now
 
 ROUTE_URL = "https://www.onemap.gov.sg/api/public/routingsvc/route"
 STOP_CATEGORIES = frozenset({"rate_limited", "authorization_error", "network_error"})
+WALK_FALLBACK_PT_CATEGORIES = frozenset({"missing_route", "invalid_response"})
 
 
 @dataclass(frozen=True)
@@ -218,7 +219,7 @@ def execute_route_batch(
         if pt.category in STOP_CATEGORIES:
             stop_category = pt.category
             break
-        if pt.category == "missing_route":
+        if pt.category in WALK_FALLBACK_PT_CATEGORIES:
             if limit is not None and attempted >= limit:
                 break
             if not cache.has(od_id, "walk"):
@@ -263,7 +264,7 @@ def execute_route_batch_concurrent(
             tasks.append((row, "pt"))
         else:
             skipped_cached += 1
-            if pt.category == "missing_route" and cache.get(od_id, "walk") is None:
+            if pt.category in WALK_FALLBACK_PT_CATEGORIES and cache.get(od_id, "walk") is None:
                 tasks.append((row, "walk"))
 
     attempted = 0
@@ -285,7 +286,7 @@ def execute_route_batch_concurrent(
             walking_fallbacks += 1
         if outcome.category in STOP_CATEGORIES and stop_category is None:
             stop_category = outcome.category
-        if mode == "pt" and outcome.category == "missing_route" and stop_category is None:
+        if mode == "pt" and outcome.category in WALK_FALLBACK_PT_CATEGORIES and stop_category is None:
             if cache.get(od_id, "walk") is None:
                 tasks.appendleft((row, "walk"))
 

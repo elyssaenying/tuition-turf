@@ -14,8 +14,91 @@ type Station = {
   percentile: number;
   busStops800m: number;
   schools800m: number;
+  accessibilityPopulation: number;
+  accessibilityRank: number;
+  ptAccessiblePopulation: number;
+  walkingAccessiblePopulation: number;
+  proximityFallbackPopulation: number;
+  transitReachShare: number;
   longitude: number;
   latitude: number;
+};
+
+type Metric = "accessibility" | "proximity";
+
+type H2Result = {
+  materialDifference: boolean;
+  medianDifference: number;
+  rankCorrelation: number;
+  movedTenRanks: number;
+  validNodeCount: number;
+};
+
+type Recommendation = {
+  commercial_node_id: string;
+  display_name: string;
+  planning_region: string;
+  recommendation_rank: number;
+  nearby_population_proxy_800m: number;
+  primary_accessible_population_proxy: number;
+  confirmed_competitors_10_min: number;
+  confirmed_competitors_15_min: number;
+  possible_competitors_10_min: null;
+  possible_count_status: string;
+  selection_count: number;
+  top_three_frequency: number;
+  top_three_frequency_zero_confirmed_caution: number;
+  pareto_frequency: number;
+  rationale: string;
+  next_due_diligence: string;
+};
+
+type WatchlistItem = Recommendation & { watchlist_reason: string };
+
+type FinalAnalysis = {
+  competition: {
+    coverage: {
+      fixed_queries_completed: number;
+      fixed_queries_planned: number;
+      unique_mrt_areas: number;
+      unique_confirmed_physical_branches: number;
+      walking_routes_completed: number;
+      all_competitor_walking_routes_completed: number;
+    };
+    h1: {
+      direction_observed: boolean;
+      inferential_status: string;
+      primary_design_weighted_result: { weighted_correlation: number };
+      interpretation: string;
+    };
+    strategic_benchmark: {
+      interpretation: string;
+      claim_boundary: string;
+      nodes: Array<{
+        display_name: string;
+        confirmed_within_10_min_walk: number;
+        possible_within_10_min_walk: number;
+        confirmed_within_15_min_walk: number;
+      }>;
+    };
+  };
+  decision: {
+    method: {
+      profile_ranking_evaluations: number;
+      unique_rank_orderings: number;
+      location_sensitivity_scenarios: number;
+      illustrative_finance_case_evaluations: number;
+    };
+    financial_scenarios: Array<{
+      scenario_id: string;
+      occupancy_cost: number;
+      break_even_active_enrolments: number;
+      break_even_utilisation: number;
+    }>;
+    recommendations: Recommendation[];
+    competition_recheck_watchlist: WatchlistItem[];
+    claim_boundary: string;
+  };
 };
 
 type GeoFeature = {
@@ -24,6 +107,9 @@ type GeoFeature = {
 };
 
 type BoundaryFeature = {
+  properties: {
+    region_name: string;
+  };
   geometry: {
     type: "Polygon" | "MultiPolygon";
     coordinates: number[][][] | number[][][][];
@@ -31,6 +117,17 @@ type BoundaryFeature = {
 };
 
 const number = new Intl.NumberFormat("en-SG", { maximumFractionDigits: 0 });
+const REGION_STYLES = [
+  { key: "central", value: "CENTRAL REGION", label: "Central", color: "#6b4fc1", tint: "#ebe6f7" },
+  { key: "east", value: "EAST REGION", label: "East", color: "#c4513a", tint: "#f5e3dc" },
+  { key: "north", value: "NORTH REGION", label: "North", color: "#167466", tint: "#dcece7" },
+  { key: "northEast", value: "NORTH-EAST REGION", label: "North-East", color: "#316e8c", tint: "#dfeaf0" },
+  { key: "west", value: "WEST REGION", label: "West", color: "#9b6f10", tint: "#f1e9d3" },
+] as const;
+
+function regionColor(regionName: string) {
+  return REGION_STYLES.find((region) => region.value === regionName)?.color ?? "#6f817a";
+}
 
 function parseCsv(input: string): string[][] {
   const rows: string[][] = [];
@@ -72,6 +169,12 @@ function cleanStationName(name: string) {
   return name.replace(/ MRT STATION$/i, "").replace(/ LRT STATION$/i, "");
 }
 
+function rankMovementLabel(station: Station) {
+  const movement = station.rank - station.accessibilityRank;
+  if (movement === 0) return "same rank as proximity";
+  return `${movement > 0 ? "rose" : "fell"} ${Math.abs(movement)} rank${Math.abs(movement) === 1 ? "" : "s"} vs proximity`;
+}
+
 function ArrowIcon() {
   return (
     <svg viewBox="0 0 20 20" aria-hidden="true">
@@ -106,18 +209,49 @@ export default function App() {
   const [region, setRegion] = useState("All regions");
   const [query, setQuery] = useState("");
   const [mapScope, setMapScope] = useState<"leaders" | "all">("all");
+  const [metric, setMetric] = useState<Metric>("accessibility");
+  const [h2, setH2] = useState<H2Result | null>(null);
+  const [finalAnalysis, setFinalAnalysis] = useState<FinalAnalysis | null>(null);
   const [loadingError, setLoadingError] = useState("");
 
   useEffect(() => {
     Promise.all([
       fetch("/data/node_proximity_metrics.csv").then((response) => response.text()),
+      fetch("/data/node_accessibility_metrics.csv").then((response) => response.text()),
+      fetch("/data/h2-results.json").then((response) => response.json()),
       fetch("/data/node_inspection.geojson").then((response) => response.json()),
       fetch("/data/mp2019_subzones.geojson").then((response) => response.json()),
+      fetch("/data/final-analysis.json").then((response) => response.json()),
     ])
-      .then(([csv, geojson, subzoneGeojson]) => {
+      .then(([csv, accessibilityCsv, h2Result, geojson, subzoneGeojson, completedAnalysis]) => {
         const rows = parseCsv(csv);
         const headers = rows[0];
         const column = (name: string) => headers.indexOf(name);
+        const accessibilityRows = parseCsv(accessibilityCsv);
+        const accessibilityHeaders = accessibilityRows[0];
+        const accessibilityColumn = (name: string) => accessibilityHeaders.indexOf(name);
+        const primaryAccessibility = accessibilityRows
+          .slice(1)
+          .filter(
+            (row) =>
+              row[accessibilityColumn("scenario_id")] === "primary_weekday_after_school" &&
+              row[accessibilityColumn("is_primary_threshold_case")] === "True",
+          );
+        const accessibilityRanks = new Map(
+          [...primaryAccessibility]
+            .sort(
+              (left, right) =>
+                Number(right[accessibilityColumn("accessible_target_population_proxy")]) -
+                  Number(left[accessibilityColumn("accessible_target_population_proxy")]) ||
+                left[accessibilityColumn("commercial_node_id")].localeCompare(
+                  right[accessibilityColumn("commercial_node_id")],
+                ),
+            )
+            .map((row, index) => [row[accessibilityColumn("commercial_node_id")], index + 1]),
+        );
+        const accessibilityById = new Map(
+          primaryAccessibility.map((row) => [row[accessibilityColumn("commercial_node_id")], row]),
+        );
         const coordinates = new Map<string, [number, number]>(
           (geojson.features as GeoFeature[]).map((feature) => [
             feature.properties.commercial_node_id,
@@ -127,6 +261,7 @@ export default function App() {
         const loaded = rows.slice(1).map((row) => {
           const id = row[column("commercial_node_id")];
           const point = coordinates.get(id) ?? [103.82, 1.35];
+          const accessibility = accessibilityById.get(id);
           return {
             id,
             name: cleanStationName(row[column("node_name")]),
@@ -138,14 +273,36 @@ export default function App() {
             percentile: Number(row[column("population_proxy_800m_percentile")]),
             busStops800m: Number(row[column("bus_stop_count_800m")]),
             schools800m: Number(row[column("school_context_count_800m")]),
+            accessibilityPopulation: Number(
+              accessibility?.[accessibilityColumn("accessible_target_population_proxy")] ?? 0,
+            ),
+            accessibilityRank: accessibilityRanks.get(id) ?? 146,
+            ptAccessiblePopulation: Number(
+              accessibility?.[accessibilityColumn("pt_accessible_population_proxy")] ?? 0,
+            ),
+            walkingAccessiblePopulation: Number(
+              accessibility?.[accessibilityColumn("walking_fallback_accessible_population_proxy")] ?? 0,
+            ),
+            proximityFallbackPopulation: Number(
+              accessibility?.[accessibilityColumn("proximity_fallback_accessible_population_proxy")] ?? 0,
+            ),
+            transitReachShare: Number(accessibility?.[accessibilityColumn("transit_reach_share")] ?? 0),
             longitude: point[0],
             latitude: point[1],
           };
         });
-        loaded.sort((a, b) => a.rank - b.rank);
+        loaded.sort((a, b) => a.accessibilityRank - b.accessibilityRank);
         setStations(loaded);
         setBoundaries(subzoneGeojson.features as BoundaryFeature[]);
         setSelectedId(loaded[0]?.id ?? "");
+        setH2({
+          materialDifference: Boolean(h2Result.material_difference),
+          medianDifference: Number(h2Result.median_node_absolute_percentage_difference),
+          rankCorrelation: Number(h2Result.spearman_rank_correlation),
+          movedTenRanks: Number(h2Result.nodes_moving_at_least_10_ranks_count),
+          validNodeCount: Number(h2Result.valid_node_count),
+        });
+        setFinalAnalysis(completedAnalysis as FinalAnalysis);
       })
       .catch(() => setLoadingError("The local dashboard data could not be loaded."));
   }, []);
@@ -157,21 +314,29 @@ export default function App() {
 
   const filteredStations = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
-    return stations.filter(
-      (station) =>
-        (region === "All regions" || station.region === region) &&
-        (!normalizedQuery ||
-          station.name.toLowerCase().includes(normalizedQuery) ||
-          station.planningArea.toLowerCase().includes(normalizedQuery)),
-    );
-  }, [stations, region, query]);
+    return stations
+      .filter(
+        (station) =>
+          (region === "All regions" || station.region === region) &&
+          (!normalizedQuery ||
+            station.name.toLowerCase().includes(normalizedQuery) ||
+            station.planningArea.toLowerCase().includes(normalizedQuery)),
+      )
+      .sort((left, right) =>
+        metric === "accessibility"
+          ? left.accessibilityRank - right.accessibilityRank
+          : left.rank - right.rank,
+      );
+  }, [stations, region, query, metric]);
 
   const selected = stations.find((station) => station.id === selectedId) ?? stations[0];
-  const maxPopulation = Math.max(...stations.map((station) => station.population800m), 1);
+  const stationRank = (station: Station) => metric === "accessibility" ? station.accessibilityRank : station.rank;
+  const stationValue = (station: Station) => metric === "accessibility" ? station.accessibilityPopulation : station.population800m;
+  const maxPopulation = Math.max(...stations.map(stationValue), 1);
   const mappedStations = useMemo(() => {
     if (mapScope === "all") return filteredStations;
-    return filteredStations.filter((station) => station.rank <= 10 || station.id === selected?.id);
-  }, [filteredStations, mapScope, selected?.id]);
+    return filteredStations.filter((station) => stationRank(station) <= 10 || station.id === selected?.id);
+  }, [filteredStations, mapScope, selected?.id, metric]);
 
   const stationFeatureCollection = useMemo(
     () => ({
@@ -183,12 +348,14 @@ export default function App() {
         properties: {
           id: station.id,
           name: station.name,
-          rank: station.rank,
-          population: Math.round(station.population800m),
+          region: station.region,
+          rank: stationRank(station),
+          population: Math.round(stationValue(station)),
+          score: stationValue(station) / maxPopulation,
         },
       })),
     }),
-    [mappedStations],
+    [mappedStations, metric, maxPopulation],
   );
 
   useEffect(() => {
@@ -216,27 +383,44 @@ export default function App() {
     const clearPointer = () => { map.getCanvas().style.cursor = ""; popup.remove(); };
 
     const updateClusterCountMarkers = () => {
-      if (!map.getSource("stations")) return;
+      if (!map.getSource("stations") || !map.getLayer("station-clusters")) return;
 
       const visibleClusterIds = new Set<number>();
-      for (const feature of map.querySourceFeatures("stations")) {
+      for (const feature of map.queryRenderedFeatures({ layers: ["station-clusters"] })) {
         const clusterId = Number(feature.properties?.cluster_id);
         const count = Number(feature.properties?.point_count);
         if (!feature.properties?.cluster || !Number.isFinite(clusterId) || feature.geometry.type !== "Point") continue;
 
         visibleClusterIds.add(clusterId);
-        if (clusterCountMarkers.has(clusterId)) continue;
+        const regionCounts = REGION_STYLES.map((regionStyle) => Number(feature.properties?.[regionStyle.key] ?? 0));
+        let runningCount = 0;
+        const segments = REGION_STYLES.flatMap((regionStyle, index) => {
+          const start = (runningCount / count) * 360;
+          runningCount += regionCounts[index];
+          const end = (runningCount / count) * 360;
+          return regionCounts[index] > 0 ? [`${regionStyle.color} ${start}deg ${end}deg`] : [];
+        });
 
-        const markerElement = document.createElement("div");
-        markerElement.className = "map-cluster-count";
-        markerElement.textContent = String(feature.properties?.point_count_abbreviated ?? count);
-        markerElement.setAttribute("aria-hidden", "true");
-        markerElement.style.setProperty("--cluster-size", `${count >= 24 ? 42 : count >= 10 ? 34 : count >= 4 ? 26 : 20}px`);
+        let marker = clusterCountMarkers.get(clusterId);
+        if (!marker) {
+          const markerElement = document.createElement("div");
+          const countLabel = document.createElement("span");
+          markerElement.className = "map-cluster-count";
+          markerElement.append(countLabel);
+          markerElement.setAttribute("aria-hidden", "true");
+          marker = new maplibregl.Marker({ element: markerElement, anchor: "center" })
+            .setLngLat(feature.geometry.coordinates as [number, number])
+            .addTo(map);
+          clusterCountMarkers.set(clusterId, marker);
+        }
 
-        const marker = new maplibregl.Marker({ element: markerElement, anchor: "center" })
-          .setLngLat(feature.geometry.coordinates as [number, number])
-          .addTo(map);
-        clusterCountMarkers.set(clusterId, marker);
+        const markerElement = marker.getElement();
+        const size = count >= 24 ? 44 : count >= 10 ? 36 : count >= 4 ? 29 : 23;
+        markerElement.style.setProperty("--cluster-size", `${size}px`);
+        markerElement.style.setProperty("--cluster-ring", segments.length ? `conic-gradient(${segments.join(",")})` : "#155f56");
+        const countLabel = markerElement.querySelector("span");
+        if (countLabel) countLabel.textContent = String(feature.properties?.point_count_abbreviated ?? count);
+        marker.setLngLat(feature.geometry.coordinates as [number, number]);
       }
 
       for (const [clusterId, marker] of clusterCountMarkers) {
@@ -256,7 +440,15 @@ export default function App() {
         id: "subzone-fill",
         type: "fill",
         source: "subzones",
-        paint: { "fill-color": "#dce6e0", "fill-opacity": 0.96 },
+        paint: {
+          "fill-color": [
+            "match",
+            ["get", "region_name"],
+            ...REGION_STYLES.flatMap((region) => [region.value, region.tint]),
+            "#e4ebe7",
+          ] as never,
+          "fill-opacity": 0.72,
+        },
       });
       map.addLayer({
         id: "subzone-lines",
@@ -270,6 +462,12 @@ export default function App() {
         cluster: true,
         clusterMaxZoom: 13,
         clusterRadius: 34,
+        clusterProperties: Object.fromEntries(
+          REGION_STYLES.map((region) => [
+            region.key,
+            ["+", ["case", ["==", ["get", "region"], region.value], 1, 0]],
+          ]),
+        ),
       });
       map.addLayer({
         id: "station-clusters",
@@ -293,17 +491,22 @@ export default function App() {
           "circle-color": [
             "case",
             ["boolean", ["feature-state", "selected"], false],
-            "#f06c4f",
-            ["interpolate", ["linear"], ["get", "population"], 0, "#a7bdb6", 10084, "#0d695f"],
-          ],
+            "#17211f",
+            [
+              "match",
+              ["get", "region"],
+              ...REGION_STYLES.flatMap((region) => [region.value, region.color]),
+              "#6f817a",
+            ],
+          ] as never,
           "circle-radius": [
             "case",
             ["boolean", ["feature-state", "selected"], false],
             7,
-            ["interpolate", ["linear"], ["get", "population"], 0, 3.2, 10084, 5.8],
+            ["interpolate", ["linear"], ["get", "score"], 0, 3.2, 1, 5.8],
           ],
-          "circle-stroke-color": "#fffdf7",
-          "circle-stroke-width": ["case", ["boolean", ["feature-state", "selected"], false], 2.5, 1.2],
+          "circle-stroke-color": ["case", ["boolean", ["feature-state", "selected"], false], "#f06c4f", "#fffdf7"],
+          "circle-stroke-width": ["case", ["boolean", ["feature-state", "selected"], false], 3, 1.4],
         },
       });
 
@@ -391,8 +594,8 @@ export default function App() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#explore">Explore</a>
+          <a href="#recommendations">Results</a>
           <a href="#method">Method</a>
-          <a href="#roadmap">Roadmap</a>
         </nav>
         <a className="header-action" href="#explore">View analysis <ArrowIcon /></a>
       </header>
@@ -417,7 +620,7 @@ export default function App() {
               accessibility, competition and economics to build a transparent shortlist.
             </p>
             <div className="hero-actions">
-              <a className="primary-button" href="#explore">Explore the first analysis <ArrowIcon /></a>
+              <a className="primary-button" href="#explore">Explore the audited analysis <ArrowIcon /></a>
               <a className="text-link" href="#method">See how it works</a>
             </div>
           </div>
@@ -425,26 +628,26 @@ export default function App() {
             <div><strong>146</strong><span>MRT areas screened</span></div>
             <div><strong>332</strong><span>Residential subzones</span></div>
             <div><strong>5</strong><span>Decision stages</span></div>
-            <div className="status-metric"><strong>01</strong><span><b /> stage complete</span></div>
+            <div className="status-metric"><strong>05</strong><span><b /> stages complete</span></div>
           </div>
         </section>
 
         <section className="status-strip" aria-label="Dashboard status">
           <span className="live-dot" />
-          <strong>First-cut preview</strong>
-          <span>Real proximity data · unfinished stages clearly marked</span>
-          <span className="status-date">Data snapshot: 17 Sep 2026</span>
+          <strong>Analysis complete</strong>
+          <span>146 MRT areas screened · {finalAnalysis?.competition.coverage.fixed_queries_completed ?? 156} competitor searches · quality checks passed</span>
+          <span className="status-date">Analysis completed: 18 Sep 2026</span>
         </section>
 
         <section className="content-section explore-section" id="explore">
           <div className="section-heading">
             <div>
-              <p className="section-number">01 / Population proximity</p>
-              <h2>Explore all 146 MRT areas</h2>
+              <p className="section-number">01–02 / Demand and accessibility</p>
+              <h2>See what changes when travel time replaces distance</h2>
             </div>
             <div className="section-summary">
               <span className="complete-badge">Complete</span>
-              <p>Estimated residents aged 7–16 inside an 800 m exit-union catchment.</p>
+              <p>Compare the 800 m proximity baseline with audited 20-minute public-transport accessibility.</p>
             </div>
           </div>
 
@@ -466,8 +669,8 @@ export default function App() {
                 </select>
               </label>
               <div className="metric-toggle" aria-label="Selected metric">
-                <button className="active">800 m baseline</button>
-                <button disabled>Accessibility soon</button>
+                <button className={metric === "accessibility" ? "active" : ""} onClick={() => setMetric("accessibility")}>20 min accessibility</button>
+                <button className={metric === "proximity" ? "active" : ""} onClick={() => setMetric("proximity")}>800 m proximity</button>
               </div>
             </div>
 
@@ -475,7 +678,7 @@ export default function App() {
             <div className="dashboard-grid">
               <div className="map-panel">
                 <div className="panel-heading">
-                  <div><p>Geographic overview</p><span>MRT-area anchor points</span></div>
+                  <div><p>Geographic overview</p><span>{metric === "accessibility" ? "Dot size reflects accessible population" : "Dot size reflects nearby population"}</span></div>
                   <div className="map-scope-toggle" aria-label="Map display">
                     <button className={mapScope === "leaders" ? "active" : ""} onClick={() => setMapScope("leaders")}>Top 10</button>
                     <button className={mapScope === "all" ? "active" : ""} onClick={() => setMapScope("all")}>All 146</button>
@@ -485,12 +688,20 @@ export default function App() {
                   <div ref={mapContainerRef} className="interactive-map" role="application" aria-label="Interactive clustered map of Singapore MRT-area candidates" />
                   <div className="map-interaction-hint">Number = grouped MRT areas · dot = one area · click a cluster to split</div>
                 </div>
-                <div className="map-note"><span>Real MP2019 subzone boundaries and station-complex anchors</span><span>{mapScope === "leaders" ? "Top 10 population signals · not a shortlist" : "Clusters separate into individual MRT areas as you zoom"}</span></div>
+                <div className="region-legend" aria-label="Singapore planning region colours">
+                  <span className="legend-title">Planning region</span>
+                  {REGION_STYLES.map((regionStyle) => (
+                    <span className="legend-item" key={regionStyle.value}>
+                      <i style={{ background: regionStyle.color }} />{regionStyle.label}
+                    </span>
+                  ))}
+                </div>
+                <div className="map-note"><span>Real MP2019 subzones and station-complex anchors</span><span>{mapScope === "leaders" ? `Top 10 ${metric === "accessibility" ? "accessibility" : "proximity"} signals · not a shortlist` : "Clusters separate into individual MRT areas as you zoom"}</span></div>
               </div>
 
               <aside className="ranking-panel">
                 <div className="panel-heading">
-                  <div><p>Population-proximity ranking</p><span>{filteredStations.length} areas shown</span></div>
+                  <div><p>{metric === "accessibility" ? "Travel-time accessibility ranking" : "Population-proximity ranking"}</p><span>{filteredStations.length} areas shown</span></div>
                   <span className="sort-label">Highest first ↓</span>
                 </div>
                 <div className="ranking-list">
@@ -500,10 +711,10 @@ export default function App() {
                       key={station.id}
                       onClick={() => setSelectedId(station.id)}
                     >
-                      <span className="rank">{String(station.rank).padStart(2, "0")}</span>
-                      <span className="station-copy"><strong>{station.name}</strong><small>{station.planningArea}</small></span>
-                      <span className="bar-track"><i style={{ width: `${(station.population800m / maxPopulation) * 100}%` }} /></span>
-                      <span className="station-value">{number.format(station.population800m)}</span>
+                      <span className="rank">{String(stationRank(station)).padStart(2, "0")}</span>
+                      <span className="station-copy"><strong><i className="region-dot" style={{ background: regionColor(station.region) }} />{station.name}</strong><small>{station.planningArea}</small></span>
+                      <span className="bar-track"><i style={{ width: `${(stationValue(station) / maxPopulation) * 100}%`, background: regionColor(station.region) }} /></span>
+                      <span className="station-value">{number.format(stationValue(station))}</span>
                     </button>
                   ))}
                 </div>
@@ -513,13 +724,24 @@ export default function App() {
             {selected ? (
               <div className="selection-drawer">
                 <div className="selected-title">
-                  <span className="rank-pill">#{selected.rank}</span>
-                  <div><strong>{selected.name}</strong><span>{selected.planningArea} · {selected.region}</span></div>
+                  <span className="rank-pill" style={{ background: regionColor(selected.region) }}>#{stationRank(selected)}</span>
+                  <div><strong>{selected.name}</strong><span>{selected.planningArea} · {metric === "accessibility" ? rankMovementLabel(selected) : selected.region}</span></div>
                 </div>
-                <div className="selected-stat"><span>800 m population proxy</span><strong>{number.format(selected.population800m)}</strong></div>
-                <div className="selected-stat"><span>1,200 m sensitivity</span><strong>{number.format(selected.population1200m)}</strong></div>
-                <div className="selected-stat"><span>Bus stops nearby</span><strong>{selected.busStops800m}</strong></div>
-                <div className="selected-stat"><span>Schools nearby</span><strong>{selected.schools800m}</strong></div>
+                {metric === "accessibility" ? (
+                  <>
+                    <div className="selected-stat"><span>Accessible population</span><strong>{number.format(selected.accessibilityPopulation)}</strong></div>
+                    <div className="selected-stat"><span>Via public transport</span><strong>{number.format(selected.ptAccessiblePopulation)}</strong></div>
+                    <div className="selected-stat"><span>Via walking fallback</span><strong>{number.format(selected.walkingAccessiblePopulation)}</strong></div>
+                    <div className="selected-stat"><span>Via proximity fallback</span><strong>{number.format(selected.proximityFallbackPopulation)}</strong></div>
+                  </>
+                ) : (
+                  <>
+                    <div className="selected-stat"><span>800 m population proxy</span><strong>{number.format(selected.population800m)}</strong></div>
+                    <div className="selected-stat"><span>1,200 m sensitivity</span><strong>{number.format(selected.population1200m)}</strong></div>
+                    <div className="selected-stat"><span>Bus stops nearby</span><strong>{selected.busStops800m}</strong></div>
+                    <div className="selected-stat"><span>Schools nearby</span><strong>{selected.schools800m}</strong></div>
+                  </>
+                )}
                 <span className="not-recommendation">Early signal · not a recommendation</span>
               </div>
             ) : null}
@@ -528,25 +750,94 @@ export default function App() {
 
         <section className="content-section insight-section">
           <div className="insight-copy">
-            <p className="section-number">What the first stage says</p>
-            <h2>Strong residential proximity appears outside the city core.</h2>
+            <p className="section-number">What changed</p>
+            <h2>Travel time materially reshapes the national picture.</h2>
             <p>
-              Sengkang currently leads the completed proximity baseline. That means more estimated
-              residents aged 7–16 fall inside its 800 m straight-line catchment—not that it is already
-              the best place to open.
+              The median MRT area's accessibility estimate differs from its straight-line baseline by
+              {h2 ? ` ${Math.round(h2.medianDifference * 100)}%` : " a material amount"}. Network connections
+              reveal reach that a simple circle around a station cannot measure.
             </p>
             <div className="caution-card">
               <span>Important</span>
-              <p>Accessibility, competition and commercial viability can still change the eventual shortlist.</p>
+              <p>This is a stronger screen, not the final answer. Competition, commercial qualification and economics still matter.</p>
             </div>
           </div>
           <div className="insight-card">
-            <div className="insight-card-head"><span>Leading proximity signal</span><b>Completed analysis</b></div>
-            <strong className="big-number">10,084</strong>
-            <span className="big-number-label">estimated residents aged 7–16 within 800 m</span>
-            <Sparkline values={stations.slice(0, 12).map((station) => station.population800m).reverse()} />
-            <div className="insight-footer"><strong>Sengkang</strong><span>Rank 1 of 146</span></div>
+            <div className="insight-card-head"><span>Rank movement diagnostic</span><b>{h2?.materialDifference ? "Material difference" : "Under review"}</b></div>
+            <strong className="big-number">{h2?.movedTenRanks ?? 92}</strong>
+            <span className="big-number-label">of {h2?.validNodeCount ?? 127} comparable MRT areas moved at least 10 ranks</span>
+            <Sparkline values={stations.slice(0, 12).map((station) => station.accessibilityPopulation).reverse()} />
+            <div className="insight-footer"><strong>Rank correlation</strong><span>{h2?.rankCorrelation.toFixed(3) ?? "0.614"}</span></div>
           </div>
+        </section>
+
+        <section className="content-section recommendation-section" id="recommendations">
+          <div className="section-heading">
+            <div>
+              <p className="section-number">03–05 / Competition, economics and decision</p>
+              <h2>{finalAnalysis?.decision.recommendations.length ?? 2} areas remain defensible after the competition stress test</h2>
+            </div>
+            <div className="section-summary">
+              <span className="complete-badge">Conditional result</span>
+              <p>{finalAnalysis?.decision.method.profile_ranking_evaluations ?? 200} predeclared profile evaluations across demand, accessibility and competition sensitivities.</p>
+            </div>
+          </div>
+
+          <div className="recommendation-grid">
+            {(finalAnalysis?.decision.recommendations ?? []).map((item) => (
+              <article className="recommendation-card" key={item.commercial_node_id}>
+                <div className="recommendation-rank"><span>0{item.recommendation_rank}</span><i style={{ background: regionColor(item.planning_region) }} /></div>
+                <h3>{item.display_name}</h3>
+                <p className="recommendation-region">{item.planning_region.replace(" REGION", "")}</p>
+                <div className="recommendation-stats">
+                  <div><strong>{number.format(item.primary_accessible_population_proxy)}</strong><span>reachable population proxy</span></div>
+                  <div><strong>{item.confirmed_competitors_10_min}</strong><span>confirmed found ≤10 min</span></div>
+                  <div><strong>{Math.round(item.top_three_frequency * 100)}%</strong><span>top-three frequency</span></div>
+                </div>
+                <p className="recommendation-copy">{item.rationale}</p>
+                <p className="due-diligence"><strong>Before signing a lease</strong>{item.next_due_diligence}</p>
+              </article>
+            ))}
+          </div>
+
+          {finalAnalysis?.decision.competition_recheck_watchlist.length ? (
+            <div className="benchmark-callout">
+              <span>Competition-recheck watchlist</span>
+              <strong>{finalAnalysis.decision.competition_recheck_watchlist.map((item) => item.display_name).join(" and ")} are not final recommendations.</strong>
+              <p>They rank well only when zero confirmed discoveries receive the most favourable competition score. Recheck local competitor coverage before promoting either area.</p>
+            </div>
+          ) : null}
+
+          <div className="evidence-strip">
+            <div><strong>{finalAnalysis?.competition.coverage.unique_confirmed_physical_branches ?? "—"}</strong><span>unique verified branches</span></div>
+            <div><strong>{number.format(finalAnalysis?.competition.coverage.all_competitor_walking_routes_completed ?? 0)}</strong><span>competitor walking routes</span></div>
+            <div><strong>{finalAnalysis?.competition.h1.primary_design_weighted_result.weighted_correlation.toFixed(2) ?? "—"}</strong><span>H1 weighted correlation</span></div>
+            <p>{finalAnalysis?.competition.h1.interpretation ?? "Loading final competition result…"} It remains descriptive/inconclusive. Discovery is fixed and reproducible from safe aggregates, but not a complete business registry.</p>
+          </div>
+
+          {finalAnalysis ? (() => {
+            const beautyWorld = finalAnalysis.competition.strategic_benchmark.nodes.find((item) => item.display_name === "BEAUTY WORLD");
+            return (
+              <div className="benchmark-callout">
+                <span>Bukit Timah benchmark</span>
+                <strong>Beauty World has {beautyWorld?.confirmed_within_10_min_walk ?? 8} confirmed competitors inside 10 minutes.</strong>
+                <p>{finalAnalysis.competition.strategic_benchmark.interpretation} {finalAnalysis.competition.strategic_benchmark.claim_boundary}</p>
+              </div>
+            );
+          })() : null}
+
+          <div className="finance-grid">
+            <div className="finance-intro"><span>Illustrative economics</span><h3>Same assumptions for every area</h3><p>No unsupported local rent differences were invented. Finance is reported separately because common assumptions do not change the location order.</p></div>
+            {(finalAnalysis?.decision.financial_scenarios ?? []).map((scenario) => (
+              <article key={scenario.scenario_id}>
+                <span>{scenario.scenario_id}</span>
+                <strong>{scenario.break_even_active_enrolments} students</strong>
+                <small>{Math.round(scenario.break_even_utilisation * 100)}% of illustrative capacity · SGD {number.format(scenario.occupancy_cost)}/month occupancy assumption</small>
+              </article>
+            ))}
+          </div>
+
+          <p className="decision-boundary">{finalAnalysis?.decision.claim_boundary}</p>
         </section>
 
         <section className="content-section method-section" id="method">
@@ -557,10 +848,10 @@ export default function App() {
           <div className="method-grid">
             {[
               ["01", "Population proximity", "Complete", "done", "Area-weighted ages 7–16 population inside 800 m and 1,200 m station-exit catchments."],
-              ["02", "Real accessibility", "Running", "active", "Public-transport journeys from 332 residential subzones to all 146 MRT areas."],
-              ["03", "Competition", "Next", "pending", "Confirmed mathematics-tuition branches around viable candidate areas."],
-              ["04", "Economics", "Planned", "pending", "Break-even enrolment, required capture share and occupancy-cost sensitivity."],
-              ["05", "Recommendation", "Locked", "pending", "Up to three conditional locations, only after quality and robustness checks."],
+              ["02", "Real accessibility", "Complete", "done", "96,944 public-transport journeys from 332 residential subzones to all 146 MRT areas."],
+              ["03", "Competition", "Complete", "done", "156 fixed searches, operator-page validation and actual walking routes around 78 audited MRT areas."],
+              ["04", "Economics", "Complete", "done", "Three transparent operator-assumption cases for break-even and occupancy-cost sensitivity."],
+              ["05", "Recommendation", "Complete", "done", "Up to three conditional areas selected across the frozen Pareto and five-profile grid."],
             ].map(([step, title, status, state, description]) => (
               <article className={`method-card ${state}`} key={step}>
                 <div className="method-card-top"><span>{step}</span><StageIcon state={state as "done" | "active" | "pending"} /></div>
@@ -575,14 +866,14 @@ export default function App() {
         <section className="content-section roadmap-section" id="roadmap">
           <div className="roadmap-card">
             <div>
-              <p className="section-number">Next analytical release</p>
-              <h2>Travel-time accessibility is being calculated.</h2>
-              <p>The final dashboard will replace this preview with audited national results—never made-up placeholders.</p>
+              <p className="section-number">What happens next</p>
+              <h2>Validate a real unit before making a lease decision.</h2>
+              <p>The analytical shortlist is complete. The next work is practical due diligence: current availability and all-in rent, intended-use approval, owner consent, fire safety, room capacity and local parent validation.</p>
             </div>
             <div className="progress-preview">
-              <div className="progress-label"><span>National route collection</span><strong>In progress</strong></div>
-              <div className="skeleton-bars"><i /><i /><i /><i /></div>
-              <span>96,944 planned public-transport routes · 500 m walking limit</span>
+              <div className="progress-label"><span>Core portfolio analysis</span><strong>100% complete</strong></div>
+              <div className="completion-bar"><i /></div>
+              <span>All 5 stages complete · conditional area result · unit due diligence remains</span>
             </div>
           </div>
         </section>
@@ -590,7 +881,7 @@ export default function App() {
 
       <footer>
         <div className="brand"><span className="brand-mark"><i /><i /><i /></span><span>Tuition Location Intelligence</span></div>
-        <p>Portfolio preview · Results are analytical estimates, not guarantees of business success.</p>
+        <p>Portfolio case study · Results are analytical estimates, not guarantees of business success.</p>
         <a href="#top">Back to top ↑</a>
       </footer>
     </div>

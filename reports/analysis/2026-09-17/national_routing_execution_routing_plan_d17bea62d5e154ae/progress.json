@@ -1,26 +1,24 @@
 {
   "authentication_requests_this_chunk": 1,
   "chunk_request_limit": 5000,
-  "completed_pt_percent": 84.305,
-  "completed_pt_requests": 81729,
+  "completed_pt_percent": 100.0,
+  "completed_pt_requests": 96944,
   "concurrent_workers": 7,
   "execution_plan_run_id": "routing_plan_d17bea62d5e154ae",
   "pace_seconds": 0.25,
   "planned_pt_requests": 96944,
   "pt_status_counts": {
-    "http_error": 5,
-    "invalid_response": 313,
-    "missing_route": 2439,
-    "network_error": 29,
-    "success": 78943
+    "invalid_response": 362,
+    "missing_route": 3607,
+    "success": 92975
   },
   "raw_response_persisted": false,
-  "routing_requests_this_chunk": 4250,
-  "status": "stopped_network_error",
-  "stop_category": "network_error",
+  "routing_requests_this_chunk": 362,
+  "status": "complete",
+  "stop_category": null,
   "token_persisted": false,
-  "total_cached_safe_outcomes": 84168,
-  "walking_fallback_requests_this_chunk": 294,
-  "walking_fallbacks_completed": 2439,
-  "walking_fallbacks_required": 2439
+  "total_cached_safe_outcomes": 100913,
+  "walking_fallback_requests_this_chunk": 362,
+  "walking_fallbacks_completed": 3969,
+  "walking_fallbacks_required": 3969
 }

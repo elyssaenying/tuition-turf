@@ -1,0 +1,26 @@
+{
+  "all_route_coverage_complete": true,
+  "claim_boundary": "Area-level accessibility proxy only; not observed demand, customers, competition, financial viability, shortlist or recommendation.",
+  "expected_metric_row_count": 1460,
+  "journey_scenario_count": 2,
+  "metric_row_count": 1460,
+  "national_route_progress": {
+    "completed_pt_percent": 100.0,
+    "completed_pt_requests": 96944,
+    "planned_pt_requests": 96944,
+    "pt_status_counts": {
+      "invalid_response": 362,
+      "missing_route": 3607,
+      "success": 92975
+    },
+    "raw_response_persisted": false,
+    "status": "complete",
+    "token_persisted": false,
+    "total_cached_safe_outcomes": 100913,
+    "walking_fallbacks_completed": 3969,
+    "walking_fallbacks_required": 3969
+  },
+  "node_count": 146,
+  "status": "passed",
+  "threshold_case_count": 5
+}

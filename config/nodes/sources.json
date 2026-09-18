@@ -37,6 +37,18 @@
       "expected_sha256": "ef985c8df9c8adea0c25119336a1974ed167b092e78fb1497ab91523f4f376e4",
       "expected_content_type": "application/pdf",
       "use_limitation": "Publicly published official reference map, retained only as a checked provenance snapshot underlying the manually curated config/nodes/system_map_roster.json derived registry; the roster itself is a reviewed, tracked configuration and is never regenerated automatically from this PDF. Not republished as a redistributed dataset by this project."
+    },
+    {
+      "source_id": "S034",
+      "publisher": "Health Sciences Authority",
+      "title": "Retail pharmacy locations (GEOJSON)",
+      "landing_url": "https://data.gov.sg/datasets/d_bb92615f43de22933e4479558b1f6c36/view",
+      "resource_id": "d_bb92615f43de22933e4479558b1f6c36",
+      "method": "data_gov_poll_download",
+      "format": "geojson",
+      "raw_directory": "s034_hsa_retail_pharmacies",
+      "raw_filename": "retail-pharmacy-locations.geojson",
+      "use_limitation": "Singapore Open Data Licence. A licensed retail-pharmacy point is a current public-facing commercial-presence proxy only; it is not tuition-competitor evidence, premises availability, rent, demand, or tuition-use permission. Absence is not proof that commercial activity is absent."
     }
   ]
 }

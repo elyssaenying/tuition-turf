@@ -28,6 +28,15 @@ class NationalRoutingProgressTests(unittest.TestCase):
         )
         self.assertEqual(complete["status"], "complete")
 
+    def test_progress_requires_fallback_for_repeated_invalid_pt_response(self) -> None:
+        rows = [{"od_plan_id": "A"}]
+        partial = build_progress(
+            rows,
+            [{"od_plan_id": "A", "method": "pt", "category": "invalid_response"}],
+        )
+        self.assertEqual(partial["status"], "in_progress")
+        self.assertEqual(partial["walking_fallbacks_required"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

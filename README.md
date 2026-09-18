@@ -4,11 +4,11 @@ For a short, presentation-friendly explanation of the analysis, data, code, reas
 
 **Where Should a P1–S4 Mathematics Tuition Operator Open a New Centre?**
 
-A reproducible undergraduate data-analysis portfolio project for an operator opening its first physical centre or expanding an existing network in Singapore. The eventual output is an evidence-led shortlist of commercial nodes, supported by demand and competition analysis, explicit rental and operating scenarios, break-even modelling, Pareto comparison, and uncertainty analysis. Current-unit eligibility is a later due-diligence layer.
+A reproducible undergraduate data-analysis portfolio project for an operator opening its first physical centre or expanding an existing network in Singapore. The completed output is an evidence-led shortlist of commercial nodes, supported by demand and competition analysis, explicit operating scenarios, break-even modelling, Pareto comparison and uncertainty analysis. Current-unit eligibility remains a later due-diligence layer.
 
-**Status: the nationwide proximity baseline is complete and the approved national accessibility-routing run is in progress.** Run `proximity_baseline_965a36240409d092` compares all 146 current MRT-area candidates using an area-weighted ages 7–16 population proxy inside 800 m exit-union proximity catchments, with a 1,200 m sensitivity. The corrected 500 m routing plan `routing_plan_d17bea62d5e154ae` covers 332 subzone origins × 146 nodes × 2 frozen times = 96,944 planned PT requests and includes the walking parameter in every cache-safe request ID. Approved bounded run `walk_comparison_11ab30dda2b46b67` found identical pair-level statuses/durations at 300/500/1,000 m and supports retaining 500 m. D59 authorises the full plan; D60 adds controlled concurrency while keeping the four-request-starts-per-second ceiling, plus completion-gated accessibility/H2 aggregation. No accessibility result exists until the cache and required fallbacks are complete and audited. Quality checks and the 209-test project suite pass. The proximity result is not observed demand, a shortlist or a recommendation. The private competitor-method pilot remains approved for design planning only, and zero nodes are formally `qualified` until the second independent commercial signal is completed. Full history is in the decision log (D01–D60).
+**Status: the core portfolio analysis and dashboard are complete, with accepted limitations stated.** The project screened all 146 current MRT areas, completed 96,944 public-transport routes from 332 residential subzones and froze 36 candidates before inspecting competitor evidence. It then executed all 156 fixed competitor searches across 78 candidate/audit/benchmark areas, verified 120 unique physical P1–S4 Mathematics branches, resolved 129/130 batch-specific branch locations and completed 3,690 national-batch plus 54 separately labelled Bukit Timah benchmark walking routes (3,744 total). H1 is a positive but inferentially inconclusive design-weighted descriptive association (`r = 0.318`); H2 shows that travel time materially changes the straight-line picture. The final comparison evaluates 40 location-sensitivity scenarios under five frozen preference profiles (200 profile evaluations, 106 unique full rank orderings) and reports the three common finance cases separately because they cannot change the location order. **Sengkang and Serangoon** survive both observed-confirmed and zero-confirmed-caution competition cases. **Yishun and Bukit Panjang** move to a competition-recheck watchlist because their earlier advantage disappears when zero discoveries are not automatically treated as best. Fewer than three recommendations are reported honestly. Beauty World's eight confirmed competitors inside 10 minutes remain a market-hub benchmark. These are alternatives for premises due diligence—not guaranteed business outcomes or current-unit recommendations. Full history is in the decision log.
 
-The bounded competitor-intelligence pilot (D41–D52) froze branch-level scope/evidence rules, reconciled 40 query records to a private 121-observation ledger, limited credit to candidate-specific validation, and retained the D44 deterministic physical-branch identity rule. The approved run records 27 confirmed, 28 possible and 9 unresolved retained branches; 51 resolved, 1 ambiguous and 12 missing-postal geocodes; and 94/94 exact observations represented exactly once across retained/excluded outputs. Five aggregate brand diagnostics retain zero validation credit. S010-derived evidence remains private and historical public reports are not authorised for publication. D52 approves only national-design planning, not national collection or location ranking. The proposed next design first resolves the second-commercial-signal requirement, then runs separately authorised national demand/accessibility, freezes a non-competitor candidate set, and validates competition in candidate catchments plus a reproducible outside audit. The owner choices remain unapproved; see the [decision sheet](docs/national-design-decision-sheet.md) and [national competitor design](docs/national-competitor-design.md).
+The bounded competitor-intelligence pilot (D41–D52) froze branch-level scope/evidence rules, reconciled 40 query records to a private 121-observation ledger, limited credit to candidate-specific validation, and retained the D44 deterministic physical-branch identity rule. The approved run records 27 confirmed, 28 possible and 9 unresolved retained branches; 51 resolved, 1 ambiguous and 12 missing-postal geocodes; and 94/94 exact observations represented exactly once across retained/excluded outputs. Five aggregate brand diagnostics retain zero validation credit. S010-derived evidence remains private and historical public reports are not authorised for publication. D52 approves the method only; D63–D66 approve and freeze the national candidate/audit/benchmark design, and the Bukit Timah benchmark is the first controlled national-protocol batch. See the [decision sheet](docs/national-design-decision-sheet.md) and [national competitor design](docs/national-competitor-design.md).
 
 **Historical-run note:** D46, D49 and D51's incomplete private output remain preserved non-authoritative audit history. D52's independently audited run is the authoritative method-pilot result; it does not turn the pilot into national coverage.
 
@@ -28,16 +28,16 @@ The scope validated by this project will be P1–S4 mathematics only. Shared com
 ├── src/tuition_location_analytics/
 │   ├── preflight/                 # Bounded S001/S007 acquisition and validation
 │   ├── foundation/                # Nationwide public-source acquisition and processing
-│   ├── pipelines/                 # Future analytical pipeline stages
-│   ├── geospatial/                # Future boundaries, joins and catchments
-│   └── modelling/                 # Future demand, finance and Pareto calculations
+│   ├── analysis/                  # Proximity, routing, H1/H2 and final decision
+│   ├── competitors/               # Frozen discovery, audit and walking catchments
+│   └── nodes/                     # Station complexes and commercial qualification
 ├── data/
 │   ├── raw/                       # Immutable acquired snapshots, ignored by default
 │   ├── interim/                   # Rebuildable working tables, ignored by default
 │   └── processed/                 # Validated analytical exports, ignored by default
 ├── app/
-│   ├── src/                       # Future React/TypeScript interface
-│   └── public/data/               # Future approved static export bundle
+│   ├── src/                       # React/TypeScript dashboard
+│   └── public/data/               # Approved static export bundle
 ├── config/
 │   ├── preflight/                 # Fixed, non-recommendation coverage fixtures
 │   └── foundation/                # Frozen source and processing configuration
@@ -46,16 +46,16 @@ The scope validated by this project will be P1–S4 mathematics only. Shared com
 └── reports/
     ├── preflight/                 # Redacted machine/readable preflight evidence
     ├── foundation/                # Manifest, quality, join and completion reports
-    └── figures/                   # Future analysis narrative and figures
+    └── analysis/                  # Audited analytical and release reports
 ```
 
 Raw, interim and processed data remain ignored. The reusable code, configuration, tests and redacted reports occupy their documented paths.
 
 ## Architecture and workflow
 
-Python 3.12 performs acquisition, cleaning, geospatial analysis, modelling and versioned data export. The foundational runtime pins PyArrow, pyproj and Shapely for Parquet, EPSG:3414 transformation and geometry validation; `requirements.lock` records the complete installed dependency set. A React/TypeScript application will later consume small, precomputed static tables. A backend is deferred until a documented requirement justifies one.
+Python 3.12 performs acquisition, cleaning, geospatial analysis, modelling and versioned data export. The foundational runtime pins PyArrow, pyproj and Shapely for Parquet, EPSG:3414 transformation and geometry validation; `requirements.lock` records the complete installed dependency set. The React/TypeScript dashboard consumes only precomputed, redacted static tables. No backend is required for the portfolio release.
 
-Planned core flow: registered source → immutable raw snapshot → validated interim tables → harmonised geographic and branch tables → node-level financial scenarios → Pareto and five-profile sensitivity comparison → conditional commercial-node shortlist → validated processed exports → analytical report and static dashboard bundle. Optional later layers include current-unit due diligence, licensed node-specific rent integration, Monte Carlo, expansion cannibalisation, cluster effects and exhaustive national manual branch validation. Each stage must preserve source lineage, dates and quality flags. The interface will explain calculations and limitations and will not recompute substantive models independently.
+Completed core flow: registered source → immutable raw snapshot → validated interim tables → harmonised geographic and branch tables → common financial scenarios → Pareto and five-profile sensitivity comparison → competition-uncertainty gate → conditional commercial-node shortlist → validated exports, release manifest and static dashboard bundle. Optional later layers include current-unit due diligence, licensed node-specific rent integration, parent validation, Monte Carlo and expansion cannibalisation. The interface explains calculations and limitations and does not recompute substantive models independently.
 
 `.env.example` lists variable names only. The preflight reads OneMap credentials from the ignored local `.env`, generates a token in memory and never persists credentials, tokens, request headers or raw authentication responses. Every foundation run performs generic secret-pattern scanning over reportable text outputs. When credential values are loaded, the scan also compares outputs with those exact values. Any match fails the run; when credentials are unavailable, a clean cached run continues with a warning and records limited assurance because exact-value comparison was not performed. Only safe finding paths, counts and comparison status may be retained. Do not place credentials in source files or browser assets. Large inputs and generated data are excluded by default; later publication needs an explicit size, licence and privacy review.
 
@@ -119,10 +119,21 @@ This offline stage uses only approved processed foundation/node inputs:
 PYTHONPATH=src .venv/bin/python -m tuition_location_analytics.analysis.proximity_cli --repo-root .
 ```
 
-The current immutable run is `proximity_baseline_965a36240409d092`. It evaluates all 146 MRT-area candidates, unions 800 m and 1,200 m EPSG:3414 buffers around every preserved station exit, and allocates each subzone's ages 7–16 population proxy by intersected polygon area. Outputs are under `data/processed/analysis/2026-09-17/<run_id>/` and `reports/analysis/2026-09-17/<run_id>/`. An identical rerun aborts rather than overwriting its directory. Do not use this baseline alone to shortlist or recommend a location; the frozen national transit/walking calculation and H2 comparison remain outstanding.
+The current immutable run is `proximity_baseline_965a36240409d092`. It evaluates all 146 MRT-area candidates, unions 800 m and 1,200 m EPSG:3414 buffers around every preserved station exit, and allocates each subzone's ages 7–16 population proxy by intersected polygon area. Outputs are under `data/processed/analysis/2026-09-17/<run_id>/` and `reports/analysis/2026-09-17/<run_id>/`. An identical rerun aborts rather than overwriting its directory. This baseline is not used alone: the completed final comparison combines it with audited travel-time accessibility and competition evidence.
 
 ## Accessibility preparation and bounded comparison
 
 The corrected offline national plan is `routing_plan_d17bea62d5e154ae`: 332 subzone-centroid origins × 146 MRT areas × two frozen times = 96,944 unique PT requests using the approved 500 m main walking setting. Request IDs include the walking setting and other request-defining parameters, preventing cross-setting cache collisions.
 
-Bounded run `walk_comparison_11ab30dda2b46b67` safely tested the same 20 deterministic pairs at 300 m, 500 m and 1,000 m. All three settings produced identical pair-level PT status and duration in this diagnostic. The separately approved national execution is now in progress with a resumable redacted cache. Current safe progress is written to `reports/analysis/2026-09-17/national_routing_execution_routing_plan_d17bea62d5e154ae/progress.json`; do not treat partial progress as a national accessibility result or location ranking.
+Bounded run `walk_comparison_11ab30dda2b46b67` safely tested the same 20 deterministic pairs at 300 m, 500 m and 1,000 m. All three settings produced identical pair-level PT status and duration in this diagnostic. The separately approved national execution is complete with a resumable redacted cache. Final safe progress is recorded in `reports/analysis/2026-09-17/national_routing_execution_routing_plan_d17bea62d5e154ae/progress.json`; audited accessibility outputs are in `reports/analysis/2026-09-17/accessibility_f7fb9e067b244fbd/`.
+
+## Reproduce the final comparison
+
+The tracked redacted candidate/audit inputs, accessibility table and aggregate competition snapshot are sufficient to reproduce the final public comparison. When the private local ledgers exist, the same command rebuilds the safe aggregates from them first. Run:
+
+```sh
+PYTHONPATH=src .venv/bin/python -m tuition_location_analytics.analysis.final_decision --repo-root .
+cd app && npm run build
+```
+
+The first command validates complete 156-query/3,690 national-batch route coverage plus the separate 54-route Bukit Timah benchmark, calculates the descriptive H1 diagnostic, applies 10/15-minute confirmed-count and zero-confirmed-caution competition cases, evaluates 40 location scenarios under five profiles, and exports the public dashboard bundle. Finance is reported across three illustrative cases but not multiplied into the location-ranking denominator. Final evidence, release QA and checksums are in `reports/competitors/2026-09-18/national_completion/`, `reports/analysis/2026-09-18/final_decision/` and `app/public/data/final-analysis.json`.

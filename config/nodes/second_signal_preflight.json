@@ -1,0 +1,41 @@
+{
+  "config_version": "2026-09-18.1",
+  "frozen_at": "2026-09-18",
+  "purpose": "Preflight the HSA registered retail-pharmacy layer as a second independent current commercial-presence signal before candidate selection or competitor inspection.",
+  "source_id": "S034",
+  "snapshot_date": "2026-09-18",
+  "inputs": {
+    "candidate_nodes_ref": "data/processed/nodes/2026-09-13/commercial_node_candidates.csv",
+    "station_exits_ref": "data/processed/nodes/2026-09-13/station_complex_exits.csv",
+    "subzones_ref": "data/processed/foundation/2026-09-12/mp2019_subzones.geojson"
+  },
+  "method": {
+    "metric_crs": "EPSG:3414",
+    "buffers_metres": [400, 800],
+    "primary_buffer_metres": 800,
+    "node_geometry": "union_of_straight_line_buffers_from_all_valid_station_exits",
+    "positive_signal_rule": "at_least_one_distinct_licensed_retail_pharmacy_within_buffer",
+    "absence_interpretation": "No nearby pharmacy means this source is not positive; it does not prove that commercial activity is absent."
+  },
+  "predeclared_acceptance_gates": {
+    "minimum_official_feature_count": 100,
+    "minimum_valid_in_bounds_point_rate": 0.99,
+    "maximum_unassigned_source_point_rate": 0.01,
+    "maximum_unassigned_node_count": 0,
+    "maximum_source_age_months": 18,
+    "required_planning_regions": 5,
+    "minimum_source_points_per_region": 10,
+    "minimum_national_node_coverage_rate_at_primary_buffer": 0.45,
+    "minimum_node_coverage_rate_per_region_at_primary_buffer": 0.25,
+    "minimum_positive_nodes_nationally": 36,
+    "minimum_positive_nodes_per_region": 2
+  },
+  "decision_rule": "Accept only if every gate passes. Otherwise reject this source without changing thresholds after results are observed.",
+  "prohibited_uses": [
+    "tuition_competitor_measurement",
+    "proof_of_unit_availability",
+    "proof_of_rent_or_affordability",
+    "proof_of_tuition_use_permission",
+    "proof_that_no_commercial_activity_exists_when_no_pharmacy_is_observed"
+  ]
+}

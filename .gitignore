@@ -77,12 +77,29 @@ credentials*.json
 /reports/competitors/**
 !/reports/competitors/**/
 !/reports/competitors/**/.gitkeep
+!/reports/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/candidate-freeze.json
+!/reports/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/candidate-freeze.md
+!/reports/competitors/2026-09-18/outside_audit_9b157537eeda6481/outside-audit-freeze.json
+!/reports/competitors/2026-09-18/national_batch_01/
+!/reports/competitors/2026-09-18/national_batch_01/national-batch-01-summary.json
+!/reports/competitors/2026-09-18/national_batch_01/national-batch-01-summary.md
+!/reports/competitors/2026-09-18/national_completion/
+!/reports/competitors/2026-09-18/national_completion/national-competition-summary.json
+!/reports/competitors/2026-09-18/national_completion/national-competition-summary.md
 /data/processed/**
 !/data/processed/**/
 !/data/processed/**/.gitkeep
+!/data/processed/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/candidate_node_freeze.csv
+!/data/processed/competitors/2026-09-18/outside_audit_9b157537eeda6481/outside_audit_sample.csv
 /app/public/data/**
 !/app/public/data/**/
 !/app/public/data/**/.gitkeep
+!/app/public/data/mp2019_subzones.geojson
+!/app/public/data/node_inspection.geojson
+!/app/public/data/node_proximity_metrics.csv
+!/app/public/data/node_accessibility_metrics.csv
+!/app/public/data/h2-results.json
+!/app/public/data/final-analysis.json
 
 # Generated figures: explicitly select final publication assets later
 /reports/figures/**

@@ -1,0 +1,49 @@
+{
+  "config_version": "2026-09-18.1",
+  "frozen_at": "2026-09-18",
+  "purpose": "Freeze identical competitor-discovery queries and catchment membership rules for candidate and outside-audit nodes before national competitor evidence is inspected.",
+  "inputs": {
+    "candidate_freeze_ref": "data/processed/competitors/2026-09-18/candidate_freeze_8f16c917adc6a3a3/candidate_node_freeze.csv",
+    "outside_audit_ref": "data/processed/competitors/2026-09-18/outside_audit_9b157537eeda6481/outside_audit_sample.csv",
+    "station_exits_ref": "data/processed/nodes/2026-09-13/station_complex_exits.csv",
+    "strategic_benchmarks_ref": "config/competitors/strategic_benchmarks.json"
+  },
+  "permitted_discovery_channel": {
+    "channel_id": "WEB_SEARCH",
+    "description": "General web search is a lead-generation channel only. Raw result pages and snippets are not retained or used as confirmation evidence."
+  },
+  "query_templates": [
+    {
+      "template_id": "primary_math_near_mrt",
+      "template_code": "P",
+      "query_text_template": "{place_name} MRT Singapore primary school maths tuition centre"
+    },
+    {
+      "template_id": "secondary_math_near_mrt",
+      "template_code": "S",
+      "query_text_template": "{place_name} MRT Singapore secondary school maths tuition centre"
+    }
+  ],
+  "execution_rule": "Run both templates once for every unique frozen candidate, outside-audit or separately labelled strategic-benchmark node. Record zero, blocked and completed outcomes. Deduplicate physical branch leads across queries, but retain every query-to-lead link and every applicable target role.",
+  "validation_rule": "Every unique lead receives a candidate-specific operator-controlled attempt for physical address, current operation, Mathematics offering and overlapping P1-S4 level. Search snippets, map pins, directories and legal-entity records cannot confirm a branch.",
+  "catchment_membership": {
+    "primary": {
+      "method": "minimum_onemap_walking_route_from_any_preserved_station_exit_to_branch_coordinate",
+      "maximum_minutes": 10
+    },
+    "sensitivity": {
+      "method": "minimum_onemap_walking_route_from_any_preserved_station_exit_to_branch_coordinate",
+      "maximum_minutes": 15
+    },
+    "proximity_diagnostics_metres": [800, 1200],
+    "walking_route_failure_rule": "Keep network catchment membership unresolved; report 800 m and 1,200 m straight-line proximity separately and never relabel it as walking time.",
+    "multi_node_rule": "A validated physical branch may belong to multiple frozen node catchments; validate it once and retain every catchment membership."
+  },
+  "prohibited_sources_or_uses": [
+    "systematic_S010_acquisition",
+    "search_snippet_as_confirmation",
+    "directory_only_confirmation",
+    "raw_search_result_persistence",
+    "competitor_result_driven_candidate_reselection"
+  ]
+}

@@ -1,5 +1,7 @@
 # National competitor-design decision
 
+**Implementation status (2026-09-18):** The owner approved Approach B and its parameters in D63. D64 subsequently accepted the second commercial signal, qualified 95 nodes, froze 36 candidate nodes and drew the 40-node outside audit before competitor inspection. D65 froze the identical discovery/catchment protocol. D66 retained Bukit Timah as a four-node, separately labelled strategic benchmark without changing the 36; two benchmark nodes overlap the audit. The design below remains the governing protocol; statements describing these items as proposals are retained as the pre-approval record.
+
 ## Purpose and decision boundary
 
 This design governs the next competitor phase only. It does not acquire any data, create a national branch inventory, calculate travel times, score nodes, model finance, rank locations or make a recommendation.

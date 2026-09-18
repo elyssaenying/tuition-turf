@@ -1,0 +1,52 @@
+{
+  "accepted_limitations": [
+    "Discovery-bounded competitor coverage rather than a complete registry.",
+    "Illustrative common finance assumptions rather than observed node rents.",
+    "Population and accessibility are target-age proxies rather than customer demand.",
+    "No unit-specific availability, use approval, fire-safety or lease-readiness evidence."
+  ],
+  "checks": [
+    {
+      "check_id": "Q_FINAL_01",
+      "detail": "All 36 frozen candidates are represented.",
+      "status": "pass"
+    },
+    {
+      "check_id": "Q_FINAL_02",
+      "detail": "All 156 fixed searches and 3,744 competitor walking routes reconcile.",
+      "status": "pass"
+    },
+    {
+      "check_id": "Q_FINAL_03",
+      "detail": "Public JSON contains only finite numbers or explicit nulls.",
+      "status": "pass"
+    },
+    {
+      "check_id": "Q_FINAL_04",
+      "detail": "Public bundle excludes branch addresses, postcodes, operator URLs, credentials and authentication fields.",
+      "status": "pass"
+    },
+    {
+      "check_id": "Q_FINAL_05",
+      "detail": "National possible-lead counts were not retained consistently; zero-confirmed caution sensitivity is published instead of an invented upper bound.",
+      "status": "warning"
+    },
+    {
+      "check_id": "Q_FINAL_06",
+      "detail": "Finance uses common illustrative operator assumptions and cannot distinguish locations.",
+      "status": "warning"
+    },
+    {
+      "check_id": "Q_FINAL_07",
+      "detail": "H1 is labelled descriptive/inconclusive rather than causal or inferential support.",
+      "status": "pass"
+    },
+    {
+      "check_id": "Q_FINAL_08",
+      "detail": "Every released recommendation survives both observed-confirmed and zero-confirmed-caution cases; fewer than three are permitted.",
+      "status": "pass"
+    }
+  ],
+  "generated_at": "2026-09-18",
+  "status": "pass_with_accepted_limitations"
+}

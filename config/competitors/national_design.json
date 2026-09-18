@@ -1,0 +1,65 @@
+{
+  "config_version": "2026-09-18.1",
+  "approved_at": "2026-09-18",
+  "status": "completed_frozen_protocol_with_release_limitations",
+  "strategy": {
+    "approach": "frozen_candidate_catchments_plus_outside_audit",
+    "coverage_claim": "complete protocol execution within frozen candidate and audit catchments only; no national competitor total or completeness claim"
+  },
+  "candidate_set": {
+    "maximum_nodes": 36,
+    "merit_slots": 24,
+    "regional_coverage_slots": 12,
+    "selection_inputs": [
+      "qualified_commercial_node_status",
+      "population_proximity",
+      "travel_time_accessibility",
+      "planning_region"
+    ],
+    "prohibited_selection_inputs": [
+      "competitor_count",
+      "competitor_brand",
+      "rent_observation",
+      "premises_listing"
+    ],
+    "freeze_status": "complete",
+    "freeze_id": "candidate_freeze_8f16c917adc6a3a3"
+  },
+  "competition_catchments": {
+    "primary": "exit_union_10_minute_walk",
+    "sensitivity": "exit_union_15_minute_walk",
+    "labelled_proximity_sensitivities_metres": [800, 1200]
+  },
+  "outside_audit": {
+    "sample_size": 40,
+    "stratification": ["planning_region", "pre_competition_screen_band"],
+    "record_seed_and_inclusion_probability": true,
+    "freeze_status": "complete",
+    "audit_id": "outside_audit_9b157537eeda6481"
+  },
+  "discovery": {
+    "permitted_channels": ["operator_controlled_pages", "general_web_search_leads"],
+    "systematic_s010_use": false,
+    "exact_query_template_wording_status": "completed_156_of_156",
+    "protocol_config_ref": "config/competitors/national_discovery.json",
+    "query_schedule_ref": "config/competitors/national_query_schedule.json",
+    "planned_query_count": 156,
+    "strategic_benchmark_ref": "config/competitors/strategic_benchmarks.json",
+    "strategic_benchmark_note": "Four Bukit Timah MRT areas are run under the identical protocol as a separately labelled market-hub benchmark; two overlap the outside audit, so the schedule contains 78 unique nodes rather than 80."
+  },
+  "workload_control": {
+    "planning_ceiling_human_hours": 100,
+    "mandatory_reestimate_after_completion_share": 0.25,
+    "on_exceeding_ceiling": "pause_for_owner_rescope; do not silently reduce validation"
+  },
+  "next_gate": {
+    "requirement": "perform current-premises, operator-assumption and local-parent due diligence for the released conditional shortlist",
+    "status": "national_protocol_complete_release_due_diligence_next",
+    "completed_second_signal": {
+      "source_id": "S034",
+      "decision": "accepted_all_predeclared_gates_passed",
+      "qualified_node_count": 95,
+      "report_ref": "reports/nodes/2026-09-18/second-commercial-signal-preflight.json"
+    }
+  }
+}

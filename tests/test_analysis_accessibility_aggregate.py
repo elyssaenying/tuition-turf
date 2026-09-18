@@ -25,11 +25,12 @@ class AccessibilityAggregationTests(unittest.TestCase):
         result = aggregate_accessibility(plan, outcomes, cases, proximity_fallback_metres=800)[0]
         self.assertEqual(result["pt_accessible_population_proxy"], 100)
         self.assertEqual(result["walking_fallback_accessible_population_proxy"], 200)
+        self.assertEqual(result["proximity_fallback_accessible_population_proxy"], 0)
         self.assertEqual(result["accessible_target_population_proxy"], 300)
         self.assertEqual(result["centroid_proximity_population_proxy_800m"], 100)
         self.assertTrue(result["route_coverage_complete"])
 
-    def test_unresolved_walk_fallback_makes_accessible_population_null(self) -> None:
+    def test_unavailable_routes_use_frozen_proximity_fallback(self) -> None:
         plan = [{"od_plan_id": "A", "origin_geo_id": "G1", "origin_target_population_proxy": 100, "commercial_node_id": "N1", "node_name": "NODE", "scenario_id": "weekday", "nearest_exit_straight_line_distance_metres": 500}]
         outcomes = [
             {"od_plan_id": "A", "method": "pt", "category": "missing_route", "duration_seconds": None},
@@ -37,8 +38,22 @@ class AccessibilityAggregationTests(unittest.TestCase):
         ]
         cases = [{"threshold_case_id": "primary", "pt_minutes": 20, "walk_minutes": 10, "is_primary": True}]
         result = aggregate_accessibility(plan, outcomes, cases, proximity_fallback_metres=800)[0]
-        self.assertIsNone(result["accessible_target_population_proxy"])
-        self.assertFalse(result["route_coverage_complete"])
+        self.assertEqual(result["accessible_target_population_proxy"], 100)
+        self.assertEqual(result["proximity_fallback_accessible_population_proxy"], 100)
+        self.assertEqual(result["transit_reach_share"], 0)
+        self.assertTrue(result["route_coverage_complete"])
+
+    def test_repeated_invalid_pt_response_uses_walk_then_proximity(self) -> None:
+        plan = [{"od_plan_id": "A", "origin_geo_id": "G1", "origin_target_population_proxy": 100, "commercial_node_id": "N1", "node_name": "NODE", "scenario_id": "weekday", "nearest_exit_straight_line_distance_metres": 900}]
+        outcomes = [
+            {"od_plan_id": "A", "method": "pt", "category": "invalid_response", "duration_seconds": None},
+            {"od_plan_id": "A", "method": "walk", "category": "success", "duration_seconds": 500},
+        ]
+        cases = [{"threshold_case_id": "primary", "pt_minutes": 20, "walk_minutes": 10, "is_primary": True}]
+        result = aggregate_accessibility(plan, outcomes, cases, proximity_fallback_metres=800)[0]
+        self.assertEqual(result["accessible_target_population_proxy"], 100)
+        self.assertEqual(result["walking_fallback_accessible_population_proxy"], 100)
+        self.assertEqual(result["pt_invalid_response_count"], 1)
 
     def test_missing_primary_or_fallback_outcome_fails(self) -> None:
         plan = [{"od_plan_id": "A", "origin_geo_id": "G1", "origin_target_population_proxy": 100, "commercial_node_id": "N1", "node_name": "NODE", "scenario_id": "weekday", "nearest_exit_straight_line_distance_metres": 500}]
