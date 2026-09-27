@@ -14,7 +14,7 @@ The project starts with all **146 current MRT-area candidates** and compares the
 4. financial feasibility under stated assumptions; and
 5. robustness checks before recommending up to three areas.
 
-The final release recommends **Sengkang and Serangoon**. It deliberately reports only two areas because Yishun and Bukit Panjang do not survive the conservative zero-confirmed competition stress test.
+The final release recommends **Sengkang and Serangoon** as conditional areas for further investigation. Sengkang is the substantially more robust result; Serangoon is a weaker secondary alternative. The project reports only areas that meet the predeclared release rule rather than forcing three recommendations.
 
 ## Major part 1 — population proximity analysis (complete)
 
@@ -110,7 +110,7 @@ These are **early population-proximity results**, not the best business location
 
 ### How to explain it in a portfolio presentation
 
-> I first created a consistent national baseline for all 146 MRT areas. Using Python spatial-analysis code, I drew 800 m catchments around all exits in each station complex. I then estimated the ages 7–16 population inside each catchment by allocating each subzone's population according to its overlapping area. I repeated the analysis at 1,200 m to test sensitivity. I treated these results only as an early proximity proxy, because straight-line distance and evenly distributed population are simplifying assumptions. The next stage tests actual public-transport and walking accessibility before any shortlist is made.
+> I first created a consistent national baseline for all 146 MRT areas. Using Python spatial-analysis code, I drew 800 m catchments around all exits in each station complex. I then estimated the ages 7–16 population inside each catchment by allocating each subzone's population according to its overlapping area. I repeated the analysis at 1,200 m to test sensitivity. I treated these results only as an early proximity proxy, because straight-line distance and evenly distributed population are simplifying assumptions. The next stage tests route-based public-transport and walking accessibility before any shortlist is made.
 
 ### Where are the outputs?
 
@@ -118,7 +118,7 @@ These are **early population-proximity results**, not the best business location
 - `reports/analysis/2026-09-17/proximity_baseline_965a36240409d092/analysis-summary.md`
 - `reports/analysis/2026-09-17/proximity_baseline_965a36240409d092/top-20-population-proxy.svg`
 
-## Major part 2 — real travel accessibility (complete)
+## Major part 2 — route-based travel accessibility (complete)
 
 ### What question did it answer?
 
@@ -128,7 +128,7 @@ The purpose is **not** to check whether an MRT area has public transport—it ob
 
 Each planned journey starts at the centre point of one residential subzone and ends at the closest preserved exit of the candidate MRT area. The public-transport route may use buses, MRT, or both. Starting at the resident's nearest MRT would incorrectly ignore the first part of the journey from home to that station.
 
-The main accessibility rule is a journey of **20 minutes or less**. The analysis will also check 15 minutes as a stricter case and 25 minutes as a more generous case. A 40-minute journey with multiple transfers therefore does not count as the main target audience.
+The main accessibility rule is a journey of **20 minutes or less**. This was a judgement-based after-school scenario, not a threshold supported by a parent survey. The completed sensitivity analysis also checks 15 minutes as a stricter case and 25 minutes as a more generous case. A 40-minute journey therefore does not count under the main rule.
 
 The completed run covers **332 subzone starting points × 146 MRT areas × two frozen times = 96,944 public-transport requests**, plus 3,969 required walking fallbacks. The main weekday result counts the ages 7–16 population represented by subzone centroids that can reach each MRT area within 20 minutes by public transport, or within 10 minutes using the documented walking fallback.
 
@@ -200,14 +200,14 @@ The five highest weekday primary accessibility values were:
 | 4 | Punggol Coast | 49,360 |
 | 5 | Tampines | 46,360 |
 
-Travel-time accessibility materially differed from the allocation-compatible 800 m centroid baseline under the rule frozen before national results were viewed:
+Travel-time accessibility materially differed from the allocation-compatible 800 m centroid baseline under the rule frozen before national results were viewed. This formal baseline counts a subzone's full population proxy when its centre point is within 800 m of a selected station exit. It is different from the area-weighted 800 m map estimate in Major part 1:
 
 - median absolute node-level difference: **560%**;
 - frozen materiality threshold: **10%**;
 - rank correlation: **0.614**; and
 - **92 of 127** comparable MRT areas moved by at least ten ranks.
 
-This shows why the proximity stage was only a baseline. It does not prove the top-ranked MRT areas are profitable or suitable premises.
+The 560% figure is a median absolute relative difference, not an accuracy score. It is large partly because the 20-minute network and 800 m centroid rules cover different geographic ranges, and relative differences can be large when the centroid baseline is small. The result shows that the measurement choice changes the ranking; it does not prove the route estimate is exact or that top-ranked MRT areas are profitable or suitable premises.
 
 ### Quality checks
 
@@ -220,7 +220,7 @@ This shows why the proximity stage was only a baseline. It does not prove the to
 
 ### How to explain it in a portfolio presentation
 
-> I first used proximity as a simple national baseline, then tested whether real network travel changed the answer. I generated 96,944 public-transport journeys from 332 residential subzones to all 146 MRT areas at two frozen times. For the primary weekday case, I summed the target-age population that could arrive within 20 minutes, using a 10-minute walking fallback and a separately labelled 800 m proximity fallback only when routing was unavailable. The travel-time ranking differed materially from the straight-line baseline, so using proximity alone would have hidden important network effects.
+> I first used proximity as a simple national baseline, then tested whether route-based accessibility changed the answer. I generated 96,944 public-transport route requests from 332 residential-subzone centre points to all 146 MRT areas at two frozen times. For the primary weekday case, I summed the target-age population proxy represented by subzones whose centre point met the 20-minute rule, using a 10-minute walking fallback and a separately labelled 800 m proximity fallback only when routing was unavailable. The route-based ranking differed materially from the centroid-distance baseline, so using distance alone would have hidden important network effects.
 
 ### Where are the outputs?
 
@@ -291,56 +291,20 @@ East and North have no qualified non-candidate areas left because every qualifie
 
 ### What was done overall?
 
-- Ran **156/156 fixed searches** across 78 unique candidate, audit and benchmark MRT areas.
-- Used search only to find leads; only current operator pages could confirm a branch.
-- Verified **120 unique physical P1–S4 Mathematics branches**.
-- Resolved 129 of 130 batch-specific branch locations by exact postal code; the unresolved one was excluded rather than guessed.
-- Completed **3,690/3,690** national-batch routes plus 54/54 separately labelled Bukit Timah benchmark routes (**3,744 total**).
-- Counted confirmed branches within the primary 10-minute walk and a 15-minute sensitivity.
+- The decision analysis uses the same fixed discovery protocol for the **36 frozen candidates** and the **40 probability-sampled outside-audit areas**.
+- Two fixed search templates were completed for each of these 76 areas, giving **152 decision-relevant searches**.
+- Search results created leads only. A current operator-controlled page had to confirm a physical branch, Mathematics and at least one relevant P1–S4 level before it counted as a confirmed direct competitor.
+- Branches were geocoded by exact postal code. Python measured the shortest successful walking route from the preserved station exits to each branch building.
+- Confirmed physical branches were counted inside a primary 10-minute walking catchment and a 15-minute sensitivity catchment.
+- Brands were not counted as single competitors because separate physical branches can compete in different local catchments.
 
-This is complete execution of the fixed protocol, but not a claim that every tuition business in Singapore was found. Directory-only, online-only, home-tutor and address-incomplete results were not counted.
+This is complete execution of a bounded and reproducible protocol, not a claim that every tuition business in Singapore was found. A result of zero means that the protocol confirmed no branch in that catchment; it does not prove that no centre exists. Directory-only, online-only, home-tutor and address-incomplete results were not counted as confirmed physical competitors.
 
-### Why was Bukit Timah added as a benchmark?
+The internal collection also contains historical context records, but they are excluded from the H1 sample, the 36-candidate comparison and the final recommendations. Public interpretation therefore focuses on the predeclared candidate and outside-audit design rather than selected anecdotes.
 
-The frozen 36 were chosen only from nearby target-age population and transport accessibility before competitor results were viewed. That prevents circular reasoning, but those two measures do not capture every possible market factor such as family income, willingness to pay, school clusters or an area's existing reputation as a tuition hub.
+### Why count by walking catchment?
 
-Bukit Timah was therefore added as a **separately labelled benchmark**, not silently inserted into the 36. The benchmark covers Beauty World, King Albert Park, Sixth Avenue and Tan Kah Kee. Beauty World and King Albert Park were already in the frozen outside audit; the other two are benchmark-only.
-
-### What did the benchmark show?
-
-Two fixed web queries were run for each of the four areas. Search was used only to find leads; a centre's own website was required to confirm its address, Mathematics offering and relevant school levels. The initial batch found 12 distinct operator-page leads: 11 confirmed and one possible. This is not claimed to be a complete Bukit Timah total.
-
-All 12 branches were geocoded by exact six-digit postal code. Python then requested the walking route from every preserved official MRT exit to each unique building and used the shortest route. All 54 route checks succeeded. The preliminary 10-minute catchment counts are:
-
-| MRT area | Confirmed branches | Possible additional branch |
-|---|---:|---:|
-| Beauty World | 8 | 1 |
-| King Albert Park | 2 | 0 |
-| Sixth Avenue | 1 | 0 |
-| Tan Kah Kee | 1 | 0 |
-
-One branch can belong to more than one MRT catchment, so these rows must not be summed as a unique-branch total. Beauty World's 15-minute sensitivity contains nine confirmed plus one possible branch.
-
-### What did the first national batch show during execution?
-
-The first fixed national chunk covers eight MRT areas: Lentor, Newton, Sengkang, Chinatown, HarbourFront, Punggol, Paya Lebar and Marine Terrace. All 16 planned searches completed. Search only created leads; a centre's own site still had to confirm a current physical branch, Mathematics and a relevant P1–S4 level.
-
-Eighteen physical in-scope branches were confirmed and all 18 exact-postal geocodes resolved. Python tested every branch building against every preserved official exit of all eight MRT areas. All 646 walking requests succeeded and produced 144 branch × MRT-area memberships.
-
-| MRT area | Confirmed ≤10 min | Confirmed ≤15 min |
-|---|---:|---:|
-| Lentor | 1 | 1 |
-| Newton | 1 | 1 |
-| Sengkang | 1 | 1 |
-| Chinatown | 1 | 1 |
-| HarbourFront | 0 | 0 |
-| Punggol | 1 | 1 |
-| Paya Lebar | 4 | 5 |
-| Marine Terrace | 0 | 3 |
-
-This shows why the project counts by measured MRT walking catchment rather than town name. Punggol has several validated centres elsewhere in the town, but only one is within the measured Punggol MRT catchment. Marine Terrace has nearby competition under the 15-minute sensitivity, but none under the stricter 10-minute main rule.
-
-That first batch was partial; the complete national protocol has now finished and is used in the final comparison below.
+A town-level address can overstate how directly a branch competes with a particular MRT-area location. The model therefore uses the shortest measured route from any preserved exit of the MRT area to the branch building. A branch can fall inside more than one MRT catchment, so node-level catchment counts must not be summed to obtain a national unique-branch total.
 
 Core code:
 
@@ -352,31 +316,29 @@ inside_sensitivity = best_route.duration_seconds <= 15 * 60
 
 Main files:
 
-- `config/competitors/strategic_benchmarks.json`
 - `config/competitors/national_query_schedule.json`
 - `src/tuition_location_analytics/competitors/walking_catchment.py`
-- `reports/competitors/2026-09-18/national_batch_01/national-batch-01-summary.md`
 - `reports/competitors/2026-09-18/national_completion/national-competition-summary.md`
 
 ### How to explain it in a portfolio presentation
 
-> I froze the shortlist before looking at rivals, then ran the same two search queries and operator-page validation rules across 78 candidate, audit and benchmark MRT areas. I geocoded branches by exact postal code and measured the shortest actual walking route from every official MRT exit. All 156 searches and 3,690 routes completed. The Bukit Timah benchmark confirmed that famous tuition hubs can be dense with competitors, while the final model deliberately looks for a better balance of demand, access and competitive space.
+> I froze the 36 candidates before looking at rivals, then applied the same two search templates and operator-page validation rules to those candidates and a probability-sampled 40-area outside audit. I counted physical branches rather than brands, geocoded confirmed branches by exact postal code and measured their shortest station-exit walking route. The dataset is a reproducible discovery sample rather than an official registry, so zero confirmed branches means none were verified by the protocol—not that none exist.
 
 ## Major part 5 — H1 and financial sensitivity (complete)
 
 ### What did H1 show?
 
-The predeclared expectation was that areas reachable by more target-age residents would tend to contain more confirmed tuition branches. Combining all 36 candidates with the probability-weighted 40-area outside audit produced a positive descriptive correlation of **0.318**. The expected direction was observed, but the result remains **inferentially inconclusive** because no confidence interval, spatial-dependence correction or causal design was applied. It does not prove that competition causes success or that highly competitive hubs are best for a new entrant.
+The predeclared expectation was that areas with a larger accessible target-age population proxy would tend to contain more confirmed tuition branches. Combining all 36 candidates with the probability-weighted 40-area outside audit produced a positive descriptive correlation of **0.318**; the unweighted candidate-only correlation was **0.165**. The expected direction was observed, but the result remains **inferentially inconclusive** because no confidence interval, spatial-dependence correction or causal design was applied. It does not prove that accessible population causes branch placement, that the branches are successful, or that the same relationship predicts a new centre's performance.
 
 ### How was finance handled without inventing local rents?
 
 The same three illustrative operator assumptions were applied to every MRT area. They are not market-rent observations or forecasts.
 
-| Case | Occupancy assumption/month | Break-even students | Illustrative capacity used |
-|---|---:|---:|---:|
-| Cautious | SGD 12,000 | 123 | 68% |
-| Base | SGD 9,000 | 83 | 46% |
-| Upside | SGD 6,000 | 54 | 30% |
+| Case | Effective monthly fee/student | Variable cost/student | Occupancy/month | Other fixed costs/month | Break-even students | Illustrative capacity used |
+|---|---:|---:|---:|---:|---:|---:|
+| Cautious | SGD 280 | SGD 35 | SGD 12,000 | SGD 18,000 | 123 | 68% |
+| Base | SGD 320 | SGD 30 | SGD 9,000 | SGD 15,000 | 83 | 46% |
+| Upside | SGD 360 | SGD 25 | SGD 6,000 | SGD 12,000 | 54 | 30% |
 
 Because no licensed node-specific rent source was available, finance was kept equal between areas. This is more honest than making up local rent differences to force a ranking.
 
@@ -406,12 +368,12 @@ The national batches did not retain every possible or unresolved lead consistent
 | 1 | Sengkang | 100% | 100% | 1 |
 | 2 | Serangoon | 19% | 20% | 1 |
 
-Sengkang is the clearly robust result. Serangoon is a weaker but defensible second alternative because it appears under both competition treatments. Yishun and Bukit Panjang remain on a **competition-recheck watchlist**: both ranked well under observed confirmed counts, but neither received a top-three selection when the automatic advantage from zero confirmed discoveries was removed.
+Sengkang is the clearly robust result: it entered the top three in all 200 profile evaluations, with a median rank of 1 and worst rank of 2. Serangoon is a weaker second alternative: it entered the top three in 37 of 200 evaluations, with a median rank of 9 and worst rank of 28, but it received at least one top-three selection under both competition treatments. Other areas are not promoted merely because they looked favourable under one treatment.
 
 These are **conditional MRT-area alternatives**, not proof that a suitable unit is available and not advice to open both centres. Before a lease decision, verify the actual unit, all-in rent, permitted use, owner consent, fire safety, room/timetable capacity, registration requirements and local parent demand.
 
 ### One-line portfolio presentation
 
-> I screened all 146 MRT areas, narrowed them to 36 without using competitor data, audited rivals with 156 fixed searches and 3,744 walking routes, and tested 40 location scenarios under five preference profiles. A final uncertainty gate prevented zero confirmed discoveries from automatically looking best. Sengkang and Serangoon survived; Yishun and Bukit Panjang moved to a recheck watchlist. The output is an evidence-led due-diligence shortlist, not a guaranteed lease recommendation.
+> I screened all 146 MRT areas, narrowed them to 36 without using competitor results, applied the same competitor protocol to those candidates and a 40-area probability-sampled outside audit, and tested 40 demand/accessibility/competition cases under five preference profiles. A final uncertainty gate prevented zero confirmed discoveries from automatically looking best. Sengkang was robust across every profile evaluation, while Serangoon was a weaker secondary alternative. The output is an evidence-led due-diligence shortlist, not a guaranteed lease recommendation.
 
 Final dashboard data: `app/public/data/final-analysis.json`.

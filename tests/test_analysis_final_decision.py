@@ -1,9 +1,58 @@
+from pathlib import Path
+
 from tuition_location_analytics.analysis.final_decision import (
     _average_percentiles,
     _competition_value,
     financial_outputs,
     pareto_frontier,
 )
+
+
+def test_dashboard_has_no_location_specific_benchmark_commentary() -> None:
+    source = (Path(__file__).resolve().parents[1] / "app/src/App.tsx").read_text(encoding="utf-8")
+    assert "Bukit Timah benchmark" not in source
+    assert "Beauty World has" not in source
+    assert "strategic_benchmark" not in source
+    assert "36 candidates compared" in source
+    assert "40 extra areas checked" in source
+    assert "coverage.walking_routes_completed" not in source
+    assert "Competition-recheck watchlist" not in source
+    assert "rank movement diagnostic" not in source.lower()
+    assert "competition stress test" not in source.lower()
+    assert "What the analysis found" in source
+    assert "Who can reach the area?" in source
+    assert "Who lives near the station?" in source
+    assert "Show the modelling assumptions behind these measures" in source
+    assert "median absolute relative difference" not in source
+    assert "Early signal" not in source
+    assert "median rank" not in source
+    assert "worst rank" not in source
+    assert "How to use this map" in source
+    assert "How the final decision was built" in source
+    assert "typical position" in source
+    assert "lowest position" in source
+    assert "Do areas accessible to more students tend to have more tuition branches?" in source
+    assert "Higher-cost case" not in source
+    assert "Middle case" not in source
+    assert "Lower-cost case" not in source
+    assert "Why cost was not used to rank locations" in source
+    assert "identical cost assumptions cannot change the location order" in source
+    assert "decision rule" not in source
+    assert "walking fallback" not in source
+    assert "sensitivity check" not in source
+    assert "An “MRT area” means the station and its immediate surroundings" in source
+    assert "Count physical branches" in source
+    assert "Interpret “zero found” carefully" in source
+    assert "Test a more cautious ranking" in source
+    assert "This is a safeguard, not an invented branch count" in source
+    assert "—" not in source
+    assert "not a guarantee of success" in source
+    assert "does not identify demand" in source
+    assert "not an official registry" in source
+    assert "prioritise Sengkang" in source
+    assert "secondary area for investigation" in source
+    assert "cannot change which MRT area ranks higher" in source
+    assert "collect current quotations for real premises" in source
 
 
 def test_pareto_frontier_keeps_tradeoffs_and_removes_dominated_option() -> None:

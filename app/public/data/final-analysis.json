@@ -1,10 +1,7 @@
 {
   "competition": {
     "coverage": {
-      "all_competitor_walking_routes_completed": 3744,
       "batch_specific_confirmed_leads": 130,
-      "benchmark_areas": 4,
-      "benchmark_overlap_with_outside_audit": 2,
       "candidate_areas": 36,
       "exact_postal_geocodes_resolved": 129,
       "exact_postal_geocodes_unresolved": 1,
@@ -13,7 +10,6 @@
       "outside_audit_areas": 40,
       "queries_blocked": 0,
       "raw_search_pages_persisted": false,
-      "strategic_benchmark_walking_routes_completed": 54,
       "systematic_directory_use": false,
       "unique_confirmed_physical_branches": 120,
       "unique_mrt_areas": 78,
@@ -1297,47 +1293,7 @@
         "target_set": "candidate"
       }
     ],
-    "status": "complete",
-    "strategic_benchmark": {
-      "benchmark_id": "bukit_timah_tuition_hub",
-      "claim_boundary": "Separately labelled benchmark; it did not alter the frozen 36-candidate set after results were viewed.",
-      "fixed_queries_completed": 8,
-      "interpretation": "Beauty World is a high-density established tuition hub. It is valuable market context, but its heavy direct competition means popularity alone is not a greenfield recommendation rule.",
-      "nodes": [
-        {
-          "confirmed_within_10_min_walk": 8,
-          "confirmed_within_15_min_walk": 9,
-          "display_name": "BEAUTY WORLD",
-          "node_name": "BEAUTY WORLD MRT STATION",
-          "possible_within_10_min_walk": 1,
-          "possible_within_15_min_walk": 1
-        },
-        {
-          "confirmed_within_10_min_walk": 2,
-          "confirmed_within_15_min_walk": 2,
-          "display_name": "KING ALBERT PARK",
-          "node_name": "KING ALBERT PARK MRT STATION",
-          "possible_within_10_min_walk": 0,
-          "possible_within_15_min_walk": 0
-        },
-        {
-          "confirmed_within_10_min_walk": 1,
-          "confirmed_within_15_min_walk": 1,
-          "display_name": "SIXTH AVENUE",
-          "node_name": "SIXTH AVENUE MRT STATION",
-          "possible_within_10_min_walk": 0,
-          "possible_within_15_min_walk": 0
-        },
-        {
-          "confirmed_within_10_min_walk": 1,
-          "confirmed_within_15_min_walk": 1,
-          "display_name": "TAN KAH KEE",
-          "node_name": "TAN KAH KEE MRT STATION",
-          "possible_within_10_min_walk": 0,
-          "possible_within_15_min_walk": 0
-        }
-      ]
-    }
+    "status": "complete"
   },
   "decision": {
     "candidate_results": [

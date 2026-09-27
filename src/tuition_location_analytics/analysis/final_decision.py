@@ -141,8 +141,6 @@ def collect_competition(repo_root: Path) -> dict[str, Any]:
     private_paths = [
         *(private / f"national_batch_{batch_number:02d}.private.json" for batch_number in range(1, 11)),
         *(private / f"national-batch-{batch_number:02d}-walk-memberships.private.json" for batch_number in range(1, 11)),
-        private / "bukit_timah_benchmark_batch.private.json",
-        private / "bukit-timah-walk-memberships.private.json",
     ]
     if not all(path.exists() for path in private_paths):
         public_path = repo_root / f"reports/competitors/{DATE}/national_completion/national-competition-summary.json"
@@ -151,7 +149,15 @@ def collect_competition(repo_root: Path) -> dict[str, Any]:
                 "Neither the private national ledgers nor the tracked redacted competition snapshot is available"
             )
         competition = json.loads(public_path.read_text(encoding="utf-8"))
+        competition.pop("strategic_benchmark", None)
         coverage = competition.get("coverage", {})
+        for field in (
+            "benchmark_areas",
+            "benchmark_overlap_with_outside_audit",
+            "strategic_benchmark_walking_routes_completed",
+            "all_competitor_walking_routes_completed",
+        ):
+            coverage.pop(field, None)
         if coverage.get("fixed_queries_completed") != 156 or coverage.get("walking_routes_completed") != 3690:
             raise RuntimeError("The public competition snapshot does not match the frozen completed run")
         if len(competition.get("nodes", [])) != 78:
@@ -219,28 +225,6 @@ def collect_competition(repo_root: Path) -> dict[str, Any]:
         raise RuntimeError(f"unexpected national coverage: {totals['queries']} queries, {len(nodes)} nodes")
     if totals["routes_planned"] != totals["routes_completed"]:
         raise RuntimeError("not every planned walking route completed")
-    benchmark_ledger = json.loads(
-        (private / "bukit_timah_benchmark_batch.private.json").read_text(encoding="utf-8")
-    )
-    benchmark_walk = json.loads(
-        (private / "bukit-timah-walk-memberships.private.json").read_text(encoding="utf-8")
-    )
-    if benchmark_walk["status"] != "complete":
-        raise RuntimeError("Bukit Timah strategic-benchmark walking routes are incomplete")
-    ten_minute = benchmark_ledger["walking_catchment_summary"]["ten_minute_counts"]
-    fifteen_minute = benchmark_ledger["walking_catchment_summary"]["fifteen_minute_counts"]
-    benchmark_nodes = [
-        {
-            "node_name": name,
-            "display_name": _clean_name(name),
-            "confirmed_within_10_min_walk": counts["confirmed"],
-            "possible_within_10_min_walk": counts["possible"],
-            "confirmed_within_15_min_walk": fifteen_minute[name]["confirmed"],
-            "possible_within_15_min_walk": fifteen_minute[name]["possible"],
-        }
-        for name, counts in ten_minute.items()
-    ]
-    all_routes = totals["routes_completed"] + int(benchmark_walk["completed_route_requests"])
     return {
         "input_mode": "private_ledgers_rebuilt_to_redacted_aggregates",
         "coverage": {
@@ -250,25 +234,14 @@ def collect_competition(repo_root: Path) -> dict[str, Any]:
             "unique_mrt_areas": len(nodes),
             "candidate_areas": 36,
             "outside_audit_areas": 40,
-            "benchmark_areas": 4,
-            "benchmark_overlap_with_outside_audit": 2,
             "batch_specific_confirmed_leads": totals["confirmed_leads"],
             "unique_confirmed_physical_branches": len(unique_branches),
             "exact_postal_geocodes_resolved": totals["geocoded"],
             "exact_postal_geocodes_unresolved": totals["unresolved_geocodes"],
             "walking_routes_planned": totals["routes_planned"],
             "walking_routes_completed": totals["routes_completed"],
-            "strategic_benchmark_walking_routes_completed": int(benchmark_walk["completed_route_requests"]),
-            "all_competitor_walking_routes_completed": all_routes,
             "raw_search_pages_persisted": False,
             "systematic_directory_use": False,
-        },
-        "strategic_benchmark": {
-            "benchmark_id": "bukit_timah_tuition_hub",
-            "fixed_queries_completed": 8,
-            "nodes": benchmark_nodes,
-            "interpretation": "Beauty World is a high-density established tuition hub. It is valuable market context, but its heavy direct competition means popularity alone is not a greenfield recommendation rule.",
-            "claim_boundary": "Separately labelled benchmark; it did not alter the frozen 36-candidate set after results were viewed.",
         },
         "nodes": sorted(nodes.values(), key=lambda row: row["commercial_node_id"]),
     }
@@ -553,10 +526,7 @@ def write_outputs(repo_root: Path, competition: dict[str, Any], h1: dict[str, An
     _write_csv(decision_dir / "candidate-results.csv", decision["candidate_results"], fields)
 
     coverage = competition["coverage"]
-    beauty_world = next(
-        row for row in competition["strategic_benchmark"]["nodes"] if row["display_name"] == "BEAUTY WORLD"
-    )
-    competition_md = f"""# National competition analysis\n\nStatus: **complete for the frozen, discovery-bounded protocol**.\n\n- {coverage['fixed_queries_completed']}/{coverage['fixed_queries_planned']} fixed searches completed across {coverage['unique_mrt_areas']} unique MRT areas\n- {coverage['unique_confirmed_physical_branches']} unique verified physical branches found in the national batch ledgers\n- {coverage['walking_routes_completed']}/{coverage['walking_routes_planned']} national-batch official-exit walking routes completed, plus {coverage['strategic_benchmark_walking_routes_completed']} separately labelled Bukit Timah benchmark routes ({coverage['all_competitor_walking_routes_completed']} total)\n- {coverage['exact_postal_geocodes_unresolved']} verified branch location remained unresolved and was not guessed\n- H1 design-weighted correlation: {h1['primary_design_weighted_result']['weighted_correlation']:.3f}; {h1['interpretation']} Its inferential status is **descriptive/inconclusive**.\n- Beauty World benchmark: {beauty_world['confirmed_within_10_min_walk']} confirmed branches inside 10 minutes, illustrating that a recognised hub can also carry heavy direct competition\n\n## Competition uncertainty\n\nPossible and unresolved leads were not retained systematically in national batches 2–10. A reliable `confirmed + possible` upper bound therefore cannot be reconstructed. Zero means **zero confirmed by the bounded protocol**, not proof that no competitor exists. The final comparison includes a separately labelled stress test that removes the automatic best-score advantage from zero-confirmed areas.\n\nThis is not a complete Singapore business registry, market-share estimate or proof of commercial attractiveness.\n"""
+    competition_md = f"""# National competition analysis\n\nStatus: **complete for the frozen, discovery-bounded protocol**.\n\n- {coverage['fixed_queries_completed']}/{coverage['fixed_queries_planned']} fixed searches completed across {coverage['unique_mrt_areas']} unique MRT areas\n- {coverage['unique_confirmed_physical_branches']} unique verified physical branches found in the national batch ledgers\n- {coverage['walking_routes_completed']}/{coverage['walking_routes_planned']} official-exit walking routes completed\n- {coverage['exact_postal_geocodes_unresolved']} verified branch location remained unresolved and was not guessed\n- H1 design-weighted correlation: {h1['primary_design_weighted_result']['weighted_correlation']:.3f}; {h1['interpretation']} Its inferential status is **descriptive/inconclusive**.\n\n## Competition uncertainty\n\nPossible and unresolved leads were not retained systematically in national batches 2–10. A reliable `confirmed + possible` upper bound therefore cannot be reconstructed. Zero means **zero confirmed by the bounded protocol**, not proof that no competitor exists. The final comparison includes a separately labelled stress test that removes the automatic best-score advantage from zero-confirmed areas.\n\nThis is not a complete Singapore business registry, market-share estimate or proof of commercial attractiveness.\n"""
     (competitor_dir / "national-competition-summary.md").write_text(competition_md, encoding="utf-8")
 
     rec_lines = "\n".join(
@@ -582,7 +552,7 @@ def write_outputs(repo_root: Path, competition: dict[str, Any], h1: dict[str, An
     public_bundle = {"competition": competition, "decision": decision}
     checks = [
         {"check_id": "Q_FINAL_01", "status": "pass", "detail": "All 36 frozen candidates are represented."},
-        {"check_id": "Q_FINAL_02", "status": "pass", "detail": "All 156 fixed searches and 3,744 competitor walking routes reconcile."},
+        {"check_id": "Q_FINAL_02", "status": "pass", "detail": "All 156 fixed searches and 3,690 competitor walking routes reconcile."},
         {"check_id": "Q_FINAL_03", "status": "pass" if _numbers_are_finite(public_bundle) else "blocker", "detail": "Public JSON contains only finite numbers or explicit nulls."},
         {"check_id": "Q_FINAL_04", "status": "pass" if not _contains_forbidden_public_fields(public_bundle) else "blocker", "detail": "Public bundle excludes branch addresses, postcodes, operator URLs, credentials and authentication fields."},
         {"check_id": "Q_FINAL_05", "status": "warning", "detail": "National possible-lead counts were not retained consistently; zero-confirmed caution sensitivity is published instead of an invented upper bound."},
@@ -645,7 +615,7 @@ def run(repo_root: Path) -> dict[str, Any]:
     write_outputs(repo_root, competition, h1, decision)
     return {
         "queries_completed": competition["coverage"]["fixed_queries_completed"],
-        "routes_completed": competition["coverage"]["all_competitor_walking_routes_completed"],
+        "routes_completed": competition["coverage"]["walking_routes_completed"],
         "recommendations": [row["display_name"] for row in decision["recommendations"]],
     }
 

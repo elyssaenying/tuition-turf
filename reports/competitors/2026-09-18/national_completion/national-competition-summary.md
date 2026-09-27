@@ -4,10 +4,9 @@ Status: **complete for the frozen, discovery-bounded protocol**.
 
 - 156/156 fixed searches completed across 78 unique MRT areas
 - 120 unique verified physical branches found in the national batch ledgers
-- 3690/3690 national-batch official-exit walking routes completed, plus 54 separately labelled Bukit Timah benchmark routes (3744 total)
+- 3690/3690 official-exit walking routes completed
 - 1 verified branch location remained unresolved and was not guessed
 - H1 design-weighted correlation: 0.318; The frozen design-weighted sample shows a positive descriptive association. Its inferential status is **descriptive/inconclusive**.
-- Beauty World benchmark: 8 confirmed branches inside 10 minutes, illustrating that a recognised hub can also carry heavy direct competition
 
 ## Competition uncertainty
 
