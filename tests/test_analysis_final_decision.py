@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 from tuition_location_analytics.analysis.final_decision import (
@@ -29,8 +30,9 @@ def test_dashboard_has_no_location_specific_benchmark_commentary() -> None:
     assert "worst rank" not in source
     assert "How to use this map" in source
     assert "How the final decision was built" in source
-    assert "typical position" in source
-    assert "lowest position" in source
+    assert "What changes if the public-transport limit is 15, 20 or 25 minutes?" in source
+    assert "same original 36 MRT areas" in source
+    assert "not its chance of business success" in source
     assert "Do areas accessible to more students tend to have more tuition branches?" in source
     assert "Higher-cost case" not in source
     assert "Middle case" not in source
@@ -49,10 +51,43 @@ def test_dashboard_has_no_location_specific_benchmark_commentary() -> None:
     assert "not a guarantee of success" in source
     assert "does not identify demand" in source
     assert "not an official registry" in source
-    assert "prioritise Sengkang" in source
-    assert "secondary area for investigation" in source
+    assert "investigate sengkang first" in source.lower()
+    assert "Serangoon only ranks near the top when 25 minutes are allowed" in source
     assert "cannot change which MRT area ranks higher" in source
-    assert "collect current quotations for real premises" in source
+    assert "check available units, current rent" in source
+    assert 'aria-label="Follow the analysis"' in source
+    assert 'aria-label="What the estimated journey measures"' in source
+    assert "not an exact home or school" in source
+    assert "not a rank or a chance of success" in source
+    assert "Extra research: does population access relate" in source
+    assert "100% complete" not in source
+    assert "{item.selection_count}/200" not in source
+
+
+def test_public_travel_time_check_matches_the_audited_results() -> None:
+    root = Path(__file__).resolve().parents[1]
+    audit = json.loads(
+        (root / "reports/analysis/2026-09-28/travel-time-sensitivity/travel-time-sensitivity.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    public = json.loads((root / "app/public/data/travel-time-sensitivity.json").read_text(encoding="utf-8"))
+    assert audit["quality"]["frozen_20_minute_candidate_order_reproduced"]
+    assert audit["quality"]["all_200_published_top_three_counts_reproduced"]
+    assert public["comparison_scope"] == "same_original_36_mrt_areas"
+    assert public["walking_fallback_minutes"] == 10
+    assert public["straight_line_fallback_metres"] == 800
+    assert public["comparisons_per_limit"] == 40
+    assert [row["public_transport_minutes"] for row in public["thresholds"]] == [15, 20, 25]
+    for row in public["thresholds"]:
+        case = audit["thresholds"][str(row["public_transport_minutes"])]
+        assert row["candidate_screen_overlap_with_20_minutes"] == case["overlap_with_frozen_20_minute_count"]
+        results = case["fixed_36_ranking_both_days"]
+        assert results["status"] == "complete"
+        assert results["evaluations"] == public["comparisons_per_limit"]
+        by_name = {result["node_name"].removesuffix(" MRT STATION"): result for result in results["candidate_results"]}
+        for name, count in row["top_three_counts"].items():
+            assert count == by_name[name]["top_three_count"]
 
 
 def test_pareto_frontier_keeps_tradeoffs_and_removes_dominated_option() -> None:

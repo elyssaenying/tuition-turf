@@ -100,6 +100,7 @@ credentials*.json
 !/app/public/data/node_accessibility_metrics.csv
 !/app/public/data/h2-results.json
 !/app/public/data/final-analysis.json
+!/app/public/data/travel-time-sensitivity.json
 
 # Generated figures: explicitly select final publication assets later
 /reports/figures/**

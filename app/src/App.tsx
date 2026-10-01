@@ -93,6 +93,18 @@ type FinalAnalysis = {
   };
 };
 
+type TravelTimeSensitivity = {
+  comparison_scope: "same_original_36_mrt_areas";
+  walking_fallback_minutes: number;
+  straight_line_fallback_metres: number;
+  comparisons_per_limit: number;
+  thresholds: Array<{
+    public_transport_minutes: number;
+    candidate_screen_overlap_with_20_minutes: number;
+    top_three_counts: { SENGKANG: number; SERANGOON: number };
+  }>;
+};
+
 type GeoFeature = {
   geometry: { coordinates: [number, number] };
   properties: { commercial_node_id: string };
@@ -167,14 +179,21 @@ function rankMovementLabel(station: Station) {
   return `${movement > 0 ? "rose" : "fell"} ${Math.abs(movement)} position${Math.abs(movement) === 1 ? "" : "s"} compared with the 800 m map estimate`;
 }
 
-function recommendationInterpretation(item: Recommendation) {
+function recommendationInterpretation(item: Recommendation, sensitivity: TravelTimeSensitivity | null) {
   if (item.display_name === "SENGKANG") {
-    return `I would prioritise Sengkang for further investigation. It entered the top three in all 200 scoring runs. Its typical position was ${item.median_rank}${item.median_rank === 1 ? "st" : item.median_rank === 2 ? "nd" : item.median_rank === 3 ? "rd" : "th"}, and even its lowest position was ${item.worst_rank}${item.worst_rank === 1 ? "st" : item.worst_rank === 2 ? "nd" : item.worst_rank === 3 ? "rd" : "th"}. This suggests that the result is not dependent on one particular set of assumptions. Its large accessible target-age population estimate and ${item.confirmed_competitors_10_min} verified nearby direct competitor make it the stronger analytical result. Actual rent, footfall, parent interest and premises suitability still need to be checked.`;
+    return `I would investigate Sengkang first. It stayed in the top three whenever the tested assumptions changed${sensitivity ? ", including all three travel limits" : ""}. This is the stronger result, but it does not tell us whether a particular unit is affordable or suitable.`;
   }
   if (item.display_name === "SERANGOON") {
-    return `I would retain Serangoon as a secondary area for investigation, not as an equally strong recommendation. It entered the top three in ${item.selection_count} of 200 scoring runs. Its typical position was ${item.median_rank}${item.median_rank === 1 ? "st" : item.median_rank === 2 ? "nd" : item.median_rank === 3 ? "rd" : "th"}, while its lowest position was ${item.worst_rank}${item.worst_rank === 1 ? "st" : item.worst_rank === 2 ? "nd" : item.worst_rank === 3 ? "rd" : "th"}. It passed the minimum rule under both competition-counting approaches, but its position is more sensitive to the assumptions than Sengkang's.`;
+    return `Serangoon stays on the published shortlist, but I would treat it as an area to investigate further, not an equally strong recommendation.${sensitivity ? " It placed in the top three only when the model allowed a 25-minute public-transport trip, not at 15 or 20 minutes." : " Its result depends more heavily on the travel-time assumption."} That does not show how long families are actually willing to travel.`;
   }
   return item.rationale;
+}
+
+function travelResultLabel(count: number, total: number) {
+  if (count === total) return "In the top three every time";
+  if (count === 0) return "Outside the top three in every comparison";
+  if (count > total / 2) return "In the top three most of the time";
+  return "In the top three some of the time";
 }
 
 function ArrowIcon() {
@@ -202,6 +221,7 @@ export default function App() {
   const [metric, setMetric] = useState<Metric>("accessibility");
   const [h2, setH2] = useState<H2Result | null>(null);
   const [finalAnalysis, setFinalAnalysis] = useState<FinalAnalysis | null>(null);
+  const [travelSensitivity, setTravelSensitivity] = useState<TravelTimeSensitivity | null>(null);
   const [loadingError, setLoadingError] = useState("");
 
   useEffect(() => {
@@ -219,8 +239,9 @@ export default function App() {
       fetch("/data/node_inspection.geojson").then((response) => response.json()),
       fetch("/data/mp2019_subzones.geojson").then((response) => response.json()),
       fetch("/data/final-analysis.json").then((response) => response.json()),
+      fetch("/data/travel-time-sensitivity.json").then((response) => response.json()),
     ])
-      .then(([csv, accessibilityCsv, h2Result, geojson, subzoneGeojson, completedAnalysis]) => {
+      .then(([csv, accessibilityCsv, h2Result, geojson, subzoneGeojson, completedAnalysis, sensitivity]) => {
         const rows = parseCsv(csv);
         const headers = rows[0];
         const column = (name: string) => headers.indexOf(name);
@@ -300,6 +321,7 @@ export default function App() {
           validNodeCount: Number(h2Result.valid_node_count),
         });
         setFinalAnalysis(completedAnalysis as FinalAnalysis);
+        setTravelSensitivity(sensitivity as TravelTimeSensitivity);
       })
       .catch(() => setLoadingError("The local dashboard data could not be loaded."));
   }, []);
@@ -613,8 +635,8 @@ export default function App() {
             <p className="kicker">An evidence-led location decision</p>
             <h1>Where should a tuition centre open?</h1>
             <p className="hero-intro">
-              I wanted to understand how target-age population, transport accessibility, nearby competition
-              and uncertainty could guide where a tuition centre opens. This dashboard turns those factors
+              I wanted to understand how many school-age residents live near an area, how easily they can reach it,
+              and which tuition centres already operate nearby. This dashboard brings those factors
               into a transparent shortlist for operators to investigate. It is not a guarantee of success.
             </p>
             <div className="hero-actions">
@@ -625,8 +647,8 @@ export default function App() {
           <div className="hero-metrics" aria-label="Project summary">
             <div><strong>146</strong><span>MRT areas screened</span></div>
             <div><strong>332</strong><span>Residential areas modelled</span></div>
-            <div><strong>5</strong><span>Decision stages</span></div>
-            <div className="status-metric"><strong>05</strong><span><b /> stages complete</span></div>
+            <div><strong>36</strong><span>Areas compared in detail</span></div>
+            <div className="status-metric"><strong>2</strong><span><b /> areas for further investigation</span></div>
           </div>
         </section>
 
@@ -634,7 +656,7 @@ export default function App() {
           <span className="live-dot" />
           <strong>Analysis complete</strong>
           <span>146 MRT areas screened · 36 candidates compared · 40 extra areas checked · quality checks passed</span>
-          <span className="status-date">Analysis completed: 18 Sep 2026</span>
+          <span className="status-date">Original analysis: 18 Sep · travel-time check: 28 Sep 2026</span>
         </section>
 
         <section className="quick-start" aria-labelledby="quick-start-title">
@@ -650,23 +672,33 @@ export default function App() {
               <p>It stayed near the top across every tested set of assumptions. Investigate this area first.</p>
             </article>
             <article>
-              <span>Secondary option</span>
+              <span>Depends on travel time</span>
               <strong>Serangoon</strong>
-              <p>It remained eligible under both competition-counting approaches, but its position changed more when the assumptions changed.</p>
+              <p>It ranked near the top only when the model allowed 25 minutes by public transport. Treat it as a less certain option.</p>
             </article>
             <article>
               <span>Still required</span>
-              <strong>Premises checks</strong>
-              <p>Current rent, unit availability, footfall, permitted use and parent interest were not measured.</p>
+              <strong>Check an actual unit</strong>
+              <p>Current rent, available spaces, people passing by and local parent interest were not measured.</p>
             </article>
           </div>
         </section>
 
+        <nav className="reading-path" aria-label="Follow the analysis">
+          <a href="#explore"><span>1</span><strong>Explore population and travel</strong></a>
+          <span aria-hidden="true">→</span>
+          <a href="#recommendations"><span>2</span><strong>Check nearby competition</strong></a>
+          <span aria-hidden="true">→</span>
+          <a href="#travel-time-check"><span>3</span><strong>Test different travel limits</strong></a>
+          <span aria-hidden="true">→</span>
+          <a href="#shortlist"><span>4</span><strong>See where to investigate</strong></a>
+        </nav>
+
         <section className="content-section explore-section" id="explore">
           <div className="section-heading">
             <div>
-              <p className="section-number">01–02 / Demand and accessibility</p>
-              <h2>Compare who lives nearby with who can actually reach the area</h2>
+              <p className="section-number">01–02 / Residents and travel</p>
+              <h2>How many school-age residents are nearby or within reach?</h2>
             </div>
             <div className="section-summary">
               <span className="complete-badge">Complete</span>
@@ -674,11 +706,17 @@ export default function App() {
             </div>
           </div>
 
+          <div className="journey-guide" aria-label="What the estimated journey measures">
+            <div><span>Start</span><strong>Residential-area centre</strong><p>A stand-in for where residents live, not an exact home or school.</p></div>
+            <div className="journey-connector"><span aria-hidden="true">→</span><strong>Bus, MRT or both</strong><p>OneMap estimates the trip.</p></div>
+            <div><span>End</span><strong>An exit of the candidate MRT station</strong><p>Not the door of a tuition centre.</p></div>
+          </div>
+
           <div className="metric-guide" aria-label="Plain-language metric guide">
             <article>
               <span>Main view</span>
               <h3>Who can reach the area?</h3>
-              <p>This estimates how many residents aged 7–16 live in residential areas that can reach the MRT area within the selected 20-minute travel scenario.</p>
+              <p>This counts estimated residents aged 7–16 in areas with a public-transport trip of up to 20 minutes to the MRT station. Separate walking and distance rules apply when a public-transport route is unavailable.</p>
             </article>
             <article>
               <span>Comparison view</span>
@@ -695,9 +733,10 @@ export default function App() {
           <details className="method-details">
             <summary>Show the modelling assumptions behind these measures</summary>
             <div>
-              <p><strong>20-minute view:</strong> This is an estimate, not a customer count. Each journey starts at the centre of an official residential area, called a subzone, and ends at a selected MRT exit. The main case uses a representative Wednesday at 4 pm. If a usable public-transport result was unavailable, the model used a separately labelled 10-minute walking estimate or 800-metre distance estimate.</p>
+              <p><strong>Where the journey starts and ends:</strong> OneMap estimated travel from the centre point of each residential area to an MRT exit. It is not a trip from a school or to an actual tuition unit. The weekday check uses Wednesday at 4 pm.</p>
+              <p><strong>What “20 minutes” means:</strong> It is the maximum estimated public-transport time counted in the main view. If OneMap could not return a public-transport route, the model tried walking within 10 minutes. If that also failed, it used a straight-line distance of 800 metres. The distance fallback is not a travel-time estimate.</p>
               <p><strong>800-metre view:</strong> The population is estimated according to how much of each residential area overlaps the 800-metre boundary around station exits. This assumes residents are evenly distributed inside each area.</p>
-              <p><strong>Alternative assumptions:</strong> The model also tests 15-minute and 25-minute travel limits, plus a wider 1.2 km nearby-population boundary. The 20-minute choice is based on judgement, not survey evidence.</p>
+              <p><strong>Why test 15 and 25 minutes too?</strong> No survey tells us how long families would travel for tuition. The 20-minute limit was a judgement made before seeing the results. The 15- and 25-minute checks show what changes when that judgement changes. Walking and distance fallbacks stay the same.</p>
             </div>
           </details>
 
@@ -719,8 +758,8 @@ export default function App() {
                 </select>
               </label>
               <div className="metric-toggle" aria-label="Selected metric">
-                <button className={metric === "accessibility" ? "active" : ""} onClick={() => setMetric("accessibility")}>20-minute access estimate</button>
-                <button className={metric === "proximity" ? "active" : ""} onClick={() => setMetric("proximity")}>Near station exits (800 m)</button>
+                <button className={metric === "accessibility" ? "active" : ""} onClick={() => setMetric("accessibility")}>Residents within travel reach</button>
+                <button className={metric === "proximity" ? "active" : ""} onClick={() => setMetric("proximity")}>Residents living nearby</button>
               </div>
             </div>
 
@@ -751,8 +790,8 @@ export default function App() {
 
               <aside className="ranking-panel">
                 <div className="panel-heading">
-                  <div><p>{metric === "accessibility" ? "Largest 20-minute access estimates" : "Largest 800 m nearby-population estimates"}</p><span>{filteredStations.length} areas shown · estimated ages 7–16 population</span></div>
-                  <span className="sort-label">Highest first ↓</span>
+                  <div><p>{metric === "accessibility" ? "Most residents reached in the 20-minute public-transport test" : "Largest 800 m nearby-population estimates"}</p><span>{filteredStations.length} areas shown · estimated ages 7–16 population</span></div>
+                  <span className="sort-label">Population only, highest first ↓</span>
                 </div>
                 <div className="ranking-list">
                   {filteredStations.slice(0, 12).map((station) => (
@@ -792,7 +831,7 @@ export default function App() {
                     <div className="selected-stat"><span>Schools within 800 m</span><strong>{selected.schools800m}</strong></div>
                   </>
                 )}
-                <p className="map-stage-note"><strong>How to use this map:</strong> This view compares demand and access only. The final shortlist below also includes competition and checks whether results remain stable when assumptions change.</p>
+                <p className="map-stage-note"><strong>How to use this map:</strong> This view compares nearby population and travel access only. It does not identify the best place to open. <a href="#travel-time-check">See what changes at 15, 20 and 25 minutes.</a></p>
               </div>
             ) : null}
           </div>
@@ -804,8 +843,8 @@ export default function App() {
             <h2>Distance alone does not show how easily an area can be reached.</h2>
             <p>
               I compared the travel-route ranking with a simpler distance-based ranking.
-              {h2 ? ` ${h2.movedTenRanks} of ${h2.validNodeCount}` : " Many"} comparable MRT areas moved by at
-              least 10 positions. This means that using distance alone could materially change which areas appear attractive.
+              {h2 ? ` ${h2.movedTenRanks} of ${h2.validNodeCount}` : " Many"} MRT areas with usable results for both methods moved by at
+              least 10 positions. This means that using distance alone could substantially change which areas appear attractive.
             </p>
             <div className="caution-card">
               <span>What this means</span>
@@ -814,7 +853,7 @@ export default function App() {
             <details className="method-details compact-details">
               <summary>Show the technical comparison</summary>
               <div>
-                <p>The formal test compares a 20-minute route-based estimate with a simpler rule that counts a subzone when its centre is within 800 metres of a selected station exit.</p>
+                <p>The formal test compares the 20-minute public-transport limit, with its fixed fallbacks, against a simpler rule that counts a residential area when its centre is within 800 metres of a station exit.</p>
                 <p>These rules answer different questions and cover different geographic ranges. I therefore judged the practical effect by checking how much the ordering of MRT areas changed, rather than presenting a percentage difference between the two population estimates.</p>
               </div>
             </details>
@@ -822,8 +861,8 @@ export default function App() {
           <div className="insight-card">
             <div className="insight-card-head"><span>How much did the ordering change?</span><b>{h2?.materialDifference ? "Clearly different" : "Under review"}</b></div>
             <strong className="big-number">{h2?.movedTenRanks ?? 92}</strong>
-            <span className="big-number-label">of {h2?.validNodeCount ?? 127} comparable MRT areas moved by at least 10 positions when routes replaced straight-line distance.</span>
-            <p className="insight-explanation">This shows that the choice of measurement method can materially affect which areas appear attractive.</p>
+            <span className="big-number-label">of {h2?.validNodeCount ?? 127} MRT areas with usable results for both methods moved by at least 10 positions when routes replaced straight-line distance.</span>
+            <p className="insight-explanation">The way we measure access can change which areas appear attractive.</p>
             <div className="insight-footer"><strong>Overall ordering</strong><span>Moderately similar, not identical</span></div>
             <details className="dark-method-details">
               <summary>See the statistical measure</summary>
@@ -835,20 +874,29 @@ export default function App() {
         <section className="content-section recommendation-section" id="recommendations">
           <div className="section-heading">
             <div>
-              <p className="section-number">03–05 / Competition, stability and decision</p>
-              <h2>Two areas remained eligible, but the evidence is not equally strong</h2>
+              <p className="section-number">03–05 / Existing centres and the final choice</p>
+              <h2>Two areas made the shortlist, but the evidence is not equally strong</h2>
             </div>
             <div className="section-summary">
-              <span className="complete-badge">Area-level result</span>
-              <p>The shortlist combines the earlier population and access measures with verified nearby competition. It then checks whether the result survives reasonable changes to the assumptions.</p>
+              <span className="complete-badge">Areas, not units</span>
+              <p>The shortlist combines estimated population, travel access and nearby tuition branches. It also checks what happens when the assumptions change.</p>
             </div>
           </div>
 
           <div className="decision-flow" aria-label="How the final decision was built">
             <article><span>1</span><div><strong>Compare potential reach</strong><p>Screen the MRT areas using target-age population and travel access.</p></div></article>
-            <article><span>2</span><div><strong>Add nearby competition</strong><p>Count verified physical branches, while treating places with none found cautiously.</p></div></article>
-            <article><span>3</span><div><strong>Test stability</strong><p>Change the assumptions and priorities, then keep only areas that repeatedly rank well.</p></div></article>
+            <article><span>2</span><div><strong>Check existing centres</strong><p>Count physical tuition branches confirmed by their operators. Do not assume a place has no competitors just because the search found none.</p></div></article>
+            <article><span>3</span><div><strong>See what changes</strong><p>Change the travel limit and other model choices. Flag areas that rank well only under certain choices.</p></div></article>
           </div>
+
+          <details className="method-details">
+            <summary>How were the areas ranked and shortlisted?</summary>
+            <div>
+              <p><strong>Compare like with like:</strong> Each area is compared on school-age population, travel access and verified nearby competition. Higher population and easier access receive stronger scores; fewer verified competitors receive a stronger competition score. A separate cautious version prevents “zero found” from automatically looking best.</p>
+              <p><strong>Allow different priorities:</strong> There is no single objectively best weighting. The model repeats the comparison with five sets of operator priorities and different travel and competition assumptions. Before combining scores, it sets aside an area if another option is at least as strong on every measured dimension and stronger on at least one.</p>
+              <p><strong>Choose results that hold up:</strong> The shortlist favours areas that appear in the top three more often, and an area must appear at least once with both the observed competitor counts and the cautious treatment. Shared financial assumptions do not distinguish areas. These rules identify places to investigate, not proven business opportunities.</p>
+            </div>
+          </details>
 
           <div className="uncertainty-callout" id="competition-uncertainty">
             <div className="uncertainty-heading">
@@ -873,6 +921,9 @@ export default function App() {
             </div>
           </div>
 
+          <details className="method-details research-details">
+            <summary>Extra research: does population access relate to existing branch locations?</summary>
+            <div>
           <div className="subsection-heading">
             <span>Competition pattern</span>
             <h3>Do areas accessible to more students tend to have more tuition branches?</h3>
@@ -886,10 +937,81 @@ export default function App() {
             <p><strong>What I found:</strong> Areas accessible to more target-age residents tended to contain slightly more verified branches. The correlation was r = {finalAnalysis?.competition.h1.primary_design_weighted_result.weighted_correlation.toFixed(3) ?? "0.318"}, where values closer to 1 indicate a stronger positive relationship. This pattern is not strong enough to predict success and does not prove cause and effect. Rent, income, reputation, school mix and other unmeasured factors may also affect branch location.</p>
           </div>
 
-          <div className="subsection-heading shortlist-heading">
+            </div>
+          </details>
+
+          <div className="travel-time-check" id="travel-time-check">
+            <div className="travel-time-heading">
+              <div>
+                <span>Check the travel-time assumption</span>
+                <h3>What changes if the public-transport limit is 15, 20 or 25 minutes?</h3>
+                <p>These are estimated trips from residential areas to MRT exits by bus, MRT or both. The limits are assumptions to test, not surveyed family preferences. The separate rules used when a route is unavailable stay unchanged.</p>
+              </div>
+              <a href="#shortlist">See what this means for the shortlist <ArrowIcon /></a>
+            </div>
+            <p className="travel-time-explainer">I compared the same original 36 MRT areas repeatedly, changing the journey timing, competitor-data assumptions and operator priorities. “In the top three every time” means the area stayed among the three highest-ranked options in every comparison. It does not mean it always ranked first.</p>
+            {travelSensitivity ? (
+              <div className="travel-time-grid" aria-label="How each shortlisted area performs when travel time changes">
+                {(["SENGKANG", "SERANGOON"] as const).map((area) => (
+                  <article className="travel-time-card" key={area}>
+                    <div className="travel-time-card-head">
+                      <h4>{area === "SENGKANG" ? "Sengkang" : "Serangoon"}</h4>
+                      <span>{area === "SENGKANG" ? "Consistent result" : "Depends on travel time"}</span>
+                    </div>
+                    <p>{area === "SENGKANG" ? "Stays among the strongest options at all three travel limits." : "Ranks near the top only when a longer trip is allowed."}</p>
+                    <dl className="travel-time-results">
+                      {travelSensitivity.thresholds.map((caseResult) => (
+                        <div key={caseResult.public_transport_minutes}>
+                          <dt>{caseResult.public_transport_minutes} minutes</dt>
+                          <dd className={caseResult.top_three_counts[area] === 0 ? "outside-top-three" : "in-top-three"}>
+                            {travelResultLabel(caseResult.top_three_counts[area], travelSensitivity.comparisons_per_limit)}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </article>
+                ))}
+              </div>
+            ) : <p className="travel-time-loading">Loading the travel-time comparison…</p>}
+            <div className="travel-time-takeaway">
+              <strong>What this tells us</strong>
+              <p>Sengkang stays strong at every tested limit. Serangoon only ranks near the top when 25 minutes are allowed. The original shortlist still names both areas, but Serangoon depends on a travel-time choice that has not been checked against how families actually travel for tuition.</p>
+            </div>
+            {travelSensitivity ? (
+              <details className="method-details travel-time-details">
+                <summary>See the exact comparison counts and how they were calculated</summary>
+                <div>
+                  <p>At each travel limit, the model compared a weekday and a Saturday, four ways of handling incomplete competitor information and five sets of operator priorities. This gives 40 comparisons. A count of zero means the area was never selected in the top three, not that it had no residents or could not be reached.</p>
+                  <div className="travel-counts-wrap">
+                    <table className="travel-counts">
+                      <caption>Comparisons that selected the area in the top three</caption>
+                      <thead><tr><th scope="col">Public-transport limit</th><th scope="col">Sengkang</th><th scope="col">Serangoon</th></tr></thead>
+                      <tbody>{travelSensitivity.thresholds.map((caseResult) => (
+                        <tr key={caseResult.public_transport_minutes}>
+                          <th scope="row">{caseResult.public_transport_minutes} minutes</th>
+                          <td>{caseResult.top_three_counts.SENGKANG} of {travelSensitivity.comparisons_per_limit}</td>
+                          <td>{caseResult.top_three_counts.SERANGOON} of {travelSensitivity.comparisons_per_limit}</td>
+                        </tr>
+                      ))}</tbody>
+                    </table>
+                  </div>
+                  <p>These are different model settings, and some produce the same ranking. The counts show how an area's result changes across settings, not its chance of business success.</p>
+                </div>
+              </details>
+            ) : null}
+            <details className="method-details travel-time-details">
+              <summary>Did changing the limit also change which areas were investigated?</summary>
+              <div>
+                <p>Yes, slightly. Of the original 36 areas, 34 are still selected with a 15-minute limit and 35 with a 25-minute limit. Macpherson enters both alternative lists, but comparable competitor information is not yet available for it. That is why the results above keep the original 36 areas fixed. They do not claim to rank the changed lists fully.</p>
+                <p>These limits are tests of an assumption, not measured travel preferences. The comparison also uses only a weekday afternoon and a Saturday morning, not every possible class time.</p>
+              </div>
+            </details>
+          </div>
+
+          <div className="subsection-heading shortlist-heading" id="shortlist">
             <span>Final area shortlist</span>
-            <h3>Which areas stayed strong when the assumptions changed?</h3>
-            <p>One scoring run is one tested combination of travel threshold, competition rule and decision priority. A typical position is the midpoint of an area's results. Its lowest position is the weakest result it reached. This is called ranking stability.</p>
+            <h3>Which area is supported most consistently?</h3>
+            <p>The earlier comparison changed travel limits, how uncertain competitor results were treated and what an operator valued most. Placing in the top three more often means the result changed less across these model checks. It does not tell us the probability that a centre would succeed.</p>
           </div>
 
           <div className="recommendation-grid">
@@ -899,12 +1021,13 @@ export default function App() {
                 <h3>{item.display_name}</h3>
                 <p className="recommendation-region">{item.planning_region.replace(" REGION", "")}</p>
                 <div className="recommendation-stats">
-                  <div><strong>{number.format(item.primary_accessible_population_proxy)}</strong><span>estimated ages 7–16 population with 20-minute access</span></div>
-                  <div><strong>{item.confirmed_competitors_10_min}</strong><span>verified direct-competitor {item.confirmed_competitors_10_min === 1 ? "branch" : "branches"} within a 10-minute walk</span></div>
-                  <div><strong>{Math.round(item.top_three_frequency * 100)}%</strong><span>of scoring runs placed it in the top three</span></div>
+                  <div><strong>{number.format(item.primary_accessible_population_proxy)}</strong><span>estimated residents aged 7–16 reached in the 20-minute public-transport test, including fallbacks</span></div>
+                  <div><strong>{item.confirmed_competitors_10_min}</strong><span>verified P1–S4 maths tuition {item.confirmed_competitors_10_min === 1 ? "branch" : "branches"} within a 10-minute walk</span></div>
+                  <div><strong>{item.selection_count === 200 ? "Consistent" : "Depends on assumptions"}</strong><span>{item.selection_count === 200 ? "in the top three in every original comparison" : "reaches the top three in only some original comparisons"}</span></div>
                 </div>
-                <p className="recommendation-copy">{recommendationInterpretation(item)}</p>
-                <p className="due-diligence"><strong>Before signing a lease</strong>{item.next_due_diligence}</p>
+                <details className="method-details compact-details"><summary>See the original comparison count</summary><div><p>Appeared in the top three in {item.selection_count} of {finalAnalysis?.decision.method.profile_ranking_evaluations ?? 200} original comparisons. This is a count of model settings, not a rank or a chance of success. The 15/20/25-minute check above uses 40 comparisons at each travel limit.</p></div></details>
+                <p className="recommendation-copy">{recommendationInterpretation(item, travelSensitivity)}</p>
+                <p className="due-diligence"><strong>Before signing a lease</strong>Check an actual unit, its total monthly cost, whether a tuition centre may operate there, fire-safety requirements, class capacity and interest from nearby parents.</p>
               </article>
             ))}
           </div>
@@ -913,17 +1036,17 @@ export default function App() {
             <span>Why cost was not used to rank locations</span>
             <div>
               <h3>Comparable area-specific cost data was unavailable.</h3>
-              <p>Applying the same assumed rent, fees and operating costs to every area cannot change which MRT area ranks higher. I therefore excluded those assumptions from the location ranking. The next stage should compare current all-in premises costs only after actual units have been identified in the shortlisted areas.</p>
+              <p>Applying the same assumed rent, fees and operating costs to every area cannot change which MRT area ranks higher. I therefore excluded those assumptions from the location ranking. The next stage should compare current total monthly costs after identifying actual units in the shortlisted areas.</p>
             </div>
           </div>
 
           <div className="conclusion-callout">
             <span>My conclusion</span>
-            <h3>Investigate Sengkang first and treat Serangoon as a secondary option.</h3>
-            <p>Based on the tested indicators, Sengkang is the clearer location for the next stage of investigation because it remained highly ranked under every tested assumption. Serangoon still qualifies as an alternative, but the evidence is less stable. Before recommending an actual unit, I would collect current quotations for real premises and validate unit availability, footfall, permitted use, owner consent, fire safety, room capacity, achievable fees and local parent interest.</p>
+            <h3>Investigate Sengkang first. Treat Serangoon as a travel-time-sensitive option.</h3>
+            <p>Sengkang remained highly ranked at 15, 20 and 25 minutes. Serangoon ranked near the top only at 25 minutes, so I would not present it as equally well supported. Before choosing either area for a real centre, I would check available units, current rent and other costs, footfall, permission to use the space for tuition, safety rules and interest from nearby parents.</p>
           </div>
 
-          <p className="decision-boundary">{finalAnalysis?.decision.claim_boundary}</p>
+          <p className="decision-boundary">These are areas worth investigating, not specific units to lease. “Zero competitors found” means none were verified by this search, not that none exist. Availability, rent, required approvals and business success have not been established.</p>
         </section>
 
         <section className="content-section method-section" id="method">
@@ -933,11 +1056,11 @@ export default function App() {
           </div>
           <div className="method-grid">
             {[
-              ["01", "Who lives nearby?", "Complete", "done", "Estimate the ages 7–16 population within 800 m, then repeat at 1.2 km to check sensitivity to the boundary."],
-              ["02", "Who can reach it?", "Complete", "done", "Test 96,944 public-transport route requests from 332 residential-subzone centre points to all 146 MRT areas."],
-              ["03", "Who already operates nearby?", "Complete", "done", "Use fixed searches, operator-page validation and walking routes to count verified direct competitors."],
+              ["01", "Who lives nearby?", "Complete", "done", "Estimate the ages 7–16 population within 800 m, then see what changes when the nearby area widens to 1.2 km."],
+              ["02", "Who can reach it?", "Complete", "done", "Estimate public-transport journeys from 332 residential-area centre points to 146 MRT areas. Use the stated walking and distance rules if a route is unavailable."],
+              ["03", "Who already operates nearby?", "Complete", "done", "Search for tuition branches, check details on the operators’ own pages and measure walking routes to MRT areas."],
               ["04", "Can costs distinguish the areas?", "Not used in ranking", "done", "No. Reliable area-specific rent data was unavailable, and identical cost assumptions cannot change the location order."],
-              ["05", "Does the result stay stable?", "Complete", "done", "Recommend only areas that remain competitive across different assumptions and decision priorities."],
+              ["05", "Does the result stay stable?", "Complete", "done", "Compare results when travel limits, competitor uncertainty and operator priorities change. Flag results that rely on one assumption."],
             ].map(([step, title, status, state, description]) => (
               <article className={`method-card ${state}`} key={step}>
                 <div className="method-card-top"><span>{step}</span><StageIcon state={state as "done" | "active" | "pending"} /></div>
@@ -955,9 +1078,9 @@ export default function App() {
             <p className="method-intro">Every headline figure is reproducible, but each answers a limited question. Use the shortlist to decide where deeper commercial research should begin.</p>
           </div>
           <div className="data-guide-grid">
-            <article><span>Population estimate</span><h3>Estimated residents, not customers</h3><p>I use ages 7–16 because they broadly correspond to the P1–S4 education years in scope. The official subzone population data cannot show tuition participation, willingness to enrol or households’ ability to pay.</p></article>
-            <article><span>Recommendation</span><h3>An MRT area, not a premises</h3><p>The result identifies promising areas under stated assumptions. It does not confirm an available unit, rent, permitted use, capacity or profitability.</p></article>
-            <article><span>For researchers</span><h3>Inspect the released evidence</h3><p>Download the underlying public outputs and verify the rankings independently.</p><div className="download-links"><a href="/data/node_accessibility_metrics.csv" download>Accessibility CSV</a><a href="/data/node_proximity_metrics.csv" download>Nearby-population CSV</a><a href="/data/final-analysis.json" download>Final analysis JSON</a></div></article>
+            <article><span>Population estimate</span><h3>Estimated residents, not customers</h3><p>I use ages 7–16 because they broadly correspond to the P1–S4 education years in scope. The official residential-area population data cannot show who takes tuition, who would enrol or which households can afford it.</p></article>
+            <article><span>Recommendation</span><h3>An MRT area, not a unit to lease</h3><p>The result identifies areas worth investigating under stated assumptions. It does not show that a suitable unit is available, affordable or approved for tuition use.</p></article>
+            <article><span>For researchers</span><h3>Inspect the released evidence</h3><p>Download the public results and the later travel-time check to inspect the numbers yourself.</p><div className="download-links"><a href="/data/node_accessibility_metrics.csv" download>Travel-access CSV</a><a href="/data/node_proximity_metrics.csv" download>Nearby-population CSV</a><a href="/data/final-analysis.json" download>Original analysis JSON</a><a href="/data/travel-time-sensitivity.json" download>15/20/25-minute check JSON</a></div></article>
           </div>
         </section>
 
@@ -966,12 +1089,11 @@ export default function App() {
             <div>
               <p className="section-number">What happens next</p>
               <h2>Test the shortlist against real premises and local market evidence.</h2>
-              <p>The analysis narrows where an operator could investigate; it does not decide which unit to lease. My next step would be to compare available units in Sengkang and Serangoon using current all-in rent, actual footfall, intended-use approval, owner consent, fire safety, room capacity, achievable fees and feedback from local parents.</p>
+              <p>The analysis narrows where an operator could investigate; it does not decide which unit to lease. I would start with actual units in Sengkang. I would also check whether Serangoon could draw families from as far away as the 25-minute test assumes. For any unit, I would check its total monthly cost, footfall, permission to operate, fire safety, room capacity, achievable fees and feedback from nearby parents.</p>
             </div>
             <div className="progress-preview">
-              <div className="progress-label"><span>Core portfolio analysis</span><strong>100% complete</strong></div>
-              <div className="completion-bar"><i /></div>
-              <span>All 5 stages complete · conditional area result · unit due diligence remains</span>
+              <div className="progress-label"><span>What this project delivers</span><strong>Area comparison complete</strong></div>
+              <span>Next real-world step: investigate actual units and speak to nearby parents. This is separate from the completed area analysis.</span>
             </div>
           </div>
         </section>

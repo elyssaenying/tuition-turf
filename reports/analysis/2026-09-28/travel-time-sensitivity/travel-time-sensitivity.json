@@ -1,0 +1,4315 @@
+{
+  "canonical_results_changed": false,
+  "quality": {
+    "all_200_published_top_three_counts_reproduced": true,
+    "frozen_20_minute_candidate_order_reproduced": true,
+    "frozen_candidates": 36,
+    "publicly_evaluated_competition_nodes": 78,
+    "qualified_nodes": 95
+  },
+  "scope": "Weekday 16:00 residential-subzone-centre to MRT-exit travel; 10-minute walking fallback and 800-metre straight-line fallback remain fixed; candidate screen and four competition cases match the release rules.",
+  "source_checksums": {
+    "accessibility": "aa46af261f555396d36586a2e380e1624bd73362c6975f63c86fbb58b45936d1",
+    "candidate_config": "8f16c917adc6a3a32ed4c6e0489d1db152470aa90cc2d567ba04d1d1b9261993",
+    "competition": "115dd39452f177202720036252406b58933cf2af000d5baf1da2adb0c2aeecad",
+    "final_decision": "a97a0c7eede372df625480f32b73f1f6eceea83669ab5d48ca9b114b4bb2b315",
+    "frozen_candidates": "d144a1ee22d08455e0205af0de44f318cc79a93614aff3869c21625477fdba85",
+    "operator_profiles": "763091499b590a86a0da31097950fca19842554ba0f15a7e167d4a6026736c5e",
+    "population_proximity": "7e5cf827a2d2b3d0619436d713d825dd10121abefc2ffa78954411465bd7d5ed",
+    "qualified_nodes": "1553470bbfe360c6a44effc125cf90d17454174a6d3d3dab74f774a1ff21f732"
+  },
+  "status": "diagnostic_complete",
+  "thresholds": {
+    "15": {
+      "alternative_36_ranking_both_days": {
+        "status": "unavailable_missing_competition"
+      },
+      "alternative_36_ranking_weekday": {
+        "missing_node_ids": [
+          "NODE_E30E66328EE90491"
+        ],
+        "status": "unavailable_missing_competition"
+      },
+      "alternative_36_ranking_weekend": {
+        "missing_node_ids": [
+          "NODE_E30E66328EE90491"
+        ],
+        "status": "unavailable_missing_competition"
+      },
+      "eligible_count": 95,
+      "entrants": [
+        {
+          "commercial_node_id": "NODE_80B55383A8E530D6",
+          "competition_evidence_available": true,
+          "node_name": "REDHILL MRT STATION"
+        },
+        {
+          "commercial_node_id": "NODE_E30E66328EE90491",
+          "competition_evidence_available": false,
+          "node_name": "MACPHERSON MRT STATION"
+        }
+      ],
+      "exits": [
+        {
+          "commercial_node_id": "NODE_8AA587D6F81B4538",
+          "node_name": "EUNOS MRT STATION"
+        },
+        {
+          "commercial_node_id": "NODE_C7B368530FF438A3",
+          "node_name": "BOON KENG MRT STATION"
+        }
+      ],
+      "fixed_36_ranking_both_days": {
+        "candidate_results": [
+          {
+            "caution_count": 20,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 20,
+            "top_three_count": 40
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 20,
+            "top_three_count": 20
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 10,
+            "top_three_count": 10
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          }
+        ],
+        "evaluations": 40,
+        "status": "complete"
+      },
+      "fixed_36_ranking_weekday": {
+        "candidate_results": [
+          {
+            "caution_count": 10,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "median_full_rank": 1.0,
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 4,
+            "top_three_count": 20,
+            "worst_full_rank": 1
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "median_full_rank": 5.0,
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 2,
+            "top_three_count": 10,
+            "worst_full_rank": 8
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "median_full_rank": 8.5,
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 5,
+            "pareto_case_count": 1,
+            "top_three_count": 5,
+            "worst_full_rank": 12
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "median_full_rank": 2.0,
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 3
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "median_full_rank": 3.0,
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 5
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "median_full_rank": 5.5,
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 10
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "median_full_rank": 6.0,
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 9
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "median_full_rank": 7.0,
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 11
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "median_full_rank": 9.0,
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 12
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "median_full_rank": 9.0,
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 15
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "median_full_rank": 10.0,
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 17
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "median_full_rank": 12.0,
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 15
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "median_full_rank": 13.0,
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 14
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "median_full_rank": 14.0,
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 21
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "median_full_rank": 15.0,
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 17
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "median_full_rank": 16.5,
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "median_full_rank": 17.0,
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "median_full_rank": 18.0,
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 23
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "median_full_rank": 20.0,
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 28
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "median_full_rank": 20.5,
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 24
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "median_full_rank": 21.0,
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 29
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "median_full_rank": 22.0,
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 27
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "median_full_rank": 24.0,
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "median_full_rank": 24.0,
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "median_full_rank": 25.0,
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "median_full_rank": 26.5,
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "median_full_rank": 27.5,
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "median_full_rank": 27.5,
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "median_full_rank": 29.0,
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "median_full_rank": 30.5,
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "median_full_rank": 31.0,
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "median_full_rank": 32.0,
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "median_full_rank": 33.0,
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "median_full_rank": 34.0,
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "median_full_rank": 34.5,
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "median_full_rank": 35.5,
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          }
+        ],
+        "evaluations": 20,
+        "status": "complete",
+        "unique_full_orderings": 20
+      },
+      "fixed_36_ranking_weekend": {
+        "candidate_results": [
+          {
+            "caution_count": 10,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "median_full_rank": 1.0,
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 4,
+            "top_three_count": 20,
+            "worst_full_rank": 2
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "median_full_rank": 4.0,
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 2,
+            "top_three_count": 10,
+            "worst_full_rank": 7
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "median_full_rank": 8.0,
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 5,
+            "pareto_case_count": 1,
+            "top_three_count": 5,
+            "worst_full_rank": 13
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "median_full_rank": 2.0,
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 3
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "median_full_rank": 3.0,
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 5
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "median_full_rank": 5.5,
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 7
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "median_full_rank": 6.0,
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 10
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "median_full_rank": 8.0,
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 12
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "median_full_rank": 8.0,
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 15
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "median_full_rank": 10.0,
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 14
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "median_full_rank": 10.0,
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 16
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "median_full_rank": 12.0,
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 15
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "median_full_rank": 12.5,
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 13
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "median_full_rank": 13.0,
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 20
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "median_full_rank": 15.0,
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 17
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "median_full_rank": 16.0,
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "median_full_rank": 17.5,
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 25
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "median_full_rank": 18.0,
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "median_full_rank": 19.0,
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "median_full_rank": 21.0,
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 28
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "median_full_rank": 21.0,
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 29
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "median_full_rank": 23.0,
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "median_full_rank": 23.5,
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "median_full_rank": 24.0,
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "median_full_rank": 25.0,
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "median_full_rank": 26.0,
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 30
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "median_full_rank": 27.0,
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "median_full_rank": 27.0,
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "median_full_rank": 28.5,
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "median_full_rank": 30.0,
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "median_full_rank": 31.0,
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "median_full_rank": 32.0,
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "median_full_rank": 33.0,
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "median_full_rank": 34.5,
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "median_full_rank": 34.5,
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "median_full_rank": 35.5,
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          }
+        ],
+        "evaluations": 20,
+        "status": "complete",
+        "unique_full_orderings": 16
+      },
+      "missing_competition_evidence_for_selected": [
+        {
+          "commercial_node_id": "NODE_E30E66328EE90491",
+          "node_name": "MACPHERSON MRT STATION"
+        }
+      ],
+      "notable_nodes": {
+        "Bukit Panjang": {
+          "accessibility_rank_among_146": 27,
+          "reachable_population_proxy": 9070.0,
+          "screen_rank_among_95": 11,
+          "selected": true,
+          "selection_stage": "merit"
+        },
+        "Sengkang": {
+          "accessibility_rank_among_146": 1,
+          "reachable_population_proxy": 42180.0,
+          "screen_rank_among_95": 1,
+          "selected": true,
+          "selection_stage": "merit"
+        },
+        "Serangoon": {
+          "accessibility_rank_among_146": 66,
+          "reachable_population_proxy": 5560.0,
+          "screen_rank_among_95": 34,
+          "selected": true,
+          "selection_stage": "regional_coverage"
+        },
+        "Yishun": {
+          "accessibility_rank_among_146": 10,
+          "reachable_population_proxy": 20600.0,
+          "screen_rank_among_95": 8,
+          "selected": true,
+          "selection_stage": "merit"
+        }
+      },
+      "overlap_with_frozen_20_minute_count": 34,
+      "selected_count": 36,
+      "selected_ids": [
+        "NODE_060EFCFFF0678F62",
+        "NODE_14A5C750CFCA69F9",
+        "NODE_5C9F27F182EC04E0",
+        "NODE_FBD766C3735845AC",
+        "NODE_7C210228429B4D5D",
+        "NODE_C537F8120AAB5A48",
+        "NODE_43220C9A8C78747C",
+        "NODE_6FF34CE78F7A7CE4",
+        "NODE_5D83E5FE99347632",
+        "NODE_37BEDA440130E8C9",
+        "NODE_E62A238EEFE24A0E",
+        "NODE_47C3F502FCBF6D2F",
+        "NODE_BDCD9B8B115B8110",
+        "NODE_C3A8C9C6D085005D",
+        "NODE_AF50EA7BD5A9B213",
+        "NODE_E0C109E03C86EF62",
+        "NODE_FEEA2CA592CBBD13",
+        "NODE_8274E1550C9D50B0",
+        "NODE_8C9B296C3FE59EF1",
+        "NODE_7AF1F758D718FF8F",
+        "NODE_4906C58D7F369E4A",
+        "NODE_CC9CBDDDC2E8C808",
+        "NODE_1F84239E47E93DA1",
+        "NODE_80B55383A8E530D6",
+        "NODE_508225A8012289DF",
+        "NODE_69A5823A5F4CBB39",
+        "NODE_88A40D6577952082",
+        "NODE_C83BEA2CAFFD97E8",
+        "NODE_23E1F1B3CAF5448D",
+        "NODE_D7E890F74C189D62",
+        "NODE_BE3506E4DDD906F9",
+        "NODE_DCC0FC8F75393AA4",
+        "NODE_5A8A2367299FC45A",
+        "NODE_35FB845694A4942B",
+        "NODE_E30E66328EE90491",
+        "NODE_9B9F1BA40A1694BF"
+      ],
+      "selected_region_counts": {
+        "CENTRAL REGION": 8,
+        "EAST REGION": 6,
+        "NORTH REGION": 7,
+        "NORTH-EAST REGION": 8,
+        "WEST REGION": 7
+      },
+      "threshold_minutes": 15
+    },
+    "20": {
+      "alternative_36_ranking_both_days": {
+        "candidate_results": [
+          {
+            "caution_count": 20,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 20,
+            "top_three_count": 40
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 20,
+            "top_three_count": 20
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 10,
+            "top_three_count": 10
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          }
+        ],
+        "evaluations": 40,
+        "status": "complete"
+      },
+      "alternative_36_ranking_weekday": {
+        "candidate_results": [
+          {
+            "caution_count": 10,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "median_full_rank": 1.0,
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 4,
+            "top_three_count": 20,
+            "worst_full_rank": 1
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "median_full_rank": 6.0,
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 2,
+            "top_three_count": 10,
+            "worst_full_rank": 9
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "median_full_rank": 11.0,
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 5,
+            "pareto_case_count": 1,
+            "top_three_count": 5,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "median_full_rank": 2.0,
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 2
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "median_full_rank": 3.0,
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 4
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "median_full_rank": 4.0,
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 8
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "median_full_rank": 5.5,
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 11
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "median_full_rank": 7.0,
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 10
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "median_full_rank": 8.0,
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 14
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "median_full_rank": 9.0,
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 13
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "median_full_rank": 10.0,
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "median_full_rank": 12.0,
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 23
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "median_full_rank": 13.0,
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 24
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "median_full_rank": 14.0,
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 18
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "median_full_rank": 15.0,
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "median_full_rank": 16.0,
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 25
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "median_full_rank": 17.0,
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 21
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "median_full_rank": 18.5,
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "median_full_rank": 19.0,
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 23
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "median_full_rank": 21.0,
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 24
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "median_full_rank": 21.0,
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 27
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "median_full_rank": 22.0,
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 30
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "median_full_rank": 22.5,
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 28
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "median_full_rank": 24.0,
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 30
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "median_full_rank": 24.0,
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "median_full_rank": 26.5,
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "median_full_rank": 27.5,
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "median_full_rank": 29.0,
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "median_full_rank": 29.0,
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "median_full_rank": 30.0,
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "median_full_rank": 31.0,
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "median_full_rank": 32.0,
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "median_full_rank": 33.0,
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "median_full_rank": 34.0,
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "median_full_rank": 34.5,
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "median_full_rank": 35.0,
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          }
+        ],
+        "evaluations": 20,
+        "status": "complete",
+        "unique_full_orderings": 18
+      },
+      "alternative_36_ranking_weekend": {
+        "candidate_results": [
+          {
+            "caution_count": 10,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "median_full_rank": 1.0,
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 4,
+            "top_three_count": 20,
+            "worst_full_rank": 1
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "median_full_rank": 5.0,
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 2,
+            "top_three_count": 10,
+            "worst_full_rank": 7
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "median_full_rank": 10.5,
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 5,
+            "pareto_case_count": 1,
+            "top_three_count": 5,
+            "worst_full_rank": 16
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "median_full_rank": 2.0,
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 2
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "median_full_rank": 3.0,
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 5
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "median_full_rank": 4.0,
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 9
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "median_full_rank": 6.0,
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 11
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "median_full_rank": 7.0,
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 10
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "median_full_rank": 8.5,
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 13
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "median_full_rank": 10.0,
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "median_full_rank": 10.0,
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "median_full_rank": 12.0,
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 23
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "median_full_rank": 14.0,
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 20
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "median_full_rank": 14.0,
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 25
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "median_full_rank": 15.0,
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "median_full_rank": 16.0,
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 25
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "median_full_rank": 17.0,
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "median_full_rank": 17.0,
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 27
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "median_full_rank": 19.0,
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "median_full_rank": 20.0,
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 23
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "median_full_rank": 20.5,
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "median_full_rank": 23.0,
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "median_full_rank": 24.0,
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 27
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "median_full_rank": 24.0,
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "median_full_rank": 24.5,
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "median_full_rank": 24.5,
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "median_full_rank": 27.5,
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "median_full_rank": 28.0,
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "median_full_rank": 29.0,
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "median_full_rank": 30.0,
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "median_full_rank": 31.0,
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "median_full_rank": 33.0,
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "median_full_rank": 33.5,
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "median_full_rank": 33.5,
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "median_full_rank": 34.0,
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "median_full_rank": 35.0,
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          }
+        ],
+        "evaluations": 20,
+        "status": "complete",
+        "unique_full_orderings": 18
+      },
+      "eligible_count": 95,
+      "entrants": [],
+      "exits": [],
+      "fixed_36_ranking_both_days": {
+        "candidate_results": [
+          {
+            "caution_count": 20,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 20,
+            "top_three_count": 40
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 20,
+            "top_three_count": 20
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 10,
+            "top_three_count": 10
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          }
+        ],
+        "evaluations": 40,
+        "status": "complete"
+      },
+      "fixed_36_ranking_weekday": {
+        "candidate_results": [
+          {
+            "caution_count": 10,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "median_full_rank": 1.0,
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 4,
+            "top_three_count": 20,
+            "worst_full_rank": 1
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "median_full_rank": 6.0,
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 2,
+            "top_three_count": 10,
+            "worst_full_rank": 9
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "median_full_rank": 11.0,
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 5,
+            "pareto_case_count": 1,
+            "top_three_count": 5,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "median_full_rank": 2.0,
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 2
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "median_full_rank": 3.0,
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 4
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "median_full_rank": 4.0,
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 8
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "median_full_rank": 5.5,
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 11
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "median_full_rank": 7.0,
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 10
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "median_full_rank": 8.0,
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 14
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "median_full_rank": 9.0,
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 13
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "median_full_rank": 10.0,
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "median_full_rank": 12.0,
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 23
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "median_full_rank": 13.0,
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 24
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "median_full_rank": 14.0,
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 18
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "median_full_rank": 15.0,
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "median_full_rank": 16.0,
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 25
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "median_full_rank": 17.0,
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 21
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "median_full_rank": 18.5,
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "median_full_rank": 19.0,
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 23
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "median_full_rank": 21.0,
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 24
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "median_full_rank": 21.0,
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 27
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "median_full_rank": 22.0,
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 30
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "median_full_rank": 22.5,
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 28
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "median_full_rank": 24.0,
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 30
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "median_full_rank": 24.0,
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "median_full_rank": 26.5,
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "median_full_rank": 27.5,
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "median_full_rank": 29.0,
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "median_full_rank": 29.0,
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "median_full_rank": 30.0,
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "median_full_rank": 31.0,
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "median_full_rank": 32.0,
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "median_full_rank": 33.0,
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "median_full_rank": 34.0,
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "median_full_rank": 34.5,
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "median_full_rank": 35.0,
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          }
+        ],
+        "evaluations": 20,
+        "status": "complete",
+        "unique_full_orderings": 18
+      },
+      "fixed_36_ranking_weekend": {
+        "candidate_results": [
+          {
+            "caution_count": 10,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "median_full_rank": 1.0,
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 4,
+            "top_three_count": 20,
+            "worst_full_rank": 1
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "median_full_rank": 5.0,
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 2,
+            "top_three_count": 10,
+            "worst_full_rank": 7
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "median_full_rank": 10.5,
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 5,
+            "pareto_case_count": 1,
+            "top_three_count": 5,
+            "worst_full_rank": 16
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "median_full_rank": 2.0,
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 2
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "median_full_rank": 3.0,
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 5
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "median_full_rank": 4.0,
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 9
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "median_full_rank": 6.0,
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 11
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "median_full_rank": 7.0,
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 10
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "median_full_rank": 8.5,
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 13
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "median_full_rank": 10.0,
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "median_full_rank": 10.0,
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "median_full_rank": 12.0,
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 23
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "median_full_rank": 14.0,
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 20
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "median_full_rank": 14.0,
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 25
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "median_full_rank": 15.0,
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "median_full_rank": 16.0,
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 25
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "median_full_rank": 17.0,
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "median_full_rank": 17.0,
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 27
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "median_full_rank": 19.0,
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "median_full_rank": 20.0,
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 23
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "median_full_rank": 20.5,
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "median_full_rank": 23.0,
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "median_full_rank": 24.0,
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 27
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "median_full_rank": 24.0,
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "median_full_rank": 24.5,
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "median_full_rank": 24.5,
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "median_full_rank": 27.5,
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "median_full_rank": 28.0,
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "median_full_rank": 29.0,
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "median_full_rank": 30.0,
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "median_full_rank": 31.0,
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "median_full_rank": 33.0,
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "median_full_rank": 33.5,
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "median_full_rank": 33.5,
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "median_full_rank": 34.0,
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "median_full_rank": 35.0,
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          }
+        ],
+        "evaluations": 20,
+        "status": "complete",
+        "unique_full_orderings": 18
+      },
+      "missing_competition_evidence_for_selected": [],
+      "notable_nodes": {
+        "Bukit Panjang": {
+          "accessibility_rank_among_146": 39,
+          "reachable_population_proxy": 20080.0,
+          "screen_rank_among_95": 16,
+          "selected": true,
+          "selection_stage": "merit"
+        },
+        "Sengkang": {
+          "accessibility_rank_among_146": 1,
+          "reachable_population_proxy": 61450.0,
+          "screen_rank_among_95": 1,
+          "selected": true,
+          "selection_stage": "merit"
+        },
+        "Serangoon": {
+          "accessibility_rank_among_146": 13,
+          "reachable_population_proxy": 32570.0,
+          "screen_rank_among_95": 12,
+          "selected": true,
+          "selection_stage": "merit"
+        },
+        "Yishun": {
+          "accessibility_rank_among_146": 19,
+          "reachable_population_proxy": 27270.0,
+          "screen_rank_among_95": 8,
+          "selected": true,
+          "selection_stage": "merit"
+        }
+      },
+      "overlap_with_frozen_20_minute_count": 36,
+      "selected_count": 36,
+      "selected_ids": [
+        "NODE_060EFCFFF0678F62",
+        "NODE_14A5C750CFCA69F9",
+        "NODE_5C9F27F182EC04E0",
+        "NODE_FBD766C3735845AC",
+        "NODE_7C210228429B4D5D",
+        "NODE_D7E890F74C189D62",
+        "NODE_5D83E5FE99347632",
+        "NODE_6FF34CE78F7A7CE4",
+        "NODE_7AF1F758D718FF8F",
+        "NODE_C537F8120AAB5A48",
+        "NODE_47C3F502FCBF6D2F",
+        "NODE_BE3506E4DDD906F9",
+        "NODE_43220C9A8C78747C",
+        "NODE_8274E1550C9D50B0",
+        "NODE_FEEA2CA592CBBD13",
+        "NODE_E62A238EEFE24A0E",
+        "NODE_E0C109E03C86EF62",
+        "NODE_37BEDA440130E8C9",
+        "NODE_69A5823A5F4CBB39",
+        "NODE_DCC0FC8F75393AA4",
+        "NODE_1F84239E47E93DA1",
+        "NODE_C3A8C9C6D085005D",
+        "NODE_88A40D6577952082",
+        "NODE_C83BEA2CAFFD97E8",
+        "NODE_8AA587D6F81B4538",
+        "NODE_508225A8012289DF",
+        "NODE_5A8A2367299FC45A",
+        "NODE_AF50EA7BD5A9B213",
+        "NODE_23E1F1B3CAF5448D",
+        "NODE_BDCD9B8B115B8110",
+        "NODE_C7B368530FF438A3",
+        "NODE_CC9CBDDDC2E8C808",
+        "NODE_9B9F1BA40A1694BF",
+        "NODE_4906C58D7F369E4A",
+        "NODE_8C9B296C3FE59EF1",
+        "NODE_35FB845694A4942B"
+      ],
+      "selected_region_counts": {
+        "CENTRAL REGION": 8,
+        "EAST REGION": 6,
+        "NORTH REGION": 7,
+        "NORTH-EAST REGION": 8,
+        "WEST REGION": 7
+      },
+      "threshold_minutes": 20
+    },
+    "25": {
+      "alternative_36_ranking_both_days": {
+        "status": "unavailable_missing_competition"
+      },
+      "alternative_36_ranking_weekday": {
+        "missing_node_ids": [
+          "NODE_E30E66328EE90491"
+        ],
+        "status": "unavailable_missing_competition"
+      },
+      "alternative_36_ranking_weekend": {
+        "missing_node_ids": [
+          "NODE_E30E66328EE90491"
+        ],
+        "status": "unavailable_missing_competition"
+      },
+      "eligible_count": 95,
+      "entrants": [
+        {
+          "commercial_node_id": "NODE_E30E66328EE90491",
+          "competition_evidence_available": false,
+          "node_name": "MACPHERSON MRT STATION"
+        }
+      ],
+      "exits": [
+        {
+          "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+          "node_name": "TIONG BAHRU MRT STATION"
+        }
+      ],
+      "fixed_36_ranking_both_days": {
+        "candidate_results": [
+          {
+            "caution_count": 20,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 20,
+            "top_three_count": 40
+          },
+          {
+            "caution_count": 20,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 17,
+            "top_three_count": 37
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 19,
+            "top_three_count": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 3,
+            "top_three_count": 3
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 1,
+            "top_three_count": 1
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "top_three_count": 0
+          }
+        ],
+        "evaluations": 40,
+        "status": "complete"
+      },
+      "fixed_36_ranking_weekday": {
+        "candidate_results": [
+          {
+            "caution_count": 10,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "median_full_rank": 1.0,
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 4,
+            "top_three_count": 20,
+            "worst_full_rank": 1
+          },
+          {
+            "caution_count": 10,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "median_full_rank": 4.5,
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 9,
+            "pareto_case_count": 4,
+            "top_three_count": 19,
+            "worst_full_rank": 10
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "median_full_rank": 5.0,
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 2,
+            "top_three_count": 10,
+            "worst_full_rank": 5
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "median_full_rank": 16.0,
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 1,
+            "pareto_case_count": 1,
+            "top_three_count": 1,
+            "worst_full_rank": 30
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "median_full_rank": 2.0,
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 3
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "median_full_rank": 3.0,
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 4
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "median_full_rank": 6.0,
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 11
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "median_full_rank": 8.0,
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 12
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "median_full_rank": 8.0,
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 18
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "median_full_rank": 10.0,
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 24
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "median_full_rank": 11.0,
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 21
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "median_full_rank": 11.5,
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 21
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "median_full_rank": 13.0,
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 20
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "median_full_rank": 14.0,
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "median_full_rank": 16.0,
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "median_full_rank": 16.0,
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "median_full_rank": 16.0,
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "median_full_rank": 17.0,
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 28
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "median_full_rank": 19.0,
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 27
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "median_full_rank": 20.5,
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 24
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "median_full_rank": 20.5,
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "median_full_rank": 21.0,
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 29
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "median_full_rank": 21.0,
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "median_full_rank": 23.0,
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "median_full_rank": 23.5,
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 27
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "median_full_rank": 26.0,
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 30
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "median_full_rank": 26.0,
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "median_full_rank": 27.0,
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 28
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "median_full_rank": 29.5,
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "median_full_rank": 30.0,
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "median_full_rank": 30.5,
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "median_full_rank": 32.5,
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "median_full_rank": 33.5,
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "median_full_rank": 35.0,
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "median_full_rank": 35.0,
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "median_full_rank": 35.5,
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          }
+        ],
+        "evaluations": 20,
+        "status": "complete",
+        "unique_full_orderings": 18
+      },
+      "fixed_36_ranking_weekend": {
+        "candidate_results": [
+          {
+            "caution_count": 10,
+            "commercial_node_id": "NODE_060EFCFFF0678F62",
+            "median_full_rank": 1.0,
+            "node_name": "SENGKANG MRT STATION",
+            "observed_count": 10,
+            "pareto_case_count": 4,
+            "top_three_count": 20,
+            "worst_full_rank": 1
+          },
+          {
+            "caution_count": 10,
+            "commercial_node_id": "NODE_BE3506E4DDD906F9",
+            "median_full_rank": 4.0,
+            "node_name": "SERANGOON MRT STATION",
+            "observed_count": 8,
+            "pareto_case_count": 4,
+            "top_three_count": 18,
+            "worst_full_rank": 9
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_6FF34CE78F7A7CE4",
+            "median_full_rank": 8.0,
+            "node_name": "YISHUN MRT STATION",
+            "observed_count": 9,
+            "pareto_case_count": 2,
+            "top_three_count": 9,
+            "worst_full_rank": 11
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E62A238EEFE24A0E",
+            "median_full_rank": 14.5,
+            "node_name": "BUKIT PANJANG MRT STATION",
+            "observed_count": 2,
+            "pareto_case_count": 1,
+            "top_three_count": 2,
+            "worst_full_rank": 29
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5A8A2367299FC45A",
+            "median_full_rank": 11.0,
+            "node_name": "MARSILING MRT STATION",
+            "observed_count": 1,
+            "pareto_case_count": 2,
+            "top_three_count": 1,
+            "worst_full_rank": 16
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_14A5C750CFCA69F9",
+            "median_full_rank": 2.0,
+            "node_name": "PUNGGOL MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 2
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FBD766C3735845AC",
+            "median_full_rank": 3.0,
+            "node_name": "HOUGANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 4
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5C9F27F182EC04E0",
+            "median_full_rank": 5.0,
+            "node_name": "TAMPINES MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 12
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7C210228429B4D5D",
+            "median_full_rank": 7.0,
+            "node_name": "ADMIRALTY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 18
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_5D83E5FE99347632",
+            "median_full_rank": 8.0,
+            "node_name": "PASIR RIS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 12
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_7AF1F758D718FF8F",
+            "median_full_rank": 8.5,
+            "node_name": "BOON LAY MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 17
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_43220C9A8C78747C",
+            "median_full_rank": 10.5,
+            "node_name": "PIONEER MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 20
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_BDCD9B8B115B8110",
+            "median_full_rank": 12.0,
+            "node_name": "WOODLANDS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 25
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C3A8C9C6D085005D",
+            "median_full_rank": 13.0,
+            "node_name": "KHATIB MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 2,
+            "top_three_count": 0,
+            "worst_full_rank": 19
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C83BEA2CAFFD97E8",
+            "median_full_rank": 16.0,
+            "node_name": "POTONG PASIR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_47C3F502FCBF6D2F",
+            "median_full_rank": 16.5,
+            "node_name": "KOVAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_69A5823A5F4CBB39",
+            "median_full_rank": 17.0,
+            "node_name": "SIMEI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 22
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_9B9F1BA40A1694BF",
+            "median_full_rank": 18.5,
+            "node_name": "LORONG CHUAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_D7E890F74C189D62",
+            "median_full_rank": 18.5,
+            "node_name": "SEMBAWANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 27
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_37BEDA440130E8C9",
+            "median_full_rank": 20.0,
+            "node_name": "YEW TEE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 26
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_FEEA2CA592CBBD13",
+            "median_full_rank": 21.0,
+            "node_name": "BUKIT BATOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 24
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_CC9CBDDDC2E8C808",
+            "median_full_rank": 22.0,
+            "node_name": "WOODLANDS SOUTH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 31
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C7B368530FF438A3",
+            "median_full_rank": 22.5,
+            "node_name": "BOON KENG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 25
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8C9B296C3FE59EF1",
+            "median_full_rank": 24.0,
+            "node_name": "BISHAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_4906C58D7F369E4A",
+            "median_full_rank": 25.0,
+            "node_name": "CLEMENTI MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 28
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_35FB845694A4942B",
+            "median_full_rank": 25.5,
+            "node_name": "YIO CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8AA587D6F81B4538",
+            "median_full_rank": 26.0,
+            "node_name": "EUNOS MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 32
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_DCC0FC8F75393AA4",
+            "median_full_rank": 26.5,
+            "node_name": "WOODLEIGH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 29
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_C537F8120AAB5A48",
+            "median_full_rank": 29.0,
+            "node_name": "CHOA CHU KANG MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 34
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_8274E1550C9D50B0",
+            "median_full_rank": 30.0,
+            "node_name": "TOA PAYOH MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_88A40D6577952082",
+            "median_full_rank": 30.5,
+            "node_name": "BEDOK MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 33
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_508225A8012289DF",
+            "median_full_rank": 32.0,
+            "node_name": "KEMBANGAN MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_E0C109E03C86EF62",
+            "median_full_rank": 33.5,
+            "node_name": "ANG MO KIO MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 35
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_23E1F1B3CAF5448D",
+            "median_full_rank": 34.5,
+            "node_name": "MARINE TERRACE MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_1F84239E47E93DA1",
+            "median_full_rank": 35.0,
+            "node_name": "PAYA LEBAR MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          },
+          {
+            "caution_count": 0,
+            "commercial_node_id": "NODE_AF50EA7BD5A9B213",
+            "median_full_rank": 35.0,
+            "node_name": "TIONG BAHRU MRT STATION",
+            "observed_count": 0,
+            "pareto_case_count": 0,
+            "top_three_count": 0,
+            "worst_full_rank": 36
+          }
+        ],
+        "evaluations": 20,
+        "status": "complete",
+        "unique_full_orderings": 16
+      },
+      "missing_competition_evidence_for_selected": [
+        {
+          "commercial_node_id": "NODE_E30E66328EE90491",
+          "node_name": "MACPHERSON MRT STATION"
+        }
+      ],
+      "notable_nodes": {
+        "Bukit Panjang": {
+          "accessibility_rank_among_146": 91,
+          "reachable_population_proxy": 23760.0,
+          "screen_rank_among_95": 35,
+          "selected": true,
+          "selection_stage": "regional_coverage"
+        },
+        "Sengkang": {
+          "accessibility_rank_among_146": 3,
+          "reachable_population_proxy": 82480.0,
+          "screen_rank_among_95": 1,
+          "selected": true,
+          "selection_stage": "merit"
+        },
+        "Serangoon": {
+          "accessibility_rank_among_146": 1,
+          "reachable_population_proxy": 88060.0,
+          "screen_rank_among_95": 6,
+          "selected": true,
+          "selection_stage": "merit"
+        },
+        "Yishun": {
+          "accessibility_rank_among_146": 14,
+          "reachable_population_proxy": 58250.0,
+          "screen_rank_among_95": 7,
+          "selected": true,
+          "selection_stage": "merit"
+        }
+      },
+      "overlap_with_frozen_20_minute_count": 35,
+      "selected_count": 36,
+      "selected_ids": [
+        "NODE_060EFCFFF0678F62",
+        "NODE_14A5C750CFCA69F9",
+        "NODE_FBD766C3735845AC",
+        "NODE_5C9F27F182EC04E0",
+        "NODE_7C210228429B4D5D",
+        "NODE_BE3506E4DDD906F9",
+        "NODE_6FF34CE78F7A7CE4",
+        "NODE_47C3F502FCBF6D2F",
+        "NODE_D7E890F74C189D62",
+        "NODE_5D83E5FE99347632",
+        "NODE_69A5823A5F4CBB39",
+        "NODE_8C9B296C3FE59EF1",
+        "NODE_7AF1F758D718FF8F",
+        "NODE_37BEDA440130E8C9",
+        "NODE_4906C58D7F369E4A",
+        "NODE_DCC0FC8F75393AA4",
+        "NODE_FEEA2CA592CBBD13",
+        "NODE_8274E1550C9D50B0",
+        "NODE_43220C9A8C78747C",
+        "NODE_C83BEA2CAFFD97E8",
+        "NODE_E30E66328EE90491",
+        "NODE_5A8A2367299FC45A",
+        "NODE_C3A8C9C6D085005D",
+        "NODE_C537F8120AAB5A48",
+        "NODE_88A40D6577952082",
+        "NODE_508225A8012289DF",
+        "NODE_C7B368530FF438A3",
+        "NODE_23E1F1B3CAF5448D",
+        "NODE_BDCD9B8B115B8110",
+        "NODE_9B9F1BA40A1694BF",
+        "NODE_1F84239E47E93DA1",
+        "NODE_CC9CBDDDC2E8C808",
+        "NODE_E0C109E03C86EF62",
+        "NODE_E62A238EEFE24A0E",
+        "NODE_8AA587D6F81B4538",
+        "NODE_35FB845694A4942B"
+      ],
+      "selected_region_counts": {
+        "CENTRAL REGION": 8,
+        "EAST REGION": 6,
+        "NORTH REGION": 7,
+        "NORTH-EAST REGION": 8,
+        "WEST REGION": 7
+      },
+      "threshold_minutes": 25
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "analysis_date": "2026-09-28",
+  "comparison_scope": "same_original_36_mrt_areas",
+  "public_transport_minutes_tested": [15, 20, 25],
+  "walking_fallback_minutes": 10,
+  "straight_line_fallback_metres": 800,
+  "comparisons_per_limit": 40,
+  "published_results_reproduced": true,
+  "thresholds": [
+    {
+      "public_transport_minutes": 15,
+      "candidate_screen_overlap_with_20_minutes": 34,
+      "top_three_counts": { "SENGKANG": 40, "SERANGOON": 0 }
+    },
+    {
+      "public_transport_minutes": 20,
+      "candidate_screen_overlap_with_20_minutes": 36,
+      "top_three_counts": { "SENGKANG": 40, "SERANGOON": 0 }
+    },
+    {
+      "public_transport_minutes": 25,
+      "candidate_screen_overlap_with_20_minutes": 35,
+      "top_three_counts": { "SENGKANG": 40, "SERANGOON": 37 }
+    }
+  ],
+  "alternative_candidate_screen_limit": "Macpherson enters the 15- and 25-minute candidate lists, but comparable competitor evidence is unavailable. The displayed ranking comparison therefore keeps the original 36 areas fixed.",
+  "source_report": "reports/analysis/2026-09-28/travel-time-sensitivity/travel-time-sensitivity.json"
+}
