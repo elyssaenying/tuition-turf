@@ -61,6 +61,12 @@ Completed core flow: registered source → immutable raw snapshot → validated 
 
 ## Read the contract
 
+### Public and local test checks
+
+GitHub Actions runs `PYTHONPATH=src python -m pytest -q --strict-markers -m "not local_data"` and the dashboard build. Public tests use synthetic fixtures and tracked public artifacts, not credentials or private ledgers.
+
+On an authorised local setup, run `PYTHONPATH=src .venv/bin/python -m pytest -q --strict-markers` to include the three `local_data` integration checks. They explicitly skip when their entire input set is absent. Partial input sets and invalid data still fail. Run only those checks with `-m local_data`. Never upload private evidence to make CI pass.
+
 - [Project charter](docs/project-charter.md): question, scope, units and limitations.
 - [Decision framework](docs/decision-framework.md): eligibility, hypotheses, trade-offs and recommendation rules.
 - [Methodology plan](docs/methodology-plan.md): geographic design, branch validation, finance and uncertainty.

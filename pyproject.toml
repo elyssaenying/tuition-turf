@@ -27,3 +27,6 @@ tuition-final-decision = "tuition_location_analytics.analysis.final_decision:mai
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+markers = ["local_data: integration checks requiring ignored local analytical data or private evidence"]

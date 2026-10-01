@@ -7,6 +7,7 @@ import tempfile
 from unittest.mock import patch
 
 import pyarrow.parquet as pq
+import pytest
 
 from tuition_location_analytics.competitors.dedup import deduplicate_branch_candidates
 from tuition_location_analytics.competitors.cli import (
@@ -480,15 +481,44 @@ class CandidateSpecificValidationTests(unittest.TestCase):
         second = compute_run_id(material_input_checksums=["a"], analysis_cutoff="2026-09-13", geocode_decisions=moved, geocode_cache_checksum="cache")
         self.assertNotEqual(first, second)
 
+    def _require_local_ledgers(self, root: Path) -> None:
+        config = json.loads((root / "config/competitors/pilot_run.json").read_text(encoding="utf-8"))
+        paths = [root / config[key] for key in ("raw_observation_ledger_ref", "validation_attempt_ledger_ref")]
+        if not any(path.exists() for path in paths):
+            self.skipTest("Private competitor ledgers are not distributed in Git.")
+        # Partial or corrupt local data must fail, not silently skip.
+
+    def test_configured_ledger_paths_with_synthetic_files(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            config_dir = root / "config/competitors"
+            config_dir.mkdir(parents=True)
+            private_dir = root / "data/interim/competitors"
+            private_dir.mkdir(parents=True)
+            config = {"raw_observation_ledger_ref": "data/interim/competitors/raw.private.json", "validation_attempt_ledger_ref": "data/interim/competitors/validation.private.json"}
+            (config_dir / "pilot_run.json").write_text(json.dumps(config), encoding="utf-8")
+            for reference in config.values():
+                (root / reference).write_text("{}", encoding="utf-8")
+            paths = _config_paths(root)
+            self.assertEqual(paths["raw_observations"], root / config["raw_observation_ledger_ref"])
+            self.assertEqual(paths["validation_attempts"], root / config["validation_attempt_ledger_ref"])
+            paths["validation_attempts"].unlink()
+            with self.assertRaisesRegex(RuntimeError, "validation-attempt ledger is unavailable"):
+                _config_paths(root)
+
+    @pytest.mark.local_data
     def test_validation_ledger_is_loaded_from_the_private_configured_reference(self) -> None:
         root = Path(__file__).resolve().parents[1]
+        self._require_local_ledgers(root)
         paths = _config_paths(root)
         self.assertIn("data/interim/competitors/", str(paths["validation_attempts"]))
         self.assertTrue(paths["validation_attempts"].exists())
         self.assertFalse((root / "config/competitors/pilot_validation_attempts.json").exists())
 
+    @pytest.mark.local_data
     def test_private_validation_batches_are_candidate_specific_and_dimensioned(self) -> None:
         root = Path(__file__).resolve().parents[1]
+        self._require_local_ledgers(root)
         paths = _config_paths(root)
         attempts = json.loads(paths["validation_attempts"].read_text(encoding="utf-8"))["attempts"]
         dimensions = {

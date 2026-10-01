@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import unittest
+import pytest
 from pathlib import Path
 
 from shapely.geometry import Point, box
@@ -65,7 +66,11 @@ class ProximityConfigTests(unittest.TestCase):
         self.assertIn("not", boundary)
         self.assertIn("ranking recommendation", boundary)
 
+    @pytest.mark.local_data
     def test_all_inputs_exist(self) -> None:
+        paths = [REPO_ROOT / reference for reference in self.config["inputs"].values()]
+        if not any(path.exists() for path in paths):
+            self.skipTest("Local processed proximity inputs are not distributed in Git.")
         for reference in self.config["inputs"].values():
             self.assertTrue((REPO_ROOT / reference).is_file(), reference)
 
